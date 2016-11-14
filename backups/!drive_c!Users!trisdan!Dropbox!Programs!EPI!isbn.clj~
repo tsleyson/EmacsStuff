@@ -1,0 +1,95 @@
+;; An LRU ISBN cache in Clojure. Problem 13.4 of EPI.
+(ns 'isbn)
+
+(declare compare-usage)
+(def usage-number (ref 0))
+(def cache (ref [(sorted-map-by compare-usage)
+                 (sorted-map-by compare-usage)]))
+(def ^{:const true, :dynamic true} size-limit 22)  ; Actually half the limit.
+
+(def compare-usage
+  "A comparator by usage numbers."
+  [e1 e2]
+  (- (:used e1) (:used e2)))
+
+(def update-entry
+  "Finds the map in the cache containing key
+   and updates key's usage number. Returns the map."
+  [key]
+  (let [[ready backup] @cache]
+    (if-let [entry (get ready key false)]
+      (dosync (ref-set cache
+                       [(assoc ready key
+                               {:title (:title entry),
+                                :usage @usage-number})
+                        backup]))
+      (dosync (ref-set cache
+                       [(assoc read key
+                               {:title (:title entry),
+                                :usage @usage-number})
+                        ]))))
+
+  ;; (defmulti update-cache #(count (< (deref %1) (deref %2))))
+
+  ;; (defmethod update-cache true
+  ;;   [cache size-limit new-entry]
+  ;;   (let [[ready backup] @cache]
+  ;;     [(assoc ready )
+  ;;      (dissoc backup (ffirst backup))]))
+
+  (defn insert-cache
+    "Adds an entry to the cache."
+    [isbn title]
+    (if (< (count (@cache 0)) size-limit)  ; No flip.
+      (dosync
+       (alter cache
+              (vector #(assoc (%1 0) %1 %2) (%1 1))
+              isbn {:title title, :usage @usage-number}) ; Add to ready.
+       (alter cache
+              #(dissoc (%1 1) (ffirst (%1 1))))  ; Remove one from backup.
+       (alter usage-number inc))
+      (let [[backup ready] @cache]  ; Flip caches.
+        (assert (= 0 (count ready)))  ; Should have removed all items
+                                        ; from original backup by now.
+        (assoc ready isbn {:title title, :used @usage-number})
+        (dosync
+         (ref-set cache [ready backup])
+         (alter usage-number inc))))))
+
+(defn retrieve-cache
+  "Retrieve a value from the cache."
+  [key]
+  (let [m (update-entry key)]))
+
+;; (defn insert-cache
+;;   "Adds an entry to the cache."
+;;   [isbn title]
+;;   (if (< (count (@cache 0)) size-limit)  ; Can fit in ready cache.
+;;     (dosync
+;;      (update-cache isbn title)
+;;      (alter usage-number inc))
+;;     (let [[backup ready] @cache]  ; Flip the caches. Ready is empty.
+;;       (assert (= 0 (count ready)))
+;;       (assoc ready isbn {:title title, :used @usage-number})
+;;       (dosync
+;;        (ref-set cache [ready backup])
+;;        (alter usage-number inc)))))
+
+;; (defn retrieve-cache
+;;   "Get an entry from the cache. Ditch usage number."
+;;   [isbn]
+;;   (:title (@cache isbn)))
+
+;; The first map in the cache is the ready map. We add new elements
+;; to this until it reaches size-limit. Then we flip it to the backup
+;; map. When the new ready map reaches size-limit, we just dump the
+;; backup map.
+;; We can keep the two maps sorted as well, and every time we add
+;; something new to the ready map, replace the backup with (rest
+;; backup).
+;; Every time we access something, replace its usage number with the
+;; current global number. (This is vulnerable to overflow, of course.
+;; But Clojure, at the very least, will throw an exception if there's
+;; an overflow, and then we can add some checks.)
+;; Based on the amortized purely functional queues from Purely Functional Data
+;; Structures.

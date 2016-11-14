@@ -1,0 +1,4 @@
+import sys
+
+lines = [(int(t[0]), t[1], t[2]) for t in 
+          [s.split() for s in sys.stdin.readlines()[1:]]]

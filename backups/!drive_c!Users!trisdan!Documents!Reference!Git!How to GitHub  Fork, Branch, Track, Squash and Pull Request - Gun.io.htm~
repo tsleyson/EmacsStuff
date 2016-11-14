@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="description" content="Hire The Industry's Best Freelance Developers">
+<meta name="keywords" content="software, startups, hackers, development, java, python, angular, agile, ruby, javascript, bootstrap">
+<meta name="author" content="Gun.io">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to GitHub: Fork, Branch, Track, Squash and Pull Request - Gun.io</title>
+
+<!-- =========================
+ FAV AND TOUCH ICONS  
+============================== -->
+<link rel="shortcut icon" href="https://gun.io/static/assets/img/gunio-icon.png">
+<link rel="apple-touch-icon" href="https://gun.io/blog/how-to-github-fork-branch-and-pull-request/images/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://gun.io/blog/how-to-github-fork-branch-and-pull-request/images/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://gun.io/blog/how-to-github-fork-branch-and-pull-request/images/icons/apple-touch-icon-114x114.png">
+
+<!-- =========================
+     STYLESHEETS      
+============================== -->
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/bootstrap.css">
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/owl.css">
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/owl_002.css">
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/jquery.css">
+
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/styles_002.css"> 
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/pixeden-icons.css"> 
+
+<!-- CUSTOM STYLES -->
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/styles.css">
+<link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/responsive.css">
+
+<!-- WEBFONT -->
+<link href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/css.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+<!-- JQUERY -->
+<script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/ga.js" async="" type="text/javascript"></script><script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/jquery.js"></script>
+
+<script language="javascript" type="text/javascript">
+/**
+ *   Used for split testing experiments.
+ *   User participation to an experiment is available through:
+ *       experiments.control("experiments_name");
+ *   and
+ *       experiments.test("experiments_name");
+**/
+experiments = function() {
+    // experiment_enrollment should have the following format { experiment_name : group }
+    var experiment_enrollment = {};
+
+    return {
+        record_enrollment: function(experiment_name, group) {
+            experiment_enrollment[experiment_name] = group;
+        },
+        control: function(experiment_name) {
+            if (experiment_enrollment[experiment_name]) {
+                return experiment_enrollment[experiment_name] == "control";
+            } else {
+                if (console) {
+                    console.error("Can't find experiment named " + experiment_name);
+                }
+                return true;
+            }
+        },
+        test: function(experiment_name) {
+            if (experiment_enrollment[experiment_name]) {
+                return experiment_enrollment[experiment_name] == "test";
+            } else {
+                if (console) {
+                    console.error("Can't find experiment named " + experiment_name);
+                }
+                return false;
+            }
+        },
+        confirm_human: function() {
+            request = new XMLHttpRequest();
+            request.open('GET', '/split/confirm_human/', true);
+
+            request.onload = function() {
+              if (request.status >= 200 && request.status < 400){
+                // Success!
+                resp = request.responseText;
+              } else {
+                // We reached our target server, but it returned an error
+
+              }
+            };
+
+            request.onerror = function() {
+              // There was a connection error of some sort
+            };
+
+            request.send();
+            //$.get("/experiments/confirm_human/");
+        }
+    };
+}();
+</script>
+
+  <script type="text/javascript" charset="utf-8">
+    
+      experiments.confirm_human();
+    
+    
+  </script>
+
+
+
+<style>
+
+body{
+	background: url("/static/assets/img/lightpaperfibers.jpg") repeat 0 0 #fcfcfc;
+	color: #454545;
+}
+
+.focus{
+	background: url("/static/assets/img/lightpaperfibers.jpg") repeat 0 0 #fcfcfc;	
+	padding-top: 12px;
+	padding-bottom: 40px;
+}
+
+.fakehead{
+	background: url("/static/assets/img/lightpaperfibers.jpg") repeat 0 0 #fcfcfc;		
+}
+
+#main-nav {
+	min-height: 5em;
+	background: url("/static/assets/img/lightpaperfibers.jpg") repeat 0 0 #fcfcfc;	
+}
+
+.service-icon{
+	background: #ffffff;
+}
+
+.blogbody{
+	background-color: #ffffff;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-bottom: 24px;
+	padding-top: 0px;
+	border-radius: 0 0 24px 24px;
+}
+
+.mainbody{
+	text-align: left;
+	font-family: Palatino;
+	line-height: 1.8em;
+	font-size: 20px;
+	padding: 36px;
+	overflow-x: scroll;
+}
+
+.mainbody p{
+	padding-top: 24px;
+}
+
+.blogbody h1, h2, h3, h4{
+	font-family: 'Montserrat', 'sans-serif';
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-top: 24px;
+	padding-bottom: 12px;
+}
+
+.blogbody h1{
+	font-size: 48px;
+	text-transform: uppercase;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	line-height: 1.2em;
+}
+
+.blogbody h2{
+	font-size: 36px !important;
+	text-transform: none;
+}
+
+.blogbody h3{
+	font-size: 24px !important; 
+	text-transform: none;
+}
+
+.blogbody h4{
+	font-size: 24px !important;
+	text-transform: none;
+}
+
+.headerbg{
+	background-image: linear-gradient(bottom, #FFFFFF 50%, rgba(255,0,0,0) 50%);
+	background-image: -o-linear-gradient(bottom, #FFFFFF 50%, rgba(255,0,0,0) 50%);
+	background-image: -moz-linear-gradient(bottom, #FFFFFF 50%, rgba(255,0,0,0) 50%);
+	background-image: -webkit-linear-gradient(bottom, #FFFFFF 50%, rgba(255,0,0,0) 50%);
+	background-image: -ms-linear-gradient(bottom, #FFFFFF 50%, rgba(255,0,0,0) 50%);
+}
+
+.bottomlinks{
+	text-align: left;
+}
+
+.bottomlinks li{
+	text-align: left;
+	font-size: 18px;
+	line-height: 2em;
+}
+
+.biglinks li{
+	line-height: 2.8em;
+	font-weight: bold;
+}
+
+.converter{
+	text-align: left;
+	margin-bottom: 28px;
+}
+
+.converter h2{
+
+}
+
+.converter p{
+	font-size: 22px;
+}
+
+/* Custom container */
+.full-container {
+  box-shadow: inset 1px 0px 1px 0px #888888;
+  margin: 0 auto;
+  width: 100%;
+  background: url(/static/assets/img/canyonsplash.jpg);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #ffffff;
+}
+
+.iconatar{
+	width: 100%;
+	border-radius: 50%;
+}
+
+.pre{
+	font-size: 16px;
+}
+
+.author{
+	font-size: 20px;
+}
+
+.subheader{
+	text-transform: none;
+}
+
+#mce-EMAIL:active{
+	border: 1px #ccc;
+}
+#mce-EMAIL:hover{
+	border: 1px #ccc;
+}
+
+.blogbody img {
+
+    width: 100%;
+    height: auto;
+    margin: 20px;
+
+}
+
+code{
+	font-size: 17px !important;
+}
+
+</style>
+
+</head>
+
+<body class="modal-open">
+
+<!-- =========================
+   FOCUS SECTION      
+============================== -->
+
+<div class="fakehead">
+<div class="container">
+
+	<div class="row">
+		<div class="col-lg-4">
+			<a href="https://gun.io/" class="navbar-brand">
+				<img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/gunio-logo.png" alt="Gun.io" style="max-height: 48px">
+			</a>
+		</div>
+		<div class="col-lg-2">
+		</div>
+		<div class="col-lg-6">
+		<div class="pull-right hidden-xs">
+				<a href="https://gun.io/accounts/signin/">Sign In</a>
+				<a class="btn btn-primary custom-button green-btn" href="https://gun.io/blog/how-to-make-money">Make Money</a>
+				<a class="btn btn-primary custom-button red-btn" href="https://gun.io/">Hire Hackers</a>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<section class="focus" id="focus">
+
+<div class="container">
+	
+	<!-- SECTION HEADER -->
+	<div class="">
+	</div>
+	<!-- / END SECTION HEADER -->
+	
+	<!-- 4 FOCUS BOXES -->
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-10">
+
+			<div class="headerbg">
+
+				<div class="row">
+					<div class="col-lg-4-offset-4 col-sm-4-offset-4 focus-box green" style="margin-bottom: 0px">
+						<div class="service-icon">
+						
+							
+							<img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/rich.jpg" class="iconatar">
+							
+						
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="blogbody">
+
+				<h1 class="dark-text">How to GitHub: Fork, Branch, Track, Squash and Pull Request</h1>
+				<h6 class="author">
+					by <b>Rich Jones</b> on Mar 27, 2012.
+				</h6>
+
+				<span class="variable" style="color: #e96656;">
+				_________________
+				</span>
+
+				<div class="mainbody">
+					<p>This guide will teach you how to properly contribute to open 
+source projects on GitHub. It assumes that you already know about how to
+ use <b>Git</b> for version control and that you already have a GitHub account. 
+
+</p><p><i>Psstt.. if you already have a GitHub account and  you want to <b>earn more money</b>, <a href="https://gun.io/social/login/github/">sign up for Gun.io with your GitHub profile</a> and we'll pair you with people looking for developers based on your portfolio!</i>
+
+</p><h4>Getting Started</h4>
+
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/LiEI3.png" alt="How to GitHub Guide Open Source" title="How to GitHub Open Source Guide"><br><i>GitHub displays these instructions when you start a new project.</i></center><br><br>
+
+<p>GitHub is pretty great about giving advice to users starting new 
+repositories, but it isn't very helpful when it comes to contributing 
+changes back to other projects.  Hopefully, this guide will help.
+
+</p><p>Before you get started, find the page of the project you're 
+looking to improve. Poke around in the code a little bit, familiarize 
+yourself with their development styles, check the commit log to see who 
+is contributing and check out the profile of the core maintainer.
+
+</p><h4>Check the Network</h4>
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/naZ6I.png" alt="How to GitHub Guide Network" title="How to GitHub Open Source Guide Network"><br><i>The
+ network graph. Notice that somebody is already working on a 'mobile' 
+branch, so you probably wouldn't want to duplicate their effort.</i></center><br><br>
+
+<p>The first thing to do is check the <b>Network</b> tab on the project 
+to see all the other forks that other people have made. Spend a few 
+minutes digging around in them, as it's quite possible that somebody is 
+already working on the problem that you'd like to see solved. It'll also
+ give you an idea of the activity of the project, and how likely it is 
+that your changes will be merged in.
+
+</p><h4>Opening an Issue</h4>
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/oksQI.png" alt="How to GitHub Guide Issues" title="How to GitHub Open Source Guide Issues"><br><i>You've got issues, man.</i></center><br><br>
+
+<p>Next, head over to the <b>Issues</b> tab. Have a look around, see how
+ many issues there are and if anybody has opened up the issue that 
+you're interested in working on.
+
+</p><p>This is an important step that many people forget about, and they
+ just submit major pull requests to maintainers without considering that
+ the maintainers might not have the same <i>intentions</i> with the software as they do. This is especially true if a new feature requires <b>user interface/design changes</b>, as often, that's the aspect of programs that people are the most <i>protective</i> of.
+
+</p><p>If your issue doesn't exist already, open up a new issue. 
+Standard human interaction rules apply here; be friendly, be polite, say
+ thanks for making the project, describe the bug or feature you'd like 
+to work on and then offer to help. 
+
+</p><p>Hopefully, they'll reply shortly with some input on how to solve the problem.
+
+</p><h4>Making Your Fork</h4> 
+
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/VWFCB.png" alt="How to GitHub Guide Hardcore Forking Action" title="How to GitHub Guide Hardcore Forking Action"><br><i>Hardcore Forking Action</i></center><br><br>
+
+<p>Here's the fun part! Hit 'Fork'. Now you've got your own version! Go 
+to the page, get the ssh: url from the box at the top and then 
+
+</p><p></p><pre>git clone **your ssh/git url**</pre>
+
+<p>to your local machine. Hooray! You have the code on your local machine now.
+
+</p><h4>Make Your Fork Track the Original Upstream Repo</h4>
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/bbNRs.png" alt="How to GitHub Guide Hardcore Fork" title="How to GitHub Guide Fork"><br><i>It's a fork. Hur hur hur.</i></center><br><br>
+
+<p>This step isn't absolutely necessary, but I find it <b>very useful</b>
+ if you plan on working on this project for anything more than a very 
+quick fix. Use the following commands to add the 'upsteam' (original 
+project location) as a remote branch so that you can get their <i>updates</i>
+ into your branch. Replace the 'upstreamname' and 'projectname' values 
+with that actual user/project name that you're trying to track.
+
+</p><p><script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/2209205.js"></script><link rel="stylesheet" href="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/embed-8bf0013c72fb64f0bb1bc1872b43e39e.css"></p><div id="gist2209205" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table class="lines highlight" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-gistfile1-txt-L1" rel="file-gistfile1-txt-L1">1</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-gistfile1-txt-LC1">git remote add --track master upstream git://github.com/upstreamname/projectname.git
+</div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/Miserlou/2209205/raw/gistfile1.txt" style="float:right">view raw</a>
+            <a href="https://gist.github.com/Miserlou/2209205#file-gistfile1-txt">gistfile1.txt</a>
+            hosted with ❤ by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+
+<p>This will add the original project as a remote named 'upstream'. To get the code, type:
+
+</p><p></p><pre>git fetch upstream</pre>
+
+<p>Then, to merge it into your own project, type:
+
+</p><p></p><pre>git merge upstream/master</pre>
+
+<p>Tada! Now you'll have an up-to-date version of the upstream code in your current branch.
+
+</p><h4>Setting Up A Development Branch</h4>
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/fI9qT.gif" alt="How to GitHub Guide Development Branch" title="How to GitHub Development Branch"><br><i>Guys, remember the old internet? Oh man.</i></center><br><br>
+
+<p>Now you're getting ready to start hacking, you'll want to switch off 
+of the 'master' branch and onto a different branch for your new feature.
+ It's <b>important</b> to do this because you can only have <i>one</i> <b>Pull Request</b> <i>per branch</i>, so if you want to submit more than one fix, you'll need to have multiple branches. Make a new branch like this:
+
+</p><p></p><pre>git branch newfeature</pre>
+
+<p>Then switch to it like this:
+
+</p><p></p><pre>git checkout newfeature</pre>
+
+<p>Now you're on your new branch. You can confirm this by simply typing 'git branch'.
+
+</p><h4>Hack!</h4>
+
+<p>This part's up to you. Hack along as you normally would until the 
+code is in the state where you're happy with it, it performs the task as
+ described and it passes all the tests you've written for it. Yayyyy!
+
+</p><h4>Squashing Your Commits</h4>
+
+<p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/FgOPu.png" alt="How to GitHub Guide Squash Commits" title="How to GitHub Squash Commits"><br><i>Squash. Hur hur hur.</i></center><br><br>
+
+<p>If you're a <i>heavy committer</i> like me, you've probably got lots 
+of poorly messaged commits ('works!', 'broken', 'fuck', 'woo', etc.). 
+This is a bad habit, but I haven't been able to break it yet and <i>I know I'm not the only one!</i>
+
+</p><p>Before you submit your pull request back upstream, you'll want to <b>squash</b> these commits into a small handful of well-labeled commits. To do this, we're going to use the <b>git rebase</b> command. First, take a look at the commits we've made with <i>git log</i>
+ and figure out the commits that we want to squash. If we wanted to 
+squash the last 3 commits into one, we'd open up an an interactive 
+rebase like this:
+
+</p><p></p><pre>git rebase -i HEAD~3</pre>
+
+<p>This will bring you into your editor with some text that will look something like this:
+
+</p><pre>  pick df94881 Allow install to SD 
+  pick a7323e5 README Junkyism 
+  pick 3ead26f rm classpath from git 
+</pre>
+
+<p> To squash those commits into one, change to something like this:
+
+</p><pre>  pick df94881 Allow install to SD 
+  squash a7323e5 README Junkyism 
+  squash 3ead26f rm classpath from git 
+</pre>
+
+<p>Then, save/quit, and you'll be brought to into another editor 
+session. Describe the changes as well as you can and save/quit again. 
+Hooray! You've squashed your ugly commits into one nice one. Now you're 
+ready to submit a pull request.
+
+</p><h4>Submitting a Pull Request</h4>
+
+<p>Once you've commited and squashed your changes, push them to your remote like this:
+
+</p><p></p><pre>git push origin newfeature</pre>
+
+<p>Then go to that page on GitHub and change branches to the one for your new feature.
+
+</p><p></p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/aAd2v.png" alt="How to GitHub Guide Submitting Pull Requests" title="How to GitHub Guide Submitting Pull Requests"><br><i>Submit a Pull Request!</i></center><br><br>
+
+<p>Then, click on the little button that says 'Pull Request'. This will 
+bring you to a page asking you to describe your change. Describe it 
+thoroughly.
+
+</p><center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/5Euiy.png" alt="How to GitHub Guide Describing Pull Requests" title="How to GitHub Guide Describing Pull Requests" width="600px"><br><i>Describe your Pull Request.</i></center><br><br>
+
+<p>Then press 'Submit Pull Request'. Hooray! You did it. Now, you're not
+ quite done yet. If the maintainer finds some problems with your code, 
+they won't want to pull your changes until you fix them. Fortunately, 
+whenever you commit and push more things to that branch of your code, 
+they will be included in that pull request until it is closed.
+
+</p><h4>Accepting And Merging a Pull Request</h4>
+
+<p>Bonus! If you're on the receiving end of a pull request, how do you 
+merge the changes? Easy - press the button! GitHub now has an auto-merge
+ button which does everything for you in one click. However, it doesn't 
+always work, in which case you'll have to do the merge on your own 
+machine, like so:
+
+</p><p></p><pre>git checkout master
+git remote add contributor git://github.com/contributor/project
+git fetch contributor
+git merge contributor/newfeature
+git push origin master
+</pre>
+
+<p>And then their changes will be properly merged into your main master branch.
+
+</p><h4>So, Your Pull Request Was Rejected. Now What?</h4>
+
+<center><img src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/Qyyh5.gif" alt="How to GitHub Guide Fork Project" title="How to GitHub Guide Fork Project"><br><i>Some forks are unavoidable.</i></center><br><br>
+
+<p>Sometimes, for technical or organizational reasons, your pull request will be <b>rejected</b>. This can feel really frustrating, and there are a few different ways you can proceed. Just remember to <i>act rationally</i>.
+
+</p><p>The simplest thing is to simply <b>accept their judgement</b>. It's their project, and <i>a good maintainer knows when to say "no."</i>
+ If their argument is logically sound, you should accept it. If you 
+don't think it's a particularly important feature, hopefully whoever is 
+looking at the project will check the Network and Issues tabs of the 
+upstream project and will notice your changes. However, I think this is a
+ pretty poor solution in cases when the upstream maintainer is wrong or 
+unresponsive.
+
+</p><p>A better thing to do is <b>write about it</b>. Write about it on 
+your blog, start a discussion on a mailing list, and solicit opinions 
+from the community about what the best way to proceed is. It'll also 
+give some Google-juice to your project/issue, which will help other 
+people who ran into the same problem you faced.
+
+</p><p>The last option is to sever ties with the upstream and <b>declare yourself the new maintainer of the project</b>. This should only be as a <i>last resort</i>
+ and should only really be done when the upstream project is dead or has
+ gone completely off the rails. That being said, this kind of <b>software deadheading</b>
+ can actually breathe a lot of new life into a project - just look at 
+how LibreOffice has managed to revive the OpenOffice project by severing
+ ties with Oracle.
+
+</p><p>If you do this, you should rename your project to differentiate 
+it from the upstream, explicitly state your reasons for the schism in 
+your README, and be sure to give proper copyright credit according the 
+the open source license they originally chose. <b>Maintaining an open 
+source project carries quite a lot of responsibility, so make sure 
+you're prepared to care for the project once you create such a schism.</b>
+
+</p><h4>Wrap Up</h4>
+
+<p>Hopefully this little guide was useful for getting you started with collaborative software development on GitHub!
+
+</p><p>If you're a developer looking for more jobs, we at Gun.io would like to help! You can <a href="https://gun.io/social/login/github/">sign up with GitHub</a> and we'll automatically pair you up with freelance and full-time job offers based on your existing code portfolio!
+				</p></div>
+
+			</div>
+
+		</div>
+		<div class="col-lg-1">
+		</div>		
+		
+	</div>
+</div> <!-- / END CONTAINER -->
+
+
+<div class="full-container">
+<div class="container">
+
+<!-- Converter -->
+	<div class="row converter">
+
+		<div class="col-lg-1">
+		</div>		
+
+		<div class="col-lg-6">
+
+			<h2>Learn and Earn!</h2>
+			<p>Sign up for great tutorials, guides, rants, raves and opportunities to <b>earn more money!</b></p>
+
+		</div>
+
+		<div class="col-lg-4">
+
+			<h2>&nbsp;</h2>
+
+			<form class="contact-form form-inline" action="//gun.us8.list-manage.com/subscribe/post?u=63738611e7e98fea8dbd91c1a&amp;id=85b613f97a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+				
+
+				<div class="form-group">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<input class="form-control" placeholder="your@email.com" style="height: 45px; opacity: .95; border: 1px solid #ccc; !important;" name="EMAIL" id="mce-EMAIL" type="text">
+							<button class="btn btn-success custom-button green-btn" style="margin: 0px">Sign Up!</button>
+						</div>
+					</div>
+
+				</div>
+			</form>
+
+		</div>
+
+		<div class="col-lg-1">
+		</div>		
+
+	</div>
+	<!-- / End Converter -->
+
+</div>
+</div> <!-- / END CONTAINER -->
+
+
+<div class="container">
+	<!-- Bottom Links -->
+	<div class="row bottomlinks">
+
+		<div class="col-lg-1">
+		</div>		
+
+		<div class="col-lg-5">
+
+			<h3 class="subheader">Featured Articles <small>check these out first!</small></h3>
+			<hr>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="featured biglinks">
+
+						<li class="">
+							<a href="https://gun.io/blog/how-to-make-money/">How to Make Money on Gun.io</a>
+						</li>
+						<li class="">
+							<a href="https://gun.io/blog/where-do-you-work/">Where Do You Work?</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/how-gun-io-is-changing-the-hiring-game/">How Gun.io Is Changing the Hiring Game</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/how-to-hire-hackers/">How to Hire Programmers</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/hacker-yoga-part-zero-arms">Hacker Yoga</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-lg-5">
+
+			<h3 class="subheader">Categories</h3>
+			<hr>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<ul>
+						<li>
+							<a href="https://gun.io/blog/tag/realtalk/">Start Up Real Talk</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/tag/politics/">Tech and Politics</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/tag/tutorials/">Tutorials and Guides</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/tag/foss/">F/OSS Underground</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/tag/health/">Hacker Health</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-lg-6">
+					<ul>
+						<li>
+							<a href="https://gun.io/blog/">Uncategorized</a>
+						</li>
+						<li>
+							<a href="https://gun.io/blog/">Show All</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-lg-1">
+		</div>		
+
+	</div>
+	<!-- / End Bototm Links -->
+
+	<!-- / END 4 FOCUS BOXES -->
+	
+</div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->
+
+<footer>
+<div class="container">
+	
+	<!-- COMPANY ADDRESS-->
+	<div class="col-md-3 company-details">
+		<div class="icon-top red-text">
+		    <i class="icon-fontawesome-webfont-302"></i>
+		</div>
+		Made with love In Berkeley, Boston, and Nashville.
+	</div>
+	
+	<!-- COMPANY EMAIL-->
+	<div class="col-md-2 company-details">
+		<div class="icon-top green-text">
+		<i class="icon-fontawesome-webfont-329"></i>
+		</div>
+		 Say hi: <a href="mailto:team@gun.io">team@gun.io</a>
+	</div>
+	
+	<!-- COMPANY PHONE NUMBER -->
+	<div class="col-md-2 company-details">
+		<div class="icon-top blue-text">
+		<i class="icon-fontawesome-webfont-101"></i>
+		</div>
+		(650) 966-7660
+	</div>
+
+	<!-- COMPANY BLOG -->
+	<div class="col-md-2 company-details">
+		<div class="icon-top white-text">
+		<i class="icon-rss"></i>
+		</div>
+		Check out our <a href="https://gun.io/blog/">blog</a>.
+	</div>
+
+	<!-- SOCIAL ICON AND COPYRIGHT -->
+	<div class="col-lg-3 col-sm-3 copyright">
+
+		<ul class="social">
+			<li><a href="https://www.facebook.com/GUNdotIO"><i class="icon-facebook"></i></a></li>
+			<li><a href="http://twitter.com/GUNdotIO"><i class="icon-twitter-alt"></i></a></li>
+			<li><a href="http://www.linkedin.com/company/gun-io"><i class="icon-linkedin"></i></a></li>
+		</ul>
+		 ©2015 gun.io incorporated. Article content CC-BY, owned by the author.
+	</div>
+
+
+</div> <!-- / END CONTAINER -->
+</footer> <!-- / END FOOOTER  -->
+
+<!-- SCRIPTS -->
+<script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/bootstrap.js"></script>
+<script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/parsley.js"></script>
+<script src="How%20to%20GitHub%20%20Fork,%20Branch,%20Track,%20Squash%20and%20Pull%20Request%20-%20Gun.io_files/ouibounce.js"></script>
+<script>
+	ouibounce(document.getElementById('ouibounce-modal'), { 
+		callback: function() { 
+			$('#ouibounce-modal').modal('show');
+		} });
+
+</script>
+
+<!-- Modal -->
+<div style="display: block;" class="modal fade in" id="ouibounce-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fc-header" id="myModalLabel">Talk To Our Hiring Experts for Free!</h2>
+      </div>
+      <div class="modal-body" style="text-align: left">
+        <p class="modalp">Our experienced team will work with you to 
+help you figure out your needs, scope your project, and pair you with an
+ experienced professional software developer.</p>
+
+        <br>
+
+        <p class="modalp">We've already helped over <b>900</b> employers
+ find amazing talent - why not give it a try? It's absolutely free to 
+get started, and costs only 15% of your project's estimate once work 
+begins.</p>
+
+        <br>
+
+		<form role="form" action="" method="post" class="contact-form" data-validate="parsley">
+
+		
+
+		<!-- its a trap --> 
+        <input id="id_pass" name="pass" class="margin6" style="width: 100%; display: none;" type="text">
+        
+
+		<div class="row">
+		        <p></p>
+			<div class="col-lg-3 col-sm-3">
+			</div>
+			<div class="col-lg-6 col-sm-6">
+				<input name="company" id="id_company" placeholder="Your Name" class="form-control fc" type="text">
+			</div>
+			<div class="col-lg-3 col-sm-3">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3 col-sm-3">
+			</div>
+			<div class="col-lg-6 col-sm-6">
+				<input id="id_email" name="email" placeholder="Your Email" data-required="true" class="form-control fc parsley-validated" type="email">
+				</div>
+			<div class="col-lg-3 col-sm-3">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3 col-sm-3">
+			</div>
+			<div class="col-lg-6 col-sm-6">
+				<button class="btn btn-primary btn-block custom-button-no-margin green-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">Start Your Project</button>
+				<br><br><br>
+			</div>
+			<div class="col-lg-3 col-sm-3">
+			</div>
+		</div>
+
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of page JS -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24979378-1']);
+  _gaq.push(['_setDomainName', '.gun.io']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+<style>
+
+.fc-header{
+	font-size: 28px;
+	line-height: 1.1em;
+}
+
+.fc, .fc:hover, .fc:active, .fc:focus {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.modalp{
+	font-size: 16px;
+}
+
+</style>
+
+
+
+
+<div class="modal-backdrop fade in"></div></body></html>

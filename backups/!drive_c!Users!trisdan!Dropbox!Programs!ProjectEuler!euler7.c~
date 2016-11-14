@@ -1,0 +1,7 @@
+// Euler 7.
+// Find the 10,001st prime number.
+#include <stdio.h>
+
+int main(void) {
+    return 0;
+}

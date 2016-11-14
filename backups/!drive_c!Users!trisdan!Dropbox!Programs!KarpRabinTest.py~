@@ -1,0 +1,10 @@
+import unittest
+import KarpRabin
+
+class KarpRabinTest(unittest.TestCase):
+    def setUp(self):
+        self.upperLower = KarpRabin("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz")
+    def testStringMatch(self):
+        text = "TERPSICHOREAN"
+        pattern = "SICHO"
+        

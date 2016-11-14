@@ -1,0 +1,10 @@
+\documentclass{moderncv}
+\moderncvstyle{casual}
+\firstname{John}
+\familyname{Doe}
+\begin{document}
+\makecvtitle
+\section{Education}
+\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+  % arguments 3 to 6 can be left empty
+\end{document}

@@ -1,0 +1,25 @@
+# clj sounds
+PySounds in Clojure, as a DSL with macros and stuff.
+
+I want the basic form of a transformation  to look like this:
+
+    (becomes [p t k] [b d g] :in [V_V] :except [e_i])
+
+I have no idea how to make environments work when they look like that.
+You can do (str ‘V\_V) or just (str V\_V) inside a macro and get the string version of that.
+
+Like this for single characters:
+
+    (becomes s z :in [V_V])
+
+Like this for several characters collapsing into a single:
+
+    (becomes #{s z ȿ ɀ} s)
+
+If the :in clause isn’t given, the change applies everywhere. If the :in clause is given with no :except clause, the change applies in every occurrence of the :in pattern. If the :except clause is given with no :in, the change applies everywhere except for the given environment. E.g.
+
+    (becomes [p t k] [b d g] :except [s_])
+
+makes p, t, and k become b, d, and g everywhere unless preceded by an s.
+
+It seems like we should be able to do something cool with this using miniKanren, but I don’t know what yet. 

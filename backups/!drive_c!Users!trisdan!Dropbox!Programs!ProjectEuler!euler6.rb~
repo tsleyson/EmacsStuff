@@ -1,0 +1,5 @@
+# euler6.rb
+# Ruby solution to Project Euler Problem 6: 
+# Find the difference between the square of sum and the sum of
+# squares of the first 100 natural numbers (i.e. 1^2 + 2^2 + ... +
+# 100^2 - (1 + 2 + ... + 100)^2)

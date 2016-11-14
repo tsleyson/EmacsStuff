@@ -1,0 +1,9 @@
+There's a boring quadratic time solution like this:
+
+    for n1 in h1:
+      for n2 in h2:
+        if n1 == n2:
+          return n1
+
+
+

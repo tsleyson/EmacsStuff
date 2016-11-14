@@ -1,0 +1,7 @@
+// Problem 17.4 of EPI.
+
+public class GridPaths {
+    public static numPaths(int n) {
+
+    }
+}

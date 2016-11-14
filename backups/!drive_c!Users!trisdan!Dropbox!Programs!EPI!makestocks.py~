@@ -1,0 +1,21 @@
+import sys
+import random
+
+symbols = []
+with open("nasdaqlisted.txt", "r") as f:
+    for line in f:
+        symbols.append(line.split("|")[0])
+msecs_per_day = 1000*3600*8
+# 1000 msecs / sec, 3600 secs / hr, 8 hrs / day.
+
+# argv[1] is lines per files, argv[2] will be num of files.
+for i in range(int(sys.argv[2])):
+    with open("C:/Users/trisdan/Documents/Programs/Stocks/stocks"
+              + str(i)
+              + ".txt", "w") as f:
+        for _ in range(int(sys.argv[1])):
+            f.write("%d,%s".format(random.randint(msecs_per_day),
+                                   random.choice(symbols)))
+
+
+        

@@ -1,0 +1,151 @@
+This is a copy of ispell 3.1.20 compiled to run on Windows 95 and NT.
+
+MOTIVATION
+
+Most versions of ispell that are available for Windows NT and 95/98
+rely on custom versions of ispell.el, which are now out of date with
+respect to Emacs 20.4. This means you cannot take advantage of the
+newer features like flyspell-mode, and language support in Emacs. I
+compiled this version with the goal of getting a copy of ispell 3.1
+that would run with the ispell.el distributed with Emacs, so you can
+take advantage of all the latest features now and in the future.
+Originally I did it for my own use, but the number of problems
+reported on the ntemacs-users mailing list lead me to generalize it
+and make a basic, easily installed distribution.
+
+This copy of ispell was compiled from the original 3.1.20 sources
+found at ftp.gnu.org by adding in missing functions from the Emacs
+source, or providing stubs until it compiled and worked for what I
+want to use it for (spellchecking English and Spanish documents from
+Emacs 20.4 using flyspell). If you are interested in improving it or
+customising it for your site, the modified source is available in
+ispell-src.zip where you obtained this file.
+
+This version will work in standalone mode, although it does not make
+very efficient use of the console, so screen refreshing is very slow.
+The recommended use is with Emacs. This version works with the
+ispell.el that is distributed with Emacs 20.3 and later. It may work
+with other ispell.el's, but has not been tested. More importantly, it
+works with the new flyspell.el so you can have on the fly spell
+checking. It does not grab focus on my Windows 95 system, as many
+people have reported ispell doing with other distributions. I cannot
+guarantee that it will not happen for you though.
+
+
+INSTALLATION
+
+There are four files in this package:
+  README you are reading now.
+  ISPELL.EXE should go somewhere in your PATH.
+  ENGLISH.HASH is the medium-sized English dictionary that is
+    distributed with the original source. If you require other
+    languages, or the small or large English dictionaries, you will
+    have to find them elsewhere. This may be placed in your HOME
+    directory (where your .emacs resides). If you place it elsewhere,
+    you will need to specify the full path to it using the '-d'
+    switch, or the DICTIONARY environment variable.
+  ISPELL.INFO is the manual - it can be placed in your INFO directory
+    if you are using Emacs, and an entry added for it to the DIR file
+    (copy and modify one of the other entries for correct formatting -
+    it is important that TABS and spaces are preserved in the DIR file).
+
+
+If you want to use flyspell, you will need the following in your .emacs:
+
+     (add-hook 'text-mode-hook 'flyspell-mode)
+
+Emacs 20.3 users will need the following (not required in 20.4):
+
+     ;; Ispell has it's own coding-system support which is broken under W32
+     (setq ispell-dictionary-alist
+           '((nil "[A-Za-z]" "[^A-Za-z]" "[']" nil ("-B") nil raw-text-dos)
+             ("american" "[A-Za-z]" "[^A-Za-z]" "[']" nil ("-B")
+              nil raw-text-dos)
+             ("british" "[A-Za-z]" "[^A-Za-z]" "[']" nil
+              ("-B" "-d" "british") nil raw-text-dos)
+             ("english" "[A-Za-z]" "[^A-Za-z]" "[']" nil ("-B")
+              nil raw-text-dos)))
+
+AFAIK that is everything you need to get up and running. For other
+dictionaries, if you can't find .hash versions, you may need other
+tools to convert them. Most of the tools are available from the site
+where you found this, in the file ispell-ex.zip. The most notable
+omission is mungelist, which is a Unix script for compressing the
+dictionary, but you can make uncompressed dictionaries using
+buildhash.exe (see dictionary makefile for how to run this command). I
+have tested ispell with the Spanish (castellano.hash) dictionary with
+no noticable problems.
+
+If you have any trouble, or would like to improve this and make a
+better distribution, please contact Jason Rumney <jasonr@altavista.net>.
+
+
+NOTE TO ANYONE THAT WANTS TO MIRROR THIS SOFTWARE
+
+If you want to mirror this distribution, please mirror ispell.zip,
+ispell-ex.zip and ispell-src.zip together, or edit this README so
+users can find the dictionary tools and source code if they wish.
+
+
+KNOWN BUGS
+
+* ispell-buffer sometimes fails with "Ispell misalignment: word
+`misplled' point 6; probably incompatible versions" type error
+messages. I think this is due to hidden text not being handled
+properly, and I am not sure if this has been fixed in the released
+version of Emacs 20.4 or not, as I do not use any of the modes that
+this was reported as happening in.
+
+GENERAL NOTES ABOUT ISPELL 3.1 (see also ispell.info)
+
+@(#) International Ispell Version 3.1.20 10/10/95
+@(#) Copyright (c), 1983, by Pace Willisson
+@(#) International version Copyright (c) 1987, 1988, 1990-1995,
+@(#) by Geoff Kuenning, Granada Hills, CA.  All rights reserved.
+@(#)
+@(#) Redistribution and use in source and binary forms, with or without
+@(#) modification, are permitted provided that the following conditions
+@(#) are met:
+@(#)
+@(#) 1. Redistributions of source code must retain the above copyright
+@(#)    notice, this list of conditions and the following disclaimer.
+@(#) 2. Redistributions in binary form must reproduce the above
+@(#)    copyright notice, this list of conditions and the following
+@(#)    disclaimer in the documentation and/or other materials provided
+@(#)    with the distribution.
+@(#) 3. All modifications to the source code must be clearly marked as
+@(#)    such.  Binary redistributions based on modified source code
+@(#)    must be clearly marked as modified versions in the documentation
+@(#)    and/or other materials provided with the distribution.
+@(#) 4. All advertising materials mentioning features or use of this
+@(#)    software must display the following acknowledgment:
+@(#)      This product includes software developed by Geoff Kuenning and
+@(#)      other unpaid contributors.
+@(#) 5. The name of Geoff Kuenning may not be used to endorse or promote
+@(#)    products derived from this software without specific prior
+@(#)    written permission.
+@(#)
+@(#) THIS SOFTWARE IS PROVIDED BY GEOFF KUENNING AND CONTRIBUTORS ``AS
+@(#) IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+@(#) LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+@(#) FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL GEOFF
+@(#) KUENNING OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+@(#) INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+@(#) (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+@(#) SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+@(#) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+@(#) STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+@(#) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+@(#) OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ISPELL 3.1 vs ISPELL 4
+
+Ispell 4 is not an updated version of Ispell 3.1. This causes much
+confusion, particularly when flyspell tells you that it requires
+Ispell 3.1.12 or later. Ispell 4 and Ispell 3.1 are both descended
+seperately from Ispell 3.0. Ispell 3.1 has multi language support,
+and has become the more favoured of the two releases on Unix
+platforms. Ispell 4 is now pretty much dead and Emacs 20.3 was the
+last release of Emacs that contained support for it.
+
+I hope that clears up any confusion you have.

@@ -1,119 +1,55 @@
-;; Note: This installation is enforcing GNU Emacs Lisp style guide
-;; recommendations for comments, so it automatically right-aligns
-;; comments that start with ;, but it does what I want for comments
-;; that start with ;;.
+;; My personal global key bindings.
+(global-set-key (kbd "C-c C-r") 'reunite-orphaned-first-letter)
+(global-set-key (kbd "C-c C-l") 'reunite-orphaned-last-letter)
+;; For when the above settings are overridden, eg org mode
+(global-set-key (kbd "C-c C-0") 'reunite-orphaned-first-letter)
+(global-set-key (kbd "C-c C-9") 'reunite-orphaned-last-letter)
+;; General
+(global-set-key (kbd "M--") 'insert-unicode-em-dash)
+(global-set-key (kbd "C-c C-n C--") 'insert-unicode-en-dash)
+(global-set-key (kbd "M-z") 'other-window)
+(global-set-key (kbd "<f2>") 'other-window)
+(global-set-key (kbd "C-c M-z") 'zap-to-char)
+;;(global-set-key (kbd "M-b") 'ido-switch-buffer)
+(global-set-key (kbd "<f8>") 'ido-switch-buffer)
+(global-set-key (kbd "C-x C-k") 'ido-kill-buffer)  ; I make this typo a lot.
+(global-set-key (kbd "C-c C-a") 'mark-whole-buffer) ; Like CUA C-a.
+(global-set-key (kbd "<kp-multiply>") 'count-words)
+(global-set-key (kbd "<apps>") 'smex)
+(global-set-key (kbd "<kp-enter>") 'save-buffer)
+(global-set-key (kbd "<f9>") 'save-buffer)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "C-x C-o") 'delete-blank-lines)  ; C-o to insert one blank line.
+(global-set-key (kbd "M-j") 'delete-indentation)  ; Joins line with line above.
+;; M-space to remove all spaces save one.
+;; M-\ to remove all spaces, period.
+;; M-x canonically-space-region to put one space between every word and two after periods.
 
-;; Makes sure it looks in .emacs.d for packages and addons.
-(add-to-list 'load-path "C:/Users/trisdan/.emacs.d")
-(add-to-list 'load-path "C:/Users/trisdan/.emacs.d/my-extensions")
-(require 'package)
-(require 'linum)
-;(require 'markdown-mode)
+(add-to-list 'load-path "/Users/trisdan/.emacs.d/my-extensions")
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 
-;; Let you use hex code points with C-q.
-(setq read-quoted-char-radix 16)
-; Turn on line numbers.
-(global-linum-mode 1)
+(require 'typopunct)
+(typopunct-change-language 'english t)
+;; “Using nice quotes.” Typopunct.
+;; "Using ugly quotes." C-q C-”.
 
-;; Turn off auto-fill mode. (It stinks).
-;; It's actually good for programming language comments, but it sucks
-;; for text (it's inferior to visual line mode).
-;; LINE 83 starter-kit-defuns.el TO DISABLE GLOBALLY.
-(turn-off-auto-fill)
-(auto-fill-mode -1)
-(remove-hook 'text-mode-hook 'turn-on-auto-fill)
-(remove-hook 'ruby-mode-hook 'turn-on-auto-fill)
-(remove-hook 'org-mode-hook 'turn-on-auto-fill)
-(remove-hook 'markdown-mode-hook 'turn-on-auto-fill)
-
-; Turn off flyspell mode since it doesn't work and is slow.
-(flyspell-mode -1)
-(remove-hook 'text-mode-hook #'turn-on-flyspell)
-
-;; Turn off hl-line-mode that highlights current line.
-(remove-hook 'coding-hook 'turn-on-hl-line-mode)
-
-; add markdown mode as default for text and md
-(autoload 'markdown-mode "markdown-mode"
-  "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-; Make markdown mode also have visual-line-mode by default.
+; Make markdown mode also have visual-line-mode and typopunct mode by default.
 (add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'text-mode-hook 'typopunct-mode)
+(add-hook 'org-mode-hook 'typopunct-mode)
+(add-hook 'markdown-mode-hook 'typopunct-mode)
 
 ;; Change C/C++/Java indentation rules
 (setq c-default-style "bsd"
       c-basic-offset 4)
 
-; Include clojure mode and other starter kit packages.
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
-
-(defvar my-packages '(starter-kit
-		      starter-kit-lisp
-		      starter-kit-bindings
-		      starter-kit-eshell
-		      clojure-mode
-		      clojure-test-mode
-		      nrepl))
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-; Always use Unix line endings.
-(set-default buffer-file-coding-system 'utf-8-unix)
-(set-default-coding-systems 'utf-8-unix)
-(prefer-coding-system 'utf-8-unix)
-(set-default default-buffer-file-coding-system 'utf-8-unix)
-
+;; Load my html entity replacement functions
+(load "html-entities.el")
 ;; Load my personal editing functions.
 (load "my-editing.el")
-
-;; My personal global key bindings.
-(global-set-key (kbd "C-c C-r") 'reunite-orphaned-first-letter)
-(global-set-key (kbd "C-c C-l") 'reunite-orphaned-last-letter)
-;; For when the above settings are overridden, eg org mode
-(global-set-key (kbd "C-c C-9") 'reunite-orphaned-first-letter)
-(global-set-key (kbd "C-c C-0") 'reunite-orphaned-last-letter)
-(global-set-key (kbd "C--") 'insert-unicode-em-dash)
-(global-set-key (kbd "M-z") 'other-window)
-(global-set-key (kbd "C-c M-z") 'zap-to-char)
-(global-set-key (kbd "M-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-x C-k") 'ido-kill-buffer)  ; I make this typo a lot.
-(global-set-key (kbd "C-c C-a") 'mark-whole-buffer) ; Like CUA C-a.
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-2") 'split-window-below)
-; set by M-x customize
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2"
-                            "#cc79a7" "#56b4e9" "white"])
- '(custom-enabled-themes (quote (adwaita)))
- '(text-mode-hook (quote (visual-line-mode text-mode-hook-identify))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; Sets the highlight line to let syntax highlighting show through,
-;; and also changes the color to a nice dark yellow that you can see
-;; through.
-;;
-;; (set-face-attribute 'hl-line nil
-;;                     :background "#ffff99"
-;;                     :foreground nil
-;;                    :inherit t)
-;; Note: the above works if you just hit M-x eval-buffer, but when you
-;; start up Emacs it fails with the error "Invalid face hl-line". I'm
-;; just going to turn off hl-line-mode from starter-kit-defuns.el.
 
 ;; Load functions to allow quick font changes.
 (load "font-toggle.el")
@@ -121,18 +57,104 @@
 (global-set-key (kbd "<f7>") 'cycle-font-backward)
 
 ;; Set default font for all windows.
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
+(add-to-list 'default-frame-alist '(font . "Monaco 12"))
 
-;; Also make text modes have variable-width font. Easier to read.
-;; But also slow, so I'm going to try just using Constantia for everything.
-;;(add-hook 'text-mode-hook 'variable-pitch-mode)
+;; Get rid of annoying screen flash on Mac OS X. 
+(setq ring-bell-function 'ignore)
 
-;; (setq explicit-shell-file-name "C:/cygwin/bin/bash")
-;; (setq explicit-bash-args '("--login" "-i"))
-;; Makes M-x shell use Cygwin, only it's so fucking annoying that
-;; even cmd.exe is an improvement. (Autocomplete is iffy, no ability
-;; to kill runaway processes, colors are ugly, always starts in home
-;; directory, etc.) Some of these are fixable, though.
+;; Activate ido mode.
+(require 'ido)
+(ido-mode t)
 
-;; http://stackoverflow.com/questions/3847981/cygwin-shell-in-emacs-output-messed-up
-;; shows how to fix the color and garbage output problems.
+;; Saves files between sessions.
+(desktop-save-mode t)
+
+;; Turn on line numbers.
+(require 'linum)
+(global-linum-mode t)
+
+;; Automatically reloads files which have changed on disk.
+(global-auto-revert-mode t)
+
+;; Let you use hex code points with C-q.
+(setq read-quoted-char-radix 16)
+
+;; add markdown mode as default for text and md
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Settings for backups. See [[http://www.emacswiki.org/emacs/BackupDirectory]]
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.backups"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+(exec-path-from-shell-initialize)
+(add-to-list 'exec-path "/usr/bin/local")
+
+;; Fullscreen on startup
+(add-to-list 'default-frame-alist '(fullscreen . fullheight))
+(add-to-list 'default-frame-alist '(fullscreen . fullwidth))
+
+;; Use js2-minor-mode with Javascript files.
+(add-hook 'js-mode-hook 'js2-minor-mode)
+
+;; Configure auto-complete mode.
+(require 'auto-complete-config)
+;; Dictionaries
+(add-to-list 'ac-dictionary-directories 
+	     "~/.emacs.d/elpa/auto-complete-20160107.8/dict")
+(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
+(add-hook 'prog-mode-hook 'auto-complete-mode)
+(setq ac-auto-start 3)
+(setq ac-ignore-case nil)
+
+;; Configure yasnippets
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/elpa/yasnippet-20160226.1359/snippets/")
+(add-to-list 'ac-sources 'ac-source-yasnippet)
+
+(require 'nodejs-repl)
+
+(add-to-list 'auto-mode-alist '("\\.handlebars" . handlebars-mode))
+
+;; Make runpython use Python 3
+(setq python-shell-interpreter "python3")
+
+;; Make sure emacs can find ispell so spell-checking works
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+(add-hook 'text-mode-hook 'flyspell-mode)
+
+(set-default-font "Monaco 14")
+
+;; Set command as meta for mac os x, and make option nothing so you
+;; can use it as a modifier. I'm having trouble getting used to it
+;; and I actually like having meta a little further over, so it's
+;; disabled for now. 
+;; (when (eq system-type 'darwin)
+;;   (setq mac-command-modifier 'meta)
+;;   (setq mac-option-modifier nil))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

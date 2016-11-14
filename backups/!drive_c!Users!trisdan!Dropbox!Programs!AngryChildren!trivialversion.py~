@@ -1,0 +1,35 @@
+import sys
+import itertools
+import pdb
+
+def get_min_unfairness(candies, kids):
+    unfairnesses = []
+    for subset in itertools.combinations(candies, kids):
+        unfairnesses.append(unfairness(subset))
+    return min(unfairnesses)
+
+def unfairness(subset):
+    return max(subset) - min(subset)
+
+# Note: get duplicates because we e.g. add {1} union {2} and then also
+# add {2} union {1}. Could get rid of them by adding frozensets to a
+# set, then turning that set into a list upon recursing. But since
+# this is just a prototype for the Java version, didn't bother.
+def my_combi(s, subsets, size):
+ if len(subsets[0]) == size:
+     return subsets
+ else:
+     next_subsets = []
+     print(subsets)
+     for sb in subsets:
+         for r in s - sb:
+             next_subsets.append(sb | set([r]))
+     my_combi(s, next_subsets, size)
+
+if __name__ == "__main__":
+    inputs = sys.stdin.readlines()
+    # Skip set size; don't need it.
+    kids = int(inputs[1])
+    candies = [int(x) for x in inputs[2:]]
+    print(get_min_unfairness(candies, kids))
+    print(my_combi(set([1, 2, 3, 4]), [set()], 3))

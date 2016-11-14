@@ -1,0 +1,5 @@
+(defun member? (a l)
+  (cond
+   ((null l) '())
+   ((equal a (car l)) t)
+   (t (member? a (cdr l)))))

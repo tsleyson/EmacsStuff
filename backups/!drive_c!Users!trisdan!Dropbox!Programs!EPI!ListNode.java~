@@ -1,0 +1,65 @@
+/* Something like this is used on so many Leetcode OJ problems,
+   I figured I'd just add it to the package.
+   Also used in Elements of Programming Interviews. 
+*/
+public class ListNode<T> {
+    T val;
+    ListNode<T> next;
+    ListNode(T x) {
+        val = x;
+        next = null;
+    }
+
+    // For testing.
+    public static <S> ListNode<S> listFromArray(S[] items) {
+        assert items.length > 0;
+        ListNode<S> head, current;
+        head = new ListNode<S>(items[0]);
+        current = head;
+        for (int i = 1; i < items.length; ++i, current = current.next) {
+            current.next = new ListNode<S>(items[i]);
+        }   
+        return head;
+    }
+
+    // Also for testing.
+    public static void printList(ListNode<Integer> head) {
+        for (ListNode<Integer> curs = head; curs != null; curs = curs.next) {
+            System.out.printf("%-4d", curs.val);
+        }
+        System.out.println();
+    }
+
+    public static <T> ListNode<T> advanceTo(ListNode<T> head, T elt) {
+        ListNode<T> ln;
+        for (ln = head; ln != null; ln = ln.next) {
+            if (ln.val.equals(elt)) {
+                return ln;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static <T> ListNode<T> advanceToEnd(ListNode<T> head) {
+        ListNode<T> ln;
+        for (ln = head; ln.next != null; ln = ln.next);
+        return ln;
+    }
+}
+
+/*
+Note: EPI uses a templated version of a listnode for C++. Then in all
+their solutions, they assume that the list is storing an int and go
+ahead on that basis, not even dealing with all the extra problems that
+having it be a template creates. In Java, I guess you'd deal with the
+problems by putting functions that operate on the list in some class
+with access to the list's type parameter, but I'm just going to do
+what they did and assume all ListNodes are ListNode<Integer>s.
+
+There's probably some way to do this with ListNode<Number> or
+ListNode<Comparable> that's a little more generic, though.
+
+Note, another way is to use ListNode<?> as a parameter, but I think
+ListNode<Comparable> is probably better.
+
+*/

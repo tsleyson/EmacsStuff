@@ -1,0 +1,5 @@
+REGEDIT4
+[HKEY_CURRENT_USER\SOFTWARE\GNU\Emacs]
+"Emacs.Foreground"="black"
+"Emacs.Background"="#f5f5f5"
+"Emacs.Geometry"="80x40-80+0"

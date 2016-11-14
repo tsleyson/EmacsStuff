@@ -1,0 +1,7 @@
+import java.util.Arrays;
+
+public class OnlineSampling {
+    public int[] ksample(int[] data, int k) {
+        
+    }
+}

@@ -1,0 +1,306 @@
+
+
+
+
+
+CHILD NUTRITION DATABASE
+
+
+VERSION CN17
+
+
+
+
+
+
+
+
+
+
+
+
+SYSTEM COMPONENTS AND FILE FORMATS
+
+
+
+
+CHILD NUTRITION DATABASE
+(CN-D)
+
+VERSION CN17
+
+
+SYSTEM COMPONENTS
+
+CN Coding Database 
+   Food Description File (FDES)
+   Food Category Name File (CTGNME)
+   Gram Weights and Measure Descriptions File (WGHT)
+
+CN Nutrient Database
+   Nutrient Values File (NUTVAL)
+   Nutrient Description File (NUTDES)
+
+Other Files 
+   Food Buying Guide File (BUYGD)
+   Food Buying Guide Link File (BYGDLNK)
+   Data Quality Control Table for Food Industry Items (DQC)
+
+
+
+CHILD NUTRITION DATABASE
+(CN-D)
+
+SYSTEM COMPONENTS
+
+The data files described in this document are designed and developed for nutrient analysis for the USDA Child Nutrition Programs.
+
+Eight files were released in the CN17 version.  The abbreviated file names are FDES, CTGNME, WGHT, NUTVAL, NUTDES, BUYGD, BYGDLNK, and DQC. The CTGNME file contains descriptions for food categories assigned to foods in the FDES and BUYGD files. The DQC file contains the results of the nutrient data quality control field used to identify the nutrient information available for each item. 
+
+
+The file formats include the name of each field, followed by the type of field (N=numeric, A=alphanumeric, and D=date), the field length including decimals, and an * (asterisk) symbol to indicate that a field is indexed, followed by the field description.  The indexes are identified in this document to display the order of records within the Agricultural Research Service database system known as the National Nutrient Database for Standard Reference (SR). The files described in SR are released in American Standard Code for Information Interchange (ASCII) format and, therefore, do not have indexes.  Fields without indexes are separated by caret symbols (^), except for alphanumeric fields, which are denoted by tilde (~) symbols.
+
+Discontinued Items
+
+Each release contains revisions made to information included in the previous CN-D files. The status field in the FDES, WEIGHTS, NUTVAL, BUYGD AND BYGDLNK files should be checked against the previous CN-D release since some records have been discontinued in these CN-D files. The records that were marked as discontinued in the previous CN-D release have been removed from this CN-D release.  Please be advised that all discontinued records indicated by status = "d" found in this CN-D release will be removed in the next CN-D release. 
+
+Clarification of CN Database Items with Status of "d"
+
+The status field of the CN-D is intended to notify developers and users of approved software programs that data, such as food items used in recipes and menus will no longer be included in the next release of the CN Database and to provide users with ample time to replace the data.  The status field shows which food items and other data, such as weights and measures, are active as designated by an "a" and which food items are being discontinued and designated by a "d".  The contractor managing the CN Database will not remove data marked with a "d" until the next release.  Software developers must ensure that software programs do not interfere with this alert mechanism intended to inform the end users when data will no longer be available.  The data marked with "d" should not be removed from the software program’s database until it is physically removed from the CN-D with the next release.  Ideally, software developers should have a system in the software program for alerting the user about foods marked with "d", such as a warning message or report.
+
+
+
+Comments and Notes for CN17 Release
+
+CN17 Release: A record with a date after 03/1/2012 in the “date_added” field is a new record in the CN17 release.  A record with a date after 03/1/2012 in the “last_modified” field and different from the date in the “date_added” field contains a revised value in one or more of its fields with the CN17 release. 
+
+69 new USDA Foods (commodity foods) and 30 new recipes used in the National School Lunch Program and School Breakfast Program were added to CN17.
+
+192 existing USDA Foods (commodity foods) used in the National School Lunch Program and School Breakfast Program were updated with revised commodity codes, and updated nutrient data, including the new Vitamin A(RAE) values if available.
+
+In CN17, Vitamin A(RAE) has replaced Vitamin A(RE).  All Vitamin A(RE) values in CN17 have been marked as discontinued (d).  Vitamin A(RAE) values were added for all Standard Reference items and those Commodity Food and Recipe items where the data was available.
+
+All 447 foods in the Standard Reference 25 ADD_FOODS file have been added to CN17 provided that they met the nutrient requirements.
+
+
+
+CN CODING DATABASE
+
+The CN CODING DATABASE contains information needed for coding foods and amounts in the analysis of menus and recipes.  This information includes the non-nutritive info about the food and unit of measure information for calculating conversions of measures and nutrient values.   For each food in the database, there is a food identification code (CN_Code also referred to as CN-D Number or CND#)), food category code, description of the food, set of measures (for most foods), and gram weights for those measures.  Product codes, manufacturer names, brand/label names and brand/label codes are also included, when provided by the manufacturer, for commercially prepared foods sold for use in Child Nutrition Programs.
+
+The CN CODING DATABASE consists of three (3) files.  They are the FOOD DESCRIPTION, WEIGHTS, and FOOD CATEGORY NAME files.
+
+
+
+FOOD DESCRIPTION (FDES) file contains both a complete description and an abbreviated description for each food item in the CN Database. For commercially prepared (brand) foods sold for use in Child Nutrition Programs, the product code or UPC code and manufacturer name, associated with the item, are listed.
+
+
+FOOD DESCRIPTION (FDES)Field NameType/LengthDescriptionFood Category CodeN 2*Classifies food into a designated groupDescriptorA 255*Item descriptionAbbreviated DescriptorA 60Abbreviated Item descriptionCN Code (CN-D number)N 6CN Code (CND#) is used to link data for the same food item between files. Product CodeA 15The item product code defined by the manufacturer or the UPC code.  The UPC code is identified with the prefix ‘UPC’.Manufacturer NameA 80The manufacturer nameCommodity Or Recipe CodeA 6Code for a USDA standardized recipe or the commodity code for a USDA Food (commodity food) used by schools.Source CodeN 1Specifies source of nutrient values-
+
+USDA Nutrient Database for Standard Reference (1),
+
+Standardized recipe calculation (2),
+
+Food industry (3), 
+
+Commodity (4)Date AddedDThe date that the food was first placed in this file (mm/dd/yyyy)Last ModifiedDDate of last revision to this record
+(mm/dd/yyyy)Status A 1Active (a) or 
+Discontinued (d)Form of FoodA 12Designated only for brand foods (foods with source code 
+3) "as purchased" or "as served";
+(as purchased food requires preparation before serving; as served food does not require add. prep)
+FOOD CATEGORY NAME (CTGNME) file contains the codes and descriptions for food categories assigned to foods in the FOOD DESCRIPTION and FOOD BUYING GUIDE files.
+
+FOOD CATEGORY NAME (CTGNME)Field NameType/LengthDescriptionFood Category CodeN 2*Code for classifying food into a designated groupCategory DescriptionA 100Description of food category groupingDate AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or 
+Discontinued  (d)
+
+WEIGHTS (WGHT) file contains measure information for specific foods.  Gram weights are provided for all units of measure listed.  Many foods have more than one unit of measure.  Some foods do not have a corresponding unit of measure in the Weights file.  
+
+WEIGHTS (WGHT)Field NameType/LengthDescriptionCN Code (CN-D number)N 6*CN Code (CND#) is used to link data for the same food item between files.Weights Sequence NumberN 2*Unique sequence number used to identify record.AmountN 6.3Unit Modifier - e.g. 1 in 1 cup)Measure DescriptionA 80Description (e.g. Cup, Diced, 1" pieces)Gram WeightN 8.2Gram weight of food itemDate AddedDDate record was first placed into this file.Last modifiedDDate of last record revision.StatusA 1Active (a) or 
+Discontinued (d)  
+
+CN NUTRIENT DATABASE
+
+The CN NUTRIENT DATABASE consists of two files--NUTRIENT VALUES and NUTRIENT DESCRIPTION.
+
+NUTRIENT VALUES (NUTVAL) file contains nutrient values for food items to be used in the nutrient analysis of menus and recipes in the Child Nutrition Programs.  Sources of data for this file include the USDA Nutrient Database for Standard Reference; nutrient calculations for standardized school lunch recipes; industry data for foods sold for school lunch or breakfast programs, and USDA [commodity] Foods.  All nutrient values are based on 100 grams (nutrients per 100 grams).  Additional value type codes have been added to the NUTVAL Table to describe the type of value for a nutrient.
+
+Differentiating Between Data Containing Zeros and Missing Data
+
+Nutrient data represented by a zero means that the food item was tested for that nutrient, but there was no significant amount of that nutrient found in the food.  For example, a value of zero for food energy (or calories) means that this food contains no calories.  Values of zero are not to be interpreted as missing values or blanks; they must remain zeros.
+
+Please notify FNS if you find any food items with missing values or blanks for any of the required nutrients: food energy, sodium, and saturated fat.  Foods that do not provide values for these three required nutrients should not be included in the CN-D. 
+
+In the case of the remaining nutrients, missing nutrient values may exist and are shown as blanks in the CN-D.  Blank nutrient values should not be interpreted as zeros.  Blank nutrient values should be interpreted and marked as missing values; for example, an asterisk with a footnote indicating that the nutrient value is missing.  Additionally, any nutrient total containing a missing value must also be marked as including missing nutrient data.  Use of a zero to represent a missing value is incorrect.  Zeros must only be used for true zero values
+
+NUTRIENT VALUES (NUTVAL)Field NameType/LengthDescriptionCN Code (or CN-D number)N 6*CN Code (or CND#) is used to link data for the same food item between files.Nutrient CodeN 5*Code used to identify a particular nutrient. Linked to Nutrient Description fileNutrient ValueN 10.3Value for nutrientValue Type Code
+
+Note: The Value Type Code is intended for internal use only and should not be displayed to software users.N 3Type of value:
+Calculated from standardized school lunch recipe (0),
+Analytical or derived from analytical (1), 
+Imputed (4), 
+Value manufacturer based label claim for added nutrients (5),
+Aggregated data involving combinations of source codes 1 &12 (6).
+Assumed zero (7),
+Calculated from nutrient label by NDL (8), 
+Calculated by manufacturer, not adjusted or rounded for NLEA (9),
+Aggregated data involving comb. of codes other then 1,12 or 6 (11),
+Manufacturer's analytical; partial documentation (12),
+Analytical data from the literature, partial documentation (13)Date AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or 
+Discontinued (d)
+NUTRIENT DESCRIPTION (NUTDES) file contains the names and codes for nutrients included in the NUTRIENT VALUES file. 
+
+NUTRIENT DESCRIPTION (NUTDES)Field NameType/LengthDescriptionNutrient CodeN 5*Code used to identify a particular nutrient.Nutrient DescriptionA 30Description of nutrientNutrient Description (abbreviated)A 5 Abbreviated description of nutrientNutrient UnitA 5Identifies the measure (calories, grams, milligrams, International Units, etc.) for reporting a nutrient in the Nutrient Values file.Date AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or 
+Discontinued (d)
+OTHER CN FILES
+
+FOOD BUYING GUIDE (BUYGD) file contains data on the quantity of ready-to-serve, ready-to-cook or cooked food obtained from a purchased unit of food.  Also, included are weights of drained vegetables or fruits from various can sizes.  The information from the BUYGD file must be provided to software users as a reference. 
+
+FOOD BUYING GUIDE (BUYGD)Field NameType/LengthDescriptionFood Category CodeN 2*Code for classifying food into a designated groupFood DescriptionA 255*Item descriptionBuying Guide Code (FBG Code)N 4*Code used to identify a particular FBG item.Sequence NumberN 2*Unique sequence number used to identify multiple items for the same FBG code.Purchase UnitA 60Purchase unitPreparation DescriptionA 60Description of preparationEdible Portion AmountN 5.2Specifies the part of a portion size for the consumed amountEdible Portion MeasureA 8Measure for food such as 
+c (cup),TB (tablespoon)Date AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or 
+Discontinued (d)
+FOOD BUYING GUIDE LINK (BYGDLNK) file identifies Food Buying Guide (FBG) codes matched to CN codes (CND#s) for use in calculating edible portion weight.
+
+FOOD BUYING GUIDE LINK (BYGDLNK)Field NameType/LengthDescriptionCN Code (CN-D NumberN 6*CN Code (CND#) is used to link data for the same food item between files.Buying Guide CodeN 4*Code used to identify a particular FBG item.Date AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or
+Discontinued (d)
+
+DATA QUALITY CONTROL (DQC).  This file contains the results of a data quality control check. This table is completed after the nutrient values for each food item are reviewed. A number is then placed in the Data Quality Control Field, based on the data present, indicating which nutrient fields contain values. This file is used by the Food and Nutrition Service for tracking purposes. It is important to note that each food item in the FDES file has sixteen nutrient (NUTVAL) records associated with it; however, the values for ash, moisture, or trans fat may be blank, thereby creating a need for this table. 
+
+All items with a CN Code greater than or equal to 100000 are listed in this file.  All items with a CN Code less than 100000 have an implied DATA QUALITY CONTROL VALUE= 3 (15 nutrients).
+
+Data Quality Control Field
+
+	Value 1 = (12 Nutrients: Food Energy (Kcal), Carbohydrates, Protein, Total Fat, Total Dietary Fiber, Calcium, Iron, Sodium, Vitamin A (IU), Vitamin C, Cholesterol, Total Saturated Fat).
+		(TOTAL OF 12 NUTRIENT RECORDS CONTAINING DATA)
+
+   Value 2 = (12 Nutrients +Ash +Moisture)
+	(TOTAL OF 14 NUTRIENT RECORDS CONTAINING DATA)
+   
+   Value 3 = (12 Nutrients +Ash +Moisture +Vitamin A RE)
+	(TOTAL OF 15 NUTRIENT RECORDS CONTAINING DATA)
+
+   Value 4 = (12 Nutrients +Ash +Moisture +Vitamin A RE +Trans Fat)
+	(TOTAL OF 16 NUTRIENT RECORDS CONTAINING DATA)
+
+DATA QUALITY CONTROL (DQC)Field NameType/LengthDescriptionCN Code (CN-D number)N 6CN Code (or CND#) is used to link data for the same food item between files.Manufacturer Name A 80The manufacturer nameProduct Code A 15The item product code defined by the manufacturer or the UPC code.  The UPC code is identified with the prefix ‘UPC’.Data Quality Control FieldA 2(values 1, 2, 3 or 4)
+1 =(12 Nutrients: Energy Kcal, Carbohydrates, Protein, Total Fat, Total Dietary Fiber, Calcium, Iron, Sodium, Vitamin A (IU), Vitamin C, Cholesterol, Total Saturated Fat)
+2 =(12 Nutrients +Ash +Moisture)
+3 =(12 Nutrients +Ash +Moisture +Vitamin A RE)
+4 =(12 Nutrients +Ash +Moisture +Vitamin A RE +Trans Fat)Date AddedDDate record was first placed into this file.Last ModifiedDDate of last record revision.StatusA 1Active (a) or
+Discontinued (d)
+Archive of Comments and Notes from Previous Releases
+
+CN16 Release: A record with a date after 03/31/2011 in the “date_added” field is a new record in the CN16 release.  A record with a date after 03/31/2011 in the “last_modified” field and different from the date in the “date_added” field contains a revised value in one or more of its fields with the CN16 release. 
+
+25 new USDA Foods (commodity foods) used in the National School Lunch Program and School Breakfast Program were added to CN16.
+
+192 existing USDA Foods (commodity foods) used in the National School Lunch Program and School Breakfast Program were updated with revised commodity codes.
+
+For CN 16, only three nutrients (Calories, Saturated Fat and Sodium) were required to be present. In previous cycles, 12 nutrients were required.
+
+All foods in the Standard Reference 24 ADD_FOODS file have been added to CN16 provided that they met the nutrient requirements.
+
+
+CN15 Release: A record with a date after 03/31/2010 in the “date_added” field is a new record in the CN15 release.  A record with a date after 03/31/2010 in the “last_modified” field and different from the date in the “date_added” field contains a revised value in one or more of its fields with the CN15 release. 
+
+All records with a blank value for last_modified” date have been updated with the value in the “date_added” field for that record in the CN15 release. For the purposes of tracking records with revised values in one or more fields, the “last_modified” date must be later than 03/31/2010 AND different from the value in the “date_added” field.
+
+35 new USDA Foods (commodity foods) used in the National School Lunch Program and School Breakfast Program were added to CN15.
+
+The Food_Category_Code values in the CTGNME file that do not have a corresponding code in the Standard Reference 23 FD_GROUP file have all been marked as “d’. These categories will be removed in the CN 16 Release. As a result a number of items in the FDES file have been re-categorized moving them from the discontinued category to an active category.
+
+Note for CN15: All Standard Reference 23 updates have been applied to the CN SREF products included in this release. 112 additional SREF products have been added and 25 SREF products have been coded as discontinued in this release. Nutrient and Weight change information was applied to the SREF products included in this release.
+
+CN14 Release: A record with a date after 3/1/2009 in the "date added" field is a new record in the CN14 release. A record with a date after 3/1/2009 in the "last modified" field contains a revised value in one or more of its fields with the CN14 release.  All products marked as discontinued in CN13 have been removed from CN14 (82 products).
+
+The FINCL, FSUBCOD, and FSUBDES files were removed for CN14.  Additionally, the corresponding fields ("CN Subcode" and "Include Line Number") were removed from the WEIGHTS and DQC files.
+
+The USDA Foods (commodity foods) used in the National School Lunch Program and School Breakfast Program were added to CN14.  These 184 items replaced the commodity items in CN13.  The existing commodity items (source code 4) were either marked as discontinued or changed to source code 1 (if still active in the USDA Nutrient Database for Standard Reference (SR)).  To accommodate the Commodity code, the "Recipe Code" field in the FDES table has been renamed to "Commodity or Recipe Code."
+
+Note for CN14: All Standard Reference 22 updates have been applied to the CN SREF products included in this release.  111 additional SREF products have been added and 33 SREF products have been coded as discontinued in this release. Nutrient and Weight change information was applied to the SREF products included in this release.
+
+CN13 Release: A record with a date after 5/1/2008 in the "date added" field is a new record in the CN13 release. A record with a date after 5/1/2008 in the "last modified" field contains a revised value in one or more of its fields with the CN13 release.  All products marked as discontinued in CN12 have been removed from CN13 (79 products). Duplicate Weight measures that were mistakenly added in CN12 have been removed in CN13.
+
+All items in the FINCL, FSUBCOD, and FSUBDES files have been marked as discontinued for CN13.  These three files will be removed completely in CN14.
+
+Note for CN13: All Standard Reference 21 updates have been applied to the CN SREF products included in this release.  202 additional SREF products have been added and 81 SREF products have been coded as discontinued in this release. 
+
+CN12 Release: A record with a date after 5/1/2007 in the "date added" field is a new record in the CN12 release. A record with a date after 5/1/2007 in the "last modified" field contains a revised value in one or more of its fields with the CN12 release.  All products marked as discontinued in CN11 have been removed from CN12 (254 products).
+
+Note for CN12: All Standard Reference 20 updates have been applied to the CN SREF products included in this release.  350 additional SREF products have been added and 248 SREF products have been coded as discontinued in this release. 
+
+CN11 Release: A record with a date after 3/1/2006 in the "date added" field is a new record in the CN11 release. A record with a date after 3/1/2006 in the "last modified" field contains a revised value in one or more of its fields with the CN9 release.  All products marked for deletion in CN10 have been removed (108 products).
+
+Note for CN11: All Standard Reference 19 updates have been applied to the CN SREF products included in this release.  Eleven (11) SREF product deletes have been processed in this release.  All CN SREF products were updated to match the descriptions (long description and abbreviated description) in SR19.  A mass update to all CN SREF items in the FDES, NUTVAL, and WEIGHTS tables was performed to ensure consistency between the two databases.  The MSFTCHG File was marked as discontinued in CN10 and has been removed from CN11.  All Data Quality Control values were re-computed to include the Trans Fat optional nutrient (Nutrient code 605).  The field length for FDES.Descriptor, FINCL.Include_Description, FSUBDES.Subcode_Descriptor, and BUYGD.Food_Description was increased from 200 to 255 characters.
+
+CN10 Release: A record with a date after 10/1/2005 in the "date added" field is a new record in the CN10 release. A record with a date after 10/1/2005 in the "last modified" field contains a revised value in one or more of its fields with the CN9 release.
+
+Note for CN10: All Standard Reference 18 updates have been applied to the CN SREF products included in this release.  SREF product deletes have been processed in this release.  143 products from SR18 have been added in this release.  All CN SREF products were updated to match the descriptions (long description and abbreviated description) in SR18.  The MSFTCHG File is marked as discontinued in CN10 and will be removed from CN11.  Trans Fat has been added as an optional nutrient (Nutrient code 605).  All SR18 trans fat data within the CN database with Source Code=1 was updated.  All Chef’s Challenge recipes have been removed.  Please note the addition of a special note on page 12 of this document regarding Value Type Codes: the Value Type Code is intended for internal use only and should not be displayed to software users.  A new Data Quality Control value (4) has been added; this value will be used when all 12 required nutrient values and all 4 optional nutrient values have been provided. The following field names were changed: "Sequence" to "Weights_Sequence_Line_Number" in the WEIGHTS TABLE and "Include_Line_Number" to "Include_Sequence_Number" in the FINCL Table.
+
+CN9 Release: A record with a date after 7/15/2004 in the "date added" field is a new record in the CN9 release. A record with a date after 7/15/2004 in the "last modified" field contains a revised value in one or more of its fields with the CN8 release.
+
+Note for CN9:  All Standard Reference 17 updates have been applied to the CN SREF products included in this release.  SREF product deletes have been processed in this release.  Please note in CN9, that the USDA Recipes were updated which affects the information in the Food Description Table, the Weights Table and the Nutrient Value Table of CN9.  Five recipes have been added and two have been removed.  Most of the nutrient data for the recipe items have been changed. As of CN9, the nutrient unit for gram listed in the NUTDES Table has been changed from GM to g.
+  
+CN8 Release: A record with a date after 9/01/2002 in the "date added" field is a new record in the CN8 release. A record with a date after 9/01/2002 in the "last modified" field contains a revised value in one or more of its fields with the CN7 release.
+
+Note for CN8:  All Standard Reference 15 updates have been applied to the CN SREF products included in this release.  One new Standard Reference Item has been added. 
+
+In CN8, the WEIGHTS (WGHT) file was created by merging the old MDES and GMWT files into one file.  
+
+The Food Buying Guide (FBG) file was updated to include the changes made in the November 2001, Revised Food Buying Guide for Child Nutrition Programs (Program aid 1331).
+
+The Food Buying Guide Link File was updated with links from the updated Food Buying Guide File to the current Food Description File
+
+CN7 Release: A record with a date after 5/01/2002 in the "date added" field is a new record in the CN7 release. A record with a date after 5/01/2002 in the "last modified" field contains a revised value in one or more of its fields with the CN7 release.
+
+Note for CN7:  The Standard Reference products included in this release have not been updated, due to a change in the Standard Reference format.  Some New Standard Reference Items have been added.
+
+CN6 Release: A record with a date after 5/16/2001 in the "date added" field is a new record in the CN6 release. A record with a date after 5/16/2001 in the "last modified" field contains a revised value in one or more of its fields with the CN6 release.
+
+CN5 Release: A record with a date after 5/20/2000 in the "date added" field is a new record in the CN5 release. A record with a date after 5/20/2000 in the "last modified" field contains a revised value in one or more of its fields with the CN5 release.
+
+Note for CN5:  This release has re-activated some of the records that were marked as deleted in CN4: this affects the FDES, GMWT, NUTVAL tables.  279 products were re-activated.  Future releases of CN will not re-activate deleted products, but will assign them new CN codes if needed.
+
+CN4 Release: A record with a date after 7/07/1998 in the "date added" field is a new record in the CN4 release. A record with a date after 7/07/1998 in the "last modified" field contains a revised value in one or more of its fields with the CN4 release.
+
+CN3 Release: A record with a date after 7/20/1995 in the "date added" field is a new record in the CN3 release. A record with a date after 7/20/1995 in the "last modified" field contains a revised value in one or more of its fields with the CN3 release.
+
+Note for CN3: The CN code has been changed in all files from N5 to N6, and all tables now contain the fields Date_Added, Last_Modified and Status. All dates are represented as MM/DD/YYYY and are enclosed in ~ (tilde) symbols. A new Data Quality Control table (DQC) has been added to this release and additional value type codes have been added to the NUTVAL Table to describe the type of value for a nutrient.
+
+CN2 Release: A record with a date after 1/31/94 in the "date added" field is a new record with the CN2 release. A record with a date after 1/31/94 in the "last modified" field contains a revised value in one or more of its fields with the CN2 release.  
+
+Note for CN2:  A new field in the FOOD DESCRIPTION file--Form of Food--has been added to this file in the CN2 release. Form of food identifies whether a brand food requires additional preparation before serving (as purchased) or does not require any additional preparation before serving (as served).
+The abbreviated descriptions for standardized recipes are the descriptions, which are listed on each recipe card.  A new field--Nutrient Unit--has been added to the NUTDES file.  The Nutrient Unit identifies the measure (calories, grams, milligrams, International Units, etc.) for reporting a nutrient in the Nutrient Values file.  The Buying Guide Code in the BUYGD file has replaced the Market Code. 
+
+In CN2, new fields were added to make the descriptions for foods in the FDES file stand-alone.  In the first release of the CN-D, the include description was not always stand-alone.  For some foods, there was only a qualifying phrase such as "with fruit" for instant oatmeal.  The complete identification of an INCLUDE food required both the individual INCLUDE DESCRIPTION and the DESCRIPTION from the FDES file for the linked CN code.  Fields added for the CN2 release included the following: Food Category Code, Abbreviated Descriptor, Product Code, Manufacturer Name, Form of Food, Recipe Code, and Source Code. The Include Description or Brand/Label field was expanded in the CN2 release from a 100 to a 200 character field.
+
+As with the FOOD INCLUDE file, new fields were added to the FOOD SUBCODE DESCRIPTION file in order to make the descriptions stand-alone since the CN1 release.  Fields added are the following--Food Category Code, Abbreviated Descriptor, Product Code, Manufacturer Name, Form of Food, Recipe Code and Source Code.  The Subcode Descriptor field was expanded from a 100 to a 200 character field.
+
+
+HISTORICAL SNAPSHOT OF SYSTEM COMPONENTS
+
+CN Coding Database 2,4
+   Food Description File (FDES)
+   Food Category Name File (CTGNME)
+   Gram Weights and Measure Descriptions File (WGHT)1
+
+CN Nutrient Database
+   Nutrient Values File (NUTVAL)
+   Nutrient Description File (NUTDES)
+
+Other Files 2
+   Food Buying Guide File (BUYGD)3
+   Food Buying Guide Link File (BYGDLNK)3
+   Data Quality Control Table for Food Industry Items (DQC)
+
+1Release 8 was presented with a new table structure for the GMWT and MDES data.  CN8 adopted a format similar to the WEIGHT table structure used in the Standard Reference 15 Weight table.  This table structure was adopted because it is an effective way to combine the weight and measure description information, and because it makes for a more efficient way to incorporate Standard Reference data in the CN Database.  In order to implement this change in the CN Database, the MDES table was removed and the data from the MDES table was added to the GMWT table.  This combined GMWT and MDES table was renamed the WEIGHT table to follow the Standard Reference naming convention. 
+
+2The MSFTCHG File was marked as discontinued in CN10 and was removed from CN11.
+
+3CN8 included an updated Food Buying Guide File which reflects the changes made in the November 2001, Revised Food Buying Guide for Child Nutrition Programs (Program aid 1331). 
+
+4The FINCL, FSUBCOD, and FSUBDES Files were marked as discontinued in CN13 and were removed in CN14.
+
+
+2
+
+

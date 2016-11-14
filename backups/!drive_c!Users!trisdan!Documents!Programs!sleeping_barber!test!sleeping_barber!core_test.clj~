@@ -1,0 +1,24 @@
+(ns sleeping-barber.core-test
+  (:require [clojure.test :refer :all]
+            [sleeping-barber.core :refer :all]))
+
+;; Use a fixture to declare some local copies of waiting-room and
+;; barber before each test.
+
+(defn setup [test]
+  (do
+    (test)
+    (await (send waiting-room (fn [x] 0)))
+    (await (send barber (fn [x] 0)))))
+
+(use-fixtures :each setup)
+
+(deftest test-send-customers []
+  (testing "Whether send-customers is working at 3 seconds"
+    (let [s (future-call send-customers)]
+      (do
+        (Thread/sleep 10000)
+        (future-cancel s)
+        (is (= (deref (await waiting-room)) 3)
+            "After 10 seconds, there should be three customers waiting since the max wait is 30 ms.")))))
+

@@ -1,0 +1,269 @@
+# -*- coding: utf-8 -*-
+
+"
+"
+Name,Character,Unicode code point (decimal),Standard,Description
+quot,"""",U+0022 (34),XML 1.0,double 
+amp,&amp;,U+0026 (38),XML 1.0
+apos,\',U+0027 (39),XML 1.0
+lt,&lt;,U+003C (60),XML 1.0
+gt,&gt;,U+003E (62),XML 1.0
+"
+"
+Name,Character,Unicode code point (decimal),Standard,DTD,Old ISO subset,Description
+quot,"""",U+0022 (34),HTML 2.0,HTMLspecial,ISOnum
+amp,&amp;,U+0026 (38),HTML 2.0,HTMLspecial,ISOnum
+apos,\',U+0027 (39),XHTML 1.0,HTMLspecial,ISOnum
+lt,&lt;,U+003C (60),HTML 2.0,HTMLspecial,ISOnum
+gt,&gt;,U+003E (62),HTML 2.0,HTMLspecial,ISOnum
+nbsp,U+00A0 (160),HTML 3.2,HTMLlat1,ISOnum,no-break space 
+iexcl,\xc2\xa1,U+00A1 (161),HTML 3.2,HTMLlat1,ISOnum
+cent,\xc2\xa2,U+00A2 (162),HTML 3.2,HTMLlat1,ISOnum
+pound,\xc2\xa3,U+00A3 (163),HTML 3.2,HTMLlat1,ISOnum
+curren,\xc2\xa4,U+00A4 (164),HTML 3.2,HTMLlat1,ISOnum
+yen,\xc2\xa5,U+00A5 (165),HTML 3.2,HTMLlat1,ISOnum
+brvbar,\xc2\xa6,U+00A6 (166),HTML 3.2,HTMLlat1,ISOnum,broken bar 
+sect,\xc2\xa7,U+00A7 (167),HTML 3.2,HTMLlat1,ISOnum
+uml,\xc2\xa8,U+00A8 (168),HTML 3.2,HTMLlat1,ISOdia
+copy,\xc2\xa9,U+00A9 (169),HTML 3.2,HTMLlat1,ISOnum
+ordf,\xc2\xaa,U+00AA (170),HTML 3.2,HTMLlat1,ISOnum,feminine 
+laquo,\xc2\xab,U+00AB (171),HTML 3.2,HTMLlat1,ISOnum,left-pointing double angle quotation mark 
+not,\xc2\xac,U+00AC (172),HTML 3.2,HTMLlat1,ISOnum
+shy,U+00AD (173),HTML 3.2,HTMLlat1,ISOnum
+reg,\xc2\xae,U+00AE (174),HTML 3.2,HTMLlat1,ISOnum,registered sign 
+macr,\xc2\xaf,U+00AF (175),HTML 3.2,HTMLlat1,ISOdia
+deg,\xc2\xb0,U+00B0 (176),HTML 3.2,HTMLlat1,ISOnum
+plusmn,\xc2\xb1,U+00B1 (177),HTML 3.2,HTMLlat1,ISOnum
+sup2,\xc2\xb2,U+00B2 (178),HTML 3.2,HTMLlat1,ISOnum,superscript two 
+sup3,\xc2\xb3,U+00B3 (179),HTML 3.2,HTMLlat1,ISOnum,superscript three 
+acute,\xc2\xb4,U+00B4 (180),HTML 3.2,HTMLlat1,ISOdia
+micro,\xc2\xb5,U+00B5 (181),HTML 3.2,HTMLlat1,ISOnum,micro sign
+para,\xc2\xb6,U+00B6 (182),HTML 3.2,HTMLlat1,ISOnum
+middot,\xc2\xb7,U+00B7 (183),HTML 3.2,HTMLlat1,ISOnum
+cedil,\xc2\xb8,U+00B8 (184),HTML 3.2,HTMLlat1,ISOdia
+sup1,\xc2\xb9,U+00B9 (185),HTML 3.2,HTMLlat1,ISOnum,superscript one 
+ordm,\xc2\xba,U+00BA (186),HTML 3.2,HTMLlat1,ISOnum,masculine 
+raquo,\xc2\xbb,U+00BB (187),HTML 3.2,HTMLlat1,ISOnum,right-pointing double angle quotation mark 
+frac14,\xc2\xbc,U+00BC (188),HTML 3.2,HTMLlat1,ISOnum,vulgar fraction one quarter 
+frac12,\xc2\xbd,U+00BD (189),HTML 3.2,HTMLlat1,ISOnum,vulgar fraction one half 
+frac34,\xc2\xbe,U+00BE (190),HTML 3.2,HTMLlat1,ISOnum,vulgar fraction three quarters 
+iquest,\xc2\xbf,U+00BF (191),HTML 3.2,HTMLlat1,ISOnum
+Agrave,\xc3\x80,U+00C0 (192),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with 
+Aacute,\xc3\x81,U+00C1 (193),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with 
+Acirc,\xc3\x82,U+00C2 (194),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with 
+Atilde,\xc3\x83,U+00C3 (195),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with 
+Auml,\xc3\x84,U+00C4 (196),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with 
+Aring,\xc3\x85,U+00C5 (197),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter A with ring above 
+AElig,\xc3\x86,U+00C6 (198),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter AE 
+Ccedil,\xc3\x87,U+00C7 (199),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter C with 
+Egrave,\xc3\x88,U+00C8 (200),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter E with 
+Eacute,\xc3\x89,U+00C9 (201),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter E with 
+Ecirc,\xc3\x8a,U+00CA (202),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter E with 
+Euml,\xc3\x8b,U+00CB (203),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter E with 
+Igrave,\xc3\x8c,U+00CC (204),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter I with 
+Iacute,\xc3\x8d,U+00CD (205),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter I with 
+Icirc,\xc3\x8e,U+00CE (206),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter I with 
+Iuml,\xc3\x8f,U+00CF (207),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter I with 
+ETH,\xc3\x90,U+00D0 (208),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter 
+Ntilde,\xc3\x91,U+00D1 (209),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter N with 
+Ograve,\xc3\x92,U+00D2 (210),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with 
+Oacute,\xc3\x93,U+00D3 (211),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with 
+Ocirc,\xc3\x94,U+00D4 (212),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with 
+Otilde,\xc3\x95,U+00D5 (213),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with 
+Ouml,\xc3\x96,U+00D6 (214),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with 
+times,\xc3\x97,U+00D7 (215),HTML 3.2,HTMLlat1,ISOnum
+Oslash,\xc3\x98,U+00D8 (216),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter O with stroke 
+Ugrave,\xc3\x99,U+00D9 (217),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter U with 
+Uacute,\xc3\x9a,U+00DA (218),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter U with 
+Ucirc,\xc3\x9b,U+00DB (219),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter U with 
+Uuml,\xc3\x9c,U+00DC (220),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter U with 
+Yacute,\xc3\x9d,U+00DD (221),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter Y with 
+THORN,\xc3\x9e,U+00DE (222),HTML 2.0,HTMLlat1,ISOlat1,Latin capital letter 
+szlig,\xc3\x9f,U+00DF (223),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter sharp s 
+agrave,\xc3\xa0,U+00E0 (224),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with 
+aacute,\xc3\xa1,U+00E1 (225),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with 
+acirc,\xc3\xa2,U+00E2 (226),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with 
+atilde,\xc3\xa3,U+00E3 (227),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with 
+auml,\xc3\xa4,U+00E4 (228),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with 
+aring,\xc3\xa5,U+00E5 (229),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter a with ring above
+aelig,\xc3\xa6,U+00E6 (230),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter ae 
+ccedil,\xc3\xa7,U+00E7 (231),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter c with 
+egrave,\xc3\xa8,U+00E8 (232),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter e with 
+eacute,\xc3\xa9,U+00E9 (233),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter e with 
+ecirc,\xc3\xaa,U+00EA (234),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter e with 
+euml,\xc3\xab,U+00EB (235),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter e with 
+igrave,\xc3\xac,U+00EC (236),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter i with 
+iacute,\xc3\xad,U+00ED (237),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter i with 
+icirc,\xc3\xae,U+00EE (238),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter i with 
+iuml,\xc3\xaf,U+00EF (239),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter i with 
+eth,\xc3\xb0,U+00F0 (240),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter 
+ntilde,\xc3\xb1,U+00F1 (241),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter n with 
+ograve,\xc3\xb2,U+00F2 (242),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with 
+oacute,\xc3\xb3,U+00F3 (243),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with 
+ocirc,\xc3\xb4,U+00F4 (244),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with 
+otilde,\xc3\xb5,U+00F5 (245),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with 
+ouml,\xc3\xb6,U+00F6 (246),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with 
+divide,\xc3\xb7,U+00F7 (247),HTML 3.2,HTMLlat1,ISOnum,division sign 
+oslash,\xc3\xb8,U+00F8 (248),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter o with stroke 
+ugrave,\xc3\xb9,U+00F9 (249),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter u with 
+uacute,\xc3\xba,U+00FA (250),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter u with 
+ucirc,\xc3\xbb,U+00FB (251),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter u with 
+uuml,\xc3\xbc,U+00FC (252),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter u with 
+yacute,\xc3\xbd,U+00FD (253),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter y with 
+thorn,\xc3\xbe,U+00FE (254),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter 
+yuml,\xc3\xbf,U+00FF (255),HTML 2.0,HTMLlat1,ISOlat1,Latin small letter y with 
+OElig,\xc5\x92,U+0152 (338),HTML 4.0,HTMLspecial,ISOlat2,Latin capital ligature oe
+oelig,\xc5\x93,U+0153 (339),HTML 4.0,HTMLspecial,ISOlat2,Latin small ligature oe
+Scaron,\xc5\xa0,U+0160 (352),HTML 4.0,HTMLspecial,ISOlat2,Latin capital letter s with 
+scaron,\xc5\xa1,U+0161 (353),HTML 4.0,HTMLspecial,ISOlat2,Latin small letter s with 
+Yuml,\xc5\xb8,U+0178 (376),HTML 4.0,HTMLspecial,ISOlat2,Latin capital letter y with 
+fnof,\xc6\x92,U+0192 (402),HTML 4.0,HTMLsymbol,ISOtech,Latin small letter f with hook 
+circ,\xcb\x86,U+02C6 (710),HTML 4.0,HTMLspecial,ISOpub,modifier letter 
+tilde,\xcb\x9c,U+02DC (732),HTML 4.0,HTMLspecial,ISOdia,small 
+Alpha,\xce\x91,U+0391 (913),HTML 4.0,HTMLsymbol,Greek capital letter Alpha
+Beta,\xce\x92,U+0392 (914),HTML 4.0,HTMLsymbol,Greek capital letter Beta
+Gamma,\xce\x93,U+0393 (915),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Gamma
+Delta,\xce\x94,U+0394 (916),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Delta
+Epsilon,\xce\x95,U+0395 (917),HTML 4.0,HTMLsymbol,Greek capital letter Epsilon
+Zeta,\xce\x96,U+0396 (918),HTML 4.0,HTMLsymbol,Greek capital letter Zeta
+Eta,\xce\x97,U+0397 (919),HTML 4.0,HTMLsymbol,Greek capital letter Eta
+Theta,\xce\x98,U+0398 (920),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Theta
+Iota,\xce\x99,U+0399 (921),HTML 4.0,HTMLsymbol,Greek capital letter Iota
+Kappa,\xce\x9a,U+039A (922),HTML 4.0,HTMLsymbol,Greek capital letter Kappa
+Lambda,\xce\x9b,U+039B (923),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Lambda
+Mu,\xce\x9c,U+039C (924),HTML 4.0,HTMLsymbol,Greek capital letter Mu
+Nu,\xce\x9d,U+039D (925),HTML 4.0,HTMLsymbol,Greek capital letter Nu
+Xi,\xce\x9e,U+039E (926),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Xi
+Omicron,\xce\x9f,U+039F (927),HTML 4.0,HTMLsymbol,Greek capital letter Omicron
+Pi,\xce\xa0,U+03A0 (928),HTML 4.0,HTMLsymbol,Greek capital letter Pi
+Rho,\xce\xa1,U+03A1 (929),HTML 4.0,HTMLsymbol,Greek capital letter Rho
+Sigma,\xce\xa3,U+03A3 (931),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Sigma
+Tau,\xce\xa4,U+03A4 (932),HTML 4.0,HTMLsymbol,Greek capital letter Tau
+Upsilon,\xce\xa5,U+03A5 (933),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Upsilon
+Phi,\xce\xa6,U+03A6 (934),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Phi
+Chi,\xce\xa7,U+03A7 (935),HTML 4.0,HTMLsymbol,Greek capital letter Chi
+Psi,\xce\xa8,U+03A8 (936),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Psi
+Omega,\xce\xa9,U+03A9 (937),HTML 4.0,HTMLsymbol,ISOgrk3,Greek capital letter Omega
+alpha,\xce\xb1,U+03B1 (945),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter alpha
+beta,\xce\xb2,U+03B2 (946),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter beta
+gamma,\xce\xb3,U+03B3 (947),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter gamma
+delta,\xce\xb4,U+03B4 (948),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter delta
+epsilon,\xce\xb5,U+03B5 (949),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter epsilon
+zeta,\xce\xb6,U+03B6 (950),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter zeta
+eta,\xce\xb7,U+03B7 (951),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter eta
+theta,\xce\xb8,U+03B8 (952),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter theta
+iota,\xce\xb9,U+03B9 (953),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter iota
+kappa,\xce\xba,U+03BA (954),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter kappa
+lambda,\xce\xbb,U+03BB (955),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter lambda
+mu,\xce\xbc,U+03BC (956),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter mu
+nu,\xce\xbd,U+03BD (957),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter nu
+xi,\xce\xbe,U+03BE (958),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter xi
+omicron,\xce\xbf,U+03BF (959),HTML 4.0,HTMLsymbol,Greek small letter omicron
+pi,\xcf\x80,U+03C0 (960),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter pi
+rho,\xcf\x81,U+03C1 (961),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter rho
+sigmaf,\xcf\x82,U+03C2 (962),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter final sigma
+sigma,\xcf\x83,U+03C3 (963),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter sigma
+tau,\xcf\x84,U+03C4 (964),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter tau
+upsilon,\xcf\x85,U+03C5 (965),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter upsilon
+phi,\xcf\x86,U+03C6 (966),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter phi
+chi,\xcf\x87,U+03C7 (967),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter chi
+psi,\xcf\x88,U+03C8 (968),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter psi
+omega,\xcf\x89,U+03C9 (969),HTML 4.0,HTMLsymbol,ISOgrk3,Greek small letter omega
+thetasym,\xcf\x91,U+03D1 (977),HTML 4.0,HTMLsymbol,Greek theta symbol
+upsih,\xcf\x92,U+03D2 (978),HTML 4.0,HTMLsymbol,Greek Upsilon with hook symbol
+piv,\xcf\x96,U+03D6 (982),HTML 4.0,HTMLsymbol,ISOgrk3,Greek pi symbol
+ensp,\xe2\x80\x82,U+2002 (8194),HTML 4.0,HTMLspecial,ISOpub
+emsp,\xe2\x80\x83,U+2003 (8195),HTML 4.0,HTMLspecial,ISOpub
+thinsp,U+2009 (8201),HTML 4.0,HTMLspecial,ISOpub
+zwnj,U+200C (8204),HTML 4.0,HTMLspecial
+zwj,U+200D (8205),HTML 4.0,HTMLspecial
+lrm,U+200E (8206),HTML 4.0,HTMLspecial
+rlm,U+200F (8207),HTML 4.0,HTMLspecial
+ndash,\xe2\x80\x93,U+2013 (8211),HTML 4.0,HTMLspecial,ISOpub
+mdash,\xe2\x80\x94,U+2014 (8212),HTML 4.0,HTMLspecial,ISOpub
+lsquo,\xe2\x80\x98,U+2018 (8216),HTML 4.0,HTMLspecial,ISOnum,left single 
+rsquo,\xe2\x80\x99,U+2019 (8217),HTML 4.0,HTMLspecial,ISOnum,right single 
+sbquo,\xe2\x80\x9a,U+201A (8218),HTML 4.0,HTMLspecial,single low-9 
+ldquo,\xe2\x80\x9c,U+201C (8220),HTML 4.0,HTMLspecial,ISOnum,left double 
+rdquo,\xe2\x80\x9d,U+201D (8221),HTML 4.0,HTMLspecial,ISOnum,right double 
+bdquo,\xe2\x80\x9e,U+201E (8222),HTML 4.0,HTMLspecial,double low-9 
+dagger,\xe2\x80\xa0,U+2020 (8224),HTML 4.0,HTMLspecial,ISOpub
+Dagger,\xe2\x80\xa1,U+2021 (8225),HTML 4.0,HTMLspecial,ISOpub
+bull,\xe2\x80\xa2,U+2022 (8226),HTML 4.0,HTMLspecial,ISOpub
+hellip,\xe2\x80\xa6,U+2026 (8230),HTML 4.0,HTMLsymbol,ISOpub,horizontal 
+permil,\xe2\x80\xb0,U+2030 (8240),HTML 4.0,HTMLspecial,ISOtech
+prime,\xe2\x80\xb2,U+2032 (8242),HTML 4.0,HTMLsymbol,ISOtech,prime 
+Prime,\xe2\x80\xb3,U+2033 (8243),HTML 4.0,HTMLsymbol,ISOtech,double prime 
+lsaquo,\xe2\x80\xb9,U+2039 (8249),HTML 4.0,HTMLspecial,single left-pointing angle quotation mark
+rsaquo,\xe2\x80\xba,U+203A (8250),HTML 4.0,HTMLspecial,single right-pointing angle quotation mark
+oline,\xe2\x80\xbe,U+203E (8254),HTML 4.0,HTMLsymbol,overline 
+frasl,\xe2\x81\x84,U+2044 (8260),HTML 4.0,HTMLsymbol,fraction slash 
+euro,\xe2\x82\xac,U+20AC (8364),HTML 4.0,HTMLspecial
+image,\xe2\x84\x91,U+2111 (8465),HTML 4.0,HTMLsymbol,ISOamso,black-letter capital I 
+weierp,\xe2\x84\x98,U+2118 (8472),HTML 4.0,HTMLsymbol,ISOamso,script capital P 
+real,\xe2\x84\x9c,U+211C (8476),HTML 4.0,HTMLsymbol,ISOamso,black-letter capital R 
+trade,\xe2\x84\xa2,U+2122 (8482),HTML 4.0,HTMLsymbol,ISOnum
+alefsym,\xe2\x84\xb5,U+2135 (8501),HTML 4.0,HTMLsymbol
+larr,\xe2\x86\x90,U+2190 (8592),HTML 4.0,HTMLsymbol,ISOnum,leftwards arrow
+uarr,\xe2\x86\x91,U+2191 (8593),HTML 4.0,HTMLsymbol,ISOnum,upwards arrow
+rarr,\xe2\x86\x92,U+2192 (8594),HTML 4.0,HTMLsymbol,ISOnum,rightwards arrow
+darr,\xe2\x86\x93,U+2193 (8595),HTML 4.0,HTMLsymbol,ISOnum,downwards arrow
+harr,\xe2\x86\x94,U+2194 (8596),HTML 4.0,HTMLsymbol,ISOamsa,left right arrow
+crarr,\xe2\x86\xb5,U+21B5 (8629),HTML 4.0,HTMLsymbol,downwards arrow with corner leftwards 
+lArr,\xe2\x87\x90,U+21D0 (8656),HTML 4.0,HTMLsymbol,ISOtech,leftwards double arrow
+uArr,\xe2\x87\x91,U+21D1 (8657),HTML 4.0,HTMLsymbol,ISOamsa,upwards double arrow
+rArr,\xe2\x87\x92,U+21D2 (8658),HTML 4.0,HTMLsymbol,ISOnum,rightwards double arrow
+dArr,\xe2\x87\x93,U+21D3 (8659),HTML 4.0,HTMLsymbol,ISOamsa,downwards double arrow
+hArr,\xe2\x87\x94,U+21D4 (8660),HTML 4.0,HTMLsymbol,ISOamsa,left right double arrow
+forall,\xe2\x88\x80,U+2200 (8704),HTML 4.0,HTMLsymbol,ISOtech
+part,\xe2\x88\x82,U+2202 (8706),HTML 4.0,HTMLsymbol,ISOtech,partial differential
+exist,\xe2\x88\x83,U+2203 (8707),HTML 4.0,HTMLsymbol,ISOtech
+empty,\xe2\x88\x85,U+2205 (8709),HTML 4.0,HTMLsymbol,ISOamso
+nabla,\xe2\x88\x87,U+2207 (8711),HTML 4.0,HTMLsymbol,ISOtech
+isin,\xe2\x88\x88,U+2208 (8712),HTML 4.0,HTMLsymbol,ISOtech,element of
+notin,\xe2\x88\x89,U+2209 (8713),HTML 4.0,HTMLsymbol,ISOtech,not an element of
+ni,\xe2\x88\x8b,U+220B (8715),HTML 4.0,HTMLsymbol,ISOtech,contains as member
+prod,\xe2\x88\x8f,U+220F (8719),HTML 4.0,HTMLsymbol,ISOamsb
+sum,\xe2\x88\x91,U+2211 (8721),HTML 4.0,HTMLsymbol,ISOamsb
+minus,\xe2\x88\x92,U+2212 (8722),HTML 4.0,HTMLsymbol,ISOtech,minus sign
+lowast,\xe2\x88\x97,U+2217 (8727),HTML 4.0,HTMLsymbol,ISOtech,asterisk operator
+radic,\xe2\x88\x9a,U+221A (8730),HTML 4.0,HTMLsymbol,ISOtech
+prop,\xe2\x88\x9d,U+221D (8733),HTML 4.0,HTMLsymbol,ISOtech,proportional to
+infin,\xe2\x88\x9e,U+221E (8734),HTML 4.0,HTMLsymbol,ISOtech
+ang,\xe2\x88\xa0,U+2220 (8736),HTML 4.0,HTMLsymbol,ISOamso
+and,\xe2\x88\xa7,U+2227 (8743),HTML 4.0,HTMLsymbol,ISOtech
+or,\xe2\x88\xa8,U+2228 (8744),HTML 4.0,HTMLsymbol,ISOtech
+cap,\xe2\x88\xa9,U+2229 (8745),HTML 4.0,HTMLsymbol,ISOtech
+cup,\xe2\x88\xaa,U+222A (8746),HTML 4.0,HTMLsymbol,ISOtech
+int,\xe2\x88\xab,U+222B (8747),HTML 4.0,HTMLsymbol,ISOtech
+there4,\xe2\x88\xb4,U+2234 (8756),HTML 4.0,HTMLsymbol,ISOtech
+sim,\xe2\x88\xbc,U+223C (8764),HTML 4.0,HTMLsymbol,ISOtech,tilde operator 
+cong,\xe2\x89\x85,U+2245 (8773),HTML 4.0,HTMLsymbol,ISOtech,congruent to
+asymp,\xe2\x89\x88,U+2248 (8776),HTML 4.0,HTMLsymbol,ISOamsr,almost equal to 
+ne,\xe2\x89\xa0,U+2260 (8800),HTML 4.0,HTMLsymbol,ISOtech
+equiv,\xe2\x89\xa1,U+2261 (8801),HTML 4.0,HTMLsymbol,ISOtech,identical to; sometimes used for \'equivalent to\'
+le,\xe2\x89\xa4,U+2264 (8804),HTML 4.0,HTMLsymbol,ISOtech,less-than or equal to
+ge,\xe2\x89\xa5,U+2265 (8805),HTML 4.0,HTMLsymbol,ISOtech,greater-than or equal to
+sub,\xe2\x8a\x82,U+2282 (8834),HTML 4.0,HTMLsymbol,ISOtech,subset of
+sup,\xe2\x8a\x83,U+2283 (8835),HTML 4.0,HTMLsymbol,ISOtech,superset of
+nsub,\xe2\x8a\x84,U+2284 (8836),HTML 4.0,HTMLsymbol,ISOamsn,not a subset of
+sube,\xe2\x8a\x86,U+2286 (8838),HTML 4.0,HTMLsymbol,ISOtech,subset of or equal to
+supe,\xe2\x8a\x87,U+2287 (8839),HTML 4.0,HTMLsymbol,ISOtech,superset of or equal to
+oplus,\xe2\x8a\x95,U+2295 (8853),HTML 4.0,HTMLsymbol,ISOamsb,circled plus 
+otimes,\xe2\x8a\x97,U+2297 (8855),HTML 4.0,HTMLsymbol,ISOamsb,circled times 
+perp,\xe2\x8a\xa5,U+22A5 (8869),HTML 4.0,HTMLsymbol,ISOtech
+sdot,\xe2\x8b\x85,U+22C5 (8901),HTML 4.0,HTMLsymbol,ISOamsb,dot operator
+vellip,\xe2\x8b\xae,U+22EE (8942),HTML 5.0,vertical 
+lceil,\xe2\x8c\x88,U+2308 (8968),HTML 4.0,HTMLsymbol,ISOamsc,left ceiling 
+rceil,\xe2\x8c\x89,U+2309 (8969),HTML 4.0,HTMLsymbol,ISOamsc,right ceiling
+lfloor,\xe2\x8c\x8a,U+230A (8970),HTML 4.0,HTMLsymbol,ISOamsc,left floor 
+rfloor,\xe2\x8c\x8b,U+230B (8971),HTML 4.0,HTMLsymbol,ISOamsc,right floor
+lang,\xe2\x8c\xa9,U+2329 (9001),HTML 4.0,HTMLsymbol,ISOtech,left-pointing angle bracket 
+rang,\xe2\x8c\xaa,U+232A (9002),HTML 4.0,HTMLsymbol,ISOtech,right-pointing angle bracket 
+loz,\xe2\x97\x8a,U+25CA (9674),HTML 4.0,HTMLsymbol,ISOpub
+spades,\xe2\x99\xa0,U+2660 (9824),HTML 4.0,HTMLsymbol,ISOpub
+clubs,\xe2\x99\xa3,U+2663 (9827),HTML 4.0,HTMLsymbol,ISOpub
+hearts,\xe2\x99\xa5,U+2665 (9829),HTML 4.0,HTMLsymbol,ISOpub
+diams,\xe2\x99\xa6,U+2666 (9830),HTML 4.0,HTMLsymbol,ISOpub
+"
+"

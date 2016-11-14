@@ -1,0 +1,7 @@
+/* life.c
+ * Implements Conway's game of life. Uses ASCII art for the display.
+ */
+
+#include <stdio.h>
+
+

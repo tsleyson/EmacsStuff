@@ -1,0 +1,36 @@
+public class HasBSTProperty {
+    public boolean hasBSTProperty(BinaryTreeNode<Integer> root) {
+        if (root.left == null && root.right == null) {
+            return true;
+            // Base: a node with no children has the BST property.
+        }
+        else {
+            return
+                root.left.val < root.val &&
+                root.val <= root.right.val &&
+                hasBSTProperty(root.left) &&
+                hasBSTProperty(root.right);
+            // Recursive: a node with children has the BST property
+            // if it and its children are ordered properly and both
+            // of its subtrees have the BST property.
+        }
+    }
+
+    public static void main(String[] args) {
+        HasBSTProperty hbp = new HasBSTProperty();
+        // This array courtesy of Python's
+        // [random.randint(-1000, 1000) for _ in range(50)]
+        int[] a = {721, 427, -477, 705, -977, -751, 703, -162, 949, -539,
+                   -645, 74, 706, 861, -364, 363, -163, 37, -641, 992, 842,
+                   -140, 261, 446, 74, 167, -487, 609, -558, 642, -130,
+                   -453, 900, 109, 650, -309, -344, 657, -658, 888, -935,
+                   10, 462, -905, 937, -85, 268, -902, 884, 522};
+        BinaryTreeNode<Integer> root = BinaryTreeNode.bstTreeFrom(a);
+        System.out.println("Should have property: " +
+                           hbp.hasBSTProperty(root));
+        root.val = -1001;  // All those numbers in [-1000, 1000] so
+                           // this will be totes wrong.
+        System.out.println("Should not have property: " +
+                           hbp.hasBSTProperty(root));
+    }
+}

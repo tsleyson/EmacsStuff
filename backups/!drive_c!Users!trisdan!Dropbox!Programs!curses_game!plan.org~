@@ -1,0 +1,38 @@
+* Curses Game
+** Idea
+A Fire Emblem-like game, except without actual graphics. It has ASCII art graphics, like Nethack, but it’s not a Rogue-like, it’s a terminal game that uses curses.
+** The interface
+Three windows: a main window showing the battle map, a side window showing stats on the currently highlighted square (the terrain, and stuff about the guy on it if there’s anyone on it), and a minibuffer sort of thing like Vim’s command mode across the bottom. Like Vim, you can switch between the movement mode and command mode with ESC (or something).
+
+I want to implement a cheesy sort of command language that lets you control your guys with terminal commands in the minibuffer, but also give the option of using the arrow keys to move a highlighted square around and select people.
+
+The command language would be something like this:
+
+=4;5,>9;10,\w=
+
+would mean “Move the character at square 4, 5 to square 9, 10 and then attack the character on the square above you.” Yes, it’s horrible, but you want it to be quick and easy to type (like Vim’s commands), not pretty to read. The comma separates commands which can be executed on the same turn. \w means attack upwards because we’re using w, a, s, d to represent directions (like the movement in some games) and \ to mean attack, since it’s easy to type and it sort of looks like a spear or something.
+
+=4;5,i’last elixir’s=
+
+means use the item with name matching “last elixir” on the character in the square below you. Of course, you can also open the item menu and choose it.
+
+If we copy Fire Emblem’s inventory system where stuff breaks, then we can also give an argument to the attack command for which weapon to attack with:
+
+=4;5,\’iron spear’d,>3;4=
+
+means select the character at 4, 5, attack the character on his right with the iron spear, then move to 3, 4.
+
+Basically a command has two parts: a selection of a character, and a list of actions to undertake. The selection and each command are separated by commas. (We could also separate the selection with a colon, and allow optional whitespace. We could also record the commands to allow replaying of a battle.)
+
+=4;5: \’sol katti’a, > 5;6=
+
+would mean “Select the character at 4, 5, attack on the left with the Sol Katti, then move to 5, 6.
+
+Obviously there have to be some constraints. We don’t want to allow two attacks per turn (except maybe for certain special classes).
+
+** The implementation
+I’m torn. This would be the perfect use for C, because C is the traditional language of ASCII art games and the usual language for curses. I’ve totally been looking for an excuse to use C for something so I could learn it better. On the other hand, C is really hard. It has all the right tools for the interface (curses and lex and yacc for the command language), but the actual game logic might be hard because this kind of thing is where object-oriented programming really shows its strength.
+
+Python is another very viable option. It has the curses module and plenty of tools for building the command language, plus object-orientation.
+
+I’ve also considered C++ in a C with classes style. I could use STL vectors and maps (and hash tables, if they actually made it into C++11 and my compiler supports them), and use classes for modeling where they’re useful, and stay away from the crazy features like template metaprogramming and stuff. C++ can presumably use curses. (Yup, tried it out and C++ is totally fine with curses.) 

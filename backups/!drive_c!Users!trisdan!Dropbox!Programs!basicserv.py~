@@ -1,0 +1,25 @@
+import socket
+
+# create an internet streaming socket (TCP/IP)
+serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# use localhost and port 2007
+serversocket.bind(('192.168.2.11', 2007))
+
+# Get ready to receive requests
+serversocket.listen(5)
+
+connections = 0
+while True:
+    # process connections from clients
+    clientSocket, address = serversocket.accept()
+    connections += 1
+    print("Connection {0} using port {1}".format(connections, address[1]))
+
+    while True:
+        req = clientSocket.recv(100)
+        if not req:
+            break # Client closed connection
+        message = "Thank you!, processed connection number {0}"
+        clientSocket.send(message.format(connections))
+    clientSocket.close()

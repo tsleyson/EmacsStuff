@@ -1,0 +1,51 @@
+public class DutchFlag {
+    public int[] aroundPivot(int[] array, int pivotIndex) {
+        // Swap pivot to last element.
+        int pivot = array[pivotIndex];
+        array[pivotIndex] = array[array.length-1];
+        array[array.length-1] = pivot;
+
+        int i, j, temp;
+        i = -1;
+        for (j = 0; j < array.length-1; ++j) {
+            if (array[j] < pivot) {
+                temp = array[j];
+                array[j] = array[++i];
+                array[i] = temp;
+            }
+        }
+        // Swap pivot (at end) with middle element.
+        array[array.length-1] = array[++i];
+        array[i] = pivot;
+        return array;
+    }
+
+    private static void printArray(int[] a) {
+        for (Integer i : a) {
+            System.out.printf("%-4d", i);
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        DutchFlag d = new DutchFlag();
+        int[] t1 = new int[] {5, 3, 4, 7, 2, -3, 1};
+        int[] t2 = new int[] {4, 4, 4, 4, 4, 4, 4};
+        int[] t3 = new int[] {1, 2, 3, 4, 5};
+        int[] t4 = new int[] {5, 4, 3, 2, 1};
+        int[] t5 = new int[] {5, 3, 4, 7, 4, 3, 9};
+        printArray(d.aroundPivot(t1, 2));
+        printArray(d.aroundPivot(t2, 3));
+        printArray(d.aroundPivot(t3, 4));
+        printArray(d.aroundPivot(t4, 0));
+        printArray(d.aroundPivot(t4, 4));
+        printArray(d.aroundPivot(t5, 2));
+
+
+
+
+
+
+
+    }
+}

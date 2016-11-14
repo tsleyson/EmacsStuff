@@ -1,0 +1,139 @@
+(defn binary-search [v target]
+  (loop [lower 0, upper (dec (count v)), 
+         middle (int (+ lower (/ (- upper lower) 2)))]
+    (if (= (v middle) target)
+      middle
+      (recur (if (> target (v middle))
+               middle
+               lower)
+             (if (< target (v middle))
+               middle
+               upper)
+             (int (+ lower (* 1/2 (- upper lower))))))))
+
+;; Problem 5.1.
+(defn parity [x]
+  "0 for even parity, 1 for odd."
+  (mod 
+   (reduce + 0
+           (map (partial bit-and 1) 
+                (take-while (complement zero?) 
+                            (iterate #(bit-shift-right % 1) x))))
+   2))
+
+;; Problem 13.1
+(defn compare-canonical
+  "Canonical forms of string (sorted, all letters capital) compared."
+  [s1, s2]
+  (letfn [to-canonical ([s] (sort (clojure.string/upper-case s)))]
+    (= (to-canonical s1) (to-canonical s2))))
+
+(defn into-anagrams
+  "Partitions dictionary into groups of anagrams."
+  [dictionary]
+  (group-by #(sort (clojure.string/upper-case %)) dictionary))
+
+(defn into-anagrams2
+  "The 4Clojure version for Problem 77."
+  [words]
+  (into #{} (map set 
+                 (filter #(< 1 (count %))
+                         (vals (group-by 
+                                #(sort
+                                  (clojure.string/upper-case %))
+                                words))))))
+(defn into-anagrams3
+  "LTR macro version."
+  [words]
+  (->> words
+       (group-by #(sort (clojure.string/upper-case)))
+       vals
+       (filter #(< 1 (count %)))
+       (map set)
+       (into #{})))
+
+;; (defn kth-largest
+;;   "Finds kth largest item using Quickselect."
+;;   [k items]
+;;   (loop [pivot (first items), used #{}]
+;;     (let [smaller (vec (filter (partial >= pivot) items))
+;;           larger (vec (filter (partial < pivot) items))]
+;;       (cond
+;;        (= k (count smaller))
+;;         pivot
+;;        (< k (count smaller))  ; kth-largest larger than pivot.
+;;        (recur (first (remove used larger))
+;;               (conj used pivot))
+;;        :else  ; kth-largest smaller than pivot.
+;;        (recur (first (remove used smaller))
+;;               (conj used pivot))))))
+
+(defn kth-largest
+  "Finds the kth-largest item in v. Problem 12.11 of EPI."
+  [v k]
+  (loop [segment v, mag k, pivot (rand-nth v)]
+    (let [l (filter (partial > pivot) v)
+          m (filter (partial = pivot) v)
+          u (filter (partial < pivot) v)]
+      (cond
+       (<= k (count l))
+         (recur l k (rand-nth l))
+       (> k (+ (count l) (count m)))
+         (recur u (- k (count l) (count m)) (rand-nth u))
+       :else
+         pivot))))
+
+(defn int-sqrt
+  "Finds the integer square root."
+  [x]
+  (loop [l 0, h x, c (Math/floor (* 1/2 x))]
+    (if (< (* c c) x (* (inc c) (inc c)))
+      c
+      (recur (if (< (* c c) x)
+               (+ c (* 1/2 (- h l)))
+               l)
+             (if (< x (* (inc c) (inc c)))
+               (+ l (* 1/2 (- c l)))
+               h)
+             (Math/floor (* 1/2 (- h l)))))))
+
+(defn letter-constructible?
+  "Tests if ransom letter can be made from letters in mag.
+   Problem 13.3 of EPI."
+  [ransom magazine]
+  (= (frequencies ransom) (frequencies magazine)))
+
+;; Problem 7.6
+(defn next-look&say
+  "Given look&say n-1, returns look&say n."
+  [prev]
+  (->> prev
+       (partition-by identity)
+       (mapcat #(vector (count %) (first %)))
+       (apply str)))
+
+(defn look&say
+  "Returns a lazy sequence of look and say numbers."
+  [prev]
+  (lazy-seq
+   (cons prev (look&say (next-look&say prev)))))
+
+;; Then, if you want the twentieth number from the standard
+;; sequence...
+(nth (look&say "1") 20)
+
+;; Problem 9.3
+(defn balanced?
+  "Checks if a string of {}, [], and () is balanced."
+  [s stack]
+  (cond
+   (empty? s)
+     (empty? stack)
+   (contains? #{\{ \( \[} (first s))
+     (recur (rest s) (conj stack (first s)))
+   (contains? #{\} \) \]} (first s))
+     (if (= (last stack) (get {\) \(, \] \[, \} \{} (first s) false))
+       (recur (rest s) (pop stack))
+       false) 
+   :else
+     (recur (rest s) stack)))

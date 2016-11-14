@@ -1,0 +1,109 @@
+# webtable2csv.py
+# Takes a web address, reads all of that page's tables and puts the
+# info into a CSV file.
+# Note: Emacs and Open Office both recognize the output as Unicode, so
+# probably Clojure will too, so just read from the CSV in Clojure to
+# get the data. And remember: Column 2 is the keys of the map, Column
+# 1 is the values.
+# I could have done this whole thing in Clojure but marketability:
+# Clojure hasn't got it.
+import sys
+import csv
+import io
+import urllib2
+import pprint
+import HTMLParser
+import StringIO
+
+class TableRetriever(HTMLParser.HTMLParser):
+    def __init__(self, pagetext):
+        HTMLParser.HTMLParser.__init__(self)
+        self.intable = False  
+        # Protect us somewhat from malformed
+        # input by only adding if we're in a table tag.
+        self.intag = ''  # Current tag.
+        self.specialwrite = False  # Special flag to write data.
+        self.tr = []  # Build up a row of the table.
+        self.table = []  # Store the row here when it's done.
+        self.tablelist = [] # Store each table here.
+        self.feed(pagetext)
+
+    def handle_starttag(self, tag, attrs):
+        "Set up flags for tables."
+        self.intag = tag
+        if tag == 'table':
+            self.intable = True
+        elif (self.intable is True and
+              tag == 'span' and ('class', 'Unicode') in attrs):
+            self.specialwrite = True
+            
+
+    def handle_endtag(self, tag):
+        "Append row to table and reset, clear flags."
+        if tag  == 'table':
+            self.intable = False
+            self.tablelist.append(self.table)
+            self.table = []
+        elif tag == 'tr':
+            self.table.append(self.tr[:])
+            self.tr = []
+        self.intag = ''
+    
+    # Note: dumps charrefs (&gt;, &amp;, etc.) Override
+    # the handle_charref method to deal with this.
+    def handle_data(self, data):
+        "Append data to current row if we want it."
+        if self.in_table_and_want_data(self.intag) or self.specialwrite:
+            self.tr.append(data)
+            self.specialwrite = False
+    
+    def handle_entityref(self, name):
+        if self.in_table_and_want_data(self.intag) or self.specialwrite:
+            self.tr.append("&" + name + ";")
+            self.specialwrite = False
+
+    def in_table_and_want_data(self, tag):
+        "Check whether we're inside a table, inside a tag whose data we want."
+        return self.intable is True and tag in ('td', 'th')
+
+# def make_dict_from_rows(f, pred, keyind=0, valind=1):
+#     """
+#     f is a csv file path.
+#     pred takes two arguments, a key and a value, and
+#     returns true if both items validate.
+#     Passes the items at indices keyind and valind.
+#     """
+#     with open(f, "r") as csvf:
+#         reader = csv.reader(csvf)
+#         kvpairs = [(row[keyind], row[valind])
+#                     for row in reader
+#                     if (len(row) > max(keyind, valind) and
+#                         pred(row[keyind], row[valind]))]
+#         return kvpairs
+
+if __name__ == "__main__":
+    if (len(sys.argv) < 2):
+        print("Usage:\nwebtable2csv.py <url of page> <path to csv file>")
+        sys.exit(0)
+    print("Opening url {0}...".format(sys.argv[1]))
+    page = urllib2.urlopen(sys.argv[1])
+    print("Parsing data...")
+    parser = TableRetriever(page.read())
+    page.close()
+
+    print("Writing to file...")
+    with open(sys.argv[2], mode="w") as f:
+        writer = csv.writer(f)
+        for table in parser.tablelist:
+            writer.writerows(table)
+            writer.writerow(['\n'])
+    print("Processing complete; data written to {0}".format(sys.argv[2]))
+
+    # pairlist = make_dict_from_rows("xmlent.csv", lambda k,v:
+    #                                not (k[0].isupper() or
+    #                                     v[0].isupper()))
+    # with io.open("entmap", mode="w", encoding="utf-8") as outf:
+    #     for pair in pairlist:
+    #         print(unicode(pair[0], "utf-8"),
+    #               unicode(pair[1], "utf-8").encode('utf-8'))
+

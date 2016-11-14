@@ -1,0 +1,41 @@
+# separatetimes.py
+# Tally up total internet usage during bonus period and anytime period.
+import sys
+import csv
+
+def get_divisor(amount):
+    if amount < 2**10:
+        return (1, 'B')
+    elif 2**10 <= amount < 2**20:
+        return (2**10, 'KB')
+    elif 2**20 <= amount < 2**30:
+        return (2**20, 'MB')
+    else:
+        # amount >= 2**30
+        return (2**30, 'GB')
+        
+if not sys.argv[1]:
+    print("Usage: python separatetimes.py <times csv>")
+    sys.exit()
+
+bonus_times = {"{0}:00 - {0}:59".format(x) for x in range(2, 8)}
+bonusbytes = 0
+total = 0
+with open(sys.argv[1], "r") as times:
+    timesreader = csv.reader(times, delimiter=',')
+    # expect a header
+    next(timesreader)
+    for row in timesreader:
+        # CSV rows are just lists.
+        if row[1] in bonus_times:
+            bonusbytes += int(row[-1])
+        elif row[0] == "Total":
+            total = int(row[-1])
+
+divisor, units = get_divisor(total - bonusbytes)
+print("Anytime:\n{0:>10.2f} {1}\n".format((total-bonusbytes) / divisor,
+                                        units))
+divisor, units = get_divisor(bonusbytes)
+print("Bonus:\n{0:>10.2f} {1}\n".format(bonusbytes/divisor, units))
+divisor, units = get_divisor(total)
+print("Total:\n{0:>10.2f} {1}\n".format(total/divisor, units))

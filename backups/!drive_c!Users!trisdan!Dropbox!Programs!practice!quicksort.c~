@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+int partition(int* a, int lower, int upper) {
+    int pivot = a[upper];
+    int i = lower - 1;
+    int j;
+    for (j = lower; j < upper; ++j) {
+        if (a[j] <= pivot) {
+            int temp = a[++i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+    a[upper] = a[++i];
+    a[i] = pivot;
+    return i;
+}
+
+void quicksort_helper(int* a, int lower, int upper) {
+    assert(a);
+    int middle = partition(a, lower, upper);
+    assert(lower < middle || middle < upper); // Interval should
+                                              // always shrink.
+    /* THIS IS THE PROBLEM -- DOES NOT HALT */
+    if (lower == upper) {
+        // There's only one element in the subarray
+        return;
+    } else {
+        quicksort_helper(a, lower, middle);
+        quicksort_helper(a, middle+1, upper);
+    }
+}
+
+int* quicksort(int* a, int size) {
+    quicksort_helper(a, 0, size-1);
+    return a;
+}
+        
+int main(void) {
+    int a[] = {5, 12, 21, 4, 9, 18, 36, 11, 42, 102, 4, -23};
+    int size = 12;
+    int* sorted = quicksort(a, size);
+    int i;
+    for (i = 1; i < size; ++i) {
+        //assert(a[i-1] < a[i]);
+        printf("%4d", a[i-1]);
+    }
+    printf("%4d", a[size-1]);
+    return 0;
+}

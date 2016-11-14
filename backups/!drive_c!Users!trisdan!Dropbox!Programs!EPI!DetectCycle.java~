@@ -1,0 +1,44 @@
+public class DetectCycle {
+    public static boolean hasCycle(ListNode<Integer> head) {
+        ListNode<Integer> fast, slow;
+        fast = slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            if (slow == fast)
+                return true;
+            slow = slow.next;
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean whereCycle(ListNode<Integer> head) {
+        boolean cycleDetected = false;
+        ListNode<Integer> fast, slow;
+        fast = slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            if (slow == fast)
+                cycleDetected = true;
+            slow = slow.next;
+            if (slow == fast)
+                cycleDetected = true;
+        }
+        if (cycleDetected) {
+            
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Integer[] a1 = new Integer[] {10, 9, 8, 7, 6, 5, 4, 2, 1};
+        ListNode<Integer> t1 = ListNode.listFromArray(a1);
+        ListNode<Integer> tail;
+        for (tail = t1; tail.next != null; tail = tail.next);
+
+        System.out.println("Shouldn't have cycle " + hasCycle(t1));
+        tail.next = t1;
+        System.out.println("Should have cycle " + hasCycle(t1));
+    }
+}

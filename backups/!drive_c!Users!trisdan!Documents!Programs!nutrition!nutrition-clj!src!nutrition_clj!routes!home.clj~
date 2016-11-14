@@ -1,0 +1,23 @@
+(ns nutrition-clj.routes.home
+  (:require [compojure.core :refer :all]
+            [compojure.handler :as handler]
+            [nutrition-clj.layout :as layout]
+            [nutrition-clj.util :as util]
+            [nutrition-clj.db :as db]))
+
+(defn recipe [id]
+  "Get a recipe display page."
+  (let [{:keys [name ingredients instructions]}
+        (db/recipe-by-id id)]
+    (apply str (layout/base layout/recipe name ingredients instructions))))
+
+(defroutes home-routes
+  (GET "/" [] (fn [req] (apply str (layout/base #(identity "Dummy home page")))))
+  (GET "/recipe" req (if-let [id (get-in req [:params :id])]
+                         (recipe id)
+                         (throw (IllegalArgumentException.
+                                 (str  "No id given in " req))))))
+;; Make sure not to put [] around req—it leads to disaster.
+
+(def app (-> home-routes
+             (handler/api)))

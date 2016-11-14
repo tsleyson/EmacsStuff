@@ -1,0 +1,12 @@
+(defn binary-search [v target]
+        (loop [lower 0, upper (dec (count v)), 
+                     middle (int (+ lower (/ (- upper lower) 2)))]
+              (if (= (v middle) target)
+                  middle
+                (recur (if (> target (v middle))
+                           middle
+                           lower)
+                       (if (< target (v middle))
+                           middle
+                           upper)
+                       (int (+ lower (/ (- upper lower) 2)))))))

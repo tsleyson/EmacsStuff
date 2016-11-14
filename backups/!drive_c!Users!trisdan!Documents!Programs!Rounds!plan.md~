@@ -1,0 +1,14 @@
+# Rounds plan
+Rounds is a horrible joke on PySounds + the fact that Ruby stuff always starts with ‘r’. It’s my plan to redo PySounds in Ruby, not because there’s really any benefit (although I do think certain regex-related things will be slightly easier), but just to learn Ruby better.
+
+I also want to implement the more sophisticated syntax for the rules files that I was going to do in Clojure but ended up not doing. (This isn’t really Clojure’s kind of thing anyway. Clojure will do this sort of thing without complaining too much, but it’ll take forever to get around to it. This is really Ruby’s thing.)
+
+## Rules file
+Will be more sophisticated and will have a real parser and even some semantic checking to make sure categories aren’t double-declared.
+
+A small and probably idiotic CFG for the language of the rules file:
+
+category -> name ‘=’ ‘[‘ letter {‘ ‘ letter} ‘]’
+rule -> sound ‘->’ sound [where-clause] [‘except’ where-clause]
+where-clause -> ‘where ’ environment
+environment -> (‘#’ | letter {letter}) ‘_’ (‘#’ | letter {letter})

@@ -1,0 +1,6 @@
+def subsets(subs, s):
+     if len(s) == 0: return subs
+     else:
+             for item in s:
+                     subsets(subs.append(item), s[1:])
+                     subsets(subs, s[1:])

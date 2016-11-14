@@ -1,0 +1,4 @@
+object euler12 {
+  def countFactors(n: Int): Int = {
+    val sqrt: Double = Math.sqrt(n)
+    var count = if (sqrt == Math.round(sqrt)) -1; else 0

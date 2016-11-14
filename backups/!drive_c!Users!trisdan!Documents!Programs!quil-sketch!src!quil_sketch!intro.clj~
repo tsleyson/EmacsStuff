@@ -1,0 +1,53 @@
+(ns quil-intro
+  (:require [quil.core :as q]
+            [quil.middleware :refer [fun-mode]]))
+
+;; define f
+(defn spiral [t]
+  [(* t (q/sin t))
+   (* t (q/cos t))])
+
+(defn flower [t]
+  (let [r (* 200 (q/sin t) (q/cos t))]
+    [(* r (q/sin (* t 0.2)))
+     (* r (q/cos (* t 0.2)))]))
+
+(defn draw-plot [f from to step]
+  (doseq [two-points (->> (range from to step)
+                          (map f)
+                          (partition 2 1))]
+    ;; we could use 'point' function to draw a point
+    ;; but let's rather draw a lien which connects 2 points of the
+    ;; plot
+    (apply q/line two-points)))
+
+(defn draw [state]
+  ; move origin to center of sketch
+  ; by default origin is in top left corner.
+  (q/with-translation [(/ (q/width) 2) (/ (q/height) 2)]
+    (let [t (/ (q/frame-count) 10)]
+      (q/stroke (:color state))
+      (q/line (flower t)
+              (flower (+ t 0.1))))))
+
+(defn update
+  "Updates the state, passes to draw."
+  [state]
+  {:color (mod (+ (:color state) 0.99) 255)})
+
+(defn setup []
+  ;; draw will be called 60 times per second
+  (q/frame-rate 60)
+  ;; set background to white color in the setup only.
+  ;; otherwise each invocation of 'draw' would clear sketch.
+  (q/background 255)
+  (q/color-mode :hsb)
+  {:color 0})
+
+;; run sketch
+(q/defsketch trigonometry
+  :size [300 300]
+  :setup setup
+  :update update
+  :draw draw
+  :middleware [fun-mode])

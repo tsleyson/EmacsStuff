@@ -1,0 +1,183 @@
+import argparse
+import hashlib
+import lxml.etree as etree
+import os.path
+import re
+import sqlite3
+import sys
+from zipfile import ZipFile
+
+def write_text_to_file(all_text):
+    "Just a test for text extraction, might be useful later."
+    f = open("testfile", "w", encoding="utf8")
+    for parno, text in enumerate(all_text):
+#        paragraph = ''.join(text)
+        if paragraph:
+            # Write non-empy paragraphs only.
+            f.write(str(parno) + ":\t")
+            f.write(paragraph)
+            f.write("\n\n")
+    f.close()
+
+def open_db(db_file):
+    conn = sqlite3.connect(db_file)
+    return conn, conn.cursor()
+
+# TODO Finish this function.
+# def write_files_to_db(db_name, files):
+#     '''
+#     Writes a list of files to the given database.
+#     '''
+#     conn, cursor = open_db(db_name)
+#     try:
+#         for f in files:
+#             write_to_db((conn,cursor), f, extract_text(f))
+    
+def write_to_db(db, fname):
+    '''
+    Writes text to db, a connection/cursor tuple.
+    Database must already exist and have tables called
+    files and text, as defined in story_db.sql.
+    '''
+    conn, cursor = db
+    cursor.execute("insert into files values(NULL,?)", (fname,))
+    cursor.execute("select id from files where name=?", (fname,))
+    file_id = cursor.fetchone()[0] # ignores dups
+
+    document = extract_text(fname)
+    for par_no, paragraph in enumerate(document):
+        if paragraph:
+            hasher = hashlib.md5()
+            hasher.update(bytes(paragraph, encoding="utf8"))
+            digest = hasher.hexdigest()
+            # Hexdigest is printable, digest is binary.
+            cursor.execute("insert into text values(?,?,?,?)",
+                           (file_id, par_no, digest, paragraph,))
+    conn.commit()
+
+def extract_text(file):
+    '''
+    Extracts text from file and returns as iterable.
+    Can handle odt, docx, org, and markdown.
+    '''
+    _, ext = os.path.splitext(file)
+    if ext in [".odt", ".doc", ".docx"]:
+        return extract_odt_text(file)
+    elif ext in [".org", ".markdown", ".md", ".txt"]:
+        return extract_humane_text(file)
+    else:
+        raise Exception("Unsupported file type: {}".format(ext))
+    
+def extract_odt_text(odt_file):
+    '''
+    Extracts text from an ODT file. Also works
+    on docx.
+    '''
+    z = ZipFile(odt_file)
+    doc = etree.parse(z.open("content.xml"))
+
+    try:
+        root = doc.getroot()
+        ns = root.nsmap
+        # nsmap is all the namespace prefixes in the document.
+    
+        for elem in root.xpath("//text:p[text:span]",
+                               namespaces=ns):
+            etree.strip_tags(elem, '{{{}}}span'.format(ns['text']))
+            # You have to write {{ to get a literal { in
+            # a format string. The inner pair {} is the
+            # actual formatting character.
+
+        all_text = (''.join(elem.itertext()) for elem in
+                    root.xpath("//text:p", namespaces=ns))
+        return all_text
+    finally:
+        z.close()
+
+def extract_humane_text(humane_file):
+    '''
+    Extracts text from the "humane markup" formats,
+    markdown and org, using regexes.
+    '''
+    heading_or_paragraph = re.compile(
+        r'''
+        ^\s*([^=]+)\n=+ |      # Match md setext headers.
+        ^\s*[#*]+(.*)+\n |  # Match md # or org * headers.
+        \s*(.+)(\n\n)?        # Match normal paragraphs.
+        ''',
+        re.VERBOSE)
+    with open(humane_file) as f:
+        return (m.group(0).strip() for m in
+                heading_or_paragraph.finditer(f.read()))
+    
+if __name__ == "__main__":
+    # if len(sys.argv) != 3:
+    #     print(sys.argv[1])
+    #     print(sys.argv[2])
+    #     print("Usage: <database> <odt>")
+    #     sys.exit()
+
+    # db_file = sys.argv[1]
+    # odt_file = sys.argv[2]
+
+    # all_text = extract_text(odt_file)
+    # write_to_db(db_file, odt_file, all_text)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("root",
+                        help='''
+                        The root directory to start searching
+                        in.
+                        All files in or below this directory
+                        of the selected type will be read
+                        and stored.
+                        ''')
+    parser.add_argument("database",
+                        help='''
+                        The sqlite database in which to store the
+                        files.
+                        It should already be initialized with a files
+                        table and a text table.
+                        ''')
+    parser.add_argument("-o", "--include-odt",
+                        action='store_true',
+                        help='''
+                        Store files with .odt extension
+                        ''')
+    parser.add_argument("-d", "--include-doc",
+                        action='store_true',
+                        help='''
+                        Store files with .doc or .docx extension.
+                        ''')
+    parser.add_argument("-m", "--include-markdown",
+                        action='store_true',
+                        help='''
+                        Store files with .md or .markdown extension.
+                        ''')
+    parser.add_argument("-r", "--include-org",
+                        action='store_true',
+                        help='''
+                        Store files with .org extension.
+                        ''')
+    parser.add_argument("-t", "--include-text",
+                        action='store_true',
+                        help='''
+                        Store files with .txt extension.
+                        ''')
+    parser.add_argument("-x", "--exclude",
+                        nargs='*',
+                        help='''
+                        A list of files and directories which
+                        should not be included in the search.
+                        ''')
+
+    args = parser.parse_args()
+    
+    # TODO: Separate out the database connection process from
+    # write_to_db. We want to keep the same cursor and the same
+    # connection, but parse and write multiple files.
+    
+#  for path, dirs, files in os.walk(os.getcwd()):
+# ...   print(path)
+# ...   for f in files:
+# ...     if ".odt" in f: print("\t{}".format(f))

@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+# A Bash script to build a Strawberry Sunflower book from a bunch of
+# Markdown files.
+# Options: -o <output file name>
+#          -s <stylesheet>
+# You have to include the style tags in the stylesheet. 
+# Pandoc depends on the output file's extension to get the output format.
+
+# Note: following colon means option takes an argument.
+# See Learning the Bash Shell page 140.
+while getopts ":o:s:" opt; do
+    case $opt in
+        o ) outf=$OPTARG ;;
+        s ) style=$OPTARG ;;
+        \?) echo "Usage: buildstrawsun [-f outfile] [-s stylesheet] files*"
+            exit 1
+    esac
+done
+shift $(($OPTIND - 1))  # Move to input files.
+# Error handling
+if [[ "$#" -eq 0 ]]; then  # Need at least one input file.
+    echo "Error: No input files given."
+    exit 1
+fi
+
+pandoc_opts="--smart --toc --toc-depth=1"
+
+if [ -z "$outf" ] && [ -z "$style" ]; then
+    pandoc $pandoc_opts "$@"
+elif [ -z "$outf" ]; then
+    pandoc $pandoc_opts "$@" -H "$style"
+elif [ -z "$style" ]; then
+    pandoc $pandoc_opts -o "$outf" "$@"
+else
+    pandoc $pandoc_opts -o "$outf" "$@" -H "$style"
+fi
+
+#pandoc --smart --toc --toc-depth=1 \
+#    -o "$outf" "$@" -H "${basedir}/stylelink.html"

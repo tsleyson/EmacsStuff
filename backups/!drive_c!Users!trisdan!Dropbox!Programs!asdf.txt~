@@ -1,0 +1,1 @@
+Select the outbound contact and the outbound email link with the same master id. We don't need to care that the outbound contact by email wasn't done at the time of the outbound link being clicked; we just need to care that the link in that profile was clicked, and contact by email was made. 

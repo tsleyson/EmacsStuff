@@ -1,0 +1,100 @@
+-- Matching against multiple possible values
+SELECT * FROM cd.facilities WHERE facid IN (1, 5);
+-- with a subquery
+select * from cd.facilities
+  where
+    facid in ( select facid from cd.facilities );
+-- classifying in buckets
+select name,
+  case when (monthlymaintenance > 100) then
+    'expensive'
+  else
+    'cheap'
+  end as cost
+  from cd.facilities;
+-- Selecting members who joined after September 2012
+select firstname, surname, joindate
+from cd.members
+where joindate >= '2012-09-01 00:00:00';
+-- Ordered list of the first ten surnames.
+select distinct surname
+from cd.members
+order by surname
+limit 10;
+  -- Note: you can use OFFSET to save your place, e.g. for doing
+  -- pagination.
+-- Combining results from multiple queries.
+select surname from cd.members
+union
+select name from cd.facilities
+-- Just like set theory.
+-- Union all does not remove duplicates
+
+-- Get the date of joining of the latest member.
+select max(joindate) as latest from cd.members;
+
+-- Get that member's firstname, surname, and joindate.
+select firstname, surname, joindate
+from cd.members
+where joindate = (select max(joindate) from cd.members);
+
+-- Get all starttimes for David Farrell
+select bks.starttime
+from cd.bookings bks
+inner join cd.members mems
+on mems.memid = bks.memid
+where mems.firstname = 'David'
+and mems.surname = 'Farrell';
+
+-- Get all bookings for tennis courts on 2012-09-21
+select starttime as start, name
+from cd.facilities facs inner join cd.bookings bk
+  on facs.facid = bk.facid
+where 
+  facs.facid in (0, 1)  -- tennis court ids
+  and bk.starttime >= '2012-09-21' 
+  and bk.starttime < '2012-09-22'
+order by start;
+
+-- Get a list of all members who have recommended another member at
+-- some point.
+select distinct rec.firstname, rec.surname
+  from cd.members mems inner join cd.members rec
+  on mems.recommendedby = recs.memid
+order by surname, firstname;
+-- Like a nested loop.
+
+-- Get a list of all members, also printing the person who recommended
+-- them, if anyone, ordered by surname and then firstname.
+select distinct m.firstname as memfname, 
+  m.surname as memsname, 
+  r.firstname as recfname, 
+  r.surname as recsname
+  from cd.members m left outer join cd.members r
+    on m.recommendedby = r.memid
+  order by memsname, memfname;
+
+
+-- Find all member who've used a tennis court.
+-- You have to do two joins since you first have to join
+-- members with bookings to figure out which members have used any
+-- facility at all, then join that table thus created with the
+-- facilities table to find the names of those facilities, then find
+-- all the tennis court entries in that table. You can also use where
+-- facid in (0, 1) but I prefer this version with like for readability.
+select distinct 
+  m.firstname || ' ' || m.surname as member,
+  f.name as facility
+  from cd.members m 
+    inner join cd.bookings b
+          on m.memid = b.memid
+    inner join cd.facilities f 
+          on b.facid = f.facid
+  where name like 'Tennis Court%'
+order by member;
+
+-- Find bookings that cost more than $30 on 2012-09-14.
+select
+  m.firstname || ' ' || m.surname as member,
+  f.name as facility,
+  

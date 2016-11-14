@@ -1,0 +1,12 @@
+// Treat an array of bytes as a bunch of base-128 digits. Would be
+// base 256 if we had unsigned bytes but we don't.
+import java.util.Arrays;
+
+public class MyBigInt {
+    byte[] storage;
+    private final int base = 128;
+    
+    public MyBigInt(long init) {
+        int numdigits = (int)Math.log(init, base);
+    }
+}

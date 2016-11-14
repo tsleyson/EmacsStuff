@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char *d = malloc(sizeof(char)*6);
+    strcpy(d, "Hello");
+    printf("%s", d);
+    return 0;
+}

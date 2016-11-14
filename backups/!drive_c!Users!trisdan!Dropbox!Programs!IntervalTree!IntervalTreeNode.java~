@@ -1,0 +1,8 @@
+
+package io.github.tsleyson.intervaltree;
+
+import java.util.ArrayList;
+
+public class IntervalTreeNode {
+
+}

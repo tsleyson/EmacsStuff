@@ -1,0 +1,42 @@
+(ns 'cps)
+
+(defn factCPS
+  "A continuation-passing version of factorial. See Art of Recursion Prob 10."
+  [continuation n]
+  (if (zero? n)
+    (continuation n)
+    (recur (comp continuation #(* n %)) (dec n))))
+
+(defn mapCPS
+  "CPS version of map. Based on simple-map"
+  [k f ls]
+  (if (empty? ls)
+    (k ls)
+    (recur (comp k #(cons (f (first ls)) %)) f (rest ls))))
+
+(defn simple-map
+  "Translation of Art of Recursion's Haskell version."
+  [f ls]
+  (if (empty? ls)
+    nil
+    (cons (f (first ls)) (rest ls))))
+
+(defn naive-fib
+  [n]
+  (condp = n
+    0 0
+    1 1
+    (+ (naive-fib (- n 1)) (naive-fib (- n 2)))))
+                                        ; Just stick
+                                        ; default at end.
+(defn fib-cps
+  [k n]
+  (condp = n
+    0 (k 0)
+    1 (k 1)
+    (recur
+     (fn [fn-1]
+       (fib-cps (fn [fn-2]
+                  (k (+ fn-1 fn-2)))
+                (- n 2))
+       (- n 1)))))

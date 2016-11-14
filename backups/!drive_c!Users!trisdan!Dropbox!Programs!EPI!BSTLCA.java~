@@ -1,0 +1,34 @@
+// Problem 15.5 of EPI
+public class BSTLCA {
+    public BinaryTreeNode<Integer> findLCA(BinaryTreeNode<Integer> root,
+                                           BinaryTreeNode<Integer> n1,
+                                           BinaryTreeNode<Integer> n2) {
+        assert root != null && n1 != null && n2 != null :
+            "Null input given, cannot be tolerated.";
+        BinaryTreeNode<Integer> small, big;
+        if (n1.val < n2.val) {
+            small = n1;
+            big = n2;
+        }
+        else {
+            small = n2;
+            big = n1;
+        }
+        BinaryTreeNode<Integer> cursor = root;
+        while (cursor != null) {
+            if (cursor.val < small.val) {
+                cursor = cursor.right;
+            }
+            else if (cursor.val > big.val) {
+                cursor = cursor.left;
+            }
+            else {
+                assert small.val <= cursor.val &&
+                    cursor.val <= big.val :
+                "Stopped on invalid condition.";
+                return cursor;
+            }
+        }
+        throw new RuntimeException("Should not have reached this point.");
+    }
+}

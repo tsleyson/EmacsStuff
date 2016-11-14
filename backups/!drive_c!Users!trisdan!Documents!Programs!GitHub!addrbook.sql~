@@ -1,0 +1,14 @@
+-- drop the tables if they exist and recreate them afresh
+-- use constraints to improve data integrity
+drop table address;
+create table address (
+ContactID Integer Primary Key,
+First Not Null,
+Last Not Null,
+House Not Null,
+Street Not Null,
+District,
+Town Not Null,
+PostCode Not Null,
+Phone Not Null
+);

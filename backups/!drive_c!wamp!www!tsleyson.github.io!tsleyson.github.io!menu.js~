@@ -1,0 +1,6 @@
+function hideMenus() {
+    $('#menu > li > ul')
+    .hide()
+    .click(function(event) {
+        event.stopPropagation();
+    }); 

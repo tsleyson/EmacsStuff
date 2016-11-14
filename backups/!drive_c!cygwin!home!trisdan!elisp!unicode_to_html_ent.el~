@@ -1,0 +1,2 @@
+(add-to-load-path "C:/Users/trisdan/.emacs.d/my-extensions/html-entities.el")
+(require )

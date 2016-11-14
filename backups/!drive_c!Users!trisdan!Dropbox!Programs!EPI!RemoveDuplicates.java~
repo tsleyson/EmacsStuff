@@ -1,0 +1,11 @@
+/* Problem 6.6 of EPI. */
+
+public class RemoveDuplicates {
+    public static void removeDuplicates(int[] a) {
+
+    }
+    
+    public static void main(String[] args) {
+
+    }
+}

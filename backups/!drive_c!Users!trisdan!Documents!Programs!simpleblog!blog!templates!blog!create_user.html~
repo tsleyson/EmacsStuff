@@ -1,0 +1,7 @@
+{% extends "user_info.html" %}
+{% block title %}Create a new user{% endblock %}
+{% block content %}
+  {% if error %}
+    <p><span class="error">Something isn't right...AAAH!</span></p>
+  {% endif %}
+    

@@ -1,0 +1,31 @@
+# sieve.py
+# The Sieve of Erathosthenes in Python.
+
+import sys, math
+
+def find_factor(target):
+    for prime in range(2, int(math.floor(math.sqrt(target)))):
+        if target % prime == 0:
+            print(prime)
+            return False
+    return True
+
+
+def sieve(target):
+    purported_primes = [x for x in range(2, target+1)]
+    for prime in purported_primes:
+        print(prime)
+        purported_primes = [x for x in purported_primes
+                            if x != prime and x % prime != 0]
+        print(purported_primes)
+        if target not in purported_primes:
+            print(prime)
+            return False
+    return True
+
+if __name__ == "__main__":
+    if len(sys.argv) < 1:
+        raise IOException
+    target = int(sys.argv[1])
+    print(target)
+    print(sieve(target))

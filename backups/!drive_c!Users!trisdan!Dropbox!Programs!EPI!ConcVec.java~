@@ -1,0 +1,10 @@
+// Part of EPI Problem 20.7.
+
+import java.util.ArrayList;
+import java.util.List;
+
+package tsleyson.EPI207;
+
+public class ConcVec<T> implements Mutable {
+
+}

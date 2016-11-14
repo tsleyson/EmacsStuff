@@ -1,0 +1,12 @@
+(ns 'reconstruct-tree)
+
+(defn split-around
+  "Get half below item and half above."
+  [item coll]
+  (remove #{'(item)} (partition-by (partial = item) coll)))
+
+(defn reconstruct
+  "Reconstruct a tree given its in-order traversal and either the pre-
+or post-order traversal."
+  [in p selfn]
+  (s))

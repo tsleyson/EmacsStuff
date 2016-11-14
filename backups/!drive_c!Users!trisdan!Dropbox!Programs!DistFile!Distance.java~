@@ -1,0 +1,13 @@
+/** Distance.java
+    Problem 3 of Chapter 5 of Gaddis.
+*/
+
+import java.io.*;
+
+public class Distance {
+    private float milesPerHour;
+    private float timeTraveled;
+
+    public getDistance () {
+        return milesPerHour * timeTraveled;
+    }

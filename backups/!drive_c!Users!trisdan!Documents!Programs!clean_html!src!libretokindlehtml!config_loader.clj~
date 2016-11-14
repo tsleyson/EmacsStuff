@@ -1,0 +1,18 @@
+(ns libretokindlehtml.config-loader)
+
+(defn setup-config-ns
+  "Dynamically create config ns and populate with clojure.core and
+  Enlive functions."
+  []
+  (binding [*ns* *ns*]
+    (in-ns 'libretokindlehtml.config)
+    (refer-clojure)
+    (require '[net.cgrand.enlive-html :refer :all]
+             '[clojure.string :as string])))
+
+(defn load-config
+  [path]
+  (binding [*ns* *ns*]
+    (in-ns 'libretokindlehtml.config)
+    (load-file path)))
+

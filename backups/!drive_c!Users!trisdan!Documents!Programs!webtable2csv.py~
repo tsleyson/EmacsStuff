@@ -1,0 +1,4 @@
+# webtable2csv.py
+# Takes a web address, reads all of that page's tables and puts the
+# info into CSV files.
+import urllib

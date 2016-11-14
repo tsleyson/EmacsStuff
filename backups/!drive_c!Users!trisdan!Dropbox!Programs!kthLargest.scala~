@@ -1,0 +1,29 @@
+import scala.util.Random
+
+object kthLargest {
+  def kthLargest(vals: List[Int], k: Int) = {
+    def helper(vals: List[Int], k: Int, pivot: Int): Int = {
+      val l = vals filter (_ < pivot)
+      val m = vals filter (_ == pivot)
+      val u = vals filter (_ > pivot)
+
+      if (k <= l.size)
+        helper(l, k, l(Random nextInt l.size))
+      else if (k > l.size + m.size)
+        helper(u, k - l.size - m.size, u(Random nextInt u.size))
+      else  // |l| < k <= |l| + |m|
+        pivot
+    }
+
+    helper(vals, k, vals(Random nextInt vals.size))
+  }
+
+  def main(args: Array[String]): Unit = {
+    val t = Random shuffle List[Int](10, 20, 30, 40, 50, 60, 70)
+
+    println(t)
+    for (i <- 1 to t.size) {
+      printf("%d: %d%n", i, kthLargest(t, i))
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# gram-schmidt.py
+# Does the Gram-Schmidt Process to compute the QR decomposition
+# of a matrix for the normal equations.
+

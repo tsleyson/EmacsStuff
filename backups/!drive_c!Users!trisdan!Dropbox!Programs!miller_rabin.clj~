@@ -1,0 +1,100 @@
+(ns miller-rabin
+  "The Miller-Rabin Probabilistic Primality Test in Clojure.")
+
+(defn largest-dividing-power-of-2 [n]
+  "Find largest power of 2 that divides n."
+  (loop [power 1]
+    (if (not= 0 (mod n power))
+      (/ power 2)
+      (recur (* 2 power)))))
+;; Note: this gives the actual number, not its exponent. I prefer the
+;; separate-power-of-2 below, but one could add a counter or return
+;; the log to get the exponent.
+
+(defn separate-power-of-2 [n]
+  "Does the same thing as largest-dividing-power-of-2, but cleaner."
+  (loop [power 0, odd-part n]
+    (if (odd? odd-part)
+      {:odd-part odd-part, :power power}
+      (recur (inc power) (/ odd-part 2)))))
+
+(defn exp-by-squaring-rec [base expt]
+  "Non tail-recursive exponentation by squaring."
+  (cond
+   (zero? n) 1
+   (== 1 n) x
+   (even? n) (exp-by-squaring-wiki (* x x) (/ n 2))
+   (odd? n) (* x (exp-by-squaring-wiki (* x x) (/ (dec n) 2)))))
+
+(defn exp-by-squaring-iter [base expt]
+  "Tail recursive exponentation by squaring."
+  (loop [x base, n expt, accum 1]
+    (cond
+     (zero? n) accum
+     (even? n) (recur (* x x) (/ n 2) accum)
+     (odd? n) (recur x (dec n) (* accum x)))))
+
+;; Note: see http://www.billthelizard.com/2010/01/sicp-exercise-116-fast-exponentiation.html for the tail-recursive one.
+;; I initially tried to add an accumulator to the stack-blowing one, but it didn't work.
+;; The tail recursive one takes more steps because it only divides n by 2
+;; when n is even; when n is odd it just takes a step to subtract one.
+;; It uses x as an accumulator for all the multiplications that make
+;; the first version not tail recursive.
+;; You can also make the tail recursive one do a division when n is odd. I
+;; don't know how much time it actually saves, though.
+;; And it also needs to do modular exponentiation to some base. So the
+;; final version is:
+
+(defn exp-by-squaring [base expt m]
+  "Modular exponentation by repeated squaring."
+  (loop [x base, n expt, accum 1]
+    (cond
+     (zero? n) accum
+     (even? n) (recur (mod (* x x) m) (/ n 2) accum)
+     (odd? n) (recur (mod (* x x) m) (/ (dec n) 2) (mod (* x accum) m)))))
+
+
+;; Input: n > 3, an odd integer to be tested for primality;
+;; Input: k, a parameter that determines the accuracy of the test
+;; Output: composite if n is composite, otherwise probably prime
+;; write n − 1 as 2^s·d with d odd by factoring powers of 2 from n − 1
+;; WitnessLoop: repeat k times:
+;;    pick a random integer a in the range [2, n − 2]
+;;    x ← a^d mod n
+;;    if x = 1 or x = n − 1 then do next WitnessLoop
+;;     (N.B. If x = 1, we know the condition a^(n-1) /= 1 mod n has
+;;      not been fulfilled, so we move on. If x = n-1, the condition
+;;      a^(2^r*d) /= -1 mod n for all 0 <= r <= s-1 has not been
+;;      fulfilled because a^(2^0*d) = -1.
+;;      Thus a is not a witness to the compositeness of n. We need to
+;;      try another base.)
+;;    repeat s − 1 times:
+;;       x ← x^2 mod n
+;;       if x = 1 then return composite (Never will be -1; a witness)
+;;       if x = n − 1 then do next WitnessLoop (Is -1; no witness.)
+;;    (N.B. Since x /= 1 or -1, we might still have a witness. Check
+;;     that x^(2^r * d) /= -1 for all 0 <= r <= s-1.)
+;;    return composite
+;; return probably prime
+
+(defn square-root-seq
+  "Generate sequence of square-roots of a^(n-1)."
+  [a m d]
+  (iterate #(mod (* % %) m) (exp-by-squaring a d m)))
+
+(defn is-probable-prime
+  [k n]
+  (let [{:keys [odd-part power]} (separate-power-of-2 (dec n))]
+    (loop [iter-limit k
+           base (+ 2 (rand-int n))]
+      (let [sqrts (take power (square-root-seq base n odd-part))]
+        (cond
+         (zero? iter-limit)
+         :probable-prime
+         (and (== 1 (first sqrts))
+              (some #(== (dec n) %) (rest sqrts)))
+         :composite
+         :else
+         (recur (dec iter-limit) (+ 2 (rand-int n))))))))
+
+;; Throws my favorite ever, NullPointerException. (Scala may be somewhat frustrating with the type system, re. my recent two-day struggle to get an integer square root from a double, but the type system making it impossible to get NullPointerException is definitely a good thing.)

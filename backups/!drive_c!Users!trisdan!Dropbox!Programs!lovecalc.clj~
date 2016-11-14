@@ -1,0 +1,11 @@
+;; Love calculation program for Stack Exchange Code Golf
+
+(def name1 (do
+             (println "Enter your name: ")
+             (read-line)))
+(def name2 (do
+             (println "Enter your crush's name: ")
+             (read-line)))
+
+;; Get string in right format, get numbers in line
+(let [lovestr ])

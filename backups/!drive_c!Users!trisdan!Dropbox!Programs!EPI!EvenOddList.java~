@@ -1,0 +1,11 @@
+/* Problem 8.12 of EPI. */
+
+public class EvenOddList {
+    public ListNode<Integer> evenOdd(ListNode head) {
+
+    }
+
+    public static void main(String[] args) {
+
+    }
+}

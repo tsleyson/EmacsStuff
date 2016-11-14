@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+echo "All args: " $@
+
+IFS='|'
+args=( ${*//IFS/ } )
+#args= ${@:1}
+#echo $args  # Prints just first; need ${args[*]} or ${args[@]} to get
+# them all.
+echo "Second element: " ${args[2]}
+echo "Tail of args: ${args[@]:1}"
+for arg in ${args[@]}; do  # for wants a flat list like "hello" "fat" "one" 
+  echo $arg
+done

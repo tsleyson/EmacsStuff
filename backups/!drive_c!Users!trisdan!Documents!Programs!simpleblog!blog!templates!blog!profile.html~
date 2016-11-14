@@ -1,0 +1,12 @@
+{% extends "user_info.html" %}
+
+{% block title %}{{ user.username }}'s Profile{% endblock %}
+
+{% block content %}
+  {% if posts_list %}
+    {% for post in posts_list %}
+      <h1>{{ user.username }} on {{ post.post_date }}</h1>
+      <section id="post{{ post.id }}">{{ post.post_text }}</section>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

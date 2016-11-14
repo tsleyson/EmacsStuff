@@ -1,0 +1,15 @@
+(ns purelyfunctionaldatastructures.protocols)
+
+(defprotocol pfn-set
+  "Set interface for pfds sets."
+  (empty? [this])
+  (member? [this, x])
+  (balance [this])
+  (insert [this, x]))
+
+(defprotocol pfn-heap
+  "Heap interface for pfds heaps (splay, pairing, binomial, etc."
+  (insert [this x])
+  (pfn-merge [this other])
+  (find-min [this])
+  (delete-min [this]))

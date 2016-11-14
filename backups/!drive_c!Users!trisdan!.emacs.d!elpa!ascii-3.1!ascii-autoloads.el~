@@ -1,0 +1,13 @@
+;;; ascii-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'ascii-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; ascii-autoloads.el ends here

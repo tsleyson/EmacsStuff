@@ -1,0 +1,36 @@
+;; The barbershop program from Seven Languages in Seven Weeks, now
+;; that I understand Clojure concurrency a little better.
+
+(def not-neg? (comp not neg?))  ; eqv to (or (pos? %) (zero? %))
+
+(def waiting-room (ref 3 :validator not-neg?))  ; Number of free seats.
+(def cuts (ref 0 :validator not-neg?)) ; Number of haircuts given.
+
+(def #^:const chairs 3)  ; available chairs.
+(def #^:const haircut-time 20)  ; in ms
+(def #^:const day-length 10000)  ; also in ms
+
+(defn send-customers
+  [waiting-room stop]
+  "Just send in customers forever, at random intervals."
+  (doseq [interval (repeatedly #(+ 10 (rand-int 20)))]
+    (Thread/sleep interval)
+    (dosync (alter waiting-room #(if (zero? %) 0
+                                     (dec %))))))
+
+(defn give-haircuts []
+  "Give haircuts."
+  (dosync (alter waiting-room #(if (= chairs %) chairs
+                                   (inc %)))
+          (alter haircuts)))
+
+;; Code to get things started.
+(let [p (promise)
+      t (Thread. (fn []
+                   (comment Do stuff like run a day and put
+                            the result in the promise with
+                            the deliver fn.
+                            This function becomes a closure
+                            around the promise.)))]
+  (.run t)
+  (println (str "The barber gave " @p " haircuts.")))

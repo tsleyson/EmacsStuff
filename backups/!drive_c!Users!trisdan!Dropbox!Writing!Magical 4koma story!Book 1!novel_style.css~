@@ -1,0 +1,51 @@
+body {
+   /* background-color: #FFFCC9*/
+}
+.chapter { page-break-before: always; }
+
+#table_of_contents { 
+    page-break-before: always; 
+    text-align: left; 
+}
+
+#title_page { page-break-before: always; }
+
+#front_matter { text-align: center; }
+
+#main_title { text-align: center; }
+
+.heading { 
+    font-weight: bold;
+    text-align: center;
+}
+
+#legal {
+    page-break-before: always;
+}
+
+#main_text {
+   text-align: justify;
+    text-indent: 2em;
+    /*margin-left: 10em;
+    margin-right: 12em;*/
+}
+
+p.standard { 
+    margin: 0px;
+}
+#toc { 
+    list-style: none; 
+}
+#toc li {
+    padding: 5px;
+}
+
+.insert-img {
+    page-break-before: always;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

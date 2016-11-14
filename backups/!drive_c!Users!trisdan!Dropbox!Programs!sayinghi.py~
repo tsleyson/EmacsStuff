@@ -1,0 +1,8 @@
+import re
+import sys
+
+lines = sys.stdin.readlines()[1:]
+for line in lines:
+    if re.match(r"hi\s[^d]", line, re.IGNORECASE):
+        print(line)
+

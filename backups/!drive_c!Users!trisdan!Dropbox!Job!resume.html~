@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>resume</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="resume"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-04-27T12:55-0700"/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">resume</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Trisdan Leyson</a></li>
+<li><a href="#sec-2">2 Skills</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Programming Languages</a></li>
+<li><a href="#sec-2-2">2.2 Other technologies</a></li>
+<li><a href="#sec-2-3">2.3 Other</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Education</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Bachelor's of Science, Computer Science. University of California, Davis.</a></li>
+<li><a href="#sec-3-2">3.2 Associate of Arts, Arts and Humanities. Yuba College.</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Projects</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Compiler for the Cool Programming Language</a>
+<ul>
+<li><a href="#sec-4-1-1">4.1.1 Overview</a></li>
+<li><a href="#sec-4-1-2">4.1.2 Tools</a></li>
+<li><a href="#sec-4-1-3">4.1.3 Skills</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">4.2 Robot arm control system</a>
+<ul>
+<li><a href="#sec-4-2-1">4.2.1 Overview</a></li>
+<li><a href="#sec-4-2-2">4.2.2 Tools</a></li>
+<li><a href="#sec-4-2-3">4.2.3 Skills</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-3">4.3 Sound Change Modeler</a>
+<ul>
+<li><a href="#sec-4-3-1">4.3.1 Overview</a></li>
+<li><a href="#sec-4-3-2">4.3.2 Tools</a></li>
+<li><a href="#sec-4-3-3">4.3.3 Skills</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-4">4.4 Document preparer for Amazon Kindle publishing</a>
+<ul>
+<li><a href="#sec-4-4-1">4.4.1 Overview</a></li>
+<li><a href="#sec-4-4-2">4.4.2 Tools</a></li>
+<li><a href="#sec-4-4-3">4.4.3 Skills</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Employment History</a>
+<ul>
+<li><a href="#sec-5-1">5.1 Yuba College Writing and Language Development Center: 1/2014—</a>
+<ul>
+<li><a href="#sec-5-1-1">5.1.1 Position</a></li>
+<li><a href="#sec-5-1-2">5.1.2 Duties</a></li>
+<li><a href="#sec-5-1-3">5.1.3 Reason for leaving</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-2">5.2 Full-time student, University of California, Davis: 9/2011—8/2013</a></li>
+<li><a href="#sec-5-3">5.3 Yuba College Writing and Language Development Center: 1/2009—5/2011</a></li>
+<li><a href="#sec-5-4">5.4 Full-time student, Yuba Community College: 1/2007—5/2011</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 References</a>
+<ul>
+<li><a href="#sec-6-1">6.1 Rosemary McKeever</a></li>
+<li><a href="#sec-6-2">6.2 Shawn Frederking</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Trisdan Leyson</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>12266 Regent Way
+PO Box 1033
+Oregon House, CA 95962
+<b>trisdan.leyson@gmail.com</b>
+<b>(530) 692-9040</b>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Skills</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Programming Languages</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>Most experience with Python, Java, C++.
+</li>
+<li>Some experience with Clojure, C, Ruby, Javascript.
+</li>
+<li>Brief exposure to Common Lisp, Prolog, JR.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Other technologies</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<ul>
+<li>Working knowledge of HTML, CSS.
+</li>
+<li>Working knowledge of Emacs, some Emacs Lisp.
+</li>
+<li>Basic knowledge of Git and GitHub.
+</li>
+<li>Working knowledge of Unix and Microsoft Windows.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Other</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<ul>
+<li>Discrete mathematics: permutations, combinations, graphs, trees.
+</li>
+<li>Linear algebra: LU and QR decompositions, diagonalization, least squares.
+</li>
+<li>Basic statistics and probability.
+</li>
+<li>Linguistics: basic phonology and syntax.
+</li>
+<li>Proficient writer.
+</li>
+<li>Some knowledge of the Spanish and Japanese languages.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Education</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Bachelor's of Science, Computer Science. University of California, Davis.</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Completed: In-progress; expected 8/2014.
+GPA: 3.27
+</p></div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Associate of Arts, Arts and Humanities. Yuba College.</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>Completed: 2011
+GPA: 3.7
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Projects</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Compiler for the Cool Programming Language</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Overview</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<ul>
+<li>Implemented the lexing and semantic analysis phases, with support from a partner. 
+<ul>
+<li>Supported my partner in implementing the parsing and code generation phases. 
+</li>
+<li>Used Flex for the lexing phase. 
+</li>
+<li>Implemented a provably sound type system for an object-oriented class system in the semantic analysis phase.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Tools</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<p>C++, Flex, make.
+</p></div>
+
+</div>
+
+<div id="outline-container-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span> Skills</h4>
+<div class="outline-text-4" id="text-4-1-3">
+
+<p>Regular expressions, object-oriented design, type systems.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Robot arm control system</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Overview</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<ul>
+<li>Implemented a control system for an industrial robot arm. 
+</li>
+<li>Created a set of classes to model the arm and its operations. 
+</li>
+<li>Made several design decisions. The robot was designed around an
+    imperative language (QBASIC), and it took considerable thought to
+    translate those idioms into an object-oriented design.
+</li>
+<li>Worked at the bit level with the robot's control language.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Tools</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<p>C++.
+</p></div>
+
+</div>
+
+<div id="outline-container-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> Skills</h4>
+<div class="outline-text-4" id="text-4-2-3">
+
+<p>Low-level programming, object-oriented design.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Sound Change Modeler</h3>
+<div class="outline-text-3" id="text-4-3">
+
+
+</div>
+
+<div id="outline-container-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> Overview</h4>
+<div class="outline-text-4" id="text-4-3-1">
+
+<ul>
+<li>A personal project to imitate Mark Rosenfelder's Sound Change Applier,
+    a tool for linguists and language hobbyists.
+</li>
+<li>I took part of my design from Rosenfelder's original, written in C, 
+    and programmed from the ground up in Python. The implementation is 
+    very different from Rosenfelder's.
+</li>
+<li>I created a GUI interface.
+</li>
+<li>Code at <a href="https://github.com/tsleyson/PySounds2">https://github.com/tsleyson/PySounds2</a>.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> Tools</h4>
+<div class="outline-text-4" id="text-4-3-2">
+
+<p>Python.
+</p></div>
+
+</div>
+
+<div id="outline-container-4-3-3" class="outline-4">
+<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> Skills</h4>
+<div class="outline-text-4" id="text-4-3-3">
+
+<p>Regular expressions, scripting, GUIs (TKinter), Unicode.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Document preparer for Amazon Kindle publishing</h3>
+<div class="outline-text-3" id="text-4-4">
+
+
+</div>
+
+<div id="outline-container-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> Overview</h4>
+<div class="outline-text-4" id="text-4-4-1">
+
+<ul>
+<li>Another personal project. I had several chapters of a book I had written in ODT format. I needed them in a single HTML file. 
+</li>
+<li>Used LibreOffice to convert the ODT to HTML, but then needed to 
+    merge the files into one, clean up the markup, and fix various 
+    display inconsistencies.
+</li>
+<li>Coded in Clojure, a Lisp dialect for the Java Virtual Machine.
+</li>
+<li>Used Clojure's Enlive library for working with HTML. Enlive is 
+    similar to JQuery and uses a version of CSS selector syntax to 
+    pick out HTML elements.
+</li>
+<li>First wrote the configuration files in Javascript Object 
+    Notation (JSON), but later used a solution based around 
+    Clojure's ability to dynamically load code from files.
+</li>
+<li>Wrote a small amount of Emacs Lisp for this project.
+</li>
+<li>Code at <a href="https://github.com/tsleyson/kindle_pub_formatter">https://github.com/tsleyson/kindle<sub>pub</sub><sub>formatter</sub></a>.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-2" class="outline-4">
+<h4 id="sec-4-4-2"><span class="section-number-4">4.4.2</span> Tools</h4>
+<div class="outline-text-4" id="text-4-4-2">
+
+<p>Clojure, HTML, Emacs Lisp, JSON.
+</p></div>
+
+</div>
+
+<div id="outline-container-4-4-3" class="outline-4">
+<h4 id="sec-4-4-3"><span class="section-number-4">4.4.3</span> Skills</h4>
+<div class="outline-text-4" id="text-4-4-3">
+
+<p>HTML, Cascading Style Sheets, Unicode.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Employment History</h2>
+<div class="outline-text-2" id="text-5">
+
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Yuba College Writing and Language Development Center: 1/2014—</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+</div>
+
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1"><span class="section-number-4">5.1.1</span> Position</h4>
+<div class="outline-text-4" id="text-5-1-1">
+
+<p>English and ESL Tutor
+</p></div>
+
+</div>
+
+<div id="outline-container-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2"><span class="section-number-4">5.1.2</span> Duties</h4>
+<div class="outline-text-4" id="text-5-1-2">
+
+<ul>
+<li>Working closely with students to refine language, analytical, and 
+    rhetorical skills.
+</li>
+<li>Interpreting instructor comments and assignments and communicating
+    this understanding to students.
+</li>
+<li>Keeping careful records of activities within the center using the
+    AccuTrack and TutorTrac systems.
+</li>
+<li>Modeling good student behavior.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3" class="outline-4">
+<h4 id="sec-5-1-3"><span class="section-number-4">5.1.3</span> Reason for leaving</h4>
+<div class="outline-text-4" id="text-5-1-3">
+
+<p>Time-limited position.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Full-time student, University of California, Davis: 9/2011—8/2013</h3>
+<div class="outline-text-3" id="text-5-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Yuba College Writing and Language Development Center: 1/2009—5/2011</h3>
+<div class="outline-text-3" id="text-5-3">
+
+<p>See above.
+</p></div>
+
+</div>
+
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Full-time student, Yuba Community College: 1/2007—5/2011</h3>
+<div class="outline-text-3" id="text-5-4">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> References</h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Rosemary McKeever</h3>
+<div class="outline-text-3" id="text-6-1">
+
+<ul>
+<li>Relationship: Former supervisor.
+</li>
+<li>Organization: Yuba College Writing and Language Development Center.
+</li>
+<li>Title: Instructional Associate.
+</li>
+<li>Email: rmckeeve@yccd.edu
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Shawn Frederking</h3>
+<div class="outline-text-3" id="text-6-2">
+
+<ul>
+<li>Relationship: Former supervisor.
+</li>
+<li>Organization: Yuba College Writing and Language Development Center,
+    Yuba College English Department.
+</li>
+<li>Title: Associate Professor of English.
+</li>
+<li>Email: sfrederk@yccd.edu
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2014-04-27T12:55-0700</p>
+<p class="author">Author: </p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

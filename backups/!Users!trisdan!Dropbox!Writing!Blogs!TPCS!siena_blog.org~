@@ -1,0 +1,287 @@
+* What to know when you're stuck with Siena
+
+Recently, I started working on an application written in the Play! Framework, which I assume has an exclamation point because it's the sequel to the Play Framework. Presumably it will be succeeded by the Play. Framework, or possibly the Play'!! Framework. 
+
+The Play! Framework is actually pretty nice. It's an opinionated MVC framework, similar to Rails, but it's in Java so it's easier to convince business types to let you use it. There are only two things I'm not so thrilled about so far regarding Play!
+
+  1. It's actually not in Java. I lied. It's in Scala. You can write all your code in Java, but the core is in Scala and there's nothing stopping you from using it as a Scala framework. This means all the documentation has to support two languages. The official documentation and most of the published books are decent about this, but informal sources like blogs usually pick only one of the languages to focus on. There are also certain things you can do in Scala that you can't do in Java. None of them are common or very important, but that doesn't mean it doesn't hurt to be a second-class citizen in your own framework.
+  2. It's opinionated, but its opinions are actually pretty flexible when it comes to ORMs. The official ORM of Play! is Ebean, but you can also finagle it to use Hibernate, the most common Java ORM, or Siena, an ORM that no one uses, has no apparent advantages over the other options, has no documentation, and seems to be no longer under active development.
+
+Guess which ORM the application I'm working on uses!
+
+** Duccio's hometown deserves better
+I used to associate the name "Siena" with the Italian town where early Renaissance artist Duccio did his work. It was a pleasant thing to think about: a picturesque little Tuscan town full of great artists working and living. Now I associate "Siena" with endless, futile Google searches trying to figure out why the documentation claims an overload that doesn't exist does exist.
+
+All things considered, I guess Siena isn't so bad. It could have even been great. It's obviously not as magical and fairy princess-like as ActiveRecord, but it's reasonably fluid. Like most newer Java ORMs, it uses annotations to connect classes, fields, and methods in your code with tables, columns, and rows in your database. 
+
+But it has NO documentation. At all. Unless you consider half of a half-assed GitHub wiki page and decompiled .class files where all the variables are called =var0=, =var1= to be documentation. That’s kind of a problem when you’re trying to learn how to use it.
+
+To make matters worse, the half of a half-assed GitHub wiki page contains several blatantly untrue statements, at least for the version of Siena that my application uses. I suspect it was created with some future Siena in mind, some version the maintainers were planning to write at some point, until they realized that no one was using Siena and decided to stop developing it.
+
+Chances are, no one else is using Siena. Chances are, you won’t be dropped into a project that uses it without any documentation. If you are, this blog might help you.
+
+** Model classes
+To explain the basics of Siena, I’m going to use a flashy, useless example database of Servants from Fate/Stay Night. It has three tables: =servant=, =master=, and =servant_stat=. The =servant= table looks like this:
+
+|----+----------+-------------------------------+--------|
+| id | class    | true_name                     | master |
+|----+----------+-------------------------------+--------|
+|  1 | Saber    | Arturia                       |      1 |
+|  2 | Archer   | Shirou Emiya (spoiler alert!) |      2 |
+|  3 | Lancer   | Cu Chulainn                   |      3 |
+|  4 | Assassin | Hassan i-Sabbah               |      3 |
+|----+----------+-------------------------------+--------|
+
+We can assume it has more entries. The =master= table looks like this:
+
+|----+----------------|
+| id | name           |
+|----+----------------|
+|  1 | Shirou Emiya   |
+|  2 | Rin Tousaka    |
+|  3 | Kirei Kotomine |
+|----+----------------|
+
+We’re modeling each Servant as having one Master. However, a Master can have multiple Servants; e.g. Kirei is Master of both Assassin and Lancer.
+
+In Siena, we’ll have a class representing each of these tables. We use annotations to tell Siena how to connect our table rows with instances of our classes. Here’s the Servant class:
+
+#+BEGIN_SRC java
+  @Table("servant")
+  public class Servant extends Model {
+      @Id(Generator.AUTO_INCREMENT) private Integer id;
+      @Column("class") private String servantClass;
+      @Column("true_name") private String trueName;
+      @Column("master") private Master master;
+
+      // Add the usual public/protected getters and setters for these fields...
+  }
+#+END_SRC
+
+And the Master class:
+
+#+BEGIN_SRC java
+  @Table("master")
+  public class Master extends Model {
+      @Id(Generator.AUTO_INCREMENT) private Integer id;
+      @Column("name") private String name;
+
+      // Again, with the usual public/protected getters and setters.
+  }
+#+END_SRC
+
+Probably the most interesting to notice about this example is the type of the =master= field in the =Servant= class. It’s declared as =Master=, even though the database column it corresponds to just stores an id number. When you retrieve a Servant from the database, Siena will create an empty Master instance, set its id to the id stored in the =master= column, and assign that instance to the Servant’s =master= field. The rest of the Master’s fields will be set to null.
+
+Now say you have a Servant instance and you want to know the name of its Master. You have to tell Siena to load the Master instance from the database before you try to do anything with it. You can do that with the =get= method.
+
+#+BEGIN_SRC java
+  // Inside the Servant class
+  public Master getMaster() {
+      if (master != null) {
+          master.get();
+      }
+      return master;
+  }
+#+END_SRC
+
+Say we have an instance of =Servant= that represents Arturia. When Siena loads the instance, it will create a =Master= object, set its id to 1, and assign that to Arturia’s =master= field. When we call =getMaster= on Arturia, Siena will find the Master object with id 1 in the database, load the rest of its fields into Arturia’s =master= object, and return that object to us.
+
+This is actually pretty cool. Say we had a bunch of Servant instances, but all we cared about were their =trueName= fields and we never accessed their =master= fields. Then we would save a lot of time, because we’re not loading Masters that we’re never going to look at from the database. If we decide to look at just a couple of the Masters, we only pay to load the ones we care about.
+
+** Finding and filtering
+Siena’s way of searching the database looks similar to Java 8’s streams API. (If Siena had been written for Java 8, it could have just used Java 8 streams. It doesn’t, but the concept is similar.) Siena =Query= objects can also be thought of as representing SQL queries.
+
+You can execute a =SELECT * FROM servant= query / get a stream of all the rows of the =servant= table like this:
+
+#+BEGIN_SRC java
+  Model.all(Servant.class);
+#+END_SRC
+
+Which is pretty long-winded and hard to read, so the convention is to define an =all()= method on your model class that calls this.
+
+#+BEGIN_SRC java
+  public static Query<Servant> all() {
+      return Model.all(Servant.class);
+  }
+#+END_SRC
+
+This gives you back a =Query= object. You can call more methods on that object to refine your query. When you’re done, you can call a method that gives you results in a usable form.
+
+For example, you can use the =filter= method to filter out some results based on various criteria. Some examples:
+
+#+BEGIN_SRC java
+  // Get only Servants whose trueName field is "Arturia"
+  all().filter("trueName", "Arturia");
+
+  // Get Servants whose trueName is either Arturia or Shirou Emiya
+  Set<String> names = new HashSet<>();
+  names.add("Arturia");
+  names.add("Shirou Emiya");
+  all().filter("trueName IN", names);
+
+  // Get Servants whose class is not Assassin
+  all().filter("servantClass!", "Assassin");
+#+END_SRC
+
+You can also use the =order= method to choose a field to sort your results by. The default seems to be to sort by the primary key.
+
+#+BEGIN_SRC java
+  all().filter("servantClass!", "Assassin").order("trueName");
+#+END_SRC
+
+This gets all the Servants whose class is not Assassin, ordered by their true names.
+
+One subtle point: the field names you use in the strings that get passed to =filter= and =order= must be the field names you defined in your Java code, not the column names from the original database. In most cases you should make these the same, just to reduce confusion, but there are cases where this isn’t possible (e.g. I named a column =class= inside the =servant= table, then couldn’t use this as the field name because =class= is a reserved word in Java). 
+
+** Extracting results
+The =filter= and =order= methods both return =Query<>= objects. To actually execute the query, you have to call the =get=, =fetch=, or =iter= method on your query after you’ve modified it to your satisfaction.
+
+Calling =get= only gives you the first result. It’s good when you know your query will only return one result, or if you happen to only care about the first result.
+
+The =fetch= method is pretty simple; it just returns a Java =List= of everything your query found. That means it will load every matching row into memory at once, so before you use it, think about how much data your query is likely to return. 
+
+The =iter= method is more complicated. It returns an =Iterable<>=, which is loaded lazily. The concept is similar to Clojure’s or Haskell’s lazy sequences. It takes two arguments: a string, which is the name of one of the fields on your model, and an integer. The integer tells =iter= how many rows at a time to load into memory from the database. For instance, you can execute the following query.
+
+#+BEGIN_SRC java
+  Iterable<Servant> lancersOtherThanCuChulainn = all().filter("servantClass", "Lancer").filter("trueName!", "Cu Chulainn").iter("id", 5);
+#+END_SRC
+
+This query gives us an Iterable of all the Lancers other than Cu Chulainn; this would contain Diarmuid Ua Duibhne (Fate/Zero’s Lancer) and others. However, Siena doesn’t immediately load all those rows from the database. Instead, it loads the first five results (because we passed =iter= the number 5) and waits to load the rest until it needs them. When it does need more, it continues to load in groups of five. This is similar to Clojure’s lazy sequences, which load in groups of 32, except that here you have to specify what group size you want.
+
+I’m honestly not sure what the first argument does. My working theory is that it’s the field to sort the results on. This makes a certain amount of sense; when Siena goes to load more rows from the database, it has to know which rows to load next, so there has to be an ordering on the rows for it to follow. The GitHub wiki page claims there’s a version of =iter= that only takes one argument, the chunk size. My compiler disagrees, so I can only call this a dirty lie, like so many things on that page.
+
+So which to use? Java’s type system makes this choice a bit of pain, because when you choose =fetch= or =iter=, you’re stuck with plastering its return type all over your code, making things hard to change later. I would probably default to =fetch= unless you know your queries are regularly going to be returning around a gigabyte’s worth of rows. It might be a good idea to just start with =iter= for tables that you know are going to be growing a lot (e.g. if you have a query that gets a sequence of all the users in your =user= table, you might as well start with =iter=, because this table will probably grow quite a bit over time).
+
+** All the rest of the CRUD
+So far we’ve only talked about reading from the database. That’s because creating, updating, and deleting are all quite simple.
+
+To create rows, just instantiate an object of one of your model classes, set its fields to the desired values, and then call the =insert= method on it. Siena is biased towards creating objects with the Javabean pattern–use a no-arg constructor to create an object, then call setters to set values. This is how it creates objects when it loads rows from the database. You can also make your own constructors that take arguments, but make sure to provide a no-arg constructor for Siena to use.
+
+Here’s are some examples of creating and inserting a new Servant.
+
+#+BEGIN_SRC java
+  // Using a constructor that takes the class, true name, and Master instance.
+  Servant iskander = new Servant("Rider", "Alexander the Great", waverVelvet);
+  iskander.insert();
+
+  // Using the Javabean pattern.
+  Servant berserker = new Servant();
+  berserker.setServantClass("Berserker");
+  berserker.setTrueName("Heracles");
+  berserker.setMaster(illyasviel);
+  berserker.insert();
+#+END_SRC
+
+If there are fields you want to set automatically when an object gets inserted, you can override the =insert= method. For example, you can set the date something was created.
+
+#+BEGIN_SRC java
+  @Override
+  public void insert() {
+      setCreationDate(new Date());
+      super.insert();
+  }
+#+END_SRC
+
+(Siena knows how to translate between a =java.util.Date= and a MySQL timestamp or datetime.)
+
+Updating works pretty much the same way; you set the fields you want to change, then call the =update= method. Here’s an example of how to model Archer changing his allegiance around the midway point of Unlimited Blade Works:
+
+#+BEGIN_SRC java
+  Servant archer = Servant.all().filter("trueName", "Shirou Emiya").get();
+  archer.setMaster(caster);
+  archer.update();
+#+END_SRC
+
+As with =insert=, you can override =update= to automatically set a field every time you update, e.g. if you have an =updateDate= column.
+
+Deleting is the simplest of all; just call =delete=. I’ve been wanting to do this example for a long time.
+
+#+BEGIN_SRC java
+  Servant gilgamesh = Servant.all().filter("trueName", "Gilgamesh").get();  // Jerk.
+  gilgamesh.delete();  // Send that gold bastard to oblivion.
+#+END_SRC
+
+You can also override =delete= if you want. In our case, when a Servant gets deleted, we might want to also delete their stats from the =servant_stat= table. Assume the stats table looks like this.
+
+|----+------------+------------------+-------|
+| id | servant_id | stat             | grade |
+|----+------------+------------------+-------|
+|  1 |          1 | ‘Strength’       | ‘A’   |
+|  2 |          1 | ‘Noble Phantasm’ | ‘A++’ |
+|----+------------+------------------+-------|
+
+We could delete corresponding stats like this:
+
+#+BEGIN_SRC java
+  @Override
+  public void delete() {
+      List<ServantStat> stats = ServantStat.all().filter("servantId", getId()).fetch();
+      for (ServantStat stat : stats) {
+          stats.delete();
+      }
+      super.delete();
+  }
+#+END_SRC
+
+Here’s a completed, fully functional Servant model class.
+
+#+BEGIN_SRC java
+  @Table("servant")
+  public class Servant extends Model {
+      @Id(Generator.AUTO_INCREMENT) private Integer id;
+      @Column("class") private String servantClass;
+      @Column("true_name") private String trueName;
+      @Column("master") private Master master;
+
+      // Constructors. Make sure to give Siena a no-arg constructor to
+      // use when it looks things up for you.
+      public Servant() {}
+      
+      public Servant(String servantClass, String trueName, Master master) {
+          this.servantClass = servantClass;
+          this.trueName = trueName;
+          this.master = master;
+      }
+      
+      // Getters and setters for fields. The protected setters are for
+      // Siena's internal use. You can also make them public if it
+      // should be possible to modify the field, as done here with the
+      // setMaster method.
+      public Integer getId() { return id; }
+      protected void setId(Integer id) { this.id = id; }
+      public String getServantClass() { return servantClass; }
+      protected void setServantClass(String servantClass) { this.servantClass = servantClass; }
+      public String getTrueName() { return trueName; }
+      protected void setTrueName(String trueName) { this.trueName = trueName; }
+
+      public Master getMaster() {
+          if (master != null) {
+              master.get();
+          }
+          return master;
+      }
+
+      public void setMaster(Master master) {
+          this.master = master;
+      }
+
+      // Finder methods. You could also make these instance methods but
+      // it makes more sense to have them static.
+      public static Query<Servant> all() {
+          return Model.all(Servant.class);
+      }
+
+      public static List<Servant> findByServantClass(String servantClass) {
+          return all().filter("servantClass", servantClass).fetch();
+      }
+
+      public static Servant findByTrueName(String trueName) {
+          return all().filter("trueName" trueName).get();
+      }
+
+      // You can also override insert, update, and delete
+  }
+#+END_SRC
+
+** The rest of it
+There’s probably more to Siena. Undocumented code is full of mysteries. But the knowledge I’ve collected here is, at the very least, more than there was on the net when I started working with Siena. If you get stuck working with it, I hope it can help.

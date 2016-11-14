@@ -1,0 +1,12 @@
+(ns quil-sketch.random-dots
+  (:require [quil.core :as q]
+            [quil.middleware :refer [fun-mode]]))
+
+(def dots
+  (repeatedly #(hash-map
+                :color (take 3 (repeatedly (rand-int 255)))
+                :x (rand-int 500)
+                :y (rand-int 500))))
+
+(defn draw-dots [state]
+  )

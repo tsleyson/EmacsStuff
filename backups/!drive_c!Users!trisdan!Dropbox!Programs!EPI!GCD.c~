@@ -1,0 +1,99 @@
+// NODIV_REC.c
+// Compare different NODIV_REC algorithms like in NODIV_RECNoDiv.java.
+#include <time.h>
+#include <stdio.h>
+#include <assert.h>
+#include <math.h>
+
+#define isEven(x) (x & 1) == 0
+#define min(p, q) (p < q? p : q)
+
+int nodiv_rec(int a, int b) {
+    assert (2147483647 > a && a >= 0 &&
+            2147483647 > b && b >= 0);
+    //printf("%-10s%d%n%-10s%d%n", "a", a, "b", b);
+    if (a < b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+    if (a == 1 || b == 1 || a == b) {
+        return min(a, b);
+    }
+    else if (isEven(a) && isEven(b)) {
+        return nodiv_rec(a >> 1, b >> 1) << 1;
+    }
+    else if (isEven(a)) {
+        return nodiv_rec(a >> 1, b);
+    }
+    else if (isEven(b)) {
+        return nodiv_rec(a, b >> 1);
+    }
+    else {
+        return nodiv_rec((a-b) >> 1, b);
+    }
+}
+
+int gcdNoRec(int a, int b) {
+    int shiftcnt = 0;
+    do {
+        assert(2147483647 > a && a >= 0 &&
+               2147483647 > b && b >= 0);
+//            System.out.printf("%-10s%d%n%-10s%d%n", "a", a, "b", b);
+        if (a < b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        } 
+        if (isEven(a) && isEven(b)) {
+            a >>= 1;
+            b >>= 1;
+            ++shiftcnt;
+        }
+        else if (isEven(a)) {
+            a >>= 1;
+        }
+        else if (isEven(b)) {
+            b >>= 1;
+        }
+        else {
+            a = (a-b) >> 1;
+        }
+    } while (a > 1 && b > 1 && a != b);
+    return min(a, b) << shiftcnt;
+}
+
+int gcdEuclid(int a, int b) {
+    assert(2147483647 > a && a > 0 &&
+           2147483647 > b && b > 0);
+    //System.out.printf("%-10s%d%n%-10s%d%n", "a", a, "b", b);
+    int temp;
+    if (a < b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    while (a % b > 0) {
+        temp = a;
+        a = b;
+        b = temp % b;
+    }
+    return b;
+}
+
+int main() {
+    printf("Starting program");
+    int divs[1000000];
+    FILE *randdivs;
+    randdivs = fopen("randdivs", "r");
+    if (randdivs == NULL) {
+        return 1;
+    }
+    int i, ret;
+    for (i = 0; i < 1000000; ++i) {
+        ret = fscanf(randdivs, "%d", divs[i]);
+        if (ret != 1)
+            break;
+    }
+    return 0;
+}

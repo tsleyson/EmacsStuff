@@ -1,0 +1,16 @@
+# Problem 14.3 of EPI.
+
+import doctest
+import sys
+
+def count_chars(s):
+    """
+    Counts all characters and prints in alphabetical order in O(n) time.
+    Requires that input is lowercase ASCII.
+
+    >>> count_chars("aabb")
+    (a, 2) (b, 2)
+
+    >>> count_chars("zxyaabb")
+    (a, 2) (b, 2), (x, 1), (y, 1), (z, 1)
+    """

@@ -1,0 +1,28 @@
+; Second attempt at an LRU ISBN cache. Problem 13.4 of EPI.
+(ns 'isbn2)
+
+(def usage-number (ref 0))
+(def cache
+  (ref (sorted-map-by
+        (fn [e1 e2] (- (:used e1) (:used e2))))))
+(def ^:dynamic size-limit 3)  ; Dynamically rebind as needed.
+
+(defn insert-cache
+  "Insert a new entry into the cache."
+  [isbn title]
+  (dosync
+    (when (> (count @cache) size-limit)
+      (alter cache #(dissoc (ffirst %)))) ; Remove LRU item.
+    (alter cache assoc isbn {:title title, :usage @usage-number})
+    (alter usage-number inc)))
+
+(defn retrieve-cache
+  "Get a value from the cache."
+  [isbn]
+  ;; Update usage-number.
+  (dosync
+   (alter cache
+          #(let [entry (get % isbn)]
+             (assoc % isbn
+                    (assoc (:usage entry) @usage-number)))))
+  (get @cache isbn))

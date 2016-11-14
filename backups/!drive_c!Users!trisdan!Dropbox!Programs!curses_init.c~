@@ -1,0 +1,32 @@
+#include <ncurses.h>
+
+int main() {
+    int ch;
+
+    initscr(); /* start curses mode */
+    raw();  /* disable line buffering */
+    keypad(stdscr, TRUE);  /* We get F1, F2, etc... */
+    noecho();  /* Don't echo when we getch() */
+
+    printw("Type any character to see it in bold\n");
+    ch = getch();
+    /* Without raw(), we'd have to press Enter to made it go
+       to the program. */
+
+    if (ch == KEY_F(1)) {
+        printw("F1 key pressed.");
+        /* Without noecho some escape characters might be printed. */
+    }
+    else {
+        printw("The pressed key is ");
+        attron(A_BOLD);
+        printw("%c", ch);
+        attroff(A_BOLD);
+    }
+    refresh();
+    getch();
+    endwin();
+
+    return 0;
+}
+        

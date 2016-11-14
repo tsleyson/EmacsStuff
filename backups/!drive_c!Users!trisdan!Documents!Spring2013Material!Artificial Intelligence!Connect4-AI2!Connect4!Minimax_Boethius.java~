@@ -1,0 +1,261 @@
+/**
+ *	Minimax_Boethius.java
+ * @author Trisdan Leyson
+ * contributor: Tran Tu
+ * others: Alexander Church, Benson Liang
+ * Team Boethius's minimax algorithm.
+ */
+import java.util.ArrayList;
+import java.util.Collections;
+public class Minimax_Boethius extends AIModule
+{
+	TextDisplay td = new TextDisplay();	// For debugging, to look at the game board.
+	public int max_recursion, who_am_I;
+    private int[] valuation;    // Used in evaluate to give scores to different kinds of chip.
+    
+	/** Fill in evaluation function here!! */
+	private int evaluate(GameStateModule state)
+	{
+        // These values change depending on whether we're player 1 or 2.
+        valuation = new int[3];
+        valuation[0] = 0;
+        valuation[this.who_am_I] = 1;
+        valuation[this.who_am_I == 1? 2 : 1] = -1;
+		if (state.isGameOver())
+		{
+			int winner = state.getWinner();
+            /* Make sure to change these values and make them scale with the values for the
+             * other part of the evaluation function.
+             */
+			if (winner != this.who_am_I)
+				return -500;
+			else
+				return 500*winner;	// Win for us = 500*1 = +500, draw = 500*0 = 0.
+		}
+		else
+		{
+            // When the board is really full, still strive for some coverage, but also
+            // look carefully at where there are lines of chips in a row.
+            return this.fullBoard(state);
+        }
+	}
+	
+    /**
+     * The idea behind this function is in Eval Alg Expl under "Modification to the above".
+     * It basically tries to count how many lines of 1, 2, and 3 chips both we and our
+     * opponent have crossing through one of the open spaces.
+     */
+    private int fullBoard(GameStateModule state)
+    {
+		td.drawBoard(state);
+      int row, val=0, colex = 0;
+	  ArrayList<Integer> population = new ArrayList<>();
+	  population.add(0); population.add(1); population.add(2);
+	  population.add(3); population.add(4); population.add(5);
+	  population.add(6);
+		// Randomly sample some moves to investigate. The function is much more accurate
+		// when it looks at every value, but too slow.
+	  Collections.shuffle(population);
+	  int[] sample = {population.get(0), population.get(1), population.get(2), population.get(3)};
+      for (int k = 0; k < sample.length; k++)
+      {
+		  int col = sample[k];
+          row = state.getHeightAt(col);
+		  System.out.println("row is " + row + " and column is " + col);
+          int[][] points = this.generatePoints(col, row);
+              // In Java, new int arrays are full of zeros, unlike C and C++, so no worries
+              // about initialization.
+		  int most_extreme = 0;
+          for (int space_count = 0; space_count < points.length; space_count++)
+          {
+			    if (terminate) return colex;
+				int[] adjacent_points = points[space_count];
+				if (adjacent_points == null) 
+					continue;
+				int x = adjacent_points[0], y = adjacent_points[1];
+				if (x < 0 || x >= state.getWidth() || y < 0 || y >= state.getHeight())
+						continue;
+				int dx = determineDirection(x, col),
+					dy = determineDirection(y, row);
+				int previous_chip = -1, current_chip = 0;
+				for (int i = x, j = y, reps = 0; reps < 4; i += dx, j += dy, reps++)
+				{    
+				  if (i < 0 || i >= state.getWidth() || j < 0 || j >= state.getHeight())
+						break;
+					current_chip = state.getAt(i, j);
+					System.out.println("Val is " + val);
+					if (previous_chip == current_chip || previous_chip == -1)
+					{
+						  val += this.valuation[current_chip];
+						  previous_chip = current_chip;
+					}
+				}
+				if (Math.abs(val) > Math.abs(most_extreme))
+				{
+					most_extreme = val;
+					System.out.println("New extreme val is " + val);
+				}
+				val = 0;
+			}
+		  if (Math.abs(most_extreme) > Math.abs(colex))
+			  colex = most_extreme;
+      }
+	  System.out.println("Returning " + colex);
+	  return colex;
+    }
+    
+    /**
+     * Generates all the points next to an open space so fullBoard can check them.
+     */
+    private int[][] generatePoints(int row, int col)
+    {
+        int[][] points = {
+            {row-1, col-1}, 
+			{row-2, col-2},
+			{row-3, col-3},
+            {row, col-1},
+            {row, col-2},
+            {row, col-3},
+            {row+1, col-1},
+            {row+2, col-2},
+            {row+3, col-3},
+            {row-1, col},
+            {row-2, col},
+            {row-3, col},
+            {row+1, col+1},
+            {row+2, col+2},
+            {row+3, col+3},
+            {row, col+1},
+            {row, col+2},
+            {row, col+3},
+            {row-1, col+1},
+            {row-2, col+2},
+            {row-3, col+3}
+        };
+        
+        return points;
+            
+      /*(row-1, col-1) [northwest], (row, col-1) [west], (row+1, col-1) [southwest],
+        (row-1, col) [south], (row+1, col+1) [southeast], (row, col+1) [east], (row-1, col+1) 
+        [northeast]. */
+    }
+	
+    /**
+     * Used by fullBoard. Given some point, it figures out which direction to move
+     * so that we're going back towards the original space (the one we can drop a chip
+     * into).
+     */
+    private int determineDirection(int my_start, int my_destination)
+    {
+        return (int)Math.signum(my_destination - my_start);
+        /*
+         * If difference is positive, the destination is above or to the left of
+         * the start, and we have to move backward, so +1.
+         * If it's negative, destination is below or to the right, so we move forward by -1.
+         * If it's zero, the start and destination are at the same place, so zero.
+         */
+    }
+
+    /**
+     * Straight from the book. I briefly tried to combine these into one function, but it
+     * introduced all kinds of bugs, so I went back to two functions. These two bounce back
+     * and forth, doing recursion and calculating min and max values as we work up the tree.
+     */
+	private int minValue(GameStateModule state, int recursion_depth)
+	{
+		if ( recursion_depth >= max_recursion || state.isGameOver() )
+        {
+			return evaluate(state);
+        }
+		int v = Integer.MAX_VALUE;
+		for (int a = 0; a < state.getWidth(); ++a)
+		{
+			boolean made = this.result(state, a);
+			if (made && !terminate)
+			{
+                v = Math.min(v, this.maxValue(state, recursion_depth+1));
+				state.unMakeMove();
+			}
+			else if (terminate)
+				return Integer.MAX_VALUE;
+		}
+		return v;
+	}
+    
+    private int maxValue(GameStateModule state, int recursion_depth)
+	{
+		if ( recursion_depth >= max_recursion || state.isGameOver() )
+        {
+			int val = evaluate(state);
+            return val;
+        }
+		int v = -Integer.MAX_VALUE;
+		for (int a = 0; a < state.getWidth(); ++a)
+		{
+			boolean made = this.result(state, a);
+			if (made && !terminate)
+			{
+                v = Math.max(v, this.minValue(state, recursion_depth+1));
+				state.unMakeMove();
+			}
+			else if (terminate)
+				return Integer.MAX_VALUE;
+		}
+		return v;
+	}
+	
+    /**
+     * A helper for getNextMove, minValue, and maxValue. I noticed I had this code in
+     * a lot of places, so I made it a single method for readability.
+     */
+	private boolean result(GameStateModule state, int move)
+	{
+		if (state.canMakeMove(move))
+		{
+			state.makeMove(move);
+			return true;
+		}
+		return false;
+	}
+	
+        @Override
+	public void getNextMove(GameStateModule state)
+	{
+		this.who_am_I = state.getActivePlayer();
+		this.max_recursion = 1;
+		while (!terminate)
+		{
+			int current, best = -501, level_move = 0;
+				// We return -500 for a loss, so this is smaller than even a loss.
+				// current is the minimax value of making whatever move we're current contemplating.
+				// best is the minimax value of the best move we've seen so far.
+			for (int move = 0; move < state.getWidth(); move++)
+			{   
+				boolean made = this.result(state, move);
+				if (made) 
+				{
+					current = Math.max(best, this.minValue(state, 0));  // Begins minimax recursion.
+					if (current == Integer.MAX_VALUE) 
+					{
+						//System.out.println("Warning, early return with depth " + max_recursion);
+							// This happens when our time runs out in the middle of minValue or
+							// maxValue. Whatever is in chosenMove, optimal or not, is our move.
+							// If we haven't found a move yet, it's -1 and an exception is thrown.
+						return;
+					}
+					if (best < current)
+					{
+						level_move = move;
+						best = current;
+						// We're changing our move.
+					}
+					state.unMakeMove();
+				}
+			}
+			//System.out.println("Chose " + best);
+			this.chosenMove = level_move;
+			this.max_recursion++;
+		}
+	}
+
+}

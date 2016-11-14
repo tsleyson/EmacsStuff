@@ -1,0 +1,19 @@
+q = 26900927
+def fingerprints(s, m, d):
+    global q
+    t = 0
+    h = (len(d)**(m-1)) % q
+    for i in range(m):
+        t = len(d)*t + d[s[i]] % q
+    for i in range(len(s) - m):
+        yield t
+        t = len(d)*(t - d[s[i]]*h) + d[s[i+m]] % q
+
+def fingerprint(s, d):
+    global q
+    p = 0
+    for i in range(len(s)):
+        p = (len(d)*p + d[s[i]]) % q
+        if isinstance(p, long):
+            print("Went long at {}".format(p))
+    return p

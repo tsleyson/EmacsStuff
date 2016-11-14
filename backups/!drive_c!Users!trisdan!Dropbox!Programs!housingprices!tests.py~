@@ -1,0 +1,17 @@
+import unittest
+import matrix
+from array import array
+
+class TestMatrix(unittest.TestCase):
+    def setUp(self):
+        self.m = Matrix(["0.18 0.89", "1.0 0.26", "0.92 0.11",
+                         "0.07 0.37", "0.85 0.16", "0.99 0.41",
+                         "0.87 0.47"])
+    def test_dimensions(self):
+        self.assertEqual(m.numrows, 7)
+        self.assertEqual(m.numcols, 2)
+    def test_get_row(self):
+        self.assertEqual(m.get_row(3), array('d', [0.07, 0.37]))
+        self.assertEqual(m.get_row(0), array('d', [0.18, 0.89]))
+        self.assertEqual(m.get_row(6), array('d', [0.87, 0.47]))
+                         

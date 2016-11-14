@@ -1,0 +1,101 @@
+;; My personal global key bindings.
+(global-set-key (kbd "C-c C-r") 'reunite-orphaned-first-letter)
+(global-set-key (kbd "C-c C-l") 'reunite-orphaned-last-letter)
+;; For when the above settings are overridden, eg org mode
+(global-set-key (kbd "C-c C-0") 'reunite-orphaned-first-letter)
+(global-set-key (kbd "C-c C-9") 'reunite-orphaned-last-letter)
+;; General
+(global-set-key (kbd "C--") 'insert-unicode-em-dash)
+(global-set-key (kbd "C-c C-n C--") 'insert-unicode-en-dash)
+(global-set-key (kbd "M-z") 'other-window)
+(global-set-key (kbd "<f2>") 'other-window)
+(global-set-key (kbd "C-c M-z") 'zap-to-char)
+;;(global-set-key (kbd "M-b") 'ido-switch-buffer)
+(global-set-key (kbd "<f8>") 'ido-switch-buffer)
+(global-set-key (kbd "C-x C-k") 'ido-kill-buffer)  ; I make this typo a lot.
+(global-set-key (kbd "C-c C-a") 'mark-whole-buffer) ; Like CUA C-a.
+(global-set-key (kbd "<kp-multiply>") 'count-words)
+(global-set-key (kbd "<apps>") 'smex)
+(global-set-key (kbd "<kp-enter>") 'save-buffer)
+(global-set-key (kbd "<f9>") 'save-buffer)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "C-x C-o") 'delete-blank-lines)  ; C-o to insert one blank line.
+(global-set-key (kbd "M-j") 'delete-indentation)  ; Joins line with line above.
+;; M-space to remove all spaces save one.
+;; M-\ to remove all spaces, period.
+;; M-x canonically-space-region to put one space between every word and two after periods.
+
+(add-to-list 'load-path "/Users/trisdan/.emacs.d/my-extensions")
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.org/packages/"))
+
+(require 'typopunct)
+(typopunct-change-language 'english t)
+;; “Using nice quotes.” Typopunct.
+;; "Using ugly quotes." C-q C-”.
+
+; Make markdown mode also have visual-line-mode and typopunct mode by default.
+(add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'text-mode-hook 'typopunct-mode)
+(add-hook 'org-mode-hook 'typopunct-mode)
+(add-hook 'markdown-mode-hook 'typopunct-mode)
+
+;; Change C/C++/Java indentation rules
+(setq c-default-style "bsd"
+      c-basic-offset 4)
+
+;; Load my html entity replacement functions
+(load "html-entities.el")
+;; Load my personal editing functions.
+(load "my-editing.el")
+
+;; Load functions to allow quick font changes.
+(load "font-toggle.el")
+(global-set-key (kbd "<f6>") 'cycle-font-forward)
+(global-set-key (kbd "<f7>") 'cycle-font-backward)
+
+;; Set default font for all windows.
+(add-to-list 'default-frame-alist '(font . "Monaco 12"))
+
+;; Get rid of annoying screen flash on Mac OS X. 
+(setq ring-bell-function 'ignore)
+
+;; Activate ido mode.
+(require 'ido)
+(ido-mode t)
+
+;; Saves files between sessions.
+(desktop-save-mode t)
+
+;; Turn on line numbers.
+(require 'linum)
+(global-linum-mode t)
+
+;; Automatically reloads files which have changed on disk.
+(global-auto-revert-mode t)
+
+;; Let you use hex code points with C-q.
+(setq read-quoted-char-radix 16)
+
+;; add markdown mode as default for text and md
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

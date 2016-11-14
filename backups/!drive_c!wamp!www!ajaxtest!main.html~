@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Ajax Test Main</title>
+    <script type="text/javascript" src="ajax_load.js"></script>
+    <script type="text/javascript">
+      document.next_button.addEventListener("click",
+          function () {alert("Hello next")},
+          false);
+      document.prev_button.addEventListener("click",
+          function () {alert("Hello prev");},
+          false);
+    </script>
+  </head>
+  <body>
+    <h2>Testing out use of Ajax</h2>
+    <input type="button" id="next_button" />
+    <input type="button" id="prev_button" />
+    <div id="display">The default text</div>

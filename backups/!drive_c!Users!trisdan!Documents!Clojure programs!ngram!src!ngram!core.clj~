@@ -1,0 +1,30 @@
+(ns ngram.core
+  (:require [clojure.string :as s])
+  (:gen-class))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  ;; work around dangerous default behaviour in Clojure
+  (alter-var-root #'*read-eval* (constantly false))
+  (println "Hello, World!"))
+
+(defn single-tokens
+  "Removes all capital letters and punctuation from a string
+   and returns it as a vector of single words."
+  [string]
+  (-> string (s/trim) (s/lower-case) (s/replace #"[.,;\'\":]" "")
+      (s/split #"[ \n]")))
+; Note: strips out all single quotes/apostrophes. Too much trouble to
+                                        ; preserve.
+
+(defn build-ngram [n st]
+  (loop [d 0 grams []]
+    (if (= (- n 1) (- (count st) d))
+      grams
+      (recur (inc d) (conj grams (s/join " " (take n (drop d st))))))))
+; A start on building n-grams:
+; (clojure.string/join " " (take n (single-tokens string)))
+; We can also drop the first item each time to keep progressing
+; through the list.
+

@@ -1,0 +1,8 @@
+<h1>Details on Question { question.id }</h1>
+<table>
+  <tr>
+    <td>Question text</td>
+    <td>Date published</td>
+  </tr>
+  
+    

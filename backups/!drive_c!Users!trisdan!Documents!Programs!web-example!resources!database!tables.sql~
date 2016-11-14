@@ -1,0 +1,5 @@
+create table blogs (
+       post_id serial primary key,
+       auth_name varchar(50) references users(username),
+       post_date 
+       

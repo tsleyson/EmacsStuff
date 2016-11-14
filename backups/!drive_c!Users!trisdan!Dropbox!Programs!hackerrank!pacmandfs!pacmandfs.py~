@@ -1,0 +1,56 @@
+import sys
+
+# Note: complex numbers were way more trouble than they were worth.
+# I finally went back to tuples when I discovered that you can't use
+# the parts of complex numbers as list indices because they're floats.
+
+def dfs(grid, pacstart):
+  "The grid positions are Gaussian integers."
+  stack = [pacstart]
+  visited = set()
+  path = [pacstart]
+  explored = []
+  done = None
+  while done is None:
+    done = dfs_helper(grid, stack.pop(), visited, explored, path, stack)
+  return explored, path
+
+# It shouldn't be possible for the index to be out of range, because
+# the whole grid has a wall around it and we don't generate adjacent
+# spaces for walls.
+def dfs_helper(grid, curpos, visited, explored, path, stack):
+  '''
+  curpos is the node we're trying to expand this time.
+  visited is the set of visited nodes.
+  path is the path of expanded nodes so far.
+  '''
+  visited.add(curpos)
+  path.append(curpos)
+  if grid[curpos[0]][curpos[1]] == '.':
+    return True
+  elif grid[curpos[0]][curpos[1]] in ("-", "P"):
+    adjacents = [(-1, 0), (0, -1), (0, 1), (1, 0)]
+    for adjacent in adjacents:
+      nextpos = (curpos[0] + adjacent[0], curpos[1] + adjacent[1])
+      if nextpos not in visited:
+        stack.append(nextpos)
+        explored.append(curpos)
+
+def read_pos(posstring):
+  return tuple([int(p) for p in posstring.split()])
+
+if __name__ == "__main__":
+    inlines = sys.stdin.readlines()
+    pacpos = read_pos(inlines[0])
+    # THIS! IS! PYTHON!
+    #foodpos = read_pos(inlines[1])
+    #gridsize = read_pos(inlines[2])
+    grid = [line.strip() for line in inlines[3:]] # A list of strings.
+    explored, path = dfs(grid, pacpos)
+    print(len(explored))
+    for node in explored:
+      print("{0} {1}".format(node[0], node[1]))
+    print(len(path))
+    for node in path:
+      print("{0} {1}".format(node[0], node[1]))
+    

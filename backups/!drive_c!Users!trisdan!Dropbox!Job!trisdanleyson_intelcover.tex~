@@ -1,0 +1,59 @@
+\documentclass[
+  fontsize=11pt,
+  paper=a4,
+  parskip=half,
+  enlargefirstpage=on,    % More space on first page
+  fromalign=right,        % Placement of name in letter head
+  fromphone=on,           % Turn on phone number of sender
+  fromemail=on,
+  fromrule=aftername,     % Rule after sender name in letter head
+  %addrfield=on,           % Address field for envelope with window
+  backaddress=off,         % Sender address in this window
+  subject=left,  % Placement of subject
+%  locfield=narrow,        % Additional field for sender
+  foldmarks=off,           % Print foldmarks
+  addfield=false
+]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+
+\makeatletter
+\@setplength{sigbeforevskip}{\parskip}
+\@setplength{refvpos}{\useplength{toaddrvpos}}
+\@setplength{toaddrheight}{1cm}
+\@setplength{locheight}{1cm}
+\makeatother
+
+\setkomafont{fromname}{\sffamily \Large}
+\setkomafont{fromaddress}{\sffamily}%% statt \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\bfseries}
+\setkomafont{backaddress}{\mdseries}
+
+\LoadLetterOption{DIN}
+\setkomavar{fromname}{Trisdan Leyson}
+\setkomavar{fromaddress}{12266 Regent Way\\PO Box 1033\\Oregon House, CA 95962}
+\setkomavar{fromphone}{(530) 692-9040}
+\setkomavar{fromemail}{trisdan.leyson@gmail.com}
+\setkomavar{backaddressseparator}{\enspace\textperiodcentered\enspace}
+\setkomavar{signature}{Trisdan S. Leyson}
+%\setkomavar{place}{Oregon House}
+\setkomavar{date}{\today}
+\setkomavar{subject}{Intern -- Software Engineering}
+\setkomavar{enclseparator}{: }
+
+\begin{document}
+  \begin{letter}{~}
+    \opening{Dear Veeva Team:}
+    A relative of mine works in the healthcare industry, and recently, her workplace has been trying to decide which electronic medical record software to use. No one there has much love for any of the options; everyone feels the need for a better solution. I think Veeva can deliver that solution, and I would like to be part of it.
+
+    I'm very near to finishing a Bachelor of Science degree in computer science at the University of California, Davis. Java is one of my stronger languages; I've used it for several courses, including an artificial intelligence course, where I implemented a neural network for facial recognition, and two programming languages courses, in which I implemented a simple compiler and an interpreter for a subset of Common Lisp. 
+
+    I have a strong background in object-oriented programming, not only in Java, but also in C++ and Python. I learn new technologies quickly; in my two programming languages courses, I used Common Lisp, Prolog, JR, Icon, and Sisal, and I recently taught myself Clojure, a Lisp dialect for the JVM. I've also begun learning Ruby on Rails. I have a working knowledge of HTML, shown by the fact that I've created several simple websites, written a blog, and published an ebook. I recently wrote a bot in Javascript for the site \href{fruitbots.org}{fruitbots.org}; the source code is available at \href{https://github.com/tsleyson}{https://github.com/tsleyson}. 
+
+I entered college as an English major and have always been a strong analytical writer, and I took mathematics courswork equivalent to a minor, showing my problem-solving skills. I'd like to put my skills to work for Veeva, helping to craft a better data solution for the health and life sciences.
+    \closing{Thank you for your time,}
+  \end{letter}
+\end{document}

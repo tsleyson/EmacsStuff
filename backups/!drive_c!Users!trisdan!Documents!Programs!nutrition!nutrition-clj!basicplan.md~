@@ -1,0 +1,5 @@
+# Basic Plan
+
+Communicate over Ring server using local sockets. Use HTML forms as UI, have JavaScript make AJAX calls to communicate with the Clojure side. Clojure handles the Access database using YeSQL and sends the results either as HTML directly or to JavaScript through Ajax. (Telamonian Ajax or other Ajax, it doesn’t really matter.)
+
+Recipe storage: don’t know yet. MongoDB, relational, or flat text files with EDN. 

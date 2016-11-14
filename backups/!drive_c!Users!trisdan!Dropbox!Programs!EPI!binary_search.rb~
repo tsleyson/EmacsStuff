@@ -1,0 +1,9 @@
+# A binary search in Ruby that searches an array.
+
+def binary_search(a, target)
+  low, mid, high = 0, (a.length - 1)/2, a.length - 1
+  # Ruby behaves like Python 2.0 wrt integer division.
+  while a[mid] != target
+    low = mid if a[mid] < target else high = mid
+  end
+  

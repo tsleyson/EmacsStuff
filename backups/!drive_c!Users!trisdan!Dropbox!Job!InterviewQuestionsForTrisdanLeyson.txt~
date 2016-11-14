@@ -1,0 +1,255 @@
+﻿Interview Questions For Trisdan Leyson 
+
+
+These questions are designed to engineer with experience in programming languages. Do not feel you must answer any question with code. A well written explanation in English will be viewed as a superior answer to code, as at Acutulus we use many languages so the knowledge of how to solve a problem is far better than knowing how to solve it in a specific language.
+
+
+If the question contains concepts you are unsure of please google to find them out. At Acutulus you will often be asked to solve problems you do not know the answer to when you start the problem.
+
+
+
+
+1) Write code to check a String is palindrome or not?
+
+
+Starting at each end of the string, read towards the middle and compare characters for equality. If the string is a palindrome, it must read the same backwards as forwards, so if any two characters we encounter are unequal, it’s not a palindrome. If the string has odd length, there can also be a single unpaired character in the middle.
+
+
+2) Write a method which will remove any given character from a String?
+
+
+Take the character as an argument. Read through the string until the given character is found. Copy the two parts of the string, split around the given character, into a new string, and return the new string.
+
+
+
+
+3) Write a function to find out longest palindrome in a given string?
+
+
+
+
+
+
+4) In an array 1-100 numbers are stored, one number is missing how do you find it?
+
+
+Read through the array. Store each number you find in a set. Make another set of the numbers 1-100, and take the set difference of this set and the first set. The sole element in the difference is the one missing from the original array.
+
+
+5) In an array 1-100 many numbers are duplicates, how do you find them?
+
+
+For the quicksort algorithm, you partition an input array into three parts: those numbers less than some chosen pivot, those greater, and those equal. You can choose each element of the original array as a pivot and then partition the elements. Those pivots whose equal part has size greater than one are duplicated. Alternately you can sort the array, read through, and note wherever an element is repeated.
+
+
+
+
+6)Given two arrays, 1,2,3,4,5 and 2,3,1,0,5 find which number is not present in the second array.
+
+
+Add the elements of the second array to a set. Then read through the first array and check if the set contains the current element or not.
+
+
+
+
+7) How do you find second highest number in an integer array?
+
+
+You can turn the array into a max heap, then do a deleteMax operation. The new max is the second-highest number.
+
+
+
+
+8) How do you find 3rd element from last in single pass?
+
+
+In a random-access array, compute the size and then subtract 3 (or 4 if the array is zero-indexed).
+
+
+For a linked list, we can read through the list and push nodes on a queue. When the queue has three elements, we dequeue the head every time we enqueue a new node. When we reach the final node, the head of the queue will be the third element from the end.
+
+
+9) How do you find if there is any loop in singly linked list, How do you find the start of the loop?
+
+
+You can find the loop using two pointers, one that moves forward one element at a time and another that moves forward two elements at a time. If the fast pointer hits the end of the list, there is no loop. Otherwise the fast pointer will cycle, and the two pointers will eventually point to the same element.
+
+
+To find the cycle’s start, we can save each node in a set as we progress. When we find a node which is already in the set, we know the previous node was the start of the cycle.
+
+
+10) How do you find depth of binary tree?
+
+
+We can do a depth-first search on the tree. We count the number of nodes as we descend. Whenever we hit the bottom of a branch, compare the count of nodes in this branch with the largest previously observed. If it’s larger, set it as the new maximum. At the end, we will have examined all paths and will have the maximum depth.
+
+
+11) Write code to print InOrder traversal of a tree?
+
+
+- Take the root of a subtree as an argument.
+- If the root is null, terminate the algorithm. 
+- Otherwise:
+    - Recurse on the root’s left child.
+    - Process the root node.
+    - Recurse on the root’s right child.
+
+
+12) Print out all leaf node of a binary tree?
+
+
+Use an in-order traversal, but in the processing step, check whether a node has children. If not, print its value.
+
+
+
+
+13) Write a program to sort numbers using quick sort?
+
+
+Given an array of numbers A:
+  - Choose some number as the pivot. You can take the first element, the last element, or a random element.
+  - Partition the array into L, M, and U, where L contains all elements in A less than the pivot, M contains the elements equal to the pivot, and U contains all the elements greater than the pivot.
+  - Recursively sort L and U and return the results with M between them.
+
+
+It’s also possible to do the partitioning and “recursion” in-place.
+
+
+14) Write a program to implement binary search algorithm
+
+
+Given a sorted array A and a target element t:
+  - Initialize three variables: low, mid, high. low is the first index of A; high is the last index; mid <- (high - low) / 2.
+  - If A[mid] = t, return mid.
+  - Else if A[mid] < t, set high <- mid, mid <- (high - low) / 2, and repeat.
+  - Else if A[mid] > t, set low <- mid+1, mid <- (high - low) / 2, and repeat.
+  - If t is not found, we’ll eventually have high = low+1. Return some sort of failure code.
+
+
+15) Write code to check whether a number is power of two or not?
+
+
+In the binary representation of a power of 2, only one bit is set. We can count the number of set bits by doing a right-shift by one place and then taking the bitwise-and of the shifted number and 1. If the result is 1, the bit is set. If our count of set bits ever exceeds 1, the number is not a power of 2. If a shift ever makes the original number zero, the number was not zero to start with, and the number of set bits is one, the number is a power of 2.
+
+
+16) Write a program to check whether a number is palindrome or not?
+
+
+Convert the number to a string and then use the procedure for checking whether a string is a palindrome above. In languages where converting a number to a string isn’t in a library, it can be done like this:
+  
+- Create a digit table that maps the digits 0-9 to their string representations.
+- Take the number modulo 10; this is the last digit. (Assuming the number is a decimal number. We can use 2 for binary, 16 for hexadecimal, etc. but decimal will be assumed.)
+- Look up the string representation of the last digit in the table and concatenate it to an empty string.
+- Integer-divide the number by 10 and repeat the process until the number is reduced to 0.
+- Reverse the string and return it.
+
+
+17) Write code to check whether a number is Armstrong no or not? 
+
+
+An n-digit number a is an Armstrong number if the sum of each of the digits of a raised to the nth power is equal to a. We can check this directly. First use the algorithm in (16) to split a number into its digits to make an array of the digits. Raise each digit to the nth power, then sum them up at the end and check whether that sum is equal to a. (Since addition is commutative, we don’t have to worry about reversing the list.)
+
+
+
+
+18) Write a program to find all prime number up to a given numbers?
+
+
+
+
+Using the Sieve of Eratosthenes on input x:
+  - Make a list of currently discovered primes, primes
+  - For i from 2 to x:
+    - prime? = true
+    - For p in primes:
+      - If i % p == 0: prime? = false
+    - If prime? is true: Add i to primes.
+  - Return primes
+
+
+19) Write function to compute Nth Fibonacci number? Both iterative and recursive?
+
+
+Recursive:
+- if n = 0: return 0
+- else if n = 1 or n = 2: return 1
+- else: return fib(n-1) + fib(n-2)
+
+
+Iterative:
+- let fibs = [0, 1]
+- for i from 1 to n:
+  - Append fibs[i] + fib[i-1] to fibs.
+- return the last element of fibs.
+
+
+We can also save the list fibs somehow and, upon a call of fib(n), check whether it’s already been calculated, possibly saving some work.
+
+
+20) Write a program to find out if two rectangles R1 and R2 are overlapping?
+
+
+
+
+
+
+
+
+21) You need to write a function to climb n steps you can climb either 1 step at a time or 2 steps a time, write a function to return number of ways to climb a ladder with n step.
+
+
+steps(n):
+  if n = 1: return 1  // Take one step.
+  else if n = 2: return 2  // Take two steps, or one step twice.
+  else: 
+    return steps(n-1) + steps(n-2)
+
+
+To start with, we can take one step or we can take two steps. If we take one step, we still have n-1 steps to climb, and we can climb them in steps(n-1) ways. If we take two steps, we still have n-2 steps to climb and we can climb them in steps(n-2) ways.
+
+
+We can now see that this sequence is equivalent to the Fibonacci sequence, but shifted up to start with 1 and 2, so we can also use the iterative solution from the Fibonacci problem.
+  
+
+
+22) Write code for Generate Random Number in a range from min to max?
+
+
+We can use a linear congruential generator, as described in The Art of Computer Programming, Volume 2. The linear congruential generator requires a seed, a multiplier, a shift increment, and a modulus.
+
+
+Suppose we have a seed s, a multiplier a, and a shift increment c. Calculate (a*s + c mod max) + min. Using max as the modulus and adding min ensures the number is in the correct range. Then we can use the generated number as the seed in our next calculation.
+
+
+More sophisticated algorithms such as the Mersenne Twister also exist.
+
+
+23) Write program for word-wrap which should work on any screen size?
+
+
+
+
+
+
+24) Design an algorithm to find the frequency of occurrence of a word in an article?
+
+
+
+
+
+
+25) You are writing classes to provide Market Data and you know that you can switch to different vendors overtime like Reuters, wombat and may be even to direct exchange feed , how do you design your Market Data system.
+
+
+
+
+
+
+26) What is dependency injection?
+
+
+
+
+
+
+27) What are three javascript design patterns?

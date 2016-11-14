@@ -1,0 +1,7 @@
+# Problem 11.3 of EPI
+
+In the arrays we’re dealing with here, any element is never more than *k* spaces from its position in the ordered permutation of the array’s elements.
+
+If we’re talking about an in-memory array, there’s an O(n log k) algorithm that sorts each k-element slice of the array, starting at one of the ends, until we reach the end. It depends on the fact that since any element can be no more than k spaces from its ordered position, we can always correctly place the largest or smallest element by sorting the k-length slice at the end, then move up and place the second-smallest or largest, which is guaranteed to be in the next k-length slice, until we reach the end.
+
+In other words, the k-length slice starting at position i is guaranteed to contain the ith largest element, because if it doesn’t, that element is further than k positions from its ordered position. Under the invariant that the section below index i is already sorted, the ith largest element is surely the smallest, 

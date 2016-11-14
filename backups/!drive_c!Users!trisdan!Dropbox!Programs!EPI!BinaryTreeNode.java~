@@ -1,0 +1,49 @@
+public class BinaryTreeNode<T> {
+    /** Note: have to enforce your own ordering policy.
+     *  I can use this later in the Binary search tree chapter.
+     */
+    T val;
+    BinaryTreeNode<T> left;
+    BinaryTreeNode<T> right;
+
+    public BinaryTreeNode(T val) {
+        this.val = val;
+        left = null;
+        right = null;
+    }
+
+    public static BinaryTreeNode<Integer> bstTreeFrom(int[] a) {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(a[0]);
+        for (int i = 1; i < a.length; ++i) {
+            BinaryTreeNode<Integer> cursor = root;
+            while (true) {
+                if (a[i] < cursor.val) {
+                    if (cursor.left == null) {
+                        cursor.left = new BinaryTreeNode<Integer>(a[i]);
+                        break;
+                    }
+                    cursor = cursor.left;
+                }
+                else {
+                    if (cursor.right == null) {
+                        cursor.right = new BinaryTreeNode<Integer>(a[i]);
+                        break;
+                    }
+                    cursor = cursor.right;
+                }
+            }
+        }
+        return root;
+    }
+
+    public static void traverseInOrder(BinaryTreeNode<?> root) {
+        if (root == null) {
+            return;
+        }
+        else {
+            traverseInOrder(root.left);
+            System.out.println(root.val);
+            traverseInOrder(root.right);
+        }
+    }
+}

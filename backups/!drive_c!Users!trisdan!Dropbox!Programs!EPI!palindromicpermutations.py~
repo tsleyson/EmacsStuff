@@ -1,0 +1,27 @@
+# Problem 13.2 of EPI.
+import doctest
+from collections import Counter
+
+def palindromic(s):
+    """
+    Tests whether a word's letters can be permuted into a palindrome.
+
+    >>> palindromic("edified")
+    True
+
+    >>> palindromic("zed")
+    False
+
+    >>> palindromic("")
+    False
+    """
+    counts = Counter()
+    for c in s:
+        counts[c] += 1
+    vals = sorted(counts.values())
+    if len(vals) == 0:
+        return False
+    return vals[0] == 1 and all([x % 2 == 0 for x in vals[1:]])
+
+if __name__ == "__main__":
+    doctest.testmod()

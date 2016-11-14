@@ -1,0 +1,3 @@
+(ns quil-sketch.moving-object
+  (:require [quil.core :as q]
+            [quil.middleware :refer [fun-mode pause-on-error]]))

@@ -1,0 +1,46 @@
+(ns binary-search-tree.core)
+
+(defprotocol tree-node
+  "A node of a binary tree."
+  (null-node? [this] "Checks if node is null")
+  (insert [this val] "Inserts val into tree rooted at this."))
+
+(declare null-node)
+
+(defrecord full-node [val lchild rchild]
+  tree-node
+  (null-node? [this] false)
+  (insert [this val]
+    (cond
+     (= null-node this)
+       this
+     (< val (:val this))
+       (->full-node (:val this) (insert (:lchild this) val) (:rchild this))
+     (> val (:val this))
+       (->full-node (:val this) (:lchild this) (insert (:rchild this) val))))
+                                        ; Can't use recur; can't recur
+                                        ; with new value for this.
+  Object
+  (toString [this] (str (:val this) (:lchild this) (:rchild this))))
+
+(def null-node
+  (reify
+    tree-node
+    (null-node? [_] true)
+    (insert [this val] (->full-node val this this))
+    Object
+    (toString [_] "∅")))
+
+(defn into-tree
+  [items]
+  (reduce insert null-node (shuffle items)))  ; Shuffle to reduce bad cases.
+
+(defn lookup-tree
+  [tree val]
+  (cond
+   (= val (:val tree))
+   tree
+   (< val (:val tree))
+   (recur (:lchild tree) val)
+   (> val (:val tree))
+   (recur (:rchild tree) val))))

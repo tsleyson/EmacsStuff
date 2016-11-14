@@ -1,0 +1,118 @@
+;; Problem 41: Drop Every Nth element
+;; First attempt
+#(for [z (range 1 (inc (count %1)))
+              :when (not= (rem z %2) 0)]
+   (%1 (dec z)))
+
+;; Problem 66: GCD
+;; First version
+#(loop [big (max %1 %2), small (min %1, %2)]
+   (if (zero? (rem big small))
+     small
+     (recur small (rem big small))))
+
+;; Problem 152: Pairwise Disjoint Sets
+;; First Version
+#(empty? (for [a %, b %
+              :when (and (not= a b)
+                         ((complement empty?)
+                          (clojure.set/intersection a b)))]
+           a))
+
+;; Problem 91: Graph Connectivity
+;; First Version. Basically imperative.
+(fn [g]
+        (loop [v (set (mapcat identity g)), ; Set of all vertices
+               vs (into #{} (first g)) ; Discovered vertices
+               e (rest g) ; Edges whose ends are undiscovered
+               x 0] ; Repetitions of the search
+          ;; Bellman-Ford makes me think that x == count v is enough
+          ;; to guarantee an answer, though 2 is good enough for all
+          ;; the unit tests they give us.
+              (if (or (empty? e) (= x (count v)))
+                  (= v vs)
+              (recur
+               v
+               (reduce
+                #(if (empty? (clojure.set/intersection %1 (into #{} %2)))
+                          %1
+                        (into %1 %2))
+                     vs
+                     e)
+               (filter #(empty? (clojure.set/intersection vs (into #{} %1)))
+                       e)
+               (inc x)))))
+
+;; Second version, still imperative but cleaner.
+(fn [g]
+  (let [v (set (mapcat identity g))
+        contains-some? (fn [coll pair] (some (partial contains? coll) pair))
+        contains-every? (fn [coll pair] (every? (partial contains? coll) pair))]
+    (loop [vs (into #{} (first g))
+           e (rest g)
+           x 0]
+      (if (or (empty? e) (= x (count v)))
+        (= v vs)
+        (recur
+         (reduce
+          #(if (contains-some? %1 %2)
+             (into %1 %2)
+             %1)
+          vs e) ; New vs
+         (remove (partial contains-every? vs) e) ; New e
+         (inc x))))))
+
+;; Third version, absolutely barking mad, uses trampoline. It doesn't
+;; work because it claims (end?) is being called without arguments
+;; somewhere, which is wrong.
+(defn graph-connectivity-trampoline [g]
+        (let [v (set (mapcat identity g))
+              contains-some? (fn [coll pair]
+                                (some (partial contains? coll) pair))
+              contains-every? (fn [coll pair]
+                                 (every? (partial contains? coll) pair))
+              end? (fn [vs e x]
+                       (if (or (empty? e) (== x (count v)))
+                           (= vs v)
+                         (fn [vs2 e2 x2] (one-pass vs e x))))
+              one-pass (fn [vs e x]
+                            (fn [vs2 e2 x2]
+                                (end? (reduce #(if (contains-some? %1 %2)
+                                               (into %1 %2)
+                                               %1)
+                                          vs2 e2)
+                                      (remove 
+                                       (partial contains-every? vs2) e2)
+                                      (inc x2))))]
+          (trampoline end (into #{}  first g) (rest g) 0)))
+
+;; The power set problem in Python. 
+;; def power_set (s):
+;;   if empty? s:
+;;     return s
+;;   for item in s:
+;;     power_set(s - item)
+
+;; Problem 102 intoCamelCase
+;; The following gets it into camel case with initial capital.
+(apply str 
+       (mapcat
+        #(clojure.string/capitalize (apply str %))
+        (remove
+         #(= '(\-) %)
+         (partition-by
+          #(when (= % \-)
+             true)
+          (seq "multi-word-string")))))
+;; Or, using ltr macro
+(->> (seq "multi-word-string")
+     (partition-by #(when (= % \-) true))
+     (remove #(= '(\-) %))
+     (mapcat #(clojure.string/capitalize (apply str %)))
+     (apply str))
+;; What about the following to get rid of initial capital?
+(let [intermed (->> (seq "multi-word-string")
+                    (partition-by #(when (= * % \-) true))
+                    (remove #('(\-) %)))
+      capped (mapcat #(clojure.string/capitalize (apply str %)) (rest intermed))]
+  (apply str (cons (ffirst intermed) capped)))

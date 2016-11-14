@@ -1,0 +1,38 @@
+// Part of EPI Problem 20.7.
+
+package tsleyson.EPI207;
+
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+public class ConcVec<T> implements Mutable<Integer, T> {
+    List<T> storage = new ArrayList<>();
+
+    public ConcVec(Collection<? extends T> c) {
+        storage.addAll(c);
+    }
+
+    public ConcVec() {};
+
+    @Override public boolean write(Integer i, T o) {
+        storage.add(i, o);
+        return true;
+    }
+
+    @Override public T read(Integer i) {
+        return storage.get(i);
+    }
+
+    @Override public String toString() {
+        return "ConcVec: " + storage.toString();
+    }
+
+    public static void main(String[] args) {
+        List<String> ls = Arrays.asList("", "Araragi Tsukihi", "Araragi Karen",
+                                        "Hanekawa Tsubasa", "Hachikuji Mayoi");
+        ConcVec<String> cv = new ConcVec<>(ls);
+        System.out.println(cv);
+    }
+}

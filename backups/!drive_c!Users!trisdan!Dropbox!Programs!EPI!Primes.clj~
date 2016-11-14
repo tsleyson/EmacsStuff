@@ -1,0 +1,14 @@
+;; Problem 6.12 of EPI.
+(ns 'primes)
+
+(defn sieve
+  "Does the sieve of Eratosthenes"
+  [n]
+  (loop [primes (range 2 (inc  n)), divs (range 2 (inc n))]
+    (if (empty? divs)
+      primes
+      (recur
+       (remove #(and (= 0 (mod % (first divs)))
+                     (not= % (first divs)))
+               primes)
+       (rest divs)))))

@@ -1,0 +1,5 @@
+# You can translate a hash to an array like this:
+ha = {1 => 10, 2 => 20, 4 => 40}
+ha.to_a
+# You can translate an array to a hash like this:
+ar = [1, 10, 2, 20, 4, 40]

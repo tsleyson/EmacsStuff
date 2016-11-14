@@ -1,0 +1,302 @@
+* <2014-06-2 Mon> Questions
+** Why can't science *alone* tell us how to make reasonable judgments about how we should respond to climate change?
+The issue of climate change encompasses questions which are not purely scientific. Some are metascientific, such as how climate scientists arrived at their conclusions on the basis of the evidence. Others concern human conduct and morals, such as how societies should react to climate change in the face of uncertainty, and how we should hear and consider conflicting interests and views.
+
+** Why is mathematics excluded from the natural sciences?
+The mode of discovery and nature of evidence in mathematics is very different from sciences such as chemistry, physics, earth science, and biology. Mathematics uses deductive reasoning from axioms within formal systems, and does not rely on observation or experiment; the natural sciences rely on inductive reasoning based upon observation and experiment.
+
+** How is applied science different form pure science?
+Applied science has the goal of creating or designing a physical object; metallurgy deals with creation of metals, engineering creates structures and machines, technology creates tools and processes for making and improving tools. Pure science has the goal of discovering general rules or laws of nature.
+
+** Who is the the most influential natural philosopher before the Scientific Revolution?
+Aristotle.
+
+** What are the differences between a geocentric and heliocentric system?
+In a geocentric system, the Earth is the center of the universe and everything else revolves around it. In a heliocentric system, the sun is the center and the stars and planets all revolve around it.
+
+** What does Galileo mean by "the book of nature is written in the language of mathematics"?
+Natural laws can often be described very precisely by mathematics. For instance, we can say that "gravity grows weaker the further one goes from the body exerting the gravitational pull", but the mathematical equation for gravitational pull on a body, G(Mm)/r^2, tells us exactly the rate at which the pull weakens—as the square of the distance.
+
+** What does the "institutional structure of science" refer to?
+The structures that allow scientists to trust work done by other scientists which they have never met, without personally reproducing the experiment, such as accrediting organizations, peer-reviewed journals, and professional societies that set ethical standards.
+
+** What are the four images of science?
+  1. Science is a way of accumulating useful facts by observation. A
+  scientist observes the natural world and makes inductive generalizations
+  from these observations.
+  2. Science is a creative act. Scientists begin from conjectures on the edge
+  of current knowledge and investigate, continually reevaluating their
+  hypotheses and the validity of their results. Sometimes this results in
+  useful discoveries.
+  3. Science is the epitome of rationality, the best way of using our
+  minds to make sense of the world. There is a strong, definite causal
+  link between evidence and hypotheses; because of this, theories with
+  more evidence backing them, such as quantum mechanics and the germ theory
+  of disease, can be depended upon more than less well-supported theories.
+  4. The non-celebratory view; science is a human endeavour, and just as
+  much affected by the people doing it as any human endeavour. Science is
+  subject to the values, beliefs, prejudices, and expectations of its
+  practitioners. Some go so far as to say that science never advances, but
+  merely revolves; the doctrines are set out and followed until overthrown
+  by a new order.
+
+** What does "value-free" mean?
+The authors state their intention to argue that scientists must be mindful of the social consequences of their work, especially its role in crafting policy. They set this against the traditional notion that science should be value-free, which apparently denotes objective, dispassionate inquiry in which scientists set aside their humanity where their work is concerned. 
+
+* <2014-06-11 Wed> Questions
+** Concepts
+ - *The diversity of sciences*: The idea that there is no "science", but 
+   many "sciences" with different modes of inquiry and thought.
+ - *Unified science*: A framework to explain all of the sciences by reducing
+   them to a single science, at least conceptually.
+ - *Methodological naturalism*: Naturalism is the idea that only 
+   those things which are amenable to scientific explanation exist in this
+   world. It allows for the future discovery of new things, but does not
+   admit inexplicable entities such as gods and supernatural forces.
+   Methodological naturalism is the use of naturalism purely as part of a 
+   methodology of scientific inquiry, despite whatever beliefs the inquirer
+   may have as to the existence of the supernatural.
+ - *The structure of nature*: The construction of objects in the 
+   natural world, e.g. those parts of the construction of humans that make 
+   us different from other animals, in the absence of belief in a creator 
+   god or a quintessence.
+ - *Hierarchy of disciplines*: Hierarchy showing how disciplines can be
+   reduced to each other, e.g. biology -> chemistry -> physics.
+ - *Reductionism*: The idea that everything can be understood by studying
+   its constituent parts. In philosophy of science, the idea that all the sciences
+   can be reduced to a single science (physics) by breaking things down into their
+   constituent parts.
+ - *Reductionist strategy*: The idea that one can often learn something
+   useful about something by studying its constituent parts.
+ - *Bridge principles*: Ways to recast the ideas of one science into the
+   ideas of another, thereby reducing the first to the second.
+ - *Universal laws of nature*: Laws of nature which apply always 
+   and everywhere. Cartwright argues against their existence with the
+   dollar bill example.
+ - *Causation*: An asymmetric relation between two events in which one 
+   is said to necessarily entail the other, but not vice-versa.
+ - *(Mere) Correlation*: The observation that two events frequently 
+   co-occur.
+ - *Double-blind randomized experiments*: A type of experiment where the
+   population of experimental subjects is randomly split into two classes:
+   one on which the hypothesis is being tested (the experimental 
+   group), and another on which it is not (the control group). Neither the
+   subjects nor the researchers know which subjects are assigned to which
+   groups.
+ - *Materialist dogmatism*: An unfounded, doctrinal tendency towards 
+   materialism (i.e., the avoidance of supernatural or metaphysical
+   explanations). 
+ - *Teleological notions*: Ideas coming from the belief in teleology, i.e.
+   that objects in nature have final causes (in the Aristotelian sense); 
+   that nature has some kind of goal or purpose or end. 
+ - *Functional explanation*: The explanation of natural objects as existing
+   to perform some specific function. Apparently teleological; the focus of
+   efforts to either eliminate teleology from science or introduce it to
+   sciences other than biology.
+ - *Epistemology*: Theory of knowledge; what constitutes knowledge and how
+   to acquire knowledge.
+ - *Distinction between psychology and logic*: Psychology studies how humans
+   actually reason (which may or may not lead to truth); logic studies how 
+   reasoning ought to be carried out in order to necessarily lead to truth.
+ - *Naturalism about knowledge*: The idea that naturalism—science, 
+   essentially—should be applied to science itself. 
+ - *Meliorative epistemology*: Like the difference between the quadratic 
+   formula and Newton's Method. Some epistemologists believe we ought to 
+   scrap all supposed knowledge and start from pure logic, working up to
+   truths. Meliorative epistemologists believe we ought to start with
+   our best guest—current science—and continually improve it, working
+   towards our global optimum. 
+
+** Questions
+*** 1. What is a naturalistic conception of the world? (p.51)
+A conception of the world in which only those things explicable by rigorous reasoning and disciplined inquiry exist. A conception that does not admit of the supernatural.
+*** 2. What does ‘methodological unity’ mean? (p.52)
+A unity imposed by the use of a common methodology. In the sciences this amounts to methodological naturalism (i.e. accepting, at least for the purpose of inquiry, a naturalistic conception of the world). 
+*** 3. How is the reductionist strategy different from reductionism? (pp.54-55)
+Reductionism is the belief that all objects and ideas in all the sciences can be split into more and more fundamental parts and described in terms of these parts, until finally they are all described at the most basic level (in modern science, this would be the level of fundamental particles in quantum mechanics and particle physics). 
+*** 4. What is the point of the example of the twenty-dollar bill? (p.60)
+The twenty-dollar bill example shows a case where, although many scientists believe a Newtonian account of the situation is possible, since they cannot derive one, we cannot be sure. We don't know that Newtonian mechanics don't break down in the presence of multiple cross currents of wind. It argues against the existence of universal laws of nature, and also against the usefulness of formulating such laws. We know there are cases where Newtonian mechanics break down and something radically different happens—e.g. at quantum scales or when traveling close to the speed of light. But Newtonian mechanics are very useful in certain situations, so Nancy Cartwright (the philosopher who created the example, not the Simpsons voice actress), argues that we should give up on reductionism and unification and instead conceive of science as a patchwork of local explanations.
+*** 5. Can you give an example of a mere correlation (i.e. a correlation that is not causation)? (p.62)
+Ionica Smeets's ice cream <-> drowning. Decrease in pirates <-> increase in global temperature.
+*** 6. What is Kant’s response to Hume’s skepticism about causation? (p.65)
+Kant argues that causation does in fact exist outside of the mind, by pointing out that humans do recognize that not every consistently observed sequence of events has a cause-and-effect relationship.
+*** 7. What is methodological naturalism? (p.67)
+The adoption of naturalism as a method for disciplined inquiry, regardless of the inquirers actual feelings about the naturalistic conception of the world or the existence of supernatural beings or forces.
+*** 8. What are some of the reasons why scientists endorse methodological naturalism? (pp.69-70)
+History has shown that many apparently inexplicable things have actually been explained satisfactorily because inquirers didn't give up and punt to supernatural beings. 
+*** 9. Can you give an example of a teleological notion? (p.71)
++The anthropic principle?+ The idea that plants turn towards the sun to get more light for photosynthesis. This ascribes a goal to the plants' movement, of becoming a healthy and flourishing plant. Darwin created a framework in which these notions could be somewhat respectable in biology.
+*** 10. What is a functional explanation? (p.71)
+An explanation for the existence of something given in terms of its function. One of the bastions of teleology in biology, which is the bastion of teleology in science.
+*** 11. What is naturalism about knowledge? (p.74)
+The application of a naturalistic worldview to questions of knowledge.
+*** 12. What is the distinction between psychology and logic (of science)? (pp.74-75)
+The former says how humans actually reason. The latter says how to effectively reason. Naturalism about knowledge argues that logic should be the sole method of deriving scientific knowledge, and that psychology should be eliminated.
+
+** Video Summaries
+*** 18 Things You Should Know About Genetics
+Series of interesting facts about DNA and genes. 
+
+*** The danger of mixing up correlation and causation
+Cute Dutch chick and apparent statistician Ionica Smeets describes cases where causal relationships have been wrongly deduced from correlations: ice cream causes drowning, marriage causes men to live longer (actually men who live longer are more likely to be married), and children with high self-esteem get better grades, so teach your child to be a narcissist (actually that kids who get good grades have high self-esteem). 
+
+*** The Problem of induction
+The (faulty) logic behind induction. In order to conclude that our specific instances amount to a statement about the general case, we need to prove "the future will resemble the past". To prove that, we have that "the future has, thus far, resembled the past". But then we need to assume that the future will resemble the past in order to prove that the future will resemble the past, which is begging the question, which is a fallacy. So induction is bogus. 
+
+The video only deals with the strong statement "the future will resemble the past" and leaves the weaker "it is likely the future will resemble the past" for later.
+
+*** Double blind studies
+Double blind studies are medical studies where neither the patients nor the doctor know which patients are getting the medicine or in what doses. Both patients and doctors typically want the medicine to work, so they have a bias towards overreporting effectiveness and underreporting side effects. A double blind study eliminates this effect since no one has any idea whether what's happening can even be ascribed to the medicine at all.
+
+*** Unintelligent design
+Looks at the case of a specific nerve that controls the larynx. This nerve doesn't go from the brain to the larynx; it goes down into the chest, loops around the heart, and comes back up to the larynx. It turns out that in fish, since they don't really have a neck, this was a pretty direct route to the larynx; but as creatures evolved necks, the nerve just stretched out to maintain the same route, because nothing forced it to totally reroute itself. An example of evolution not following good design principles.
+
+*** The independent assortment of genes
+All cells in the human body have 23 pairs of chromosomes, one set from the mother and one from the father. Each cell also has two alleles for every gene; the way these alleles pair up (the genotype of the gene) decides how the gene is expressed in the organism (the phenotype). Some alleles are dominant and some are recessive; capital letters are for dominant, while lowercase are for recessive. Homozygous genotypes, with two copies of the same allele, express whatever allele they have. Heterozygous genotypes, where the alleles do not match, express the dominant allele. 
+
+In cell division, diploid cells with double the usual amount of DNA are formed. In mitosis, the diploid cell divides in half, and each half gets one copy of the entire DNA sequence. In meiosis, the cell divides in half and then each of those divide in half, giving four zygotes, two with the maternal version of any given chromosome, and two with the paternal copy. 
+
+In sexual reproduction, to form any given gene, one allele is chosen from the mother and one from the father. (Presumably the sperm, a zygote formed by meiosis, carries some allele from the father, and the egg carries one from the mother. I'm not clear on how we went from two alleles per gene to just one, though; I guess it must have happened during meiosis.) 
+
+Now for the law of independent assortment. The alleles inside the zygote were assigned at random to the four zygotes formed during meiosis. Suppose we have two genes, and assume both parents are heterozygous on both of them. We need to choose one allele from each parent for both of these genes to form a gamete, so there are four possibilities (2 alleles * 2 choices for each allele). If these two genes are on different chromosomes, then all four possible gametes are equiprobable. Thus the child has an equal probability of inheriting any of the four possible combinations of alleles. This is the law of independent assortment. The law of independent assortment does not hold for genes on the same chromasome because of the way crossing over works (i.e. for biological reasons, not mathematical). 
+
+These four gamete combinations can pair up into sixteen genotypes, with a 9:3:3:1 ratio of phenotypes: 9 chances for two dominant alleles, 3 for each permutation of a dominant and recessive allele (all three cases leading to expression of the dominant allele), and one chance for two recessive alleles (leading to expression of the recessive trait). 
+
+*** Kant and Hume on causation
+Hume and Kant agree that there is no sensory experience of causation, and also that the mind will link together disconnected events by backfilling with causally-connected events to create a series. Hume says the events are not actually linked; the linkage is an illusion created in the human mind. Kant says that some interpretations that the mind brings to its experience actually are part of the world; in other words, the mind apprehends something real in the world when it perceives causation, and doesn't simply create the illusion of causation. 
+
+* <2014-06-12 Thu> Questions
+*** 1. What is the main point of the argument from symmetry? (pp.4-5)
+The main point is that all religious belief was acquired in a symmetrical fashion—through socialization or personal epiphany—and yet the content of religious beliefs differs radically across faiths, and in fact most religions proclaim all other religions false in at least some respect. But since the source of religious belief was symmetrical across all religions, there is no reason to believe that any one is more correct than the others. Thus we have no reason to believe in the correctness of any religion. 
+*** 2. How is religious experience different from the special capacities of the hearer with absolute pitch or the accomplished wine-taster with respect to giving us information about reality? (p.7)
+The information given by the hearer with absolute pitch or the accomplished wine-taster can be independently verified, both by others with similar abilities and by objective methods: machines such as tuners in the musical case, and chemical analysis of the wine in the oenological case. Religious experiences cannot be so verified; obviously no machine or laboratory experiment can measure or deconstruct them, and as they are usually unique and highly personal, they are not even amenable to verification by other religious people, except in a general sense.
+*** 3. What is Kitcher’s reason for saying that “religious experiences already presuppose the legitimacy of some traditional doctrines”? (p.8)
+Kitcher finds in his examination of religious experiences that all of them involve some element of an existing religious tradition which was known to the experiencer. It may be the trappings of the experience (angels, clouds, trumpets for Christians) or in the way the experiencer understands the events (e.g. being saved from a near brush with death is interpreted as "God saving me", rather than, for instance, "The Flying Spaghetti Monster reaching out his noodly appendage").  
+*** 4. Kitcher remarks that “there is an obvious alternative to the hypothesis that the various religions have, in their different and differently inadequate ways, grasped a core insight”; what is the “obvious alternative” supposed to be? (p.9)
+That societies without religion die out, or are absorbed into those with religion, due to the social and political force of religion.
+*** 5. Why does secularism not suppose that our current scientific (and naturalistic) understanding of the world should be certified as complete? (p.10)
+Because throughout the history of science, radical changes have often been made, and some ideas within modern science are not satisfactorily explained by current theories and seem as if they may be in need of further change at some future time.
+*** 6. What is the “lowest common denominator” view of religion? (p.9)
+The view that although all individual religions are wrong, they have each hit upon some key idea about the world, which should be extracted and preserved even if all the other trappings are abandoned.
+*** 7. According to Kitcher, secularism should be both atheistic and agnostic. What exactly is his point? (p.10)
+Kitcher argues that secularism should be atheistic in the sense of rejecting all currently known religions and religious ideas, but agnostic on the question of whether something rightly characterized as "supernatural" or "transcendent" exists. In other words, secularists ought to have faith that the beliefs of all the known religions are wrong, but, because they should not suppose that our current scientific understanding of the world is complete, should have no faith in either the existence or lack thereof of some sort of transcendent thing to be discovered by science in the future.
+*** 8. In what sense is blind faith blind? (p.12)
+In the sense that it accepts the goodness of a particular set of doctrines because of its source, without judging them on any other terms. 
+*** 9. Besides particular doctrines, what other important features can a religion have? (p.14)
+Particular psychological desires and attitudes; forms of social organization; and rituals and forms of joint behavior. 
+*** 10. According to Kitcher, what is the primary significance of religious communities? (p.19)
+To "connect their members, providing a sense of belonging and of being together with others, of sharing problems and of working cooperatively to find solutions." Also to provide for "conjoint action". We can see this in modern religious communities such as the LDS Church, with its conjoint action against same-sex marriage.
+*** 11. What exactly is the difference between sympathetic connections we happen to have with some people and seeing these people as worthy of that sympathy? (p.23)
+ 
+*** 12. What is a value judgment? (p.23)
+A judgment about the relative value of something.
+*** 13. What are the two forms of the idea that ethics has a religious foundation? (p.24)
+  1. The idea of Euthyphro: what is ethical is what is defined by the gods to be ethical.
+  2. The idea that what is ethical is objectively defined, but can only be discovered by humans through revelation from some divine source.
+*** 14. What is the point of Euthyphro’s Dilemma? (p.24)
+The point is to show that divine revelation is cannot be necessary to goodness. Either goodness is independently defined, and so exists whether the gods will it or not; or else there is no independent definition, so the moral standards set out by religion are simply the whims of divine beings, and humans cannot judge the quality of these whims and therefore cannot say that they are good or bad at all.
+*** 15. What is normative guidance? (p.27)
+Normative guidance is the ability to formulate rules which lead to better outcomes for the group as a whole by restricting certain kinds of counterproductive behavior. 
+*** 16. How are autonomy and self-choice opposed to humility and self-abnegation? (p.31)
+The belief in humility and self-abnegation takes the agency for deciding purpose away from the individual and assigns it to a supernatural force. Autonomy and self-choice are both aspects of the agency for deciding purpose. 
+*** 17. Why does Kitcher think that the religious account of the purpose of life still requires autonomy? (p.33)
+The religious account of the purpose of life requires that humans submit to the divine will and take up humility and self-abnegation. But Kitcher argues that submitting to the divine will is a choice, that taking up humility and self-abnegation requires autonomy. Clearly, since atheism exists, God does not compel all humans to take their divine purpose. This means that religious believers make a choice to take up this purpose, and so even within the religious account, humans must retain autonomy.
+*** 18. Would you find death fearful even if you believe that you will reemerge in some wondrous state (such as Heaven) after you die? (p.37)
+
+* 2014-06-18 Questions
+** 1. What does Kuhn mean when he remarks that decision problems concerning theory choice “cannot be resolved by proof”? (p.356)
+He means that it's impossible to create a deductive proof from first principles that tells scientists whether to accept a new theory or not.
+** 2. In what sense are the five characteristics of a good scientific theory “the shared basis for theory choice”? (p.357)
+They are characteristics that all scientists agree should factor in to the choice of a theory.
+** 3. Give two reasons why “the shared basis for theory choice” does not always determine which theory should be chosen. (p.357)
+Because scientists will interpret or apply the shared basis differently depending on their individual characters and backgrounds, and because it's not always clear which of the five characteristics should be given the most weight in any situation.
+** 4. Why do the predictive and explanatory powers of a theory depend on its accuracy? (p.357)
+In order to make predictions or explain phenomena, a theory must show close conformity with observations; otherwise there are reasons to doubt its truth. But even if we accept the theory as true, it isn't very useful if its predictions are always wrong.
+** 5. How do you understand the “objective vs subjective” distinction? (p.359)
+In this context, "objective" seems to mean "agreed upon by the group", and also "verifiable by or in accord with observations". "Subjective" means "open to individual variation or interpretation."
+** 6. What is it for a decision procedure to be algorithmic? (p.359)
+That the procedure can be mechanically applied to the sort of situation which is makes deicisions for, yielding a single undeniably correct answer.
+** 7. What does Kuhn mean by “textbook science”? (p.360)
+Science as it is explained and framed in textbooks, for the purpose of pedagogy. Kuhn points out that in textbooks, theories are often justified in hindsight, using evidence that was not available until well after the scientific community had accepted the theory, and giving the impression that acceptance of the theory was a much easier problem than it actually was.
+** 8. Explain why the following remark is true: “Individually maxims dictate different choices, collectively none at all.” (p.362)
+Maxims, not being algorithmic, can conflict with one another. If one tries to apply two conflicting maxims to a situation, then no choice can be made.
+** 9. What is the difference between rules and values as Kuhn understands it? (p.362)
+Rules are indisputable laws which should always be followed—algorithmic. Values are considerations which can be interpreted, tweaked, and ignored as suits the situation.
+** 10. Does Kuhn think there is value invariance in science? (pp.364-365)
+No; scientists change their values based on a variety of factors. 
+** 11. Why does Kuhn think matters of taste are undiscussable? (p.366)
+Because as Kuhn describes matters of taste, they depend on individual perceptions. Individual perceptions cannot be discussed; for one thing, and individual can never convey the exact perception to another person, and for another, there are really no grounds for someone to argue that another person's perceptions are "wrong". 
+** 12. What is the sense of ‘subjective’ in which Kuhn denies that theory choice is subjective? (p.366)
+The sense of being a matter of taste.
+
+* <2014-06-20 Fri> Questions
+** 1. Can you five a few examples of how gender bias may affect scientific research? (p.106)
+The primatologists mentioned in the book; it also seems that breast cancer research has increased a lot since more women started going into medicine, and gynecological research in general. 
+** 2. What does it mean to say that knowledge is situated? (p.112)
+Similar to the idea that all language is theoretical, we can say that all knowledge is interpreted and understood in light of some presuppositions; all knowledge is held by a person, who has a perspective.
+** 3. What is, supposedly, the “view from nowhere”? (p112)
+The objective, dispassionate understanding of knowledge which was valued and sought after by eighteenth and nineteenth century scientists. It does not exist; the statement that all knowledge is situated can be taken as the negation of "the view from nowhere exists". 
+** 4. What are feminist epistemologists’ reason for thinking that people in subjugated positions have access to multiple perspectives? (p.113) N.B. epistemology = theory of knowledge
+Feminist episemologists believe that people in subjugated positions must understand both their own perspective and the perspective of the subjugators in order to survive. This teaches them the trick of understanding multiple perspectives, making them better able to do so in general than people in affluent positions. 
+** 5. Why is the clash of perspectives good for science? (p.113)
+Essentially, it creates a system of checks and balances; for example, in modern science, no one could get away with publishing a study on the innate neurological inferiority of black people, because black scientists would object. More prosaically, it ensures that science does not adopt tunnel vision with respect to the problems it investigates.
+** 6. Is it a good thing that Western science is displacing older knowledge traditions all over the world? (p.115)
+Not necessarily; many argue that much of value is lost. For example, many heirloom crop varieties were lost during the Green Revolution. And Western science can sometimes create unintended consequences for those who adopt it.
+** 7. Are all technologies science-based? (p.115)
+If we take "science" to be the rules and principles which underlay nature, then yes, all technologies are based on science. But if we take it more narrowly to mean "the Western scientific tradition that began roughly with Galileo and Kepler", then no. The book mentions Chinese and Indian technological advances which were made in the absence of science.
+** 8. What is bio-piracy? (p.116)
+The practice of learning about plants with medicinal or agricultural benefits from traditional people of the area, then claiming to have discovered it, possibly even using patents or other legal means to cut off access for the traditional people who actually discovered it.
+** 9. What does the analytic approach to knowledge tend to neglect? (p.118)
+Complex interactions taking place at the holistic level.
+** 10. “The new sciences of our era turn even the soul into part of the machine.” (p.123) How do you understand this remark?
+In Descartes's time, very little was understood about the brain and the mind, so Descartes could reserve these as bits of divinity slapped inside the machine of the human body. But modern science now understands the brain in a biomechanical fashion, which requires that the soul, if it exists in the brain as Descartes believed, also be explicable by biomechanical analysis. 
+** 11. Can you give an example of how extrascientific motivations can promote good community strategies for scientific research? (p.128)
+** 12. How can knowledge be both liberating and used to confine? (p.133)
+
+** Video Summaries
+*** Feminism
+Talks about the founding ideas behind feminism: that women are stripped of the ability to make money, thus of power and autonomy, and that women are subject to the cultural attitudes that hamper them even when they are allowed to go out and make money.
+*** Female primatologists
+A brief overview of the lives of three women who made major contributions to primatology: Jane Goodall, who worked with chimpanzees; Diane Fossey, who worked with gorillas; and Birute Galdikas, who to this day works with orangutans in Indonesia as part of the longest-ever field study by a principle investigator.
+*** Barbara McClintock
+More background on the woman who discovered the existence of mobile genes and observed crossing over.
+*** Bio-piracy
+More on instances where native people have been robbed of just reparation for discoveries.
+
+*** The Green Revolution
+How the Green Revolution failed in Bali, with its high falutin' hybrid plants, and people went back to the old water temple system.
+
+* Video Summaries
+
+** Bill Nye vs. Marc Morano
+Bill Nye the Science Guy and our supposedly unbiased host, Piers Morgan, debate climate change with crackpot Marc Morano, whose only apparent credential to doubt global warming is that he runs a website for people who doubt global warming (note: totally biased summary).
+
+Morano cites several dubious "facts" supposedly from "peer-reviewed studies" but never mentions the inquirers in the studies. (For one thing, he claims there hasn't been a Category 3 or higher storm in the US since 1900, but Hurricane Katrina and Sandy were both Category 3 or higher.)
+
+** Nicholaus Copernicus and the Heliocentric Model
+Short history of the heliocentric model.
+
+** Aristotle's Four Causes:
+Hipsters use cookie-making to explain Aristotle's four causes, different ways to explain how something came to exist:
+  1. Material cause: the materials from which something is formed. E.g.
+  water, sugar, flour, peanut butter, oil, eggs, etc. came together, and
+  that's why snickerdoodles exist.
+  2. Formal cause: When the ingredients are combined according to the recipe,
+  this causes snickerdoodles to exist.
+  3. Efficient cause: Because Elizabeth (the girl in the video)
+  performed the actions of mixing, measuring, shaping, baking, etc., the
+  snickerdoodles came to exist.
+  4. Final cause: The snickerdoodles came to exist so they could be eaten.
+  Equivalently, we could say that since a desire for cookies existed,
+  the cookies came to exist; the desire caused the cookies. The
+  tautological, highly evasive cause.
+(It just occurred to me that the anthropic principle that Stephen Hawking talks about makes use of final cause to explain why the universe is the way it is: the universe is the way it is so humans could come to exist in it and ask why the universe is the way it is.)
+** Alfred Adler
+Adler came up with many of the notions of modern pop psychology, including inferiority complexes, overcompensating, and birth order characteristics. 
+** Astrology is a scam
+A British guy does some palm reading birthdate divining naturopathic bullshit on three groups of young people: one in Britain, one in the US, and one in Spain. He then gives each a personality reading sheet which all profess to be a very close match to their personalities, before revealing that all of them have the same sheet.
+** Psychoanalytic Therapy Session
+Cheesy reenactment of a Freudian dream analysis session.
+** Marxism - Historical Materialism
+About the Marxist theory of history that Popper discusses in his paper. Historical materialism is the combination of two theories: materialism and dialectics. The former simply says that the world exists independent of our perception of it; if a tree falls in the forest and no one is around to hear it, it does make a sound. Dialectics says that the world, society, and individuals are in a state of constant change, and can embody contradictions. Historical materialism looks at the economic structure of society and theorizes that the superstructure—art, music, literature, and all forms of ideology and culture—exist to justify and reinforce the economic substrate that they depend on. 
+

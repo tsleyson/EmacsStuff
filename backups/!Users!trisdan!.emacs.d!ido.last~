@@ -1,0 +1,50 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/trisdan/Dropbox/Writing/Blogs/" . "TPCS/")
+ ("/Users/trisdan/Dropbox/Writing/" . "Blogs/")
+ ("/Users/trisdan/Dropbox/" . "Writing/")
+ ("/Users/trisdan/.emacs.d/" . "my-extensions/")
+ ("/Users/trisdan/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/trisdan/.emacs.d/"
+ "/Users/trisdan/.emacs.d/my-extensions/"
+ "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "crazystuff.el"
+ "init.old.el"
+ "font-toggle.el"
+ "siena_blog.org"
+ "typopunct.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/trisdan/.emacs.d/" (22117 4968 0 0) "url/" "TAGS" "recentf" "README.md" "places" "my-extensions/" "init.el" "image-dired/" "ido.last" "emacsreg.reg" "elpa/" "crazystuff.el" "backups/" "auto-save-list/" ".smex-items" ".git/" ".emacs.desktop" "#init.el#" "../" "./")
+
+ ("/Users/trisdan/.emacs.d/my-extensions/" (22117 3822 0 0) "typopunct.el" "tan-background-theme.el" "ruby-block.el" "python-django/" "php-mode-improved.el" "my-editing.el" "markdown-mode.el" "linum.el" "ispell/" "html-entities.el" "font-toggle.el" "ekoans.el" "../" "./")
+
+ ("/Users/trisdan/" (22117 2875 0 0) "Public/" "Pictures/" "Music/" "Movies/" "Library/" "IdeaProjects/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Books/" "bin/" "Applications/" ".viminfo" ".Trash/" ".ssh/" ".scala_history" ".sbt/" ".password-store/" ".oracle_jre_usage/" ".m2/" ".lein/" ".ivy2/" ".IdeaIC15/" ".idea-build/" ".gnupg/" ".gitconfig" ".gitattributes" ".git-prompt.sh" ".git-completion.bash" ".emacs.d/" ".DS_Store" ".dropbox/" ".CFUserTextEncoding" ".bash_profile" ".bash_history" ".android/" ".489614.padl" "../" "./")
+
+ ("/Users/trisdan/bin/" (22117 2875 0 0) "emacs" "../" "./")
+
+ ("/Users/trisdan/Dropbox/" (22106 37242 0 0) "Writing/" "UCSC Campus (mobile).pdf" "ubuntu-font-family-0.80.zip" "TrisdanLeysonCreditReport.pdf" "TESTING SUBMERSIBLE PUMP MOTORS.htm" "Somerandomfile.odt" "Programs/" "Photos/" "parking-map.pdf" "Official/" "notes" "Job/" "Icon
+" "Homework/" "hideHNQ.js" "Graduate Applications/" "Finances.ods" "eI9Verify_files/" "eI9Verify.html" "diveintopython.pdf" "Apps/" ".DS_Store" ".dropbox.cache/" ".dropbox" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/Blogs/TPCS/" (22105 25148 0 0) "understand-the-use.org" "three-clojure-topics.md" "three-clojure-topics.html" "siena_blog.org" "relational_lists.db" "relational-lists.md" "python-is-vs-equals-equals.md" "multiple_inheritance.org" "multiple_inheritance.html" "madoka-simulation.org" "madoka-simulation.html" "java_v_cpp.md" "isomorphism.html" "induction-finale.html" "implicit.md" "Essential Data Structures.lyx~" "Essential Data Structures.lyx" "dynamic_programming2.md" "dynamic_programming1.md" "ants-async.md" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/Blogs/" (22084 10766 0 0) "WhyCitations.md" "WhyCitations.html" "Where do bad programmers work.md" "webframeworks.md" "TPCS/" "one-week-friends.md" "four-algs-books.md" "explain-class.md" "clojure-conservative.md" "answer.txt" "anime/" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/" (22084 10801 0 0) "Wizard Story/" "What's inside a computer.odt" "Thoughts/" "Succubus Story/" "novel_style.css" "Neither Here Nor There Draft 4.5/" "Misc/" "Magical 4koma story/" "Building-Your-Book-for-Kindle.pdf" "Blogs/" "Amazon Kindle Direct Publishing: KDP Account Information_files/" "Amazon Kindle Direct Publishing: KDP Account Information.html" "aboutme.txt" ".DS_Store" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

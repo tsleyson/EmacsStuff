@@ -1,0 +1,32 @@
+# fakku_urls.py
+# Given a doujinshi name, pings the Fakku API and finds the images URL
+# for that doujin. Writes it to stdout for piping into curl.
+
+import json
+import re
+import sys
+import urllib
+import urllib2
+
+# Note: If you use echo to input a name on stdin, make sure to pass the -n
+# option, otherwise the title has a newline at the end and it gets all
+# screwed up.
+name = sys.stdin.read()
+try:
+    addr = "https://api.fakku.net/manga/{}/read".format(name)
+    response_json = urllib2.urlopen(addr)
+    response = json.loads(response_json.read())
+    pages = response['pages']
+    last_page = max([int(page) for page in pages])
+    last_page_url = pages[str(last_page)]['image']
+except ValueError:
+    sys.stderr.write("Invalid doujinshi name")
+else:
+    # Now we have a url like https://fakku.net/the-manga-we-wanted/034.jpg.
+    # But some URLS have [] in them so we escape those. We don't add in the
+    # curl glob stuff to get all the urls because I wanted to use this
+    # as a chance to practice with bash and the Unix command line, so
+    # Python just handles the JSON stuff.
+
+    escaped_last_page_url = urllib.quote(last_page_url, safe=":/_.")
+    sys.stdout.write(escaped_last_page_url)

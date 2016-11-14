@@ -1,0 +1,22 @@
+# boldalt.py
+# Takes an HTML file and makes every other line bold. For the
+# FocusForward transcription test.
+
+from HTMLParser import HTMLParser
+
+class BoldAlt(HTMLParser):
+    def __init__(self, startwhere):
+        """
+        True means the first paragraph should be bold, as well as
+        every other paragraph after that.
+        False means the second paragraph, and every other one after
+        that.
+        """
+        self.bold = startwhere 
+    # end __init__
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() == 'p':
+            if self.bold:
+                attrs['style'] = '{0}{1}'.format((attrs.get('style', ''), 
+                                        'color: blue; font-weight: bold;') 

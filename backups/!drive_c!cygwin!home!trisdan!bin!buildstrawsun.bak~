@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+# A Bash script to build a Strawberry Sunflower book from a bunch of
+# Markdown files.
+# The first argument is the name of the output file. Pandoc depends on
+# this file's extension to get the output format.
+
+IFS="|"  # So we can have spaces in file names, change $*'s sep char.
+args=( ${*//IFS/ } ) # Split $* into an array.
+outf=$1
+
+
+# Debug
+# echo "All args: " ${args[@]}
+# echo "Output file: " $outf
+# echo "Second input: " ${args[2]}
+# echo "Args parsed as: "
+# for arg in "${args[@]:1}"; do
+#     echo -e $arg "\n"
+# done
+
+# Error handling
+if [ -z $outf ]; then
+    echo "Error: Output file not set."
+    exit 1
+elif [ -z ${args[@]:1} ]; then
+    echo "Error: No input files given."
+    exit 1
+fi
+
+basedir='C:/Users/trisdan/Dropbox/Writing/Magical 4koma story' 
+pandoc -o $outf "${args[@]:1}" -H "${basedir}/stylelink.html" --smart
+
+# Heavy comments to explain the Bash insanity to future me:
+
+# args[@] "splats" the args into a bunch of quoted strings.
+# ${args[@]:1} takes the slice from element 1 on. The end result is to
+# pass a bunch of quoted filenames to pandoc; it's sort of like the
+# reverse of apply in Clojure. But it has to be in quotes, otherwise
+# it somehow does the exact opposite and concatenates the entire slice
+# into one big string. And of course they have to be double quotes
+# because single quotes don't evaluate anything.
+
+# basedir is defined so that you can run the command from any
+# directory; before I had ../stylelink which required that you run the
+# command from a directory under the one where stylelink was, which I
+# didn't like because it adds hidden context and Bash is insane enough
+# without adding hidden context.

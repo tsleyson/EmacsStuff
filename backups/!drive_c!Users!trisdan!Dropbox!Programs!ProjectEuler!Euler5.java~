@@ -1,0 +1,115 @@
+/** Euler5.java
+    A Java implementation of Project Euler problem 5.
+    Uses concurrency.
+*/
+import java.util.concurrent.*;
+import java.util.Queue;
+
+class Euler5
+{
+    private static BlockingQueue<Long> numbers = new LinkedBlockingQueue<>();
+    // Watch out for overflows of Long. Unlikely, but possible.
+    private static BlockingQueue<Long> answers = 
+        new PriorityBlockingQueue<>();
+    private static Long result = new Long(0);
+    private static final int NUM_THREADS = 20;
+    private static final Semaphore qs = new Semaphore(NUM_THREADS);
+
+    private static void fillQueue(Long start, Long end)
+    {
+        for (Long i = start; i <= end; ++i)
+        {
+            numbers.add(i);
+        }
+    }
+
+    // Use BlockingQueue, not Queue, so we don't have to cast to use
+    // the blocking methods.
+    private class Manager implements Runnable
+    {
+        final BlockingQueue<Long> q, answers;
+        final ArrayList<Thread> workers;
+        Manager(BlockingQueue q, BlockingQueue answers, 
+                ArrayList<Thread> workers) 
+        {
+            this.q = q;
+            this.answers = answers;
+            
+        }
+
+        public void run()
+        {
+            for (;;)
+            {
+                if (!(answers.empty()))
+                {
+                    
+                }
+            }
+        }
+    }
+
+    private class Worker implements Runnable
+    {
+        final BlockingQueue<Long> q, answers;
+        boolean finishUp = false;
+
+        Worker(BlockingQueue q, BlockingQueue answers)
+        {
+            this.q = q;
+            this.answers = answers;
+        }
+
+        private void finish()
+        {
+            this.finishUp = true;
+        }
+
+        private boolean checkDivisibility(Long candidate)
+        {
+            for (int i = 1; i <= 20; ++i)
+            {
+                if (candidate % i != 0)
+                    return false;
+            }
+            return true;
+        }
+
+        public void run()
+        {
+            while (!finishUp) 
+            {
+                try {                    
+                    Long candidate = q.take(); // Blocks until q available.
+                    if (checkDivisibility(candidate))
+                        answers.put(candidate);
+                } catch (InterruptedException ie) {
+                    System.err.println("Worker interrupted, exiting");
+                    System.exit(1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        for(;;)
+        {
+
+        }
+    }
+}
+
+/*
+  Have a thread that fills the queue, then just sits and watches it.
+  If it ever empties out, stick some more numbers in it.
+  It also waits for a signal from the other threads that an answer has
+  been found.
+  Have several other threads that take numbers off the queue and test
+  them to see if they're divisible by 1 through 20. If the queue is
+  empty, they send a message to the manager and then wait.
+  Have a semaphore. The semaphore has NUM_THREADS permits. Each thread
+  acquires and releases a permit whenever it takes a number from the
+  queue. This isn't to protect the queue; it's already protected by
+  being a BlockingQueue. 
+ */

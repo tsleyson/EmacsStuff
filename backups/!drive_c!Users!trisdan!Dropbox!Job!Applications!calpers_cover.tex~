@@ -1,0 +1,27 @@
+\documentclass[10pt]{letter}
+% The following get rid of giant white space at top of page.
+\makeatletter
+\let\@texttop\relax
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true]{hyperref}  % Make links non-horrible.
+\usepackage[margin=1.0in]{geometry}
+
+\signature{Trisdan Leyson}
+\address{12266 Regent Way\\PO Box 1033\\Oregon House, CA 95962\\(530) 692-9040\\trisdan.leyson@gmail.com}
+\longindentation=0pt  % Don't center closing.
+
+\begin{document}
+\begin{letter}{Trisdan Leyson -- Software Engineer}
+\opening{Dear Sir or Madam:}
+
+Thank you for considering me for a software engineering position. I'm a graduate of 2014 from UC Davis, with a Bachelor of Science in computer science. For a long time, I've been fascinated by text processing algorithms, including those used in bioinformatics. I've spent quite a bit of time reading chapters from Dan Gusfield's book \textit{Algorithms on Strings, Trees, and Sequences}, trying to understand the concepts and proofs behind algorithms such as Boyer-Moore and Ukkonen's Algorithm for suffix trees. In general, the application of computer science to biological problems interests me, so a position with the Biomolecular Engineering Cancer Genomics Hub is one I would be very enthusiastic about.
+
+Though I have solid skills in Java, Python, and object-oriented programming, as well as experience with C and Unix, my job as an English tutor with the Yuba College WLDC taught me many soft skills, including how to collaborate, how to communicate effectively, and how to work with people of varied backgrounds. In the course of my studies at UC Davis, I learned how to pick up new languages quickly, read code and perceive the structure of a legacy system, and get up to speed on existing software tools. 
+
+If you think I might be a good fit for the position, please contact me. I currently live in the Sierra Nevada Foothills, but I have family in Santa Cruz and plan to relocate if offered a position. 
+
+\closing{Thank you for your time,}
+\end{letter}
+
+\end{document}

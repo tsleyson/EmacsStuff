@@ -1,0 +1,52 @@
+# Notes on Regex
+
+## AST
+I like the following setup for the AST:
+
+  - A base class, RSTNode
+  - Classes Literal and Metachar, which subclass RSTNode.
+  - Subclasses of Metachar: Quantifier, Wildcard, Anchor, and Alternate.
+
+### RSTNode
+Mostly just used for its type. In fact, maybe this should be an interface. It should have the method evaluate, that takes a String or character stream and tries to match the node against the current position in the character stream. (Or maybe tryMatch would be a better name than evaluate.)
+
+### Literal
+Holds literal characters. Its evaluate method tries to match the character it holds against the current position in the token stream.
+
+### Metachar
+Maybe we don’t need this class. If Literal is also going to have an evaluate method, we can probably just walk down the tree and have each node try to match itself against the current position and then try to match the stream against its children, in order, sort of like this:
+
+ASTRoot.tryMatch(cstream);
+// Inside ASTRoot.tryMatch:
+  - Do the stuff to try and match the current node against the current state of the stream. (E.g. compare the token if you’re a literal, do the metachar stuff if you’re a metachar.)
+  - if the match succeeds, advance the character stream and:
+  - for child in children:
+      child.tryMatch(cstream)
+
+This ends up with a recursive walk down the AST.
+### Quantifier
+Covers *, +, ?, and {}. Its children will be whatever is quantified.
+
+### Wildcard
+Covers . and [].
+
+. will be a leaf, like a literal (it’s exactly like a literal except that it matches anything. We can also implement “dot matches newline” by giving the class a static flag, or else a global flag that it checks whenever it goes to match.)
+
+[] will also be a leaf since the way it matches is different from literal text. Its token will be a set containing all the characters that were inside the class. Try to make it possible to add ranges later, but don’t worry about them for now. It also needs a flag to tell it whether it should match characters in the set or characters not in the set.
+
+### Anchor
+Covers ^ and $.
+
+Anchors match if the cstream is at a specific position. ^ matches if the position is zero. $ matches if it’s the end (or we can also do a $ matches newline mode).
+
+### Alternate
+Covers |.
+
+|’s children will be the alternative expressions. If there’s another alternator, it will be the last child of the alternator.
+
+## Backtracking
+We need some way to return to the place where we took a choice and try the other choice, i.e. to backtrack. Either an explicit stack or recursion.
+
+Anchors and literals can fail to match, but they don’t contribute any choices that need to be undone.
+
+Quantifiers can fail to match. 

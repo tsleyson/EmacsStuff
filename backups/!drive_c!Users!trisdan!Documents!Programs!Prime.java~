@@ -1,0 +1,70 @@
+   public class Prime 
+    {
+
+
+ private long userNumber;
+private int numRoot;
+private int x;
+private boolean isPrime;
+private int factors;
+private long end;
+private int i;
+
+
+public void setUserNumber(long num)
+{ 
+   userNumber = num;
+}
+
+public void setEndNumber(long n)
+{ 
+ end = n;
+}
+
+public boolean getPrime()
+{
+   numRoot = ((int)Math.sqrt(userNumber));
+
+
+  for (x=2; x<=numRoot; x++)
+  {
+     if ((userNumber % x) == 0)
+     {
+        factors++;        
+     }
+  }
+
+  if (factors >1){
+     isPrime = false;
+
+  }
+  else {
+
+     isPrime = true;
+
+  }
+  return  isPrime;
+
+  }  
+  public void getPrimeList()
+{
+  if(end < 2){
+     System.out.println("No prime numbers");
+     System.exit(0);
+  }
+  System.out.printf("\nThe prime numbers from 1 to %d are: \n 2", end);
+  Prime primeNum = new Prime();
+  i = 3;
+  while( i <= end )
+  {
+     userNumber = i;
+     getPrime();
+     if (isPrime == true)
+     {
+        System.out.println(userNumber);
+     }
+     i++;
+  }
+  System.out.println();
+ }
+ }

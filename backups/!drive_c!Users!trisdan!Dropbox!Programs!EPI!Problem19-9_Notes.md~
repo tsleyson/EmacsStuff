@@ -1,0 +1,9 @@
+# Problem 19.9 Notes
+Given a set of tasks T with elements t0, t1, ..., tn and associated durations d1, d2, ..., dn and prerequisite sets P1, P2, ..., Pn, verify that the set of tasks is feasible (i.e. no task is its own prerequisite) and find a minimum delay way of scheduling them on an infinite set of servers. Each task requires one server to run.
+
+## Approach
+We can represent the tasks as a weighted directed acyclic graph. It’s directed because there is a directed edge from each prerequisite to the task that it’s a prerequisite for. The weights represent the time to complete the task; every outgoing edge from a given node will have the same weight (the duration of that particular task).
+
+We can check for feasibility by checking for an absence of directed cycles. Probably, we can do this by just marking nodes as we encounter them while finding the shortest path. The shortest path through this graph is the least time-consuming way to complete all of these tasks.
+
+Since there are no cycles and all outgoing weights are the same, we should be able to just topologically sort the nodes and schedule them in order of their topological sort. Tasks which do not depend on each other at all can be scheduled concurrently on separate servers. 

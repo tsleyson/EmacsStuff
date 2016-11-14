@@ -1,0 +1,32 @@
+public class SyncPrinting {
+    static class PrintRange implements Runnable {
+        public final int start, end, step;
+        
+        public PrintRange(int start, int end, int step) {
+            this.start = start;
+            this.end = end;
+            this.step = step;
+        }
+        
+        public void run() {
+            for (int i = start; i < end; i += step) {
+                try {
+                    System.out.println(i);
+                    notifyAll();
+                    wait();
+                } catch (InterruptedException ie) {
+                    System.out.println("Interrupted");
+                    continue;
+                } 
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread odds, evens;
+        odds = new Thread(new PrintRange(1, 100, 2));
+        evens = new Thread(new PrintRange(2, 100, 2));
+        odds.start();
+        evens.start();
+    }
+}

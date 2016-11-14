@@ -1,0 +1,48 @@
+package Euler5;
+import java.util.concurrent.*;
+
+    private class Worker implements Runnable
+    {
+        private Thread myManager;
+        private Context myContext;
+
+        Worker(Thread myManager, Context myContext)
+        {
+            this.myManager = myManager;
+            this.myContext = myContext;
+        }
+
+        private boolean checkDivisibility(Long candidate)
+        {
+            for (int i = 1; i <= 20; ++i)
+            {
+                if (candidate % i != 0)
+                    return false;
+            }
+            return true;
+        }
+
+        public void run()
+        {
+            for (;;)
+            {
+                try {
+                    if (myContext.numbers.isEmpty())
+                    {
+                        myManager.notify();
+                        while (myContext.numbers.isEmpty())
+                            wait();
+                    }
+                    else
+                    {
+                        Long candidate = myContext.numbers.take();
+                        if (checkDivisibility(candidate))
+                            answers.put(candidate);
+                    }
+                } catch (InterruptedException ie) {
+                    System.err.println("Worker interrupted, exiting");
+                    System.exit(1);
+                }
+            }
+        }
+    }

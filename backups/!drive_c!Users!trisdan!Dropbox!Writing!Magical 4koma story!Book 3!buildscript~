@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# Calls my buildstrawsun script so I don't have to keep typing in the
+# file names.
+buildstrawsun "Book 2.html" "toc.md" "The camping trip, part 2.md" "Cora's weekend.md" \
+    "Puzzles aren't that hard.md" "The hostage crisis.md" "The cat girl's mafia.md" \
+    "Alone with Lily.md" "My brother embarrasses me.md" "Angel of the Courtyard.md"

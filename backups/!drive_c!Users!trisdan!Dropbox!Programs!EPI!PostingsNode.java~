@@ -1,0 +1,10 @@
+/* Used for problem 8.14 of EPI. */
+
+public class PostingsNode {
+    int data;
+    PostingsNode next, jump;
+
+    public PostingsNode(int data) {
+        this.data = data;
+    }
+}

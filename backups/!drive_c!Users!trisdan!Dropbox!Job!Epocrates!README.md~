@@ -1,0 +1,7 @@
+# Starting the program
+python main.py <INPUT STRING>.
+
+This prints the position of INPUT STRING to the console.
+
+# Compatibility
+Tested with Python 3.4. Should work with any version of Python 3. Also tested and seems to work with Python 2.7.

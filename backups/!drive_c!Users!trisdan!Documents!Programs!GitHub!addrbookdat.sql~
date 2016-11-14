@@ -1,0 +1,12 @@
+insert into address (First, Last, House, Street, 
+                    District, Town, PostCode, Phone)
+            values('Anna', 'Smith', '42', 'Any Street', 'SomePlace',
+                           'MyTown', 'ABC123', '01234 567890');
+insert into address (First, Last, House, Street, 
+                    District, Town, PostCode, Phone)
+            values('Bob', 'Builder', '17', 'Any Street', 'SomePlace',
+                  'MyTown', 'ABC234', '01234 543219');
+insert into address (First, Last, House, Street,
+                    District, Tonw, PostCode, Phone)
+            values('Clarke', 'Kennit', '9', 'Crypt Drive', 'Hotspot',
+                             'My Town', 'ABC345', '2938457358');

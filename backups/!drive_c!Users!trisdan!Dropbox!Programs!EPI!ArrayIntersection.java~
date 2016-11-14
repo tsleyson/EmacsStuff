@@ -1,0 +1,16 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+
+public class ArrayIntersection {
+    public int[] computeIntersection(int[] a, int[] b) {
+        int[] longer = a.length > b.length? a : b;
+        int[] shorter = a.length <= b.length? a : b;
+        ArrayList<Integer> intersection = new ArrayList<>();
+        for (int i : shorter) {
+            if (Arrays.binarySearch(longer, i) > 0) {
+                intersection.add(i);
+            }
+        }
+        return intersection.toArray();
+    }
+}

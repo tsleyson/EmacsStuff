@@ -1,0 +1,11 @@
+importPackage(java.lang);
+importPackage(java.io);
+
+function subsets(s) {
+    if s.length() == 0 {
+        return [[]];
+    } else {
+        item = [s.pop()]
+        return subsets(s)
+    }
+}

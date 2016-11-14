@@ -1,0 +1,48 @@
+# Problem 13.8 of EPI.
+
+import doctest
+import itertools
+
+def find_closest_repeat(words):
+    """
+    Find closest repeating pair of words. Requires all words
+    lowercase, no punctuation or whitespace.
+
+    >>> find_closest_repeat("one pair one answer".split())
+    [('one', 0, 2)]
+
+    A tie for closest pair.
+    >>> find_closest_repeat("I got no friends got no money".split())
+    [('got', 1, 4), ('no', 2, 5)]
+
+    >>> find_closest_repeat("no repeated words".split())
+    []
+
+    One right answer, many pairs.
+    >>> find_closest_repeat(("all work and no play makes for no fun " +
+    ... "no work and no results").split())
+    [('no', 7, 9)] 
+    """
+    pair_spacing = {}
+    for i, word in enumerate(words):
+        try:
+            pair_spacing[word].append(i)
+        except KeyError:
+            pair_spacing[word] = [i]
+    for word in pair_spacing:
+        assert word in words
+        assert len(pair_spacing[word]) > 0
+    # Note: there can only be one min among individual words' lists.
+    each_word_smallest = [min([(x, y, abs(x-y))
+                                for x in pair_spacing[word]
+                                for y in pair_spacing[word]
+                               if abs(x-y) > 0],
+                              key=lambda t : t[2])
+                          for word in pair_spacing
+                          if len(pair_spacing[word]) > 0]
+    return list(itertools.takewhile(
+        lambda t: t[2] == each_word_smallest[0][2],
+        each_word_smallest))
+               
+if __name__ == "__main__":
+    doctest.testmod()

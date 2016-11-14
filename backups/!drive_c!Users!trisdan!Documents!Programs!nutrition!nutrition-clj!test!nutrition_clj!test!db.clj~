@@ -1,0 +1,57 @@
+(ns nutrition-clj.test.db
+  (:require [nutrition-clj.db :refer [recipe-by-id
+                                      ingredient-lookup
+                                      ingredient-validate
+                                      prepare]]
+            [nutrition-clj.test.test-data :refer [prepared-recipe]]
+            [clojure.test :refer [deftest testing is use-fixtures]]))
+
+(defn setup [test]
+  (def raw-ingredients [{:cn_code 14406, :weights_sequence_number 2}
+                        {:cn_code 14429, :weights_sequence_number 1}])
+  (def prepared-ingredients
+    [{:description "FRUIT PUNCH JUC DRK,FRZ CONC,PREP W/H2O",
+      :amount 1.0
+      :measure_desc "FL OZ"}
+     {:description "WATER,TAP,MUNICIPAL",
+      :amount 1.0
+      :measure_desc "FL OZ"}])
+  (def raw-data
+    {:name "Tea"
+     :instructions "Boil water^|^Place tea bag in water"
+     :ingredients (str [{:cn_code 115444 :weights_sequence_number 1},
+                        {:cn_code 14429 :weights_sequence_number 2}])}) 
+  (test))
+
+(use-fixtures :once setup)
+
+(deftest test-ingredient-validate []
+  (testing "Valid ingredients"
+    (is (= (ingredient-validate (first raw-ingredients))
+           (first raw-ingredients)))
+    (is (= (ingredient-validate (second raw-ingredients))
+           (second raw-ingredients))))
+  (testing "Invalid ingredients"
+    (is (thrown-with-msg? AssertionError #"is invalid"
+                          (ingredient-validate {:gurgle 2 :blargh 5})))
+    (is (thrown-with-msg? AssertionError #"is invalid"
+                          (ingredient-validate {:cn_code 22})))))
+
+(deftest test-ingredient-lookup []
+  (testing "Gets some ingredients"
+    (is (= (ingredient-lookup raw-ingredients) prepared-ingredients)))
+  (testing "Dies on invalid"
+    (is (thrown? AssertionError (ingredient-lookup [{:gurgle 2 :blargh 5}])))))
+
+(deftest test-prepare []
+  (testing "Correctly prepares valid data"
+    (is (= (:ingredients prepared-recipe)
+           (:ingredients (prepare raw-data))))))
+
+(deftest test-recipe-by-id []
+  (testing "Gets a recipe"
+    (is (= prepared-recipe
+           (recipe-by-id 1))))
+  (testing "Also works with a string parameter"
+    (is (= prepared-recipe
+           (recipe-by-id "1")))))

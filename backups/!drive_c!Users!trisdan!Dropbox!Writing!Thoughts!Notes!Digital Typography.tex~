@@ -1,0 +1,62 @@
+% Created 2014-01-11 Sat 15:57
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Digital Typography}
+\author{}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+\section{Notes on Digital Typography, by Donald Knuth}
+\label{sec-1}
+\subsection{Chapter 3: Breaking Paragraphs into Lines}
+\label{sec-1-1}
+
+
+Knuth starts by developing two algorithms, first-fit and best-fit, that don't quite solve the line breaking problem as elegantly as what he uses in \TeX{}. Here's how they work (as I understand it):
+
+Both algorithms are greedy, so they won't ever accept bad lines at the beginning to get better lines at the end. They are greedy on different things, with best-fit being a bit more sophisticated. Knuth's algorithm, total-fit, is a refinement of best-fit that uses dynamic programming to find the optimum set of breaks on the same criteria as best-fit.
+
+Both assume that text is a sequence of boxes and glue and penalties. Knuth uses parallel sequences to represent all the parts of these objects. (He was writing for mathematicians, not programmers.) I think tuples or classes are an easier-to-understand option. So a paragraph is a sequence of print objects $x_1x_2\ldotsx_m$, each of which can be boxes, glue, or penalties. 
+
+Boxes are objects with just a natural width $w_i$ (which depends on what's in the box; an `m' is much wider than an `i', for example). 
+
+Glue is basically a space. (Knuth says `spring' might be a better name for them since they expand and contract, and also mentions that many \TeX users call them `skips'.) Glue items have a natural width $w_i$, a stretchability $y_i$, and a shrinkability $z_i$. The latter two are used in the breaking algorithms to decide how much space to add around a box; they're sort of like the `slack' in the natural width.
+
+Penalties are breakpoints where you can end a line (since \TeX is awesome, it only lets you end lines between words or at valid hyphenation points, so the penalties are inserted into the sequence of paragraph items directly). Each penalty has a penalty value $p_i$ that tells you just how bad it would be if you broke the line there, and also a flag $f_i$; you can't break on two flagged penalties in a row. This is how we avoid hyphenating two lines in a row.
+
+All three line-breaking algorithms make use of a concept of an adjustment ratio. The basic idea is that when you break lines, you have some idea of how long you want the lines to be, so you give the program a sequence $l_1, l_2, \ldots, l_m$ specifying the length for each line. Normally they'll all be the same, but you can adjust some of them to flow the text around a picture, for example. After you've chosen a \$j\$th line (by setting a break), you calculate the total length $L_j$ (by adding up the lengths of all the boxes and glue in the line), the total stretchability $Y_j$, and the total shrinkability $Z_j$, for that line. Then you calculate the adjustment ratio, basically like this:
+
+\$r$_j$ = \$ (cond (($L_j = l_j$) 0)
+               (($L_j < l_j$) \$\frac{l_j - L_j}{Y_j})
+               (($L_j > l_j$) \$\frac{l_j - L_j}{Z_j}))
+Said very simply, what this formula says is: if the line is too small, we need to stretch it proportional to how much smaller it is than we want and how much room we have to stretch. If it's too big, we need to shrink it. Otherwise we can leave it alone. The text also does a good job explaining this.
+
+Here's how I understand the first-fit algorithm:
+
+\end{document}

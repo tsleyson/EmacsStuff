@@ -1,0 +1,11 @@
+To resize a bunch of images on the command line using Bash:
+
+for f in *.jpg; do convert -resize <width> $f ${f%%.jpg}"ext.jpg"; done
+
+That renames the resized files to the original filename plus ext.jpg. I assume ou can give $f twice and get the files replaced with the resized versions.
+
+convert is part of ImageMagick.
+
+To make sure only images bigger than the size you input are resized:
+
+convert <fname> -resize AxB\>

@@ -1,0 +1,364 @@
+* Thoughts on Steve Yegge's Ten Great Books and Ten Challenges, <2014-01-08 Wed>
+
+I'm sort of a Steve Yegge fan. It was like he spoke to me, man, like
+all the things I was thinkin and feelin, man, he thought and felt
+too, man, like some kinda 60s rock thing, man. I think I could
+totally get hired if he interviewed me (probably not, though, so I'm
+lucky that it'll likely never happen).
+
+Anyway, I could feel my brain rotting, just like when Steve mentioned
+people whose brains turn to mush from their lame day jobs (in
+'Miracle Interview'), except my lame day job was being a worthless
+loser who missed graduating from college by one credit. I decided I'd
+better read something. I used to read, but now I just talk about
+reading and how cool it is, all the time. I read manga and blogs and
+Wikipedia articles and the occasional light novel, but that's mostly
+crap. When I wrote my graduate school essays and then compared them to
+essays I wrote a few years ago for literature classes, the difference
+was pretty shocking.
+
+Since I'm one of those annoying Yegge fanatics who do everything he
+does (case in point—I learned to type with ten fingers instead of my
+former six-fingered style because of him; I decided it was worthwhile 
+taking compilers and two quarters of programming languages because of him; 
+I also decided it was worthwhile taking extra math because of him; I gave 
+Emacs a second chance because of him, and because I was forced to use it 
+for my OS class and wasn't left in a coma or a pair of disco pants at 
+the end; and I started learning Ruby and Ruby on Rails because of him, even 
+though I already know Python). So I decided to try following his lists of 'Ten Great Books' and 'Ten Challenges' that he put up on his blog. Here are the two lists, each of which had a half-joking tenth item:
+
+* Ten Great Books:
+
+The supposedly easier and more essential books.
+
+** TODO The Pragmatic Programmer
+
+I'm sure it'll be useful if I ever get a job in programming.
+
+<2014-10-29 Wed> I read the preview of this that you can download for the Kindle, and although some of the tips are useful, I really hate the writing style. It's written in that style of 1990s corporate training books like “Who Moved My Cheese?”, with cheesy acronyms and tons of “us vs. them” and bandwagoning (“Pragmatic programmers are awesome. They write awesome code that's awesome. You want to be awesome, right? Then you want to be a pragmatic programmer. Non-pragmatic programmers are stupid and lazy and smell bad. If you don't want to be stupid and lazy and smell bad, do what we say, and you too can be a pragmatic programmer, and therefore awesome.”) I also read the authors' /Pragmatic Unit Testing with JUnit/, and it's the same thing, with all kinds of corny acronyms about how to write tests that I can't even remember now (like “CORRECT”). So even if some of the tips are good, I don't think I could suffer through this book. I'm surprised Steve was able to; he complained about /Structure and Interpretation of Computer Programs/ being condescending because of its cheesy puns in the exercises (using characters with names like “Louis Reasoner” and “Eva Lu Ator”), which I agree is pretty bad, but /The Pragmatic Programmer/ is, if anything, even worse. 
+
+** TODO Refactoring
+
+Again, if I ever get a job.
+
+** TODO Design Patterns
+
+Again, maybe if I get a job.
+
+<2014-10-29 Wed> I read some of /Head First Design Patterns/, which is widely regarded as the book for people who find /Design Patterns/ too academic, but I actually found /Head First Design Patterns/ to too often belabour the obvious, so maybe I need to get the original. The prescriptive tone and programming-conservative style of all the design pattern related books somewhat turns me off, but I do see where the techniques can be useful for faking certain features in languages like Java (e.g. the Builder pattern is for faking optional arguments by creating an intermediate object whose parameters can be set using setter methods and then copied all at once into the real object in the real object's constructor; the Strategy pattern is for faking higher order functions by changing the implementation object behind the scenes). 
+
+** TODO Concurrent Programming in Java
+
+Concurrent programming is too hard for me. I've read a few sections of this book, but a lot of the material seems rarefied and remote because I've never written a program big enough to really benefit from concurrency. Because of that, I skipped over it to do The Little Schemer.
+
+<2014-04-16 Wed> I'm reading this again. I've since tried to write some concurrent programs (really simple ones) and failed utterly. That's because I learned everything I know about concurrency using JR, which is roughly based on the actor model, so there are certain things like joining and terminating threads that you don't have to deal with. (In JR, you can just leave quiescent threads alone; JR detects quiescence and will terminate as much of your program as it needs to ensure there aren't any dead threads hanging around. And there are well-defined ways to make threads wait on each other in JR without using busy waiting; there must be in Java too, but I don't know what they are.) Also, the only design pattern I know for concurrent programs is the bag of tasks / worker threads model. So I'm trying to learn something new.
+
+I think I might read some of this book and then try out some of the ideas in Jython. That way I'll be gaining familiarity with java.util.concurrent, but won't have to deal with Java. Or I guess I could just deal with Java. Anyway, concurrent programming is a pretty useful skill, both in industry and for the areas I like (numerical methods, AI, machine learning, bioinformatics) so it won't be a waste. (I realized that C is also a useful skill for those areas, whether for writing efficient programs directly or for writing extension modules for some other language. So I should buy The C Programming Language.)
+
+** DONE Mastering Regular Expressions
+
+I've actually read a fair amount of this. I read pretty much all of the theoretical section, even suffering through the Perl code that Friedl uses for all the code examples. (This is where I first learned of the great evil of Perl, and its $_ variable. When I heard that my linguistics teacher was using Perl, I tried to convince him to switch to Python by dangling the NLTK.) I completely agree with Steve on this: regular expressions are like a programming superweapon. They are to programming what the Chicago Typewriter is to Resident Evil 4. Since I've done lots of texty personal projects, I always had a regex ready when I needed it. I once did a graphics assignment with someone who loved game programming and had thus concentrated on C++. She had tons of massive text files containing vertex data, and they were in the wrong format for the reader we had in C++. When she heard that I knew Ruby, she asked me to fix the format; with Ruby it was one regex and about twelve lines of code to fix over 2000 badly formatted lines. Knowing regexes also helped me in theory classes. 
+
+I'm thinking I might tackle this after The Little Schemer. I might skim over the general stuff again, absorbing the finer points of using regexes with Unicode (which I had to do a little while ago working on my Clojure program to convert Libre Office HTML files into single HTML files suitable for publishing on the Amazon Kindle Store), and then read the section on Java, the only language in the book that I use at all. (The others are Perl (ugh!), .Net, and PHP (ugh!). Maybe I'll read Perl to get a better idea of how Ruby's regexes work.)
+
+<2014-02-11 Tue> I read most of this. That is to say, I read Chapters 1 through 6. I skipped all the language specific stuff at the end of the book, because I was kind of getting bored. I had intended to read Java. I'm just not interested in the other languages—I hope to never use Perl for anything ever, I hope to use as little PHP as I can, and I don't like how .Net shackles you to Windows. 
+
+Java's regex engine actually puts Python's to shame. Not only is it faster, it also supports more features. It has really good support for Unicode blocks, for instance. It also supports possessive quantifiers (which are versions of *, +, and ? that don't backtrack, so you can require that the quantified expressions match in a certain way). It supports finite-length expressions in lookaround, too, so you can write something like (?<=ab?c{0, 2})d and match 'ab', 'a', 'abc', 'acc', etc. Python can't do that—it only allows fixed-length strings in lookbehind. (This caused me no end of trouble when I wrote the sound change program in Python, because I really needed optional characters in lookbehind. I ended up copying something out of the Regex Cookbook that's way more complicated than it needed to be, and totally broke when I introduced negative environments.)
+
+Chapters 1 through 6 are really good, despite all that awful Perl. Friedl does use the other languages a bit in the example code. I think he missed out by not using Python, though; it's certainly the most readable to someone who doesn't know it of the languages he discusses or glances at. VB is surprisingly readable too, so the VB examples for .Net were pretty nice. And I know enough Java that I could read his examples without much trouble. But that Perl. Man. He teaches you enough Perl to get through it, but if he'd just used Python, or even done all the examples in VB, a whole section of Chapter 3 could have just gone away. 
+
+(I know Python and VB, but I still think they're inherently more readable than Perl to someone who doesn't know them. I didn't say Java because I'm not so sure that it's inherently that much more readable than Perl, although it's more readable to me because I'm much more familiar with it.)
+
+Chapters 5 and 6 were really cool; Friedl talks about how regex engines work, at a high level, and leads the reader through lots of meaty examples. He tackles some very tough problems, like parsing a CSV file and matching C's /* ... */ comments. He iteratively develops solutions, showing first an obvious solution, then refining it to use different approaches, and all the while explaining what makes the solutions good, bad, slow, fast, or whatever. He also does a good job of showing how you have to use assumptions about your data when you write regular expressions, since it's impossible to ever write a completely general expression that can capture what you want out of any data. 
+
+It's obvious that Friedl knows a lot about regular expressions and has studied them in excruciating detail. He's also a pretty good communicator and does a good job of transmitting his knowledge to another person. His story about electric engines, gas engines, and California standards-compliant gas engines that he uses in Chapter 4 to explain the differences between DFAs, traditional NFAs, and Posix NFAs, was rather ingenious. It took a somewhat complex idea and wrapped it up in a nice, homey analogy that carries pretty far below the surface (in the way that DFAs are Posix-compliant by default, and also that traditional NFAs, like traditional gas engines, are much more common than the other two). 
+
+Reading Chapter 4, I was struck by just how much a regular expression engine resembles Prolog's matching engine. Just like Prolog, a regular expression engine will try to match some valid clause of the regular expression against the current text, using something very much like unification, and continue matching until it can't, at which point it will backtrack and try again. That means a regex engine implemented in Prolog could be great! (Then you could compile the Prolog to C, wrap the C with an interface to whatever language you're using, and you'd have a Prolog-based regex engine.) It also occurred to me that Icon could be the ultimate regex language—Icon has backtracking built in, just like Prolog, but it also has high-level string processing powers. When I took ECS 140B at UC Davis, we implemented a simple Prolog interpreter in Icon; a simple regex engine could be another great project for showing off the power of Icon.
+
+And given that regular expression matching is so similar to Prolog's logic engine, which basically solves instances of the NP-complete problem SAT (somewhat restricted to more closely resemble HORNSAT, which only allows Horn clauses and which can be solved in polynomial time using a greedy algorithm), it seems that regexes could also garner huge benefits from replacing some of the backtracking with concurrency.
+
+Anyway, it was a good book, and as you can see, it had me thinking about a lot more than just text processing.
+
+I've decided to leave the path of Yegge for a while and read a book I have called Machine Learning in Action, which walks you through several machine learning algorithms coded in Python (using Numpy) in a simplified form. It's only 354 pages and the writing style is very conversational, so it shouldn't take too long. When I'm done, I'll write about it under Purely Informational.
+
+** TODO The Algorithm Design Manual
+
+Supposedly more friendly and practical than CLRS. I'd like to check it out, but it's eighty dollars and I already have CLRS and plenty of free stuff from the net.
+
+** TODO The C Programming Language
+
+Recently I've been trying to do more C. I never did any in school because we focused on C++. I keep hearing how nice C is from people who are familiar with it, and also, it's a challenging language, and I love a challenge. I imagine people who are really good at C write code you could set off a bomb next to without breaking it, because that's the only way you could ever release anything written in C without having it just fall apart.
+
+I was actually somewhat good at x86 assembly when I took the class on it, and I pretty much understood pointers right away, so I have the right foundations to write C, but I get annoyed with it sometimes since it's so inexpressive and since you have to whip out dangerous void pointers and malloc to accomplish even relatively simple tasks. Also, you pretty much can't get a job using C these days, from what I understand, unless you're Ken Thompson. Still, I might buy this book and try out the exercises; at the very least, I'll be a better programmer for having done it.
+
+** DONE The Little Schemer
+Finished (sometime around) <2014-01-08 Wed>
+This one's not quite in the bag yet, but we're close. I didn't really learn much from it, which was no fault of the book itself, a weird but brilliant venture. It's just that I took programming languages at UC Davis and was lucky enough to have Ron Olsson as a teacher. We covered Common Lisp as our second language (after using Java to do the basic stuff early on, including writing a simple compiler), and Professor Olsson took us basically all the way through The Little Schemer as a series of classroom exercises. He would ask us to write a function after giving a few examples of its behavior; a few minutes later, he'd show us how to do it, and we'd ask questions and discuss the ideas. I don't know if he was following The Little Schemer or not, but he pretty much took us all the way up to Chapter 8 (Lambda the Ultimate) and showed us how to use closures. He even showed us how to use closures to fake object-oriented programming. 
+
+Given that, I have to say that if I'd never used Lisp or didn't have a good understanding of recursion, I think this would be an awesome way to learn it. (Unless you can afford to go take ECS 140A with Olsson at UCD.) Like Steve says, the great thing about this book is that it doesn't just teach you the syntax of Scheme and tell you to use recursion to solve your problems; it teaches you the common idioms and approaches used in Scheme and other Lisps (except the weirdo Clojure) to approach basic problems. Steve said somewhere that Practical Common Lisp is the book you read when you want to see how hideous Lisp is in the real world; this is the book you read to see how elegant it is in textbook exercises. After all, some of these functions they write read like their English descriptions, but with a bunch of parentheses. That's elegance.
+
+<2014-01-09 Thu> I just about finished with it, though I skimmed over the last chapter pretty horribly. The second-to-last chapter leads into continuation-passing style, which was really weird, but really cool. As far as I know, CPS in real life is mostly used in compilers for tail-call optimization, since it replaces a stack with bunch of function applications, which you can evaluate and store as you go instead of keeping them all around until the function finishes. They all get stored in a continuation object, which is a lambda that gets passed into the function with each recurrence and gets wrapped in another lambda, which updates its state, whenever we need to recur. Since you have the power to evaluate all the applications in the continuation as soon as the function recurs (since it doesn't permit you to do something like (* n (factorial (- n 1))), instead forcing you to do (lambda (newn) (continuation (* n newn))), which can be evaluated as soon as newn is passed in on the next recurrence), you can convert them into single values stored anywhere instead of taking up the entire call stack. 
+
+In The Little Schemer, continuation-passing style is used just to collect more information on the state of the running function, almost like passing in a struct or an object that accumulates data. For example, multirember&co doesn't just remove the argument you pass it from the list and return that list; it also accumulates a list of everything removed. You can use a collector function (continuation) that takes different actions by examining all that data; for example, you can change it into a function that returns true or false according to whether anything was removed just by passing a collector that checks the second list for emptiness. 
+
+The last chapter gets into the Halting Problem a little. I found it largely confusing, and I'm not going straight on to The Seasoned Schemer anyway, so I skimmed with a vengeance and for now I'm calling it good. Good book, though. I think some school should run a general-interest programming class for some of the more hardcore humanities people and teach out of this book, maybe alongside Gödel, Escher, Bach, since both deal pretty extensively with recursion and self-reference. I could see the brighter English and philosophy majors, and probably also the math majors and linguistics majors, getting a lot out of it. (Math and linguistics majors can directly benefit from a good understanding of recursion anyway.) I think that kind of class might help get rid of the "Oh...you fix people's computers?" stigma around computer science.
+
+** TODO Compilers (the Dragon Book)
+
+This was the textbook for my Compilers class at UCD with Zhendong Su. (Though I have the first edition, which came out the same year I was born.) I've read bits and pieces of it, but not a lot. It's a lot more readable than I initially thought, though. I might take this on after reading The Little Schemer and Mastering Regular Expressions (and at least trying something from the challenges list).
+
+** TODO WikiWikiWeb (the joke one)
+
+Some of these I doubt that I'll ever actually read, or that I would
+get much benefit from doing so. K&R (The C Programming Language) for
+instance. Still, I trust Steve, so I guess I'll have to acquire them
+all at some point. Some of them I want to read, but have a hard time
+plunking down the money for, like The Algorithm Design Manual. 
+
+* Ten Challenges
+
+These are the ones Steve singles out as hard books. He hadn't finished most of them when he wrote the list. They're less practical and more theoretical than the above. Since I love less practical and more theoretical, I tend to be more interested in stuff like this, but I'm choosing the order to read in using an algorithm which is roughly greedy on how long it'll take me to finish, so these ones are being held off a bit.
+
+** DONE Gödel, Escher, Bach: An Eternal Golden Braid
+Finished around <2013-12-24>
+This was the first book I took on since I was about halfway done with it already. See the separate file. It's awesome, and it's the only book on this list to have won a Pulitzer. 
+
+<2014-01-18 Sat> I just bought The Dissociation of Haruhi Suzumiya. Towards the beginning, Nagato is reading a book about "a philosopher, an artist, and a musician forming some kind of golden braid".
+
+** TODO Structure and Interpretation of Computer Programs
+
+A Scheme book, although it focuses more on the essentials of computation than on the Scheme language. It's available free on the net, so I plan to download the pages and compile them into a Mobi with Calibre so I can read it on my Kindle. I'm not really sure what to expect.
+
+<2014-10-29 Wed> I'm now reading Structure and Interpretation of Computer Programs on and off. It's sort of a book for intermediate beginners in that it assumes you know basic things like loops and functions and tries to elevate your skills beyond that. The projects it deals with are all pretty weird; there's a logic language interpreter, a register machine, and several other smaller, heavily theoretical projects. I guess the best way to describe it is to say it's a book that tries to turn people who've messed around with some Python (or more likely Pascal, at the time in came out) into computer scientists, by providing a bridge from the basic knowledge of programming to the theory of computer science. 
+
+I was able to compile it into a Mobi using Pandoc and Kindlegen, and I even got the pictures into it, but the formatting in the code samples is all screwed up, which is extremely weird because it's all done in pure HTML using &nbsp; and <br> tags, so you'd think it would be pretty invincible. At least Scheme doesn't have significant whitespace, though. It's actually not that hard to read Lisp with no indentation or linebreaks, which is one reason working in the Clojure REPL is so much easier than working at the Python interactive prompt. 
+
+** DONE Digital Typography
+
+I bought this just for the reading program. It's Donald Knuth, one of the only programmers I admire more than Steve, and Steve implied that this was somewhat easier reading than The Art of Computer Programming, so I bought it. Judging by the bits I've read, it's just as good as Steve said. Knuth is a great writer; I admire him so much because he's both a skilled programmer who wrote TeX (which should have been the Internet's rendering engine, dammit! What's the deal with this HTML crap?) and a great writer with a good sense of fun and a craftsmanship with words that even many professional writers can't achieve. This book was perfect for me, too; I'm sort of old-timey and like old books on dead trees, just like Donald Knuth obviously does. In this case, I didn't have to trust Steve at all to buy it; I knew just from it being Knuth and being about books that I would like it.
+
+I think I might take this on after The Little Schemer and Mastering Regular Expressions.
+
+<2014-01-15 Wed> Currently reading Digital Typography. Chapter 3, "Breaking Lines in Paragraphs", is like a convenient two-part show of why Donald Knuth is awesome: first he describes a very complex algorithm that creates a simple abstraction around an even more complex problem, and makes it reasonably easy to follow even for an idiot like me; then he launches into a knowledgable and interesting examination of how early printers handled line breaking in the very challenging context of polyglot bibles, where the text of the Bible is set in multiple languages in adjacent columns, like Greek text alongside the original Hebrew. There are also some interesting stories from Knuth's past. Apparently he and I shared the experience of being interested in books at the abnormally early age of four. Some of it is difficult going, though; my geometric intuition is abysmal, so much of his description of finding most pleasing curves for letter forms in Chapter 2 was Greek typeset alongside Hebrew to me. I might have to quit in the middle and go after some lower-hanging fruit (Mastering Regular Expressions is looking particularly low right now), but for now I'll stick with it and see if I can power through a bunch of the historical stuff before hitting another patch of tough math. 
+
+<2014-01-18 Sat> I didn't make it. I gave up after Chapter 3. It was difficult reading, but it was good, old-fashioned computer science. While some of the stuff afterwards was interesting, it mostly assumed a decent knowledge of TeX, which I don't have. (I know some LaTeX, but from what I can tell, knowing just LaTeX and trying to read about TeX is like knowing how to use the Internet, but no linear algebra at all, and trying to read how PageRank works.)
+
+I might skip ahead to the Metafont stuff. It looks like pretty hard reading too (the next chapter is "The Letter S", a paper about how Knuth found the perfect curve for the letter S), but maybe it's *possible* reading, unlike the TeX stuff when I don't know TeX. I should probably learn TeX, but there are so many technologies I should learn right now (Ruby on Rails, XSL, Nokogiri, Django, Incanter, R, etc. etc.) that I can't see finding the time.
+
+<2014-01-23 Thu> I made it after all. Shortly after I wrote the last entry, I started browsing through 'The Letter S', and although there was a little geometry and vector calculus (which I am miserable at), it wasn't actually too bad, and it was filled with Knuth's normal cleverness and humor. From then on I adopted the policy of skimming over any TeX or Metafont code and reading the notes and anything else, and I made pretty good progress, finally coming to the end just minutes ago. 
+
+I found the material in this book pretty fascinating. For one thing, I learned a lot about the printing process, which Knuth laboriously studied as he was writing TeX and Metafont. I also enjoyed the chance to learn more about Knuth himself, what he's done, what he thought, and what kind of person he is. I found it very inspiring to know that such a great genius is such a warm and down-to-earth person; he seems to have always made time for his family, despite the amount of work he took on. He's very cultured and literate (as the inventor of literate programming), totally unlike the code-wrangling clods that proliferate in much of computer science. I was absolutely right to choose him as an idol to aspire after. From now on I'll aspire to become both a great computer scientist and a literate and cultured person, just like Donald Knuth. Someday I even hope to read The Art of Computer Progamming. 
+
+This ended up sounding a lot like one of those "My Person that I Admire" essays that they make you write in grade school, didn't it? Anyway, it was a great book; fun, fascinating, a lot more approachable than The Art of Computer Programming. Knuth's sense of humor is the weirdest fusion of geek and literary snob.
+
+** TODO Programming Language Pragmatics
+** TODO The Essentials of Programming Languages
+
+By the Little Schemer guys. They teach you about programming languages by implementing the features in Scheme.
+
+** TODO Types and Programming Languages
+** TODO The Seasoned Schemer
+
+The sequel to The Little Schemer. Picks up where that book left off, using the Y-Combinator, which apparently is covered in the last chapter of The Little Schemer. Since I liked The Little Schemer's format but found I already knew a lot of what it had to say, I expect to like The Seasoned Schemer and to learn a lot from it. I might have to download Scheme (I've been doing the exercises in Emacs Lisp. I guess I could use Clojure. They should release "The Little Clojurer". Or maybe "The Little Clojer" would be the title.
+
+** TODO The Scheme Programming Language
+
+Also available online. I don't really know how much effort I want to put into learning Scheme, though. Well, I do like small languages. (Io is really cool. I also love Erlang's simplicity.) Maybe I'll do the exercises in Clojure.
+
+** TODO How to Design Programs
+
+Yet another Scheme book. I didn't realize how many of these are Scheme books. I might start chucking Scheme books and adding in other kinds of books. Maybe Real World Haskell (though that fits the previous list better) or finally finishing Sipser. Maybe Artificial Intelligence: A Modern Approach (though I was kind of trying to limit this to things you can actually read). Maybe Gusfield's Algorithms on Strings, Trees, and Sequences. (That's a pretty hard book, but well-written and useful.) 
+
+It's not that I dislike Scheme, it's just that I think this list sort of reflects Steve's obsession at the time, which was finding a better programming language, which he thought was Scheme. Then he found out that even if he found the greatest language on the planet, which was as readable as Python, as learnable as Ruby, as malleable as Scheme, as secure as Java, as fast as C, and as compact as Perl, he'd never be able to use it at his job because it wouldn't be C++. 
+
+** TODO Purely Functional Data Structures
+
+This sounds pretty cool, and it covers all functional languages, not
+just Scheme. I have a preview on my Kindle. By the way, the reason I called this half-joking is that Steve hadn't even started it yet when he wrote the list; he just put it in due to his belief at the time that functional programming was the answer to concurrency. (A belief that I share, since I just got a concurrent program working in Clojure that I'm not even sure how I would have begun in Java.)
+
+<2014-02-11 Tue> I bought this on Amazon the other day, along with The Art of Computer Programming Volume 3: Searching and Sorting. It hasn't arrived yet, but I read some of my Kindle preview beforehand, and it looked really interesting. Chris Okasaki goes through some data structures that are common and not too hard to implement functionally, like linked lists, leftist heaps, binomial queues, and red-black trees (he must have found a really cool way to pull off rotations without side effects in order to do red-black trees and leftist heaps), and then goes into some general techniques for working with data structures in a functional language. A lot of the book seems to be concerned with how laziness interacts with data structures, and the book also treats the issues of structural sharing—maintaining copies of multiple versions of a structure while reusing those parts which haven't changed. Clojure uses structural sharing extensively, and also uses laziness, so knowing about these things should give me some insight into Clojure as well as generally useful information.
+
+The code is all in Standard ML, which is fairly readable from what I've seen (more so than Lisp). OCaml is based on ML, so maybe I will check out OCaml as I read this to help me follow the code more easily. The appendix also has Haskell versions of all the code examples. Haskell is pretty readable as long as you're not using monads too much. I'm sensitive to this issue right now because I just finished with Mastering Regular Expressions, and was struck by two things: (1) Perl is a really awful language to read, even when it's written by someone like Jeffrey Friedl who was going out of his way to make things readable; (2) It's not nice to make your readers put up with your quirky choice of some awful $%!#%$&-oriented programming language for your code samples, especially when there are other languages that can do the same things about as well, but ten times more readably. It's as if Norman Matloff had written "From Algorithms to Z-Scores" with all the code samples in J instead of R. I don't know R that well, but I can pretty much figure out what it means, and if I don't seem to be getting the meaning, I can look it up somewhere. You pretty much have to know J already to follow code samples in it, because you're not going to be able to figure out what something that looks like )*&^*()%&^^&%&^*&*(&*()+\:{!$%pOM}{>}>:<~!$$#%$%&%%&*J@^@$^@%$#^@#$ means just from looking at it, in even the vaguest sense. By the time you've looked up enough to figure out what it means, you're learning the language, whether you wanted to or not. 
+
+That's why, even though I like Scheme and Clojure, I'm glad Okasaki chose languages like ML and Haskell that have a bit more syntax. 
+
+I just looked at some of the ML type signatures and type definitions used for the linked list and binary search tree examples. They're kind of confusing. They're not too different from Haskell type signatures, but since I don't do Haskell, I don't have the mental habit of digesting type signatures. Still, they're more readable than Perl or a lot of Lisp code, so I can probably figure out the ML code as I go, with a few Google searches.
+
+I think I'll take on this book after Machine Learning in Action, which I've just started.
+
+<2014-03-16 Sun> The Standard ML is getting kind of annoying. It's still not that bad, though; it's still pretty nice and readable. The static typing all over does aid you in understanding an algorithm, especially when he insists on using variables like y and y' everywhere.
+
+I'm currently on Chapter 6, which is pretty challenging. Okasaki introduces amortization in Chapter 5, showing a purely functional (but ephemeral) queue implementation which runs in O(1) amortized time, as well as the famous splay tree (used as a heap) and the pairing heap. He introduces the banker's method and physicist's method for proving amortized bounds.
+
+The thing with amortized bounds is that you sometimes have operations that have much higher worst case than average case bounds. But trying to prove an average case bound is a mug's game, so instead of analyzing a single run on some purported "average" input, you analyze a whole sequence of operations and show that they do not reach the worst case behavor some reasonable amount of the time. The banker's method and physicist's method are both ways of formalizing that idea; the banker's method assigns credits to parts of the data structure which are spent by operations to achieve different effects. To prove an amortized bound, you would define the amortized cost of a single operation as the total cost plus the number of credits gained minus the number of credits spent. The credits represent work you can pay for in the future without exceeding your bound. You   prove that in any sequence of operations, you never spend more credits than you gain, which shows that the amortized cost of a sequence of operations is greater than or equal to the total cost of any operation sequence. 
+
+In the physicist's method, you create a potential function (like potential energy or electric potential) and define the amortized cost of a single operation as the total cost plus the change in potential from the previous version of the data structure (input to the operation) to the current version (output of the operation). Then you prove that the change in potential is always non-negative, which shows that the amortized cost is an upper bound on the actual cost. 
+
+So when you look at amortized cost, the actual cost can go up and down, but if we can prove that the change of potential or change in credits always skews in the direction of less work, we can prove that the amortized cost is a bound on the actual cost.
+
+But this only works for ephemeral data structures, because with persistent data structures, we don't destroy the original version, so we could have a whole history of beating on a copy that always attains the worst case time, and that would destroy the idea of amortized cost. So the book goes over a way to use lazy evaluation to prove amortized bounds on persistent data structures (i.e. ones that use structural sharing to maintain multiple versions, like Lisp's lists). The basic idea is that if you evaluate something lazily, you can get away with not doing the work for some time. In the lazy banker's method, you charge debt to parts of the data structure and prove that if you maintain a certain debit invariant on the total debt in the structure, you'll always have paid off enough debt to make up for a costly operation by the time you actually need to perform it. And since lazily evaluated things are memoized, you get O(1) time to reuse them, so you only have to pay the debt once.
+
+It started out pretty easy, but the book is getting more difficult. I haven't decided yet whether to try and struggle through it (how often am I really going to use this material, right?) or move on. I think I'd like to do Natural Language Processing with Python next, though. 
+
+
+I guess I'll try to read The Scheme Programming Language and The Seasoned Schemer and maybe skip the other Scheme books. (And SICP, I guess, since it's not about learning Scheme.)
+
+But...<2014-01-08 Wed, 2:17 PM> The Scheme Programming Language has some interesting exercises, but the bulk of it looks kinda boring. It's more of a reference on Scheme. And I don't really want to learn Scheme. (Not that I don't like it, just that I'd rather learn Clojure better because you can do more with it, and also I want to learn Rails and Django and so on.)
+
+* Self-Challenges
+
+These are books I already have and want to read someday. They vary in difficulty; some of them could be termed impossible.
+
+** TODO A Book of Abstract Algebra
+
+I could probably read this now if I put in the time.
+
+** TODO From Algorithms to Z-Scores
+
+I read quite a bit of this but never finished it. I needed to do some exercises to solidify things.
+
+** TODO Essentials of Metaheuristics
+
+HARD!!! Covers things like genetic algorithms.
+
+** TODO Algorithms on Strings, Trees, and Sequences
+
+Pretty hard, but I don't think any extra reading would help.
+
+** TODO The Elements of Statistical Learning
+
+Really hard. I need more statistics and probability under me to read this.
+
+** TODO Probabilistic Linguistics
+
+I don't have this yet, but I want it. Probably I need more linguistics and more probability to really get it.
+
+** TODO Introduction to the Theory of Computation (Sipser)
+
+I think I'll let this stand in for one of Steve's Scheme books. It was the textbook for my Theory of Computation class at UCD, so I've been over the first few chapters (up through Chapter 5, dealing with automata theory and computability theory), and then Chapter 7 (dealing with time complexity and NP-Completeness). I'd like to cover Chapter 6 (advanced topics in computability) and the rest of the book, dealing with space complexity and other complexity classes aside from P and NP. 
+** TODO An Introduction to Statistical Thought
+
+It's very mathematical, but it seems pretty readable too. 
+
+** TODO Enumerative Combinatorics
+
+I retook UC Davis's Math 145 and feel like I have a decent grasp on combinatorics now. I'd like to read this to expand my knowledge.
+
+** DONE Introduction to Statistical Learning
+Added <2014-02-17 Mon>. I found this online. From the authors of The Elements of Statistical Learning, along with two new authors, it's a much simpler book and includes code samples in R. I liked Machine Learning in Action's Python and Numpy, but its explanations for the more advanced concepts were severely lacking. I'm hoping that support vector machines will make some sense after I read ISL. And it's only about 400 pages, so it's not that much longer than Machine Learning in Action (though I wager it's harder going). 
+
+I'm going to go ahead and schedule Concurrent Programming in Java or Purely Functional Data Structures for after this. Somewhat easier reading, still rigorous, and on Steve's list.
+
+<2014-03-02 Sun> So far ISLR is NOT harder reading than Machine Learning in Action; in fact, it's easier reading. The authors have basically taken Elements of Statistical Learning and unrolled all the implicit assumptions about what you know, making them explicit. (You still have to know the very basics of statistics, the stuff that gets covered in a class like UC Davis's Statistics 13, but linear regression is covered in full and excruciating detail, and even hypothesis tests and confidence intervals are briefly reviewed.) 
+
+I'm up to Chapter 6 at the moment. So far we've gone over linear regression using least squares, including topics like polynomial regression (where you make the test stronger by using a predictor's square, cube, or higher powers in your regression function) and interaction terms (where you include the product of two predictors as a term, to show how much those terms interact with each other) that I haven't seen in other books. (Interaction terms were in Matloff, but I haven't seen polynomial regression covered in other books except in the context of interpolation; I've never seen it used as a tool to increase the accurary of a regression function.) We've done logistic regression, which uses the sigmoid function to calculate the probability of a datum belonging to one of two categories. We've used linear discriminant analysis, a type of linear model that can deal with categorical variables that have more than two values, and quadratic discriminant analysis, which uses a quadratic model. We've gone over cross validation (I wish like hell I'd had that chapter when I had to do Davidson's neural network assignment) and bootstrapping (which I saw in Erin Melcon's Statistics 32, but here saw some good uses for) and in Chapter 6 we're doing subset selection (for when you're not sure all those predictors are pulling their weight) and shrinkage methods (for when you think the coefficients for some predictors might be distorted).
+
+One interesting thing I had never seen before that the book talks about throughout is the bias-variance tradeoff. It turns out that the error in a statisical model comes from three places: bias, variance, and the irreducible error, which is error that you can't get rid of no matter what you do. Basically, the variance of a model is the amount of change in your model that can be caused by just a small amount of change in your training set. It creates error in the model because the way your model works can be affected by the vagaries of which data ended up in your training set. The bias is the error in the model that comes from its imperfect reflection of reality. 
+
+You can reduce bias in a model by making it more flexible, but that tends to increase variance. Linear regression has very high bias, because almost no data is really linear, but it has low variance because forcing the model to be linear is very restrictive. Support vector machines, which are treated in the second-to-last chapter of this book, have very high variance, but low bias, because they don't force the data to be in a particular shape.
+
+So far the book has been really good, but the real test will be when we get to support vector machines. If it can make me understand those, which no other book (including AIMA) has been able to do, I will laud this book to the sky as one of the greatest ever. I do think its treatment of the other topics so far has been both extremely clear and incredibly thorough, so that I do think it has a chance of being the book that makes me get support vector machines.  
+
+<2014-03-16 Sun> I finished this book, although I skipped the last chapter on unsupervised learning so I could move on to Purely Functional Data Structures. I actually sort of understood support vector machines. The book explains that SVMs are an extension of the support vector classifier — instead of sticking with the linear separating hyperplane, you can change out the linear equation for a nonlinear one which is linear in a higher dimensional space than the one you're considering. This is the kernel trick — the separation function is the kernel function, and you can choose a different kernel function to get a different separating boundary. The whole Lagrange multiplier thing is a trick to efficiently solve the optimization problem of finding the specific kernel function which maximizes the margin between the support vectors. 
+
+It was a really good book. It's definitely light on the gory details, and I skimmed over a lot of the R code, but it did an amazing job explaining the intuition behind the theory. I feel like I have a much better understanding now of linear regression, bias, and variance, and also how to measure goodness of fit of a model. 
+
+* Ten Impossible Books (that I still want to read)
+** TODO The Art of Computer Programming
+** TODO Introduction to Algorithms (CLRS)
+** TODO Artificial Intelligence: A Modern Approach
+
+It's just about finding the time; the material isn't really beyond me. (At least, not in the profound sense of the next book.)
+
+** TODO Quantum Theory
+
+I need to know more about statistical mechanics, thermodynamics, and vector math in general to follow this book.
+
+** TODO Thompson, Bruckner, and Bruckner Real Analysis
+
+Again, it's about finding the time. 
+
+* Great Literature
+** TODO Lyrical Ballads
+** TODO Something by William Faulkner
+** TODO A Farewell to Arms
+** TODO The Iliad
+** TODO The Last Puritan
+** TODO Gravity's Rainbow
+** TODO Catch-22
+** TODO Prometheus Unbound
+** TODO Macbeth
+** TODO Something by Haruki Murakami
+** TODO Candide (finish it)
+** TODO The Idiot, by Fyodor Dostoevsky
+
+* Purely Informational
+
+Stuff that isn't great at all, but it has information in it that I want to know.
+
+** TODO XML For Dummies
+
+XPath, XQuery, and other X-stuff that isn't X-Men, unfortunately. Since I do so much texty stuff and file formatty stuff, I ought to know XML, I wager. Steve said so, too. He said to go learn XQuery right away if you don't know it. So I ought to.
+
+** DONE Machine Learning in Action
+
+In Spring Quarter of 2013, I took ECS 170: Intro to AI at UC Davis. The professor was Ian Davidson. He was a very poor communicator, and he's very industry-focused, which was both good and bad: good, because he spent the second half of the course doing machine learning instead of pissing away a whole quarter on 1960s-era game playing crap, but bad because he made us implement all the machine learning stuff in Java. Java's not such a bad language, but it's sort of ridculously sprawling and rambling, so it takes longer to write stuff than it needs to, and it's not particularly good for short-running, CPU-bound stuff like the intense matrix math that goes on in machine learning. Most of my code was crap because it had performance problems and because I wasn't clever enough at math and algorithms to math and algorithm my way out of it like I wanted to.
+
+I later decided to rewrite one of my failures, a neural network for recognizing faces, in Python with Numpy. Python is concise and writing code in it is quick; it's also high-level, which makes it easier to encapsulate the complicated ideas in machine learning. Numpy is written in super-optimized C and Fortran, so it's good at short-running CPU-bound stuff like intense matrix math. I never got to the full facial recognition dataset, but my Python program did pretty good at learning XOR and the sin function, and it seemed faster. I was able to run the Java program's backpropagation three times on a 1024 x 1024 matrix, taking about fifteen minutes. I ran the Python program on the much smaller XOR and sin matrices over 10000 times in about a minute. I expect the Java program's main limiting factors were the huge amount of object allocation (we ran out of heap memory a few times and had to lower our node counts) and the inefficient matrix math (we hadn't totally recognized it as matrix math, so we were using Java ArrayLists of objects to fake matrices).
+
+This book covers machine learning: not just backpropagation, but also k-nearest neighbors, naive Bayes, support vector machines, regression, k-means clustering, and even MapReduce, as well as associated issues like data normalization and how to test your algorithms. It uses Python with Numpy, and also covers Matplotlib a bit. The writing style is very conversational. It covers the math, but also uses code and high-level conceptual explanations to get things across. I've already learned much more from it than I did from Davidson, and the bar to entry is much lower than with AIMA, which I used when I did my Python neural net (and when I studied for Davidson's exams). I'm still at the very beginning, reading about k-nearest neighbors, but I already think it's a cool technique and want to try implementing it so I can scan one of my books and pick out words that I think should go in a vocab list at the back. (It's a book for kids, ages 8-12, but rather than restrain my vocabulary too much, I just let it rip, while trying to give enough context for the words. Of course I avoided words that many adults don't even know, such as 'mercurial' and 'pejorative'.) 
+
+Machine Learning in Action is a pretty cool book so far. I'm looking forward to the rest of it.
+
+[I used to have a whole rant about Java vs C++ that I segued into after talking about Java at the top, but I spun that off into a potential blog entry.]
+
+<2014-02-17 Mon> Machine Learning in Action quickly falls off after the first chapter on k-nearest neighbors. The decision tree chapter was boring and mostly focused on making decision tree pictures in Matplotlib. (Mostly, I just don't see being able to do anything heavy-duty with decision trees, so I don't particularly care to learn about them.) The chapter on Naive Bayes was pretty good, but the math part was awful. It seems that Peter Harrington, the author, knew that most of his readers weren't going to get this math and that it would take three years of college courses to bring them up to snuff, so he decided that the best way to deal with this was to just not explain the math at all. He gives some overviews that cover topics at the level of first-year discrete math, like ball and urn problems, but he skims over so much of it that it's impossible to know what he's trying to say unless you already understand the math. I know this because I read his explanations of the probability behind naive Bayes, which I did already know, and then read his explanation of the math behind support vector machines, which I didn't already know and which Davidson totally failed at explaining to us. 
+
+Coming to support vector machines, that was where I really decided the book wasn't very good. I sort of understood Harrington's introduction to the theory behind SVMs, but he skipped so much that I eventually got lost, so I read The Elements of Statistical Learning and got a little bit more (at great cost), and then read A Course in Machine Learning, an unfinished draft book, that had the best explanation of the three. For instance, it was the only one that explained that you multiply the class label by the function f(x) because in SVMs we choose -1 and 1 as the class labels, and multiplying the label by the hyperplane function gives us a constraint for the optimization of the margin size that ensures that there is a nontrivial margin at the point x.
+
+SVMs are really hard to understand, but Harrington was supposed to be making this stuff more clear, and he didn't really succeed—he just foists Lagrange multipliers on you and starts talking about finding α values without explaining what these α values are or why you'd want to find them. I know it's my fault for not learning the crapload of math behind this before trying to understand support vector machines, but if I could understand all that math, I wouldn't be reading Machine Learning in Action in the first place.
+
+Also, it seems like Harrington doesn't really know how to code Python that well. He writes it like Matlab, where there are no decent code reuse mechanisms and you'd pretty much never need to reuse code anyway because all the reusable parts are already bundled up as built-in functions. As an example, here's some code that he wrote for the naive Bayes chapter:
+
+def trainNB0(trainMatrix,trainCategory):
+    numTrainDocs = len(trainMatrix)
+    numWords = len(trainMatrix[0])
+    pAbusive = sum(trainCategory)/float(numTrainDocs)
+    p0Num = ones(numWords); p1Num = ones(numWords)      #change to ones() 
+    p0Denom = 2.0; p1Denom = 2.0                        #change to 2.0
+    for i in range(numTrainDocs):
+        if trainCategory[i] == 1:
+            p1Num += trainMatrix[i]
+            p1Denom += sum(trainMatrix[i])
+        else:
+            p0Num += trainMatrix[i]
+            p0Denom += sum(trainMatrix[i])
+    p1Vect = log(p1Num/p1Denom)          #change to log()
+    p0Vect = log(p0Num/p0Denom)          #change to log()
+
+That's not as bad as it could be since it's Python, but look at how much it repeats itself. Here's how I rewrote that code when I was typing in the examples:
+
+def trainNB0(trainMatrix, trainCategory):
+    nTrainingDocs = len(trainMatrix)
+    nWords = len(trainMatrix[0])
+    pAbusive = sum(trainCategory) / float(nTrainingDocs)
+    numerators = [ones(nWords), ones(nWords)]
+    denoms = [2.0, 2.0]
+    for i in range(nTrainingDocs):
+        numerators[trainCategory[i]] += trainMatrix[i]
+        denoms[trainCategory[i]] += sum(trainMatrix[i])
+    return log(numerators[0] / denoms[0]), log(numerators[1] / denoms[1]), pAbusive
+
+Not only is my code just a bit shorter, it's also more general: if we ever decide we want more than two categories, we just have to add to the lists. And there's more I could have done, but it wasn't my intention to rewrite the code; I just wanted to see the examples, but the code was so annoyingly repetitive that I couldn't stand typing it all in. (I'm not a fan of Harrington's Java-style long-winded camel case variable names or his C-style grotesque abbreviations either.) 
+
+Anyway, I still don't understand support vector machines. I've resigned myself to not understanding them until I've learned a lot more math; I might try to hunt down a book on optimization problems, since they come up so much in machine learning and AI in general. So I skimmed the AdaBoost chapter, but he was doing decision trees again and I don't care, so I went on to regression. Harrington introduces least squares in his usual style; he just sort of saunters through the math, spitting out words like he copied the explanation from Wikipedia. As evidence of how much thought he put into this, he repeatedly talks about taking the "determinate" of a matrix. Given how many good books there are that describe least squares (Strang's Linear Algebra and its Applications, which I used in Math 167 at UC Davis, has a quite good explanation; Sal Khan has a video where he explains it quite nicely; they go over it in The Elements of Statistical Learning; and I'm pretty sure AIMA covers it too), I didn't really need a half-baked coverage of it by a guy who doesn't even remember basic terminology from linear algebra and didn't bother to look it up before putting it in a book. (If Microsoft Word foisted this on him, I'll be willing to forgive him and downgrade his status from "blind leading the blind" to merely "just another code wrangler who learns math in robot mode".)
+
+My main problem with the book is that Harrington does do a good job of explaining things intuitively at the conceptual level, but he gives up when it comes to the math and explains them in math robot mode. Books like AIMA or Sipser or A Course of Abstract Algebra or even Gödel, Escher, Bach show that math can be explained intuitively, even very complex math; it isn't always possible to apply this knowledge, but you've at least acquired the flavor of it. Sipser, in fact, is so cool that you CAN apply the knowledge he gives you; I read part of a paper on the problem of finding out whether there are any zero divisors in a semigroup of 3 by 3 matrices (i.e. two nonzero matrices whose product under the semigroup's operation is the zero matrix) the other night, which proved the problem is undecidable by reducing the Post Correspondence Problem to it. I had to look up 'semigroup', but otherwise I was able to follow the first part without much trouble, using just knowledge from Sipser and the course I took that followed Sipser. I've yet to find a machine learning book that's as cool as Sipser in this regard. I had hoped Harrington might be it, or at least partially it, but he's not. I might check out what he has to say about k-means clustering and then go look at something else.
+
+(BTW, a semigroup is a group which isn't guaranteed to have an identity element, and even if it does, there's no guarantee that every element has an inverse.)
+
+I've decided to make Introduction to Statistical Learning my new machine learning book.
+
+<2014-04-16 Wed> I seem to be running into math all over the place, and failing at dealing with it. I've just given up two books in a row (Purely Functional Data Structures and Lexical Functional Grammar) because the mathematical formalisms got to be too much. I am very distressed by this. 
+
+I think part of my problem is impatience. When I started reading Lexical Functional Grammar, I would write things in a notebook—terms I didn't understand, which I would go look up later—and in the margins. I would scribble little clarifications. Helpfully, the previous owner had written questions in the margins, and I would try to answer them (the Half-Blood Prince of linguistics?). But I got impatient and stopped doing it.

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+IFS=$'\n'
+read -ra args -d '' < orderedlist.txt  # after -d two single quotes.
+

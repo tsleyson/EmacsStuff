@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# urls=("https://t.fakku.net/images/manga/i/%5BShadow_Sorceress_Communication_Protocol%5D_Boku_wa_Tomodachi_ga_Sukunai_-_I_cant_beat_my_sisters_selfishness/images/022.jpg" "https://t.fakku.net/images/manga/h/%5BTanabe_Kyou%5D_Original_Work_-_Himo_Loli/images/024.jpg" "https://t.fakku.net/images/manga/p/%5BNoise%5D_Original_Work_-_Playing_In_The_River_By_Ourselves/images/008.jpg" "https://t.fakku.net/images/manga/h/%5BOotsuka_Reika%5D_Original_Work_-_HugHug!/images/012.jpg" "https://t.fakku.net/images/manga/p/%5BSorimura_Youji,_Misty_Isle%5D_Original_Work_-_Pai-Lolis_2/images/025.jpg" "https://t.fakku.net/images/manga/k/%5BOotsuka_Reika%5D_Original_Work_-_Kimi_no_Sumu_Machi/images/025.jpg" "https://t.fakku.net/images/manga/s/%5BAkishima_Shun%5D_Original_Work_-_Sishole_revolution/images/021.jpg")
+
+for doujin in $@; do
+    image_url=$(echo -n $doujin | python ./fakku_urls.py | sed -r 's/([0-9]+)\.jpg$/[001-\1].jpg/g')
+    mkdir -p "./$doujin"  # For some reason --create-dirs doesn't work on Cygwin
+    curl "$image_url" -o "$doujin/#1.jpg"
+done
+
+# On the sed command:
+# -r uses sane (Perl-style) regexes
+# We don't need to escape anything in the replacement text except backrefs.

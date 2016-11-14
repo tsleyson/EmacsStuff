@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <assert.h>
+
+typedef struct fields {
+    char* name;
+    char* type;
+    char* catchphrase;
+} fields; 
+
+char* parse_message(char buf[256], fields* f) {
+    // Returns the pointer to the full buffer so you can
+    // check if it's null and free the memory.
+    char* temp = NULL;
+    temp = (char*)malloc(sizeof(char)*256);
+    assert(temp);
+    strncpy(temp, buf, 256);
+    //puts(temp);
+
+    f->name = strtok(temp, ";");
+    //puts(name);
+    f->type = strtok(NULL, ";");
+    //puts(type);
+    f->catchphrase = strtok(NULL, "\0");
+    //puts(catchphrase);
+    assert(f->name && f->type && f->catchphrase);
+
+    return temp;
+}
+
+int main(void) {
+    char* s[] = {"Asuka;tsundere;'Anta baka?'",
+                 "Mahoro;oneechan-maid;'Ecchi na no wa ikenai to omoimasu!'"};
+    char* full;
+    size_t i;
+    fields f = {NULL, NULL, NULL};
+    for (i = 0; i < 2; ++i) {
+        full = parse_message(s[i], &f);
+        printf("Name: %s\nType: %s\nCatchphrase: %s\n",
+               f.name, f.type, f.catchphrase);
+        free(full);
+    }
+
+    return 0;
+}

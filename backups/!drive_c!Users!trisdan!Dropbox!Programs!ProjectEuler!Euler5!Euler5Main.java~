@@ -1,0 +1,23 @@
+/** Euler5.java
+    A Java implementation of Project Euler problem 5.
+    Uses concurrency.
+*/
+
+class Euler5
+{
+    public static void main(String[] args)
+    {
+        Context c = new Context();
+        //Thread manager = new Thread(new Manager());
+    }
+}
+
+/*
+  Have the threads go and put their answers on the answers queue until
+  the task queue is empty.
+  Have the manager queue wait while the task queue is not empty.
+  When the task queue is empty, wake up the manager. Have it check the
+  answers queue. If there's anything in it, the smallest should be in
+  it. If the answers queue is empty, the manager refills the task
+  queue and lets everyone else go ahead.
+ */

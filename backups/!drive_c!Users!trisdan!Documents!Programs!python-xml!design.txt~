@@ -1,0 +1,11 @@
+Problems:
+
+What if I add new files to a directory and want to add them? There's no way to do that with this command line interface except to rescan the entire directory.
+
+But if I did rescan, then we'd have duplicates, because I didn't bother to hunt them down.
+
+So we can get rid of the duplicates. We can search the database for a file beforehand and not include its text if it's already in there. Except what if it changed, and we do want to include those changes in the database? What if it's the same file, but the name changed? What if the name changed AND the text changed, but some parts of it are the same and thus already in the database?
+
+I didn't bother to strip out <br> tags or fix the weirdness with paragraphs that weren't really paragraphs, but were split by line breaks, being mashed together into single paragraphs. Those things didn't really matter, because the text is just going to be processed by a program, not visually presented for human consumption. But these things matter. 
+
+It's starting to sound like a version control system.

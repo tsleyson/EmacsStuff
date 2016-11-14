@@ -1,0 +1,27 @@
+(ns web-example.db
+  (:require [clojure.java.jdbc :as jdbc])
+  (:import [web_example PasswordHash]))
+;; PasswordHash/createHash is the only important method.
+;; Returns a string iters:salt:hash.
+;; Do (clojure.string/split (PasswordHash/createHash "password") #":")
+;; Stick it back together before passing to validatePassword.
+;; Possibly modify ITERATION_INDEX in the class since I don't want to
+;; store the number of iterations.
+
+(def db
+  {:subprotocol "postgresql"
+   :classname "org.postgresql.Driver"
+   :subname "//127.0.0.1:5432/trisdan"})
+
+(defn get-posts
+  "Gets all posts without n, or n posts with it."
+  ([db-spec]
+     (jdbc/query db-spec [(str "SELECT auth_name, post_date, post_text "
+                               "FROM blogs ORDER BY post_date desc")]))
+  ([db-spec n]
+      (jdbc/query db-spec [(str "select auth_name, post_date, post_text " 
+                                "from blogs order by post_date desc LIMIT " n)])))
+(defn new-post
+  "Add a new post to the database."
+  [auth_name post_text]
+  (jdbc/insert! db [(str "INSERT INTO ")]))

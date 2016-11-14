@@ -1,0 +1,9 @@
+public class PrimeMain
+{
+    public static void Main(String [] args)
+    {
+        Prime p = new Prime();
+        p.setEndNumber(2000L)
+        
+    }
+}

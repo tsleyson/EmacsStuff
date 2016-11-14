@@ -1,0 +1,29 @@
+/** DBAccess.java
+ *  Shows how to access an MS Access database from Java.
+ *  Works now.
+ */
+import java.sql.*;
+public class DBAccess {
+    public static void main(String[] args) {
+        try {
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            String database =
+                "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=C:/Users/trisdan/Documents/Programs/nutrition/CN17_Final.mdb;";
+            Connection conn = DriverManager.getConnection(database, "", "");
+            Statement s = conn.createStatement();
+
+            s.execute("SELECT * FROM NUTVAL WHERE Status='d'");
+            ResultSet rs = s.getResultSet();
+            while((rs != null) && (rs.next())) {
+                System.out.println(rs.getString(1) + " : " + rs.getString(2));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+/**
+ * Throws a java.sql.SQLException saying "Too few parameters" if you
+ * have syntax errors in the SQL (which I did--I didn't put the quotes
+ * around the 'd'). 

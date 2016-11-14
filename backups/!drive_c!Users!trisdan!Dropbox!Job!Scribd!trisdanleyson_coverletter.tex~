@@ -1,0 +1,62 @@
+\documentclass[
+  fontsize=11pt,
+  paper=a4,
+  parskip=half,
+  enlargefirstpage=on,    % More space on first page
+  fromalign=right,        % Placement of name in letter head
+  fromphone=on,           % Turn on phone number of sender
+  fromemail=on,
+  fromrule=aftername,     % Rule after sender name in letter head
+  %addrfield=on,           % Address field for envelope with window
+  backaddress=off,         % Sender address in this window
+  subject=left,  % Placement of subject
+%  locfield=narrow,        % Additional field for sender
+  foldmarks=off,           % Print foldmarks
+  addfield=false
+]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+
+\makeatletter
+\@setplength{sigbeforevskip}{\parskip}
+\@setplength{refvpos}{\useplength{toaddrvpos}}
+\@setplength{toaddrheight}{1cm}
+\@setplength{locheight}{1cm}
+\makeatother
+
+\setkomafont{fromname}{\sffamily \Large}
+\setkomafont{fromaddress}{\sffamily}%% statt \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\bfseries}
+\setkomafont{backaddress}{\mdseries}
+
+\LoadLetterOption{DIN}
+\setkomavar{fromname}{Trisdan Leyson}
+\setkomavar{fromaddress}{12266 Regent Way\\PO Box 1033\\Oregon House, CA 95962}
+\setkomavar{fromphone}{(530) 692-9040}
+\setkomavar{fromemail}{trisdan.leyson@gmail.com}
+\setkomavar{backaddressseparator}{\enspace\textperiodcentered\enspace}
+\setkomavar{signature}{Trisdan S. Leyson}
+%\setkomavar{place}{Oregon House}
+\setkomavar{date}{\today}
+\setkomavar{subject}{Intern -- Software Engineering}
+\setkomavar{enclseparator}{: }
+
+\begin{document}
+  \begin{letter}{~}
+    \opening{Dear Scribd Team:}
+    I'm probably a little different from many of your applicants. As a child, I never took apart old radios or built my own printer from spare parts. I loved books, and I wanted to be a writer. When I first entered college, I was an English major. But famous programmers like Douglas Crockford, Joel Spolsky, Steve Yegge, and Donald Knuth have talked about how important writing skills are for programmers, with Crockford even comparing the programming process itself to writing. I've been around computers my whole life, and I'm no slouch as a programmer, so I hope that you too will see how useful a programmer who's also a writer can be to your company. 
+    
+    I am currently very near to finishing a Bachelor of Science degree from the University of California, Davis. I took the standard core courses, as well as two courses in programming languages and a course in compiler design, and mathematics coursework equivalent to a minor in the subject. I used mainly the C++ and Java languages for coursework. I taught myself Python and Clojure from books and tutorials. I first learned to program in Python, teaching myself over the summer after I had decided to change my major. I learned Clojure, a Lisp dialect for the JVM, more recently, in order to teach myself about Lisp, functional programming, and concurrency. I have done learning projects in both of these languages, with code on GitHub. Links can be found in my resume. 
+
+    I used C++ out of necessity, but I like to try new languages and technologies. I recently picked up Emacs and began learning Emacs Lisp. At the time I was in a slump, fed up with programming and computer science and thinking of trying for graduate school in linguistics. I was writing a book, which I planned to self-publish with Amazon's Kindle Direct Publishing. When LibreOffice wasn't serving me well, I turned to Emacs, and figured out how to configure it so I could write future books in Markdown and easily convert them to HTML or \LaTeX. In the meantime, I still needed to get my LibreOffice files into a usable form, so I wrote a Clojure program to do it, as a project to learn Clojure better. Learning Emacs and Clojure, and in a broader sense, seeing how useful my programming skills were for something as apparently unrelated as writing a book, revitalized my interest. 
+
+    Before studying at UC Davis, I studied at Yuba Community College, and also worked for two years in the Writing and Language Development Center tutoring writing and English as a Second Language. The WLDC forbids its staff from proofreading or copyediting student work. Ultimately, all writing must come from the student, so the tutor's challenge is to spark ideas, engender confidence, clarify goals, and create an encouraging atmosphere, all indirectly. Like any team effort, it could be exhausting, and sometimes I wanted to do all the work myself. Since I couldn't, I was forced to hone my verbal communication skills and learn how to work well in a team where I couldn't always control everything. 
+
+    I learned to program at UC Davis, and to work in a team at the WLDC; I am passionate about the ebook industry, as a longtime reader and occasional author. I would love to put my skills to service for Scribd, and I hope you can see the value in a programmer who's also a writer.
+
+    \closing{Thank you for your time,}
+  \end{letter}
+\end{document}

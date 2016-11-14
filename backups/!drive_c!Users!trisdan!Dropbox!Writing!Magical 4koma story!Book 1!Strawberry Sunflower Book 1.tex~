@@ -1,0 +1,3018 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{titling}
+
+\providecommand{\makeheading}[2] {
+\pagebreak
+{\centering\subsection*{#1}}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{#2}
+\end{figure}
+}
+
+\providecommand{\scenebreak}[0] {\vspace{0.5in}}
+
+\pretitle{\begin{center}\Huge\bfseries}
+\title{Strawberry Sunflower Book 1}
+\posttitle{\par\vskip1em{\normalfont Sunshine in the Garden\par\vfill}\end{center}}
+\author{Trisdan Leyson}
+
+\begin{document}
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{StrawberrySunflowerCover.jpg}
+\end{figure}
+\pagebreak
+\begin{figure}[hp]
+\includegraphics[width=\textwidth]{norainsert.jpg}
+\end{figure}
+\pagebreak
+\begin{figure}[hp]
+\includegraphics[width=\textwidth]{lilyinsert.jpg}
+\end{figure}
+\pagebreak
+\begin{figure}[hp]
+\includegraphics[width=\textwidth]{corainsert.jpg}
+\end{figure}
+\pagebreak
+\begin{figure}[hp]
+\includegraphics[width=\textwidth]{rantainsert.jpg}
+\end{figure}
+\pagebreak
+\begin{centering}
+
+\maketitle
+\pagebreak
+All text and original images are \copyright and \textregistered Trisdan Leyson, all rights
+reserved.
+
+Cover font: Satisfy, by David L. Cohen. Obtained via Google Fonts.
+Licensed under the Apache License, version 2.0.
+
+Visit us online at
+\href{http://strawberrysunflower.wordpress.com}{strawberrysunflower.wordpress.com}.
+
+For more fonts like Satisfy, visit \href{http://squidart.com}{squidart.com}.
+
+\end{centering}
+\pagebreak
+
+\subsection*{Table of Contents}
+\begin{itemize}
+\item
+  \href{\#When\_will\_I\_make\_a\_friend\_2}{When will I make a friend?
+  By Nora.}
+\item
+  \href{\#My\_friend\_Lily}{My friend Lily. By Nora.}
+\item
+  \href{\#My\_rival}{My rival! By Cora.}
+\item
+  \href{\#Dogs\_don\_t\_like\_me\_for\_some\_reason\_}{Dogs don't like
+  me for some reason! By Nora.}
+\item
+  \href{\#Math\_is\_hard\_}{Math is hard! By Nora.}
+\item
+  \href{\#The\_camping\_trip\_\_part\_1}{The camping trip, part 1. By
+  Nora.}
+\end{itemize}
+
+\makeheading{When will I make a friend? By Nora.}{whenwillimakeafriend.jpg}
+How are you? I'm Nora.
+
+This is a story about how I made my first friend at my new school. By
+the time I met her, it wasn't really my new school anymore because I had
+already been there for two months. But until I finally made a friend, it
+didn't feel like my school at all.
+
+My school is called St. Galgani's Academy for the Gifted. It's a
+boarding school. That means you don't go home after school; I have my
+own room in the girls' dormitory where I go sleep every night. I eat
+breakfast, lunch, and dinner in the dining hall with the other
+elementary school kids.
+
+St. Galgani's is a school for kids with special talents, so there are a
+lot of amazing people here. Oh, I'm not one of them. Some people from
+the academy came to my old school one day and tested everyone to see if
+any of us had special gifts. They told me I didn't have any gift, but I
+would someday, and asked me to come to the academy. I was scared when I
+thought about going away to live by myself at school without my parents,
+but my big sister told me to think of it like an adventure and just
+throw myself in. My big sister tells me to do lots of things that aren't
+good ideas, but she was right for once, so I came to this academy.
+
+Everything was scary at first like I thought. The academy was almost as
+big as the neighborhood I used to live in with my parents. It had its
+own swimming pool, a big garden, a forest, and a horse corral. My old
+school would have fit in just the building where my bedroom was. I was
+nervous, but also excited to make friends and do lots of interesting
+things that I could tell my big sister and the other kids back home
+about.
+
+On the first day of school my teacher, Miss Hanover, had me come up to
+the front and introduce myself to the class. The night before I had come
+up with a speech I wanted to say, about making friends and having fun
+together for the next year, but when I looked at all those people
+sitting in front of me, it all left me.
+
+``Go on, introduce yourself,'' said Miss Hanover.
+
+``I, I don't know what\ldots{}to say,'' I whispered.
+
+Miss Hanover's tail flicked. Oh, I forgot to mention that Miss Hanover
+is a fox lady. She has a fox's ears and tail. Lots of people at my
+school are part animal. There are cat people and dog people too, and
+probably other kinds of animal that I haven't met yet.
+
+At the time I thought she was mad at me, but I later found out that her
+tail flicks when she's feeling sorry for someone. Even though she has
+the Gift of Trickery, she can't ever play tricks that are too cruel
+because her tail will flick and give her away.
+
+``Why don't you tell them your name?'' Miss Hanover suggested.
+
+``Um, hi, my name is Nora,'' I said, looking over the rows and rows of
+desks. I counted them later; there were only twenty of them, four
+columns and five rows to a column, but on that day it seemed like they
+reached all the way up to the moon.
+
+One of the girls in front looked at me, and I looked back, and then
+suddenly got nervous and looked down, letting my bangs fall down over my
+face to hide it.
+
+``Um, uh, I like reading, and, um\ldots{}my name is Nora, and\ldots{}''
+I tried to remember my speech. I had written it all down and recited it
+in my head three times, but it was all gone now.
+
+``What's your favorite book?'' asked a boy in the second row.
+
+``Um\ldots{}I like ham\ldots{}ham and\ldots{}''
+
+I was trying to say ``Hamlet'', but I started stuttering and couldn't
+get out the last part, and everyone thought I was saying I liked ham and
+laughed. That made me even more nervous, and I could feel my face
+getting hot. Besides, \emph{Hamlet} wasn't my favorite book to begin
+with.
+
+"I mean, my favorite book is \emph{Lyrical Ballads} by William
+Wordsworth!" I corrected, but no one heard because they were all
+laughing.
+
+I wanted to run away, but Miss Hanover put her hand on my shoulder and
+whispered, ``It's okay, just wait a minute and tell them again.'' So I
+did. When everyone had stopped laughing, I said it again.
+
+"Myfavoritebookis\emph{LyricalBallads}byWilliamWordsworth."
+
+``I don't understand. Talk slower,'' said the boy who had asked the
+question.
+
+"My favorite book is \emph{Lyrical Ballads}by William Wordsworth," I
+said, more slowly.
+
+``What, I've never heard of that.''
+
+``Well, I have,'' said Miss Hanover. ``It's a very beautiful book, and
+Nora is a very good reader to be able to understand it. Why don't you
+ask her about it later? For now, though, let's start class. Nora, you
+can sit in that desk there, okay?''
+
+``Okay,'' I said, my face still burning. I was glad to be done, and I
+went to my desk towards the back of the classroom and sat down and
+buried my face in my arms so I wouldn't have to look at anyone.
+
+\vspace{0.5in}
+
+I didn't make things any better during our first group assignment. It
+was a week after class began, and when everyone paired up, I was the
+only one left without a partner, so Miss Hanover assigned me to work
+with Greta and Sweta to answer some questions about a book we had read.
+
+Greta and Sweta started talking about a show they had watched on TV last
+night and ignoring the assignment and me as soon as we all moved our
+chairs into a circle and sat down. I looked over the questions, waiting
+for them to be done so we could start answering.
+
+After five minutes they still weren't done, so I said,
+``Um\ldots{}uh\ldots{}''.
+
+They ignored me.
+
+``Ex, ex, excuse me\ldots{}Um, about the assignment\ldots{}''
+
+Finally they looked up, glaring at me like they were annoyed. ``What was
+your name again? I forget,'' said Greta.
+
+``N-Nora,'' I said.
+
+``I'm talking to Sweta, so we'll do the assignment later. What are you,
+some kind of teacher's pet?''
+
+I looked down and hid behind my bangs, and Greta and Sweta kept talking
+and went back to ignoring me. I did the assignment on my own, handed it
+in to Miss Hanover, and got to go to lunch early; when I got back
+everyone was calling me a teacher's pet.
+
+\scenebreak
+
+I had never been a star at sports, but I wasn't that bad. I used to have
+fun swimming and playing softball and soccer with my friends at my old
+school. So when we had soccer for PE, I thought maybe I could do
+something good for my team and show everyone that I wasn't just a
+teacher's pet weirdo who stutters.
+
+We were playing out on the third field, a smaller field where the
+elementary schoolers usually ended up for PE. St. Galgani's also has a
+middle school and a high school, and the high schoolers usually get the
+bigger first and second fields. Our teams had been picked by Ms.
+Rutherford, the girls' PE teacher. I was on Cora's team, and we were
+playing against Leah's team.
+
+Things weren't too bad at first. I stayed near the back, closer to my
+team's goal, and helped move the ball away from our goal and get it back
+to my teammates a few times. We were ahead by one goal. Leah's team had
+the ball and was moving it back towards our goal, but they were still at
+center field. Most of our team was clustered around Leah and Gracie, who
+were passing the ball back and forth and moving it down towards us.
+
+Then I saw that Mikaela, the strongest player on Leah's team, wasn't
+standing by the cluster where the rest of the team was; she was off to
+the side by herself. I realized what was going on: Leah was planning to
+pass the ball to Mikaela, who was too far away for any of my team to
+reach in time. Mikaela would have a clear shot at the goal.
+
+I was the only one who had noticed. It seemed like my chance had come.
+
+I ran towards Mikaela, who was still watching the main action and hadn't
+seen me. I saw Leah receive the ball from Gracie and then pass it
+towards us.
+
+I was on Mikaela just as she received the ball. I went to kick it away
+from her.
+
+Suddenly, my feet slid out from under me, and I flailed my legs around,
+trying to keep my balance. It didn't work, but my foot did hit the ball
+as I fell backwards.
+
+The ball bounced off my foot and flew up into the air, slamming straight
+into Mikaela's nose. Mikaela reacted too late and was hit. I saw her
+grab onto her nose.
+
+I found out later that someone had left a kiwi skin on the field. It was
+brown and green, so it blended in with the grass and I couldn't see it.
+If you've never eaten one, they're delicious, but at that time I wished
+there was no such thing as a kiwi.
+
+Ms. Rutherford stopped the game and everyone came over to see what was
+going on. My own teammates almost stepped on me as they ran over to find
+out what was going on.
+
+``Are you all right, Mikaela?'' asked Ms. Rutherford.
+
+``I think my nose is bleeding,'' Mikaela said.
+
+``I'll take her to the infirmary, Ms. Rutherford,'' said Gracie, and the
+two of them left the field.
+
+Gracie came back a few minutes later and we kept playing, but everyone
+on Leah's team was mad at me because I took out their best player. As
+for my own team, they were mad at me because when we started playing
+again, Ms. Rutherford gave Leah's team a penalty kick against us since I
+had broken the rules and hit Mikaela with the ball.
+
+\scenebreak
+
+When I wrote my sister a letter asking how to make friends, she wrote
+back and said ``Everyone loves cookies. Try giving cookies to people,
+and they'll want to be your friends.''
+
+I woke up before class one day and took my allowance over to the
+shopping center at the high school, where there were lots of restaurants
+and bakeries, and bought a bag of little shortbread cookies in the shape
+of hearts and stars and crosses. They were warm, crispy on the outside
+and soft on the inside, one of the best things I had ever tasted.
+
+I put the cookies in a basket and came into the classroom before anyone
+else got there. I pinned a card to the basket that said ``Please take
+one and enjoy''. Then I waited for everyone else to come.
+
+Miss Hanover was the first to arrive. ``Nora, did you bring these?'' she
+asked.
+
+``Yes, I wanted to do something nice for everyone.''
+
+``How sweet. You're a nice girl, Nora.''
+
+Miss Hanover was always nice to me, even though I had almost screamed
+the first time I saw her fox ears and had asked all sorts of questions
+about them. It made me feel good to be complimented by her, but that was
+the sort of thing that made everyone call me a teacher's pet, so I tried
+not to feel too good about it.
+
+Before very long, other people started to come in. Some of them ignored
+the cookies, but two boys---I thought their names were Robert and
+Philip---stopped and asked Miss Hanover if they could really have some.
+
+``Yes, go ahead. They're for everyone,'' said Miss Hanover.
+
+``Did you bring them, Miss Hanover?'' Philip asked.
+
+``No, I'm not the one who brought them,'' said Miss Hanover, and she
+caught my eye and smiled. I knew she was telling me I should come
+forward as the bringer of cookies, but suddenly I felt so embarrassed
+that I couldn't even speak.
+
+``I wonder who brought them?'' said Robert.
+
+``Uh, I-I-I-I\ldots{}'' I managed to say, my voice barely higher than a
+whisper. The girl sitting in front of me looked back, and I looked down
+and hid behind my bangs.
+
+``Maybe they're poisoned!'' Philip suggested. ``Maybe some crazy guy is
+trying to kill us like rats, by leaving poisoned cookies around.''
+
+I buried my burning red face in my arms. I definitely couldn't come
+forward after that. With the way things usually went, if I came forward,
+everyone would say I had tried to poison them as revenge for being
+called a teacher's pet.
+
+After the cookie incident, I gave up for a while on trying to make
+friends and tried to keep my head down. I started to think that I was
+trying too hard to stand out. It was okay if the rest of the class
+thought I was weird, as long as I had one friend to talk to. And maybe
+if I had one friend, other people would also become my friends.
+
+I decided to be scientific about searching for a friend. I wanted
+someone nice and smart, who had something in common with me. An animal
+person might be good too; Miss Hanover was a fox lady, and she was the
+only person who'd been nice to me since I came here.
+
+I decided on Cora. She wore glasses, so she was probably smart, and our
+names rhymed, so that gave us something in common. And she was a cat
+girl, and I liked cats; we had one at home named Pudding. Her hair,
+which she usually wore in pigtails, was orange and white, just like her
+ears and tail, and she seemed really nice when she was with other
+people; she was always laughing and having fun.
+
+I never actually thought about it scientifically. If I had ever written
+down my reasons for choosing Cora and read them, I might have been able
+to see how silly they were.
+
+One day, after class, I summoned up all my courage and went up to Cora
+to ask her to be my friend.
+
+When she saw me approaching, she ignored me.
+
+I almost left right there, but all my courage was still with me, so I
+said ``H-hello\ldots{}''.
+
+``What?'' Cora asked. ``Do you need something?''
+
+``Um, I-I-I wanted to ask you to be my f-f-f-friend\ldots{}''
+
+For a second I thought Cora was going to say yes. She looked at me
+thoughtfully, took off her glasses, breathed on them, wiped them on her
+shirt, put them back on, and looked at me squarely.
+
+``No,'' she said. ``You're a teacher's pet and you read too much. I hate
+reading. It makes my head hurt.''
+
+``B-but---''
+
+``You probably thought I liked reading because I wear glasses, right?
+Don't be stupid. Wearing glasses has nothing to do with reading. I'm
+just blind.'' Cora hitched up her backpack across one shoulder and
+smoothed down her skirt. ``See you.''
+
+Even though no one was there after she left, I still sat down at my desk
+and buried my head in my arms.
+
+\scenebreak
+
+I tried to stay home from school the day after that, but it's hard to
+have your mother call in sick for you when you live at the school and
+your mother doesn't. Miss Hanover came to my room to get me when I
+didn't come to breakfast.
+
+``Nora, are you in here?'' she asked as she knocked at my door.
+
+I didn't really want to see anyone, but I was afraid to make Miss
+Hanover mad since she was the only person who talked to me, so I got out
+of my top bunk, climbed down the ladder, and answered the door.
+
+``I was a little bit worried since you weren't at breakfast,'' said Miss
+Hanover, her fox ears pointed straight up at the sky and her tail
+swirling as she smiled down at me. She was holding a white porcelain
+vase for some reason. ``Are you sick?''
+
+``Yes.'' I hid behind my bangs, waiting for her to say something else.
+
+``Nora, could you possibly do me a favor?'' she said at last. ``If
+you'll do this for me, you can stay in bed the rest of the day.''
+
+Miss Hanover was too nice to ask a sick person to do a favor for her in
+return for being allowed to stay in bed, so she must know I wasn't
+really sick. Still, I kept looking down and waiting for her to leave.
+
+``The classroom is just so gloomy. I think some flowers would look nice
+in it. Don't you think so?''
+
+``Yes.''
+
+``Do you know where the garden is? Have you ever been there?''
+
+I nodded, still looking down. I had seen it on the tour and I walked by
+it sometimes, but I had never gone inside.
+
+``If you can choose some nice flowers for me, and put them in this vase
+and bring them to the classroom, then I'll let you have today off. What
+do you say?''
+
+``Yes, Miss Hanover,'' I agreed. Since she was nice enough to offer me a
+deal like that even when she knew I wasn't sick, I might as well take
+it. Plus, a walk in the garden might make me feel better.
+
+I went back into my room and got dressed in some old jeans and a T-shirt
+so I wouldn't get any of my nice clothes dirty in the garden, then took
+the vase and left the dormitory headed for the garden.
+
+The weather outside was beautiful, and the warm sun felt nice. The
+garden was pretty far from the dormitory, on the edge of the forest, and
+I walked extra-slow to enjoy the sunshine, so it took me a while to get
+there. It was surrounded by a high white fence, one of those ornate
+wrought iron fences that are as much art as fence, with the metal
+twisted into leaves and vines and flowers. It was fenced in to keep the
+deer and rabbits out, not the people; the gate was usually unlocked and
+anyone who wanted to could go inside.
+
+I opened the gate and went in, closing it behind me, and right away I
+was face-to-face with a sea of purple, red, yellow, and green. Flowers
+and plants of all kinds were in front of me: tulips and daisies and
+begonias and orchids. I walked along the winding stone path underneath a
+lime tree, and saw a white marble statue of a young boy enclosed in
+twigs and bramble, and thought of Samuel Taylor Coleridge's poem ``This
+Lime Tree Bower My Prison''.
+
+Now that I was here, I had no intention of quickly choosing some flowers
+and trotting back to the classroom with them. I had to explore this
+place, at least a little. As pretty as the flowers here were, I felt as
+if there must be much prettier flowers somewhere further inside, and I
+wanted to find them.
+
+I'm not sure how much time I spent wandering the stone paths of that
+huge, dreamlike garden, looking at flowers, eating the fruit that grew
+on the trees, admiring the creeping vines and ivy and climbing roses
+that grew up the trellises, and resting inside the gazebos, staring
+through their latticework walls, the light coming down on me in
+criss-cross patterns. I spent at least an hour, though it felt much
+longer.
+
+I came into a clear and more orderly area where someone had set up
+raised planter boxes and was growing potatoes and rutabagas. It seemed
+to be a dead end; at the other end was a high hedge that ran all the way
+down to a stone wall on both sides. But from the way the garden fence
+had looked from the outside, it seemed there should be more to it. It
+seemed there should be something past that hedge.
+
+I came up to the hedge and tried to look through to the other side, but
+it was so thick that I couldn't see anything at all. I walked along the
+hedge from stone wall to stone wall, trying to find some spot where I
+could see through, but there wasn't one.
+
+As I was making a second pass along the hedge, I noticed a squirrel
+creeping along the bushes ahead of me. The squirrel brushed up against a
+misplaced clump of light purple martagon lilies growing in the shade of
+the hedge.
+
+Suddenly the hedge parted.
+
+I dashed to where the squirrel was, but the hole in the hedge had
+disappeared by the time I got there, making me wonder if it was just a
+mirage, some trick of the light. I watched the squirrel go off on its
+business. The hole had appeared exactly when the squirrel had touched
+those lilies.
+
+I touched the lilies.
+
+The hedge parted again.
+
+It was a small hole, just large enough for me to go through crawling on
+my hands and knees. It was a good thing I'd changed into my jeans. I got
+down and pulled myself into the tunnel.
+
+For a brief moment I was in the dark, surrounded by hedge on all sides.
+I pulled myself through, and emerged back into the sunlight on the other
+side.
+
+I stood up and looked around. This area of the garden didn't look so
+different from the other side, so I wasn't sure why they'd gone to all
+the trouble of hiding it, except\ldots{}
+
+Nearby was a plant that looked like a sunflower. Except there was
+something weird about it, something that made me look twice. I went up
+to the sunflower to get a better look. It truly was a beautiful
+sunflower, tall and bright yellow with a crisp green stalk. Except that
+it didn't have seeds in the middle like a normal sunflower. It had some
+kind of huge red fruit in the middle, something that looked a lot like a
+strawberry.
+
+I picked one, wondering if I should eat it. I'd never seen a plant like
+this before. I sniffed the fruit. It smelled like a strawberry. I tasted
+it. It was a strawberry.
+
+A sunflower with strawberries growing in the middle.
+
+I knew then that I had to find the prettiest flowers from this corner of
+the garden. This was definitely where the prettiest flowers would be.
+Why else would they hide it behind that hedge?
+
+There were no paths back here except what had been worn in the grass by
+people walking through. I followed those worn trails around looking for
+signs of flowers. Now that I thought of it, those martagon lilies
+outside had been pretty. Maybe there were more of them in here
+somewhere.
+
+I made my way towards a patch of tomatoes, their vines wound around
+wooden stakes in the ground. Next to them was a small grove of trees
+with wooden tubes, pointed down at the tomato patch like the cannons of
+a pirate ship, growing from the branches. Martagon lilies like the
+shade, so there might be some in the shadow of those trees.
+
+As I was approaching the tomato patch, something hard hit me in the
+chest, bouncing off and leaving behind a stinging pain. I knelt to see
+what it was. It was a walnut.
+
+WHOOSH!
+
+Several more walnuts flew past my head, barely missing my face.
+
+I looked up, and saw that the trees were shooting walnuts out of those
+tubes; nuts encased in a hard brown shell about the size of a golf ball
+were being showered on me from above.
+
+POP!
+
+The tomatoes suddenly began to burst, spraying red juice and flesh and
+seeds all over me. The explosion of the tomatoes on the first plant
+seemed to set off a chain reaction; the explosions rippled through the
+patch, moving outward from me. The next instant I was completely soaked
+with tomato juice from head to toe, and walnuts were still raining down
+on my head.
+
+I turned around and ran away from that tomato patch as fast as I could,
+walnuts flying after me like bullets as I went. I didn't stop running
+until I was well out of range of all those dangerous plants, and then I
+collapsed on the grass, out of breath.
+
+I hope you won't think I'm too much of a crybaby if I admit that I
+cried. After two months with no friends or family, after what Cora said
+to me yesterday, after being attacked by tomato bombs and walnut
+artillery, I think you'd cry too, or at least you'd want to.
+
+I sat there in the middle of the rut worn in the grass and cried for a
+minute, until a girl I didn't know appeared on the garden path ahead of
+me. Then I got embarrassed and stopped. At least, I tried.
+
+``My, I'm so sorry! I grew those plants to protect this place from
+intruders, but I didn't think about how how it would feel to be attacked
+by them!''
+
+I stood up and wiped my eyes, and then thought to check and make sure
+Miss Hanover's vase was still okay. It wasn't. The walnuts had hit it
+and chipped off a piece of the brim, and I'd dropped it when I collapsed
+to the ground, getting dirt and grass all over it.
+
+The girl I didn't know---she looked older than me, possibly a middle
+school or high school student---tossed her long blonde braid back over
+her shoulder and took a handkerchief from the pocket of her overalls.
+``Here, use it to wipe off some of the tomato juice,'' she said, giving
+it to me.
+
+I took the handkerchief and wiped my eyes and face with it. I felt bad,
+because what was on my face wasn't just tomato juice, but also tears and
+snot from crying, so I said, hiding behind my bangs, ``I, I, I'll get it
+w-washed\ldots{}for you.''
+
+``No worries,'' said the girl. She reached into the leather satchel
+slung over her shoulder and took out a Thermos. ``Here, drink some of
+this. It's tea with peppy mint.''
+
+``Peppermint?''
+
+"\emph{Peppy}mint. I grow it here. It'll fill you with cheer and vigor
+and give you enough energy to do anything! Here, try it."
+
+I took the tea from her and sipped. It was good. It tasted just like the
+mint tea that my mother used to make back home. Each sip seemed to warm
+up both my body and my heart.
+
+``Are you better?'' the girl asked.
+
+``A little,'' I said.
+
+``Good.'' Her eyes went to the vase in my hand. ``Were you here looking
+for some flowers?''
+
+``Yes. My teacher asked me to get some for the classroom.''
+
+``I know this whole garden,'' the girl said. ``Maybe I can help you find
+some that you like.''
+
+``Um, that would be really good. Um, there were some martagon lilies
+that I touched to come inside here\ldots{}''
+
+``Oh, those? Yeah, the hedge can smell lilies on you. It opens if it
+smells that, but you have to be pretty close to it, or else it can't
+smell. There's another clump of them this way.''
+
+The strange girl led me off down another trail, away from the exploding
+tomato patch. As we walked I saw other amazing plants that I had never
+heard of. I asked the girl about them as we walked by.
+
+``Those are beehive bellflowers,'' she said as we walked by a planter
+box full of huge cup-shaped violet flowers buzzing with bees. ``There's
+enough space for the bees to build hives inside the flower itself. Then
+the flower has a built-in pollinator. The bees make honey inside the
+flowers, so it's also possible for a beekeeper to move them to another
+flower and then take a whole flower to get the honey from.''
+
+When I asked her about some strange climbing vines sprouted along the
+whole length with pale pink and purple flowers, she said, ``Those are
+flower crown vines. Rather than pick a bunch of flowers and chain them
+together, you just pick the vine, trim it to size, and tie it on your
+head.''
+
+We passed a patch of gigantic blood red flowers with yellow spots, each
+the size of one of my shirts. ``Aren't those rafflesia?'' I asked. ``The
+flowers that smell like rotting meat?''
+
+``Those ones don't smell like rotting meat. They're rose rafflesia. They
+smell like roses.'' And they did; the scent was so strong, I could smell
+it even from ten feet away. ``And you can only see the flowers on normal
+rafflesia for about three days in a year, but you can see these ones
+year-round,'' she added.
+
+We reached a large clearing where some less unusual trees and plants had
+been allowed to grow. Thriving in the shade of an elm tree were some
+martagon lilies, like the ones that had parted the hedge.
+
+The girl bent down and picked some, and stuck them in the vase under my
+arm with a smile. ``Here you go. Oh, take some of these carnations too.
+They'll look beautiful in your classroom.''
+
+``Thank you,'' I said, accepting the flowers. For a moment we looked at
+each other, and then I got embarrassed and hid behind my bangs.
+
+``Well, I guess you'd better get back to your classroom,'' said the
+girl. ``Your teacher and all your friends must be waiting for you.''
+
+``Oh. Um, er, actually, I\ldots{}I\ldots{}I don't have any friends in my
+class.''
+
+``Oh. What about in another class?''
+
+I shook my head, too embarrassed to look at her.
+
+``In another school?''
+
+I shook my head again. ``I had some friends at my old school, but none
+at this academy.''
+
+``That's not right. With so many people at this school, none of them
+should be left without a single friend.'' The girl reached into her
+leather satchel again and brought out some peaches. ``Tell you what. If
+you like, I'll be your friend.''
+
+I looked her straight in her blue eyes, my mouth open in shock.
+``R-really? You'd---you'd be my friend, just like that?''
+
+``Sure. You seem like a nice person. No one with such good taste in
+flowers could be bad.'' The girl smiled and handed me a peach.
+
+I took the peach and bit into it. It was the sweetest peach I could ever
+remember eating.
+
+And just like that, I made my first friend at St. Galgani's.
+
+``My name is Lily. I go to the middle school here. What's your name?''
+
+``Um, I'm Nora. I'm from the elementary school. Um, did you grow all the
+plants on this side of the big hedge?''
+
+``Sure did.'' Lily beamed with pride. ``I love gardening. Being with
+plants is so peaceful, you can forget all your troubles here.''
+
+I agreed. Up until the tomatoes and walnut trees had attacked me, I'd
+been having a great time in the garden. And after that, I'd had a great
+time walking around with Lily in here.
+
+``My trouble is school, so I like to come here to forget about it.''
+
+Something seemed wrong with that, but I didn't want to lose my first
+friend by saying so.
+
+By the way, when I went to apologize to Miss Hanover for breaking her
+vase, she wasn't mad at all. ``Someone who used to be in my class always
+said the garden was a place to forget all your troubles,'' she said.
+``So I sent you there so you'd forget about whatever was bothering
+you.''
+
+I told her I had met Lily and we were friends now. ``Is that so? I'm
+happy for you, Nora.''
+
+Miss Hanover probably sent me there hoping I would meet Lily and the two
+of us would become friends. That's the sort of foxy teacher she is.
+
+\makeheading{My friend Lily. By Nora.}{myfriendlily.jpg}
+
+Even though I still didn't have any friends in class, everything seemed
+better now that I had Lily. When I had to work on a group assignment and
+the rest of the group was ignoring me and talking, I would do the
+assignment on my own and imagine what Lily would think about it. Talking
+to people in class seemed easier, because I wasn't so worried about
+saying the wrong thing and ruining my chance to make a friend.
+
+After class, I would go over to the garden and rub the scent of martagon
+lilies on my hands and part the hedge, and go through to Lily's secret
+corner of the garden, and we would talk while I helped her take care of
+the plants. They needed a lot of things, like water, special soil, and
+different amounts of sunlight. Some of them also needed trimming and
+pruning. Lily took care of all of them, and she seemed to always know
+exactly what each plant wanted, as if she could talk to them.
+
+One day I was watering a patch of roses when I saw a purple flower that
+I recognized as a milk thistle growing underneath a rose plant. I was
+about to pull it out, but Lily stopped me.
+
+``Don't pull it out,'' she said.
+
+``But milk thistles are weeds. They overgrow everything else,'' I said.
+
+``They may be selfish, but as long as we make sure they share, we can
+still let them live here,'' said Lily, taking her garden trowel from the
+pocket of her overalls. She slid it down into the soil and pulled up the
+milk thistle, leaving all of its roots intact inside a clump of dirt.
+``Let's go find somewhere we can let this little one grow.''
+
+We settled on a space near the blackberry bushes with lots of sunlight.
+``The blackberries are selfish too,'' said Lily, ``so they'll help keep
+him in line. And some day he might thank us for letting him live here.
+You know, milk thistle can be used to make medicine that can help cure
+liver disease and poison mushroom. So even though some people call them
+weeds, they also have a gift that only they can give us.''
+
+``You always seem to know exactly what to do when it comes to plants,''
+I said.
+
+``It's my gift. I have the Gift of Gardening.'' Lily took some
+strawberries from her satchel and offered them to me. They were from the
+strawberry sunflower, and were some of the ripest and sweetest I'd ever
+tasted. ``Though it might be better to say I have the gift of
+understanding what plants are telling me.''
+
+``Do they talk?'' I asked.
+
+``They don't talk or make any noises, but they do have feelings. They're
+not like human feelings or animal feelings, though. Plant feelings are
+slow, strong, twisting. A person might be mad for a few minutes, but a
+plant builds up its feelings gradually over a long time, and then keeps
+feeling that way for a long time.''
+
+I didn't totally understand, but I thought it was amazing, and I told
+Lily so.
+
+``It's not that amazing.'' Lily looked embarrassed to be complimented
+like that. ``I may be able to understand plants, but it means I have a
+hard time understanding people.''
+
+We finished taking care of the plants, and as we were leaving the
+garden, Lily said, ``I told you about my gift, but I never asked what
+your gift is.''
+
+``Oh. Um, my gift, er\ldots{}I don't know yet.''
+
+``Oh, you're a Potential.''
+
+``Yes. It's kind of embarrassing\ldots{}''
+
+Lily shook her head. ``There's nothing wrong with being a Potential.
+It's kind of fun that way, wondering what gift you'll get, looking
+forward to the wonderful things you'll be able to do someday. It's like
+waiting for Christmas.''
+
+Some of the kids with gifts looked down on Potentials, who didn't have
+gifts yet, but what Lily said made me feel good about it. Even though
+she had such an amazing gift, she wasn't snobby at all.
+
+Lily was in middle school, so her dormitory and dining hall were in a
+different building across the field from the elementary school, but she
+seemed to spend a lot of time in the elementary school building, even
+though middle schoolers weren't supposed to come over here. It seemed
+like Miss Hanover had given her permission to come over whenever she
+wanted to. I would often come to breakfast or dinner and find her in the
+dining hall, waiting for me. We would go through the line and get our
+food, then choose a small table in one of the corners, away from all the
+hustle and bustle of the walkway. Once the head chef himself came out to
+talk to Lily at our table.
+
+``Lily, thanks for all these beautiful vegetables you grow for us,'' he
+said, as I hid behind my bangs.
+
+``Thank you for making them into such nice food,'' said Lily. ``I'm sure
+they're happy to be cooked by someone as skilled as you.''
+
+``No, no. Good food comes from the ingredients. Without ingredients, a
+chef is nothing.'' The head chef then turned his gaze on me. ``Is this
+your friend?''
+
+``Yeah, this is my friend Nora,'' said Lily. ``She's been helping me out
+in the garden.''
+
+``Thanks for your good work, Nora,'' said the head chef.
+
+``Um, y-you're welcome\ldots{}'' I stammered.
+
+``I'd better get back to the kitchen. Thanks again,'' said the head
+chef.
+
+When Lily and I had finished eating, Lily said, ``I guess I should go
+check my mail.''
+
+``The mail doesn't come to your room?'' I asked.
+
+``No, my club mailbox. I've been neglecting the club for a while now.''
+
+``Oh you're in a club? And they make you check the mail?''
+
+Lily smiled. ``Well, I am the club president---and only member---so
+pretty much everything is my duty.'' She stood up. ``Come on, let's go
+the clubroom, and I'll show you.''
+
+I followed Lily up the stairs to the third floor, where there were lots
+of empty offices and lounges. The elementary school building had lots of
+empty rooms, because we didn't have as many teachers, tutors, and
+coaches as the other schools. Elementary school students weren't allowed
+to start their own clubs, although the teachers had started lots of
+clubs that we were allowed to join, like the literature club, the music
+club, and the natural sciences club. Elementary school students could
+also join high school clubs if we could find a high school student to
+sponsor us and get permission from the club's adviser and our teacher.
+
+I had thought about joining a club as my next move to make friends, so I
+had read all about them in the handbook.
+
+Lily took us down the hall to the wooden door of a lounge. A manila
+envelope hung on the wall next to the door, pinned up with a thumbtack.
+``This is my mailbox,'' she said, looking inside. ``Still nothing. Looks
+like no one needs help today.'' She took a key from the pocket of her
+overalls and unlocked the door. ``Come inside, and we'll have some
+tea.''
+
+Inside, the room was similar to the teacher's lounge, where I had gone a
+few times to see Miss Hanover before or after class, but unlike the
+noisy and crowded teacher's lounge, decorated with posters with all
+sorts of boring grown-up jokes on them, it was still and silent, and
+Lily had decorated every inch of the wall with plants and flowers. An
+arrangement of climbing flower crown vines wound all the way around the
+upper parts of the wall, filling the room with a fresh scent. Off to my
+left was a little counter with a sink, a teapot, and some dishes and
+utensils, also surrounded by flowers. In the center was a little wooden
+table with two chairs and a vase of flowers set atop it. White gossamer
+curtains swayed over a pair of tall bay windows at the far end of the
+room. The teacher's lounge had the same window seats, and I had always
+wanted to go sit on them and absorb the sunlight while reading. I didn't
+have a book with me now, but I still took my chance to go sit on them
+and absorb the sunlight while Lily made tea.
+
+``Do you like milk and sugar in your tea, Nora?'' Lily asked.
+
+``No, thank you. Plain for me, please,'' I said as I climbed into the
+window seat. From here you could see across the campus, all the way to
+the high school building and beyond to the mountains. The high school
+soccer team was practicing on the field, moving around like tiny ants in
+the distance, chasing a ball I couldn't see.
+
+When the tea was done, I went to climb down from the window seat, but
+Lily said, ``You can stay there if you like'' with a smile, so I took my
+cup and saucer up into the window with me and drank tea while looking
+out across the school.
+
+``It's too bad we can't see the garden from here,'' I said. ``I bet it
+would look amazing from this height.''
+
+When my tea was gone, I came down from the window seat and washed my cup
+and saucer in the sink and put them out to dry on the dish towel. ``So
+what do you do in this club?'' I asked.
+
+``It's the tea-drinking club,'' said Lily.
+
+``Eh? They allow clubs like that?''
+
+``Only joking. I actually made this club to gather together people with
+all sorts of gifts, and pair them up with someone who needs their
+help.''
+
+``I\ldots{}don't understand,'' I admitted.
+
+``Well, everyone in this school has a gift, even if they don't know what
+it is yet. And somewhere out there, maybe there's a person who needs
+help from someone with that gift. Maybe someone out there is having
+trouble growing food that they need to feed their family. Then I might
+be able to help them with my Gift of Gardening. Or maybe someone is sick
+and isn't getting better. Then one of my friends from the high school
+might be able to help them with his Gift of Strengthening. We all have
+gifts, and even though some of them might seem useless, they can all be
+useful to the right person.''
+
+``Like the milk thistle,'' I suggested. ``Even though it might be a weed
+to someone trying to grow roses, it could be medicine to someone with
+mushroom poisoning.''
+
+Lily smiled. Her smile was so beautiful and gentle that I always felt a
+tingle in my back when I saw it, and it made me feel like smiling too.
+``Exactly,'' she said. ``So, do you want to join?''
+
+``Me? But I don't have any gift yet.''
+
+``That's not true,'' said Lily. ``Even if you don't have any power like
+my Gift of Gardening yet, you still have gifts that only you can offer
+to someone in need.''
+
+Just as I was about to respond, the door opened. Standing there, with a
+slight blush on her face, a cake box in her hand, her cat ears standing
+straight up, her orange-and-white pigtails decorated with yellow ribbons
+and her glasses fogged up around the corners, was Cora.
+
+She began to smile at Lily, but then caught sight of me and looked
+disappointed.
+
+Hiding behind my bangs suddenly wasn't good enough, so I quickly got up
+and pulled the curtains in front of me, and shut my eyes tight.
+
+``I can still see you, idiot,'' Cora said. I heard her set the cake box
+on the table and I opened my eyes. These curtains really were easy to
+see through. Nonetheless, I stayed behind them, pulling them closer
+around me to hide my feet.
+
+``Hi, Cora,'' said Lily. ``What brings you here?''
+
+Cora's tone of voice became completely different as she said, ``I
+brought this cake for you! I was hoping we could, um, maybe eat it
+together.''
+
+Lily opened the box and looked inside. ``That looks delicious.''
+
+``Doesn't it?'' Cora agreed.
+
+``And there should be enough here for Nora to have some.''
+
+``Ye\ldots{}yeah, I guess so\ldots{}''
+
+``But we only have two chairs. Let me go look in some of the other rooms
+and see if I can find another one,'' said Lily, getting up from the
+table. ``Nora, won't you help Cora make tea and cut the cake?''
+
+``Um, s-sure,'' I stuttered. I poked my face out from the curtains and
+saw Cora getting a knife and beginning to cut the cake, looking annoyed
+all the while. When she had left the counter with a knife, I went over
+there and began to make tea.
+
+Lily had a self-heating teapot, so we didn't need to have a stove in the
+room to heat water. All I had to do was fill the teapot with water, put
+it on the heat-absorbing tile, and twist the little red ball at the top,
+and the teapot would heat the water inside. I started the water heating,
+then turned around to see Cora glaring at me and jumped.
+
+``Let's be clear about this,'' said Cora. ``I'm only sharing this with
+you because of Lily. Otherwise I wouldn't give you any.''
+
+I reached for the nearest curtains and hid behind them again. ``O-of
+course, I know that. Y-you told me you didn't want to be f-f-f-friends
+with me and I g-got the message\ldots{}''
+
+``Well, as long as you understand, that's okay. But I guess it's not
+that bad that you're here. It gives me the chance to apologize.''
+
+``Huh?'' I was confused, and peeked out from behind the curtains to see
+Cora polishing her glasses on her shirt, looking away from me as if she
+were embarrassed.
+
+``I'm sorry about what I said the other day. I still don't want to be
+friends with you, but the stuff I said was too mean. Sorry.''
+
+I came out from behind the curtains and stepped closer to Cora.
+``I\ldots{}accept your apology. I guess it was a little too forward of
+me to just come up and ask you to be my friend like that.''
+
+``That's right! I had no idea what to say when you just popped off like
+that, so my true feelings just came out,'' said Cora. ``But saying all
+that was too mean, and I felt bad afterward. So I apologize.''
+
+I somehow felt like she was still insulting me, but I appreciated the
+intentions behind what she was saying. ``I thought maybe you were mad at
+me about the soccer game,'' I said.
+
+``That was obviously an accident! Everyone just got too worked up. At
+least you were trying. Some girls hate sports so much they just stand in
+the middle of the field like lawn gnomes, and that's the kind of girl
+that really makes me mad. Besides, I win so much at sports that losing
+one stupid PE soccer game is nothing to me. I don't give a rat's tail
+about that.''
+
+Hearing that made me think that Cora really was a nice person after all,
+so I made tea for the three of us and sat down to talk with her while we
+waited for Lily to come back.
+
+``Um, how did you become friends with Lily?'' I asked.
+
+Cora put her glasses back on and started playing with her own tail,
+holding it and swirling the tip around her finger. ``We met two years
+ago, when Lily was still here in the elementary school,'' she said. ``My
+teacher back then, Mr. Grayson, was making us just read and read and
+read. He had us sit there at our desks for two hours, just reading this
+stupid book he loved. You probably know what it is---U something, by
+some Irish guy.''
+
+Even though I had read a lot of books, I wasn't a library database, so I
+couldn't figure out what book it was from such a vague description. I
+shook my head, and Cora went on.
+
+``Anyway, after two hours Mr. Grayson told us if we couldn't reach page
+fifteen by lunchtime, we'd have to sit there in the classroom through
+lunch until we got there. I was already starting to get hungry, and my
+head hurt from all that reading, and my legs were itching to get outside
+and run. When he said that, it made me mad, so I threw the book at the
+window and ran out of the classroom.''
+
+After an incident like that, it was amazing that Cora hadn't been
+labeled an angry, violent person and left out of the class like me.
+
+``After I ran around the grounds a little bit, I worked out all my anger
+and was starting to think that I should go back to the classroom and
+apologize, but I was afraid that Mr. Grayson would be mad at me and I'd
+get in trouble. As I was walking around wondering what to do, Lily found
+me.''
+
+``I asked her why she wasn't in class and she said she had permission
+from her teacher to come to the garden during certain activities. She
+asked me why I wasn't in class, and I told her what had happened. Lily
+said when people get mad at someone, they'll first be angry about
+whatever happened to make them mad, then they'll stop being mad after
+they have time to cool off. But if the person they're mad at doesn't
+apologize, then after a while they'll get mad at that person again for
+not apologizing. She said Mr. Grayson had probably just stopped being
+mad, and she would come with me to apologize to him before he got mad at
+me again for not apologizing.''
+
+``Lily walked me back to class and went with me to apologize to Mr.
+Grayson. I told him I was sorry and I would take any punishment he
+wanted to give me for what I did. But Mr. Grayson admitted that he might
+have been unreasonable, and he said we could all go to lunch and he'd
+give us some time the next day to read up to page fifteen.''
+
+``After I saw how amazing Lily is, I wanted to be her friend, but I
+somehow get embarrassed and can't be myself when she's around, so we
+never managed to get close.''
+
+``Don't worry,'' I said. ``I'm sure Lily wants to be friends with you
+too. After all, you told her all about getting angry and throwing the
+book at the window, so she knows that you're a violent and brutal
+person, yet she hasn't abandoned you.''
+
+``You little---!'' Cora snarled, and I jumped up and hid behind the
+curtains again.
+
+``Are you two getting along well?'' Lily asked as she came in carrying a
+chair, followed by Miss Hanover, also carrying a chair.
+
+``Miss Hanover? What are you doing here?'' asked Cora.
+
+``Hello Cora, Nora. I'm this club's faculty adviser,'' said Miss
+Hanover.
+
+``I asked her where I could find a chair,'' said Lily, ``and when she
+heard there was cake, she insisted on coming to advise the club.''
+
+I left the sanctuary of the curtains and made a cup of tea for Miss
+Hanover too, and we sat down to have cake together.
+
+``By the way, Cora, were you able to finish that book in the extra time
+that Mr. Grayson gave you?'' I asked.
+
+``No. I think I gave up the twenty-third time I had to read page two,
+and just started drawing in the margins.''
+
+"Are you talking about \emph{Ulysses}, by James Joyce?" Miss Hanover
+asked.
+
+``Yes.''
+
+Miss Hanover and Lily exchanged knowing looks. ``Do you want to tell
+her, Lily?'' Miss Hanover said.
+
+``It was your idea,'' said Lily.
+
+Miss Hanover took a sip of tea and said, ``Cora, after Lily told me how
+the two of you met, I started to ask Mr. Grayson some questions about
+the book he was having his class read. After a while I could tell that
+he had no idea at all what the book was about. I told him I didn't think
+it was right to make his fourth-grade class read a book that many
+adults, including him, can't understand.''
+
+``So he stopped making his class read that book?'' Cora asked.
+
+"No. He said if his fourth-grade teacher had made him read it, then
+today he'd be able to understand it just fine. But since he had no idea
+what the book was about anyway, I waited a few days and then showed him
+an order form saying that he'd ordered the wrong book. So he reordered
+everything, and nowadays his class reads \emph{The Adventures of
+Odysseus}and they can all reach page fifteen by lunch."
+
+Cora's face lit up, and she stood up and threw her arms around Miss
+Hanover, quickly letting go again. Then she took Lily's and Miss
+Hanover's plates and served them the two extra pieces of cake we'd ended
+up with when we cut it.
+
+``Somehow, this gives me a nice warm feeling inside,'' I said
+
+Miss Hanover and Lily smiled, but Cora scowled and started cleaning her
+glasses. ``That's just your twice-baked brain,'' she said.
+
+Her glasses get dirty a lot.
+
+By the way, later, after Miss Hanover left, I told Lily I would love to
+join her club. Cora chimed in and said she would too, so Lily's club got
+two new members. I'm not sure what gift I can offer to help others, but
+I'll do whatever I can.
+
+\makeheading{My rival. By Cora.}{myrival2.jpg}
+How are you? I'm Cora.
+
+You probably have a bad image of me because of what that creampuff Nora
+said about the first time we met, so let me set the record straight.
+
+First, Nora is a teacher's pet, klutz, and creampuff who hides behind
+Miss Hanover, the curtains, or whatever else is handy. I can hardly
+believe that we're the same age, because she acts like she still
+sometimes needs to wear diapers.
+
+Second, I never hugged Miss Hanover. That didn't happen. I'm not a
+teacher's pet creampuff like Nora is, so I wouldn't have done that.
+
+Third, I really did feel just a little bit like I might have gone too
+far when I turned down her friendship in class that time, so I decided
+to put up with her even though she's always in the way whenever I try to
+become better friends with Lily. Lily is nice to everyone, so when that
+creampuff came to her whining about not having any friends, she
+graciously agreed to be friends and entertain that klutz every day in
+her clubroom.
+
+It made me a little jealous that Nora had accomplished in two minutes
+what I'd spent two years trying to do, but I really did feel just a
+little bit bad for telling Nora what I did, so I decided to apologize
+and put up with her, hoping that I could use her as a stepping stone to
+get closer to Lily.
+
+Thanks to her, I ended up joining Lily's club. I'm not very clear on
+what this club does, but if it means I can become better friends with
+Lily, then I'm okay with it. If it means being in this club with Lily,
+I'm even willing to try and be friends with Nora. I'm even willing to
+talk to her in class, if it means that she'll say good things about me
+to Lily.
+
+This story isn't about Nora, although she does have a part to play in
+it. A very small, ignominious part. She screams, hides, flaps, flails,
+and wets herself, along with nearly killing me, herself, and the person
+I'm about to tell you about. This person is someone who annoys me even
+more than Nora.
+
+That day, I decided to try talking to Nora in class. I knew this would
+either make or break my reputation. Either everyone would decide that
+Nora wasn't so bad, and they would all look up to me for being smart and
+nice enough to see it, or they would throw me on the creampuff tray with
+her and no one in class would ever talk to me again.
+
+I knew all this, and yet I still went to talk to her before class. I'm
+really brave and nice, aren't I? I'm sure you can see that now. Got it?
+I'm nothing like the violent, brutal, and mean girl that Nora probably
+told you all about.
+
+When I came into the classroom that morning, Miss Hanover hadn't arrived
+yet, but some of the other kids were there. I went to my desk and set
+down my backpack.
+
+``Hi Cora,'' said Willow, the girl who sat next to me.
+
+``Hi,'' I said.
+
+``Did you finish your homework?''
+
+``Yeah.''
+
+``Can I copy it?''
+
+I let Willow copy it. There was no way that Miss Hanover wouldn't figure
+it out. Even without her Gift of Trickery, which let her see through
+lies and cheats as well as lie and cheat like a champ herself, she could
+have just noted the fact that all my answers were wrong, and all of
+Willow's were wrong too, except for the few I had gotten right, which
+would also be the few that Willow had gotten right.
+
+Still, I'm such a nice person that I let Willow copy. I left her to it
+and started moving down the rows of desks towards Nora's desk. We both
+sat in the far column, next to the windows, but my desk was closer to
+the front than hers.
+
+Having two sets of ears means I can hear really well, and I can turn my
+cat ears to pick up sounds all around me. That's how I knew that Willow
+had stopped copying my homework and was whispering with another girl.
+They were wondering where I was going.
+
+I tuned them out and kept going, finally stopping at Nora's desk. Nora
+looked up at me with surprise.
+
+``Hi,'' I said.
+
+``H-hello\ldots{}'' Nora replied, her mouth full of marshmallows as
+usual, and then she went back to her book.
+
+Something about this made me really mad, and I wanted to yell at her,
+but I reminded myself that she could be my one-way ticket to friendship
+with Lily, so I held myself back. The desk next to her was empty, so I
+sat down in it and tried to smile. ``What are you reading?'' I asked.
+
+Nora showed me the cover. \emph{On the Banks of Plum Creek}, it said,
+and there was a picture of a river out in a prairie somewhere, a horse
+and a plum tree at its edge.
+
+``Is it good?''
+
+``Uh-huh. It's very interesting.''
+
+``Good. See you.''
+
+``Uh-huh.''
+
+I stood up and returned to my own desk. ``What was that about?'' asked
+Willow when I got back.
+
+``Nothing.''
+
+``She almost totally ignored you! Are you gonna let that teacher's pet
+get away with that? I'm gonna go make sure she understands what her
+position is.'' Willow got up, but I took her by the arm and shook my
+head.
+
+``Leave her alone,'' I said. ``She's a drool-headed creampuff, but she's
+not that bad. Just leave her alone.''
+
+Willow sat down again, looking skeptical. ``Why'd you go talk to her
+anyway?'' she asked.
+
+``I found out we're in the same club,'' I said, ``so I thought we should
+be friends.''
+
+``Looks like she didn't think so,'' said Willow.
+
+That was true, but I didn't want to hear it from Willow, who was so dumb
+she was copying the dumbest person in class's homework, so I said,
+``You'd better finish copying that before Miss Hanover gets here'', and
+Willow forgot all about Nora.
+
+I went to the clubroom after school intending to give that creampuff a
+piece of my mind. She knew it, too, because when I came in she was
+hiding behind the curtains again, up in the window seat. Lily wasn't
+here yet---the middle school classes let out a bit later than the
+elementary school classes, and she had to walk over from the middle
+school building, too, so I'd expected to have a few minutes to take care
+of this before she came.
+
+``Hey! What was that about this morning?'' I asked.
+
+She didn't say anything.
+
+``I try to talk to you and you just blow me off?'' I pulled the curtains
+aside. ``Come on, you're not fooling anyone by hi---''
+
+She was asleep.
+
+Somehow she'd managed to fall asleep in the five minutes she'd been here
+before me, snoozing on the windowsill with drool all over her face and a
+book on her stomach. It was the same one from this morning, \emph{On the
+Banks of Plum Creek}.
+
+I picked the book up and looked at it. ``What is so interesting about
+this garbage? I don't understand.'' I read the back cover. Some garbage
+about a pioneer family living on the plains and braving the winter and
+mountain lions, or something. As a cat, I was on the mountain lions'
+side, so if I read this, I would be hoping for the family to get eaten
+the whole time.
+
+As I was looking at her garbage, Nora woke up and saw me. As soon as she
+realized who was standing over her while she slept, she jumped and tried
+to hide behind the curtains.
+
+``Hey! What was the deal with this morning?'' I demanded. ``I tried to
+talk to you, and you just blew me off!''
+
+``I\ldots{}I just didn't know what to say,'' Nora gibbered. ``I didn't
+expect you to talk to me in class\ldots{}I thought you'd be
+worried\ldots{}about what the other kids would think\ldots{}''
+
+``So you thought I was the sort of person who would just ignore you in
+class and try to hide the fact that we know each other? Apologize to me
+right away!''
+
+``I'm sorryyyy!'' Nora squealed like a piglet.
+
+``You don't know me at all! When I say I'll do something, I do it, and I
+said I would talk to you, so I will.''
+
+Nora looked at me stupidly. ``What?'' I demanded. ``Are you going to
+start crying?''
+
+``No\ldots{}but\ldots{}When did you tell me you'd talk to me, Cora?''
+
+I thought back. I never actually had.
+
+``It was implicit! Implicit in the talk we had yesterday! You should
+have been able to figure it out even without being told directly!'' I
+tossed her book down on the window seat next to her and went to sit down
+and wait for Lily. ``I'm not talking to you anymore.''
+
+About ten minutes later---ten minutes of sitting in strained silence as
+Nora read her book and drooled, or whatever she does while
+reading---Lily came in with Ms. Rutherford, the girls' PE teacher for
+the elementary school, in her usual mauve jogging suit.
+
+``Ms. Rutherford is looking for some help clearing one of the PE
+sheds,'' said Lily. ``Since our club's purpose is to help people, she
+came to us for help.''
+
+I felt like telling Ms. Rutherford to go find someone with the Gift of
+Dust Disappearance and leave us alone, but I couldn't be so bad-mannered
+in front of Lily, so I said, ``We can do that, can't we, Nora?''
+
+``Um, y-yes,'' Nora sputtered as usual.
+
+``Just give us a chance to change out of our school clothes,'' I said.
+
+``We'll wait here for you,'' said Lily. ``Would you care for some tea,
+Ms. Rutherford?''
+
+Lily served tea to the old hag as Nora and I left the room. ``Now
+listen, and don't forget this,'' I said once we were out of earshot. ``I
+am a nice, kind, generous person. Just like Lily. Right?''
+
+Nora looked skeptical, but she said, ``Right.''
+
+``So from now on, talk to me just like you would talk to Lily. That's an
+order.''
+
+``Aye-aye, sir\ldots{}''
+
+We went off to our rooms to change. My roommate, Victoria, was lying on
+the top bunk and listening to opera on the radio when I came in. I got
+my gym shorts and an old, ratty T-shirt and went into the bathroom to
+change.
+
+``Ranta?'' Victoria asked when I came out.
+
+``Club,'' I said.
+
+``Have a good time.''
+
+That was what I liked about Victoria---she didn't pry into things. What
+I disliked about her was her habit of waking up at five in the morning
+and singing opera in the shower for forty-five minutes, even on
+weekends. She has the Gift of Voice, so she can create some pretty weird
+sounds with her voice. She once broke my glasses by singing a high note.
+My parents were angry at me, and gave me the lecture about not
+appreciating all the hard work they went through to earn their money,
+and they didn't believe me when I said my roommate had broken them with
+her voice.
+
+I met up with Nora, who had changed into some grungy old jeans and a
+T-shirt, and we went back to the clubroom for Lily and Ms. Rutherford.
+
+Ms. Rutherford led us down to the shed we would be clearing. It was an
+old wooden building by the field, the paint chipping off and the door
+hinges rusty. Ms. Rutherford gave Lily the keys.
+
+``Please return them to the faculty office when you're done,'' she said.
+``Be careful; the shed is infested with hornets. I'd like you to take
+all the equipment out and move it to the shed across the way there, and
+then we'll call in someone to handle the hornets.''
+
+It seemed to me that things were going in the wrong order here, but Ms.
+Rutherford was gone before anyone could say anything. I knew there was a
+reason I never liked that woman.
+
+Lily, who kept bees in her garden, suggested we set up the hose before
+we started so we could spray at the hornets if they attacked us. She
+also told us to move slowly and quietly to try not to surprise them. It
+would be better, she said, if we could blow some smoke at them to calm
+them down before we started, but since we were kids we weren't allowed
+to have anything that could make smoke.
+
+I dragged a hose over from the nearest faucet, turned the water on, and
+crimped it towards the end so the water wouldn't keep on running while
+we were working, and then Lily unlocked the shed and we got started.
+
+I could hear the buzzing as soon as the door opened, but I tried to
+ignore it and tell myself it was just the cheers of roaring fans as I
+bravely led the way into the dark, dusty old shed. Most of the equipment
+inside was for soccer. Stood up in the corner was a bundle of the pipes
+used to make the goals. The nets were stored in mesh bags next to them.
+To my right were two wooden barrels filled with balls. There was also
+some general equipment like jerseys and cleats and whistles, and a few
+track accessories like starting blocks. It looked like it was going to
+take us a while to move all of this, especially since we had to move
+slowly to avoid waking up the hornets.
+
+``That old witch is totally bullying us,'' I muttered as I tiptoed
+towards the corner to grab the goals and the bag of nets. Lily and Nora
+followed me in and started looking around for things to move.
+
+Since Lily worked in the garden so much, she was pretty strong, so she
+helped me move the goals while Nora took the smaller stuff like cleats
+and whistles. We decided to just leave everything outside for now so we
+could move it all off to the other shed without worrying about the
+hornets. Once we'd moved the goals out, Lily took over the smaller
+equipment while Nora and I started on the balls. There was no way we
+could move those barrels, even with all three of us, so we decided to
+just carry the balls out one by one and leave the barrels inside.
+
+As soon as Nora, that klutz, lifted a ball off the top of the barrel, a
+cloud of hornets, disturbed from their place of rest, came flying up at
+her face. I could see her about to scream and ruin everything.
+
+I quickly jumped into action, grabbing her from behind and clamping my
+hand over her mouth. She stopped, and I whispered, ``I'm going to back
+out of this shed. Just like this. Blink if you understand.''
+
+She blinked, although I wasn't sure if she really understood or just had
+dust in her eye. I started backing out anyway, my left hand over Nora's
+mouth, my right hand on her shoulder, guiding her to match my movements.
+We slowly backed towards the door, coming out onto the grass without
+disturbing the hornets, and I took my hand off of Nora's mouth.
+
+``Whew,'' Nora sighed, and she went over and dropped the ball on top of
+the other equipment---and hornets surged out of it.
+
+I couldn't believe it---the hornets were living inside the ball.
+
+There was no time to think. Nora started screaming and flailing, and I
+didn't want her to wake up the other hornets. I grabbed the hose, undid
+the crimp, and with my thumb over the end to spread the stream, sprayed
+all over Nora and the hornets.
+
+The hornets didn't seem to be very bothered by the hose, but I kept
+spraying them anyway. They did seem to go out of their way to avoid
+being sprayed, so as long as I sprayed around Nora, I could keep them
+off of her for a while.
+
+Lily came out of the shed with a mesh ball bag over her head and another
+one in her hands. She ran up to Nora, taking some spray in the process
+(I tried not to hit her, but even I can't aim a hose with my thumb over
+the end very well), and put the mesh bag over Nora's head. At first I
+couldn't figure out what she was doing, but then I realized that the
+mesh bags looked a lot like the netting that beekeepers wear to keep
+bees off of them while they're working in the hive.
+
+Lily's a genius.
+
+I grabbed another one of the mesh bags and charged in, bravely, I might
+add (and do add), and threw the hornet-infested ball inside it, drawing
+the strings as tightly as I could. That sealed most of them inside the
+bag. I put another one over my head, like Lily had done, and chased off
+the rest of them using the hose.
+
+``That old biddy,'' I cursed at Ms. Rutherford as I sprayed off the last
+of the hornets, wishing I could have her right here to spray in the face
+instead.
+
+``What's going on?'' asked the last person whose voice I wanted to hear
+right now.
+
+I pulled the bag off my head and turned around to face her. She was
+looking all smug like usual, with her rugged olive skin, her hair cut
+all short and boyish, walking up to us in her gym shorts and shirt like
+some kind of bigshot.
+
+Ranta, my rival.
+
+``Nothing,'' I said, even though that was obviously a lie. Here we were,
+me with a hose, all three of us with mesh bags over our heads, yelling
+and flapping in the middle of the field. Nora had somehow gotten trapped
+inside her mesh bag and was rolling around on the grass trying to get
+free.
+
+Ranta didn't even blink; she walked straight over to Nora and freed that
+klutz from the bag, then helped her to her feet. ``Are you all right?''
+she asked.
+
+``Th-thank you\ldots{}'' Nora stammered.
+
+``Do you need some help finishing this?'' Ranta asked, looking around at
+us.
+
+``No!'' I insisted.
+
+``Yes,'' Lily and Nora contradicted me.
+
+There wasn't much left to do, so having Ranta helping didn't really mean
+anything, but Nora still acted like she was some kind of superhuman and
+kept buzzing around her and chattering, like a honeybee and a
+honeysuckle.
+
+We finished moving everything out of the hornet shed (except for the
+balls, which we left along with a note to be careful of them) and into
+the other shed, and were just about to go up to the faculty room and
+return the keys when I heard Lily say something shocking to Ranta.
+
+``You're Ranta, right? The ace of the track team? I heard they stopped
+letting you compete when they found out your gift was the Gift of
+Running. Would you ever think about joining our club?''
+
+``No!'' I butted in. ``Ranta would never think about joining this club.
+It's not good enough for a high and mighty rich girl like her.''
+
+``I would like to join,'' said Ranta, ``but Cora might throw a tantrum,
+so I'd better not. She's really such a whiny crybaby.''
+
+``You're confusing me with Nora over there,'' I said. Then I saw Nora
+looking like she was about to start crying. Crying because someone
+called you a crybaby is exactly what it means to be a crybaby.
+
+``Really, she's so unpleasant. I don't know why you tolerate her,'' said
+Ranta, crossing her arms in a haughty way as she spoke. ``Lily, I have
+an idea. Why don't you and Nora throw Cora out of the club, and I'll
+replace her? It won't be long before you see that I'm stronger, smarter,
+and nicer than she is.''
+
+I bit my lip. I really wanted to say something, but I was afraid I'd
+already ruined myself in Lily's eyes. Nora looked like she wanted to use
+Ranta's idea, but Lily stood up for me.
+
+``Cora has good things about her. She can be a little rambunctious, but
+she has a good heart.''
+
+Oh, Lily\ldots{}I knew you wanted to be friends with me\ldots{}I'm
+touched.
+
+``By the way, Cora, I thought you might want to know that you were
+eating my dust in the last mile run. Seven minutes and sixteen seconds.
+Soon I'll be down to the five minute mile of Lawrence of Arabia. What
+was your time again? Nine minutes? Were you hopping on one leg the
+entire time?''
+
+``You have the Gift of Running! Obviously any competition where your
+gift gives you an unfair advantage doesn't count!''
+
+``The words of a true loser. Since you're a born loser, Cora, you'll
+lose no matter what we compete in. So go ahead, pick something. I'll
+prove to you that you can't win against me.''
+
+``Soccer!'' I yelled. ``I bet you can't score one goal against me in
+soccer! Tomorrow, after school. Be here, ready to lose against me!''
+
+``Fine. I'll prove one more time that I'm better at sports than you
+are,'' said Ranta, her arms crossed in that infuriating way. ``See you
+tomorrow Lily, Nora. I hope you'll cheer for me.'' With that, she left.
+
+``She's pretty gutsy, asking people from Cora's club to cheer for her in
+a match against Cora,'' Lily commented.
+
+I ground my teeth in fury. Tomorrow, I swore, would be the day I made
+Ranta get down on her hands and knees and bow to me!
+
+\scenebreak
+
+The next day, during lunch, I went to the library to look for Nora.
+
+We hadn't spoken at all that morning; I'd been up late thinking about
+all the embarrassing things I was going to force Ranta to do when I won,
+and I hadn't gotten up the first time my alarm clock went off, so I had
+just barely gotten to class on time and hadn't had a chance. When lunch
+started, Nora ran off before I could catch her, and I hadn't seen her in
+the dining hall, so I assumed she was at the library.
+
+The main library was a huge castle-like building over by the high
+school. I didn't think Nora would have time to walk over there, so I
+walked across the courtyard to the smaller elementary school library.
+I'd never had much use for the place, so I didn't really know how many
+books were in it, but even a book freak like Nora couldn't have read all
+of them.
+
+I wasn't spending so much time looking for Nora because I enjoyed her
+company. The truth was, I might have gotten myself in too deep. As a
+cat, I can jump and climb and roll better than any human, which makes me
+a good goalkeeper in soccer; but Ranta's Gift of Running made her a
+brutal kicker, since she could build up so much speed before hitting the
+ball. I needed to be sure I could win. Anything, even the smallest
+advantage, could give me the match.
+
+What? Don't look at me like that. I'm not a cheater. This is something I
+would never do to anyone but Ranta. I'm actually doing her a favor, by
+teaching her that I'm better than she is.
+
+I went into the library and started looking around for Nora, checking
+all the tables and in between all the shelves. The library was pretty
+empty at this time, since most people over here don't love books enough
+to run off during lunch and read them. That's why when I moved towards
+the back corner, I heard their voices right away.
+
+It was Nora, and Ranta.
+
+They were sitting together in the window seat, like the one in the
+clubroom where I'd found Nora sleeping. They were sitting close
+together, and a huge leather-bound book was laid across their legs, with
+Nora holding the left side and Ranta holding the right side. The title
+was \emph{The Poetry of William Blake}. Nora was reading out of it, and
+Ranta was listening and following along.
+
+``\,`Tyger, tyger, burning bright, in the forest of the night,'\,'' Nora
+read. ``\,`What immortal hand or eye, dare frame thy'---'' She stopped
+when she saw me. ``Oh\ldots{}Cora\ldots{}''
+
+Something about her reaction made me mad. It was like she was
+disappointed to see me. I scowled at her. ``Come with me. I need to talk
+to you.''
+
+``Oh. Okay. Um, I'll be back in a minute, Ranta.''
+
+``I'll be right here,'' said Ranta.
+
+I led Nora back to the front of the library, where we wouldn't be heard.
+``What are you doing?'' I asked. ``Don't you realize she's the enemy?''
+
+``She was n-nice to me y-yesterday,'' Nora stammered, her mouth as
+always full of marshmallows. ``And she l-likes books, s-so I said we
+should r-read together sometime\ldots{}''
+
+``Fine, well, forget about that. I want you to help me with something.''
+
+Nora looked sullen, but she nodded her head.
+
+What was with this difference in treatment? It made me mad somehow.
+
+``Actually, this could be even better. I want you to go to the PE shed
+before the match and pick out the ball. Try to find one that's kind of
+flat. That way it won't have as much force when Ranta kicks it, and I'll
+have a better chance of being able to stop it. Ranta trusts you, so
+she'll never think you did anything to the ball.''
+
+``That's cheating!'' Nora flared, like a creampuff on fire. ``I don't
+want to cheat Ranta!''
+
+``Shut up! Just do it! Listen, you don't understand what kind of person
+Ranta is. Ever since we were little, she's always thought she was better
+than everyone else because she's rich and good at sports. It got even
+worse after she found out what her gift was. This is really for her own
+good. If she loses, she'll stop thinking she's better than everyone else
+and become a better person in the end. Don't you think that's a great
+plan?''
+
+``No,'' said Nora.
+
+I couldn't believe this slimy little tadpole was disagreeing with me, so
+I just snarled, ``Do it. Or else I won't talk to you in class.''
+
+For a second, Nora looked like she might have more to say, but she
+finally nodded and then turned around and left without saying a word.
+``And don't tell Lily!'' I added to Nora's back. Lily was too good a
+person, so she would stop me if she knew about this.
+
+\scenebreak
+
+By the time of the match, I felt pretty bad about the way I'd treated
+Nora in the library. She made me mad, but I was still a lot meaner to
+her than I'd wanted to be. I felt especially bad about my threat not to
+talk to her in class. I didn't really want to talk to her at all, but it
+wasn't fair for me to talk to her only when I needed her for something,
+so the second I'd asked her for a favor, I had lost the right to not
+talk to her.
+
+I put on my gym shorts and my soccer jersey, tied my hair up in a
+ponytail at the back of my head, and pulled on my shin guards, gloves,
+and cleats in my room before going down. When Victoria saw me, she
+asked, ``Club?'', and I replied, ``Ranta.'' Victoria nodded and left it
+at that.
+
+Ranta and some of her obnoxious friends had already arrived at the field
+when I came, and so had Lily, but Nora wasn't there yet. Normally, we
+wouldn't have been allowed to use the school's equipment for something
+like this since it wasn't a school activity, but I had asked Ms.
+Rutherford and she had allowed it, so the PE shed where we'd moved
+everything yesterday was unlocked.
+
+Ranta's friends erupted in a chorus of booing and whistling when they
+saw me. They were all rich girls, and they couldn't stand the idea of a
+commoner like me challenging their champion, the snobbiest and most
+stuck up of all the rich girls in this school.
+
+``I don't really know why this is necessary, but good luck to both of
+you,'' said Lily.
+
+The goal had already been set up, so I took my place in front of it and
+stared into the eyes of my enemy as we waited for Nora to get there with
+the ball.
+
+``That creampuff,'' I muttered. ``What's taking her so long?''
+
+Nora finally arrived, carrying a soccer ball in a mesh bag. She walked
+to where Ranta was standing and placed the ball at Ranta's feet, then
+went to Lily's side.
+
+Ranta started to back up. It looked like she was planning to use pure
+force to try and get the ball past me as fast as possible so I wouldn't
+have time to stop it. She was in for a nasty surprise.
+
+I took a solid stance, planted my feet, my arms out to the sides, my
+tail swishing, my ears standing high. I heard a strange buzzing sound. I
+craned my ears forward more.
+
+That idiot!
+
+Wait!" I screamed as Ranta ran in. ``Don't kick that ball!''
+
+She ignored me and kicked it anyway.
+
+As soon as her foot hit it, hornets came surging out of the ball,
+buzzing around angrily. Ranta's friends screamed and scattered all over
+the place. Ranta herself just stared for a second, her mouth wide open
+in astonishment.
+
+``Run!'' I screamed.
+
+Lily, Nora, Ranta, and I all took off. Since the other girls had already
+run off, the hornets chased us.
+
+We ran across the field as fast as we could, the buzzing cloud hot on
+our heels. Nora started to fall behind at one point, and Ranta stopped
+and heaved her up on her back and kept running, carrying that creampuff
+piggy-back.
+
+``Go for the pool!'' said Lily. ``We can hide there until they lose
+interest!''
+
+The middle school's pool was about thirty yards away, well within reach.
+But come on, a cat in a pool? Maybe a tiger could take it, but for a
+tabby like me, getting soaked in water was about as much fun as going to
+the dentist.
+
+But maybe it was better than being chased by angry hornets.
+
+I could see there was a lock on the gate from far away, but we'd managed
+to gain about twenty feet on the hornets, so there was time to deal with
+that. A plum tree stood next to the fence, its branches reaching over
+the fence. I took Nora from Ranta and clambered up the plum tree, over
+the fence, and down on the other side with that creampuff clinging to my
+back the whole time.
+
+``Get in!'' I yelled, tossing her into the pool. There was a cover on
+it, but Nora pulled it back at the corner and scrambled in. I jumped to
+the top of the fence and helped Lily over, and then, graciously, I
+helped the hopeless climber Ranta get up.
+
+By the time Ranta was over, the hornets had reached us, so there was no
+time to think. We dove into the pool at the corner and pulled the cover
+up over us, waiting for the buzzing to stop.
+
+It was hot, dark, and wet underneath that cover, and all the light that
+came through it was blue. We'd ended up at the deep end of the pool, so
+we had to tread water in our clothes while we waited for the buzzing to
+go away. (None of us thought of moving to the shallow end.)
+
+Eventually, the buzzing stopped, and we all came up. I was totally
+miserable, and I just wanted to shake off my hair, squeeze out my
+clothes, and go curl up on my bed for a while.
+
+``Where's Nora?'' Lily asked.
+
+I looked around. She wasn't there.
+
+A sputtering noise came from the pool.
+
+Before I could even think about going back in, Ranta had done a
+cannonball to the exposed corner of the pool. Lily pulled back the cover
+and exposed Ranta, holding on to a coughing and spluttering Nora and
+keeping her head above water.
+
+Lily and I helped pull them out of the pool. Lily found a chair to put
+Nora on while I stared Ranta down, trying to think of something to say
+about how stupid she looked right now, her clothes all soaked and trails
+of water dripping from her hair.
+
+I finally gave up. I probably looked twice as stupid, with my soaking
+wet tail hanging down like a drowned rat and my ears pinned back to my
+head with the weight of the water.
+
+Besides, she was the one who had saved Nora, both from the bees and from
+drowning. Even though Nora was annoying, I didn't want her to drown or
+get stung by hornets, and Ranta was the one who had kept her safe.
+
+``I believe in giving credit to people when they do something good,'' I
+said. I reached up to take off my glasses, but they weren't there. I saw
+them floating in the pool. That must be why my vision was so blurry; I
+had thought I just had water in my eyes. Instead I grabbed my tail and
+started to squeeze water out of it.
+
+``Like I said,'' I went on, ``I believe in giving credit to people when
+they deserve it. So I have to give you credit, Ranta. You did a good
+job.''
+
+``That's very big of you, Cora,'' said Ranta. ``Thank you for saying so.
+But you did well too.''
+
+We stood there for a second, not quite knowing what to say. I didn't
+think I had ever said anything nice to Ranta, and I knew she had never
+said anything nice to me, so this was pretty weird.
+
+``B-by the way,'' I added, ``I got a thirty-eight on my last test.''
+
+``Oh, r-really. How nice,'' said Ranta.
+
+``Ah-ha! I can tell from how you said that that you did worse than me!
+How bad was it? A twenty? A fifteen?''
+
+``Twelve,'' Ranta admitted.
+
+I knew I was better than her.
+
+\makeheading{Dogs don't like me for some reason! By Nora.}{dogsdontlikeme.jpg}
+After the time when Cora almost got us all stung to death by hornets
+because she tried to cheat in a soccer match with Ranta, Lily invited
+Ranta to join our club, but Ranta turned us down. She said she couldn't
+join full time, but we could ask her if we ever needed an extra pair of
+hands for anything.
+
+Soon after that, when I was helping Lily out in the garden, I asked her
+why she had agreed to help Ms. Rutherford clear out the PE shed. ``Um,
+I'm not complaining,'' I said. ``I still want to be in the club with
+you. It's just, I thought\ldots{}I thought we were going to be doing
+things that were a little bigger.''
+
+Lily smiled. ``I didn't start this club to do small jobs like that, but
+to do bigger jobs, we first have to show everyone they can trust us with
+small jobs. That's why I agreed to help Ms. Rutherford.''
+
+``But Cora might quit.''
+
+``That's up to her. We could use her help, but if she doesn't want to do
+jobs like that, she doesn't have to be a member. And you, Nora: you
+don't have to push yourself for my sake.''
+
+I shook my head. ``No, I'm all right. I don't mind doing whatever I can
+to help, since I don't have any gift yet.''
+
+Even though Lily said I didn't have to push myself for her sake, she was
+so nice that it made me want to push myself for her sake. That's why I
+did what I did a few days after that when I was in the clubroom alone.
+
+Lily is always in the garden after school, and she loses track of time
+when she's in the garden, so it usually takes her a while to get to the
+club. On the rare days that she attends her classes, she has to walk
+over from the middle school building. Cora doesn't always come, but when
+she does, she usually has to say goodbye to all her friends in class
+(which is most of the class) and then pack up all her things and drop
+them off in her room, change her clothes, and come over. I bring my
+school supplies to the clubroom with me and don't change my clothes, so
+I'm always here first.
+
+When no one else is here, I like to take the book I'm reading and climb
+into the window seat and bask in the sunlight, like a lizard, while I
+read. Today I was reading ``The Faerie Queene'', by Edmund Spencer,
+which Ranta had recommended to me. It was really good so far, although
+Spencer used a lot of weird spellings.
+
+I let the sun and the words both envelop me, taking me away from the
+place I was. I was so entranced that I didn't notice right away when the
+door opened. Once I did notice, I thought that Lily or Cora had come,
+but when I looked up, I didn't recognize the silhouette through the
+curtains.
+
+``Hello? Anyone here?'' a voice called. ``Come out, those curtains
+aren't hiding you.''
+
+I opened the curtains and saw the speaker was a girl about my age,
+though she was tall and looked mature, like Ranta. The white band pinned
+to the arm of her blouse told me she was a member of the student
+council.
+
+``Are you a member of Lily's Helping Hands?'' the girl asked.
+
+I had had no idea that was the name of our club, but I nodded.
+
+``Can you speak?''
+
+I nodded, unsure why she would ask me that.
+
+``Will you say something right now?'' she asked, talking very slowly and
+loudly.
+
+``Um, what sort of thing do you want me to say?'' I asked.
+
+``That's good enough. Now, my name is Jane and I'm the Student Council
+General Affairs officer. I've come to ask this club for help. They tell
+me that's what this club does.''
+
+``Yes, we help people in need. What do you need help with?''
+
+``Come with me.'' Jane took me by the arm and marched me out the door,
+down towards the grounds.
+
+\scenebreak
+
+The elementary school building was actually a complex of three
+buildings, connected by a large courtyard with roofed paths to keep the
+rain off when it was wet outside. The main building housed the dining
+hall, kitchens, classrooms, and offices, including the lounge that Lily
+had made into our clubroom. The dormitory building held the rooms for
+both the students and the teachers, who lived on the top floor, and also
+the laundry room and the common rooms, where we could watch television,
+study, read, or chat. The library building held the elementary school
+library and also the shop, where we could buy school supplies and
+snacks.
+
+The courtyard had all sorts of little nooks and crannies where animals
+and homesick kids could hide. I'm proud to say that I was never homesick
+enough to hide from the teachers in the courtyard, but some kids were,
+and I could understand why. A stray dog had made itself a home in the
+alley behind the kitchens, and the student council was afraid that it
+might attack someone if they left it there, so they had passed a motion
+to have the dog removed. As general affairs officer, it fell to Jane to
+figure out exactly how to remove it, and she had turned to Lily's club
+to get it done.
+
+``Um, I'll try,'' I said as Jane brought me to where the dog was, ``but
+dogs don't like me very much, so\ldots{}''
+
+``That won't be a problem. We used student council funds to buy this
+collar, muzzle, and leash,'' said Jane, taking them out of her satchel
+and giving them to me. ``Put them on the dog and lead him out. Then get
+him outside the gates and lock him out. That should be good enough.
+We'll suggest building a fence across the alley to the teachers at the
+next general meeting.''
+
+I took the collar, muzzle, and leash. They were red nylon and didn't
+look like anything special. I didn't think I'd be able to get them on
+the dog, but I decided to try, for Lily's sake. If I could do a small
+job like this, it would prove to the people that our club was ready to
+take on big jobs.
+
+``Here we are,'' said Jane. ``This is where I leave you. I'll be waiting
+at the gates to shut them behind the dog.''
+
+Now that I was here, it was kind of scary. The alley behind the kitchen
+was dark, even though the sun was high in the sky, and it was big, too.
+I was sure the dog had chosen to live here because of all the nice food
+scraps, and he might be mad at me for trying to take him away from
+there. Still, I had to do my best.
+
+I sidled up to the mouth of the alley, and then I heard a low growling
+noise from the darkness. It sounded like the growling of a big, angry
+bear protecting its cubs. My heart started beating faster, and I backed
+away from the mouth of the alley.
+
+I knew that I needed to finish this job for Lily's sake, and so I worked
+up my courage and tiptoed up to the mouth of the alley again. The
+growling started again, and once again I backed away.
+
+The only way I was ever going to get past the mouth of that alley, I
+decided, was if I just charged in. So I took a few deep breaths, worked
+up my courage again, and ran for the mouth of the alley.
+
+Suddenly the dog started barking, a deep, rough, scary bark like a huge
+mastiff, and I skidded to a stop and turned around and ran away from the
+mouth of the alley.
+
+``What are you doing?'' Cora asked as she came up. She must have been on
+the way from her room to the clubroom; she had changed out of her jeans
+and T-shirt into her nice skirt and blouse, her tail swishing around
+under the pleats.
+
+``Oh, Cora. I'm trying to get this leash on that dog,'' I said, pointing
+into the alley.
+
+``Why?''
+
+The student council asked me to, as a member of the club. But, for some
+reason, dogs have never liked me. They growl and bark at me whenever I
+come up to them."
+
+``Maybe they can sense that you're filled with yummy cream, and they'd
+like to chomp you open and lick it out,'' said Cora. She took the leash
+and walked into the alley. I couldn't see what was happening, but I
+could hear whining and licking, and the next second Cora came out of the
+alley with a Basset hound on a leash.
+
+``He's nothing,'' said Cora, petting the dog's head and jiggling his
+long, wrinkly face. ``Just a big softie.''
+
+That's what she said, but when that dog saw me, he started growling
+again, and baring his teeth at me, until I backed away.
+
+``Um, do you like dogs?'' I asked.
+
+``No, I hate them. Obviously. I'm a cat.''
+
+The dog obviously didn't feel the same way. He followed Cora obediently
+as she began to lead him towards the gates. I went after them at a
+distance of about ten feet, which was how far away I had to be so the
+dog wouldn't growl and snarl.
+
+We came to the gates of the elementary school and found Jane waiting for
+us, and Lily. ``So this is the dog who's been chasing off the people who
+sneak snacks in between meals,'' said Lily. ``He looks like someone's
+well-fed pet. I wonder if anyone owns him.''
+
+``Either way, he was making a nuisance of himself, so he had to be
+removed,'' said Jane.
+
+``He's pretty tame, except when Nora's around,'' said Cora. ``He hates
+her.''
+
+We put the dog outside the gates, and Jane shut them. He sat outside,
+staring at us through the gates with his long, sad face as we left. I
+felt a little bit bad about leaving him outside like that when it was
+going to get dark soon, with nothing to eat and nowhere to go, but he
+was a dog, so I guessed he would make it somehow.
+
+``Very good work. I'll make sure the student council comes to you with
+any future tasks we need assistance with,'' said Jane, shaking
+everyone's hand before she left.
+
+``I'm sorry I wasn't able to finish the job,'' I said, mostly to Lily,
+although also to Cora who had come in and helped me.
+
+``None of us can do everything on her own,'' said Lily. ``That's why we
+all work together. Each of us has a unique gift, and when one of us
+can't finish a job, it's all right to ask someone else who can.''
+
+``Yeah, except Nora will need help on every job,'' said Cora.
+
+``I know one job that Nora can complete all on her own,'' said Lily.
+
+``Oh yeah?''
+
+``Yes, it's a very difficult job, but I know she can do it.'' Lily
+turned to me, a serious look on her face. ``Nora.''
+
+``Yes!''
+
+``Anyone who fails all the tests isn't allowed to be in a club until
+managing to pass the next round of tests. So I'm giving you a job. You
+have to make sure that Cora and Ranta study so that they don't fail
+their next set of tests and get barred from helping the club.''
+
+``Y-yes!''
+
+I saw Cora scowling and cleaning her glasses on her shirt. Ranta was one
+thing, but making sure Cora didn't fail was going to be a challenge.
+
+By the way, we found out later that one of the teachers at the middle
+school had taken the dog in as a pet, so things ended happily for him. I
+was glad to hear that; even though he didn't like me, he was so nice to
+Cora that he must have been a good dog at heart. In that way, he was a
+lot like Cora, who didn't like me, but was so nice to Lily that I knew
+she must be a good kitty at heart. Maybe that's why the dog came to her.
+
+\makeheading{Math is hard! By Nora.}{mathishard.jpg}
+Tests were coming up in the elementary school, so all the clubs were put
+on suspension while everyone studied.
+
+Since Lily was a middle school student, her club wasn't stopped by the
+elementary school. But Lily told us that if any jobs came up, she would
+handle them herself so Cora, Ranta, and I had time to study.
+
+Since Lily had given me the job of making sure that Cora and Ranta
+didn't fail all the tests, I asked them if they would meet me in the
+clubroom every day after class to study. Ranta agreed, but Cora didn't
+want to at first.
+
+``I don't need your help,'' she insisted when I asked her after class
+one day. ``I'll do better studying on my own.''
+
+``Ranta is studying with me,'' I said. ``She might do better than you on
+the test. And Lily's going to be in the clubroom while we're studying.
+She'll see you working hard so you can keep doing club activities with
+her, and it'll make her think good things about you.''
+
+Cora's cat ears flattened down against her head. ``Fine, I'll come join
+your group.''
+
+It's surprisingly easy to get Cora to do what you want, once you know
+the right things to say.
+
+The three of us studied reading, writing, spelling, grammar, history,
+and science together. Ranta was good at reading, but she was terrible at
+spelling, and whenever she wrote anything she would spend so much time
+fixing her spelling that she forgot what she was going to write. Since
+she was good at reading, she was also pretty good at history, and she
+wasn't too bad at grammar or science either.
+
+``I just get bored when I have to sit still for too long and read big,
+boring books,'' she admitted, ``so when I try to study by myself, I
+always end up reading a story or going out for a run.''
+
+``Why don't you try going for a run before you start studying?'' Lily
+suggested as she served us tea and sliced melon. Lily was so nice, she
+had been making tea and snacks for us every day while we studied. She
+would sometimes stay in the room with us after that, but more often she
+would go down to the garden for a while and come back with fruit and
+nuts for us. She also grew herbs for her own herbal teas, like the peppy
+mint tea she'd given me the first time we met. Her concentration
+chamomile was an amazing help for studying; it let me keep my focus for
+a long time, even if I was studying something boring.
+
+``I'd like to go for a run before, during, and after studying,'' said
+Cora, who was tapping a pencil on the table and glowering at the same
+page of grammar exercises she'd been working on for the past two days.
+Nothing seemed to help her. She would do all the questions wrong and
+then get mad at me whenever I tried to explain her mistakes, so there
+wasn't a lot I could do to help her. The concentration chamomile hadn't
+helped her, either; since she didn't know how to do any of the work, it
+didn't matter how good her concentration was, I guessed.
+
+``How long have you been working on those problems? All week?'' Ranta
+asked. ``Look, Cora, it's really quite simple. This is the subject. This
+is the verb. The verb is the action word. Just go through and circle the
+verbs and subjects.''
+
+Shut up!" Cora snapped. ``I know that. I just don't want to do it. And
+you didn't know that either until Nora explained it to you.''
+
+``Nora tried to explain it to you, but you yelled at her and made her
+hide behind the curtains,'' said Ranta.
+
+``Please don't fight,'' I begged them.
+
+``By the way,'' said Lily, ``I've seen you studying lots of things, but
+so far I haven't seen you study any math.''
+
+My blood ran cold at that word. I could tell by the looks on Ranta's and
+Cora's faces that it was the same for them.
+
+``Are you all really confident about math?'' Lily asked. ``That's great,
+I was always so bad at it.''
+
+``No, no, it's not that we're confident,'' said Ranta.
+
+``It's more like we're too afraid to even try,'' said Cora.
+
+For once, they agreed.
+
+``What about you, Nora?'' Lily asked. ``Can you help them a bit with
+their math?''
+
+I shook my head.
+
+``Are you also not very good at math?''
+
+I stood up, pushed in my chair, and ran straight for the curtains.
+
+When I see words, I read them, and they make sense to me.
+
+When I see numbers, they swirl around in my head and chase each other
+like a pack of angry wolves. My big sister says I'm a number fumbler.
+
+It's always been like that, but it got even worse when I moved up and
+started doing fractions and decimals. Now, instead of each problem
+having two numbers, it has four numbers, or six numbers, or ten numbers,
+or a million numbers, or a zillion numbers, or\ldots{}
+
+Ah, my head is spinning.
+
+Whenever Miss Hanover starts talking about math, I usually hide behind
+my bangs so she doesn't notice me and I don't get called on to give the
+answer. So far it's worked; I've never been called on to give an answer
+in class.
+
+``Well, when it comes to math, I've always found the only way is to work
+lots and lots of problems so you can remember how to do it long enough
+to get through the test, then forget it all,'' said Lily. ``Let me go
+gather more concentration chamomile. You'll need it.''
+
+Cora continued to struggle with the grammar problems while Ranta and I
+started on some math exercises.
+
+``Fractions are my weakness, so I guess we should work on those first,''
+I said.
+
+``Okay. What's one fourth plus one fifth?'' said Ranta.
+
+I wrote the two fractions down on my paper, separated by a plus sign,
+and stared at them. I was at a loss. If only there were words instead of
+these numbers. I tried writing it out as words---'one fourth plus one
+fifth equals'---but that didn't help anything. I stared some more.
+
+``I can't remember,'' I admitted.
+
+Ranta starting helping me, and we came up with the answer two
+twentieths, which looked wrong to me. Miss Hanover had shown us how
+fractions could represent pieces of pie, and how we could check the
+answer on problems like this by drawing three pies and splitting one pie
+into four pieces, one into five pieces, and one into twenty pieces. If
+one piece of the first pie and one piece of the second pie put together
+looked as big as one piece of the third pie, the answer was right. I did
+that, and saw that the pieces from the first two pies were definitely
+bigger than one piece of the third pie. I told Ranta I didn't think the
+answer was right.
+
+``You're right,'' said Ranta, scratching her head. ``Geez! This is why I
+hate math.''
+
+``You were wrong when you multiplied them,'' said Cora. ``Look, if you
+multiply both desalinators by zero, you get one zeroth plus one zeroth,
+which is two zeroths.''
+
+``I know for sure that's wrong,'' said Ranta. ``There's no such thing as
+one zeroth, and there's definitely no such thing as two zeroths! And
+it's the denominator, dumb cat, not the desalinator. That's something
+that goes in a water filter.''
+
+We fought for a while about what part was wrong, getting nowhere, until
+Lily came back in with a bag of concentration chamomile. ``How's the
+math going?'' she asked.
+
+``Lily! You've done this before. Show these dolts where they went
+wrong,'' said Cora.
+
+Lily came to the table and glanced over my shoulder at the paper, which
+was now covered with numbers, plus signs, crossed out numbers and plus
+signs, drawings of circles that represented pies, and drawings of real
+pies, with whipped cream on top, which I had done while Ranta and Cora
+were fighting over whether there is such a thing as one zeroth. ``Oh,
+fractions,'' she said. ``I think I'd better go back out to the garden.
+There's, um\ldots{}something I need to do.''
+
+Lily was no help.
+
+``Okay,'' said Cora, sounding unexpectedly reasonable. ``We're doing
+this for Lily so we can keep doing club activities with her. As long as
+we don't fail everything, we can keep doing club activities. Right?''
+
+``Right,'' I said.
+
+``So here's the plan: just ignore math. We're going to fail it anyway,
+so just ignore it. If we can pass at least one subject, we'll be allowed
+to keep doing the club, so we just have to make sure there's something
+we can pass.''
+
+``Is there something you can pass?'' Ranta asked.
+
+``No.''
+
+``Then let's work on reading,'' I said. ``That's your worst subject
+aside from math, so if you can pass that, Miss Hanover will see that
+you've been working hard.''
+
+I thought Cora was going to yell at me like she usually does, but
+instead she nodded. ``You're right for once, Nora. If I can pass the
+reading test, then I can keep doing club activities, and I can show
+Ranta that I'm better than her!''
+
+``Not a chance, kitty. Just go back to your litterbox and kick up some
+dirt,'' said Ranta.
+
+``Quit it with the cat cracks! I'll scratch you!''
+
+``Now, now, please don't fight,'' I said, trying to calm them down.
+
+I thought that after a while, Cora would get mad and start yelling at me
+like before, but she actually seemed to have gotten fired up to do well
+in reading, because she sat quietly and read the passage, then worked on
+the questions, asking me if something confused her. By the end I felt
+like she really understood the passage and knew why the answers were the
+right answers, and it made me feel good to think that I had been able to
+help Cora get better at something.
+
+After a while, Lily came back, and we promised her that the fractions
+were put away. She served us more tea, along with some pear slices and
+cashews, and spent the rest of our study time watering the flowers and
+plants inside the clubroom.
+
+\scenebreak
+
+We had our tests the next week. We had a day off on Friday, and Lily,
+Ranta, and I went on camping trip, which I'll tell you all about next
+time, over the long weekend. On Monday, Miss Hanover had all of our
+tests graded, and gave them back to us after class. She left me and Cora
+until last, and had us stay so she could talk to us.
+
+``Nora, Cora, the two of you had the lowest scores in the class in
+math,'' said Miss Hanover, ``so I'm going to keep you here and tutor you
+for a while to help you learn the material. Cora, you also did poorly in
+everything else, so I'll be tutoring you in those areas as well.''
+
+She gave us our score reports. I had passed everything except for math
+with decent grades, but my score in math was horrible.
+
+``Trade you,'' said Cora, grabbing my report and handing me hers. It
+looked like Cora had failed everything, and her math score was even
+worse than mine. Then I noticed that she had actually passed reading.
+
+``Miss Hanover, since Cora passed one subject, she's allowed to do club
+activities, right?'' I asked.
+
+``Yes,'' said Miss Hanover. ``Both of you are allowed to do club
+activities for now. We'll do this tutoring for a while, and then I'll
+give you both another test. If you pass that, we can end the tutoring.
+By the way, Cora, I was pleased with your score in reading. I can see
+that you worked hard to improve. If we can get your other scores up too,
+you'll be doing well.''
+
+``Yes Miss Hanover,'' said Cora. ``Um, the truth is\ldots{}'' She
+fidgeted with her tail and glanced around the room. ``The truth is, Nora
+helped me with reading. That's the only reason I passed it.''
+
+I stared at Cora, shocked to hear her say something nice about me. Miss
+Hanover noticed my mouth hanging wide open and smiled.
+
+``Then we'll have Nora help you with your other subjects too, and I'll
+help both of you with math,'' she said. ``I know you can do it. Nora,
+you did all the word problems correctly, and those were the ones that
+many of the others got wrong, so I see that you can do this math, but
+maybe you don't quite realize it yet.''
+
+``I don't think so. I must have been lucky,'' I said.
+
+``You weren't. Trust me, after a week or two, you'll be right at the
+level of the other children. Both of you.'' Miss Hanover smiled. ``Let's
+get started.''
+
+Math is so hard. It's like one of those riddles: `When can you know
+something, but not know that you know it? When it's the answer to a math
+problem.'
+
+\makeheading{The camping trip, part 1. By Nora.}{thecampingtrip1.jpg}
+Since our tests only took four days to finish, we got to start our
+weekend on Friday. On Monday, Cora and I were going to find out that
+we'd both failed math and were going to have to do extra tutoring with
+Miss Hanover, but on Thursday afternoon we still didn't know and were
+ready to just relax and have fun over the weekend.
+
+I got to the clubroom earlier than Lily and Cora, as usual. Most of the
+time, I'm alone for about twenty minutes while I wait for them, but
+today Ranta had come to visit. I found her sitting at the table reading
+a book.
+
+``Hi Nora,'' she said when I came in. ``How were your tests?''
+
+``Okay,'' I said. ``Math probably wasn't very good, but everything else
+seemed fine. What're you reading?''
+
+"It's \emph{In Memoriam}," said Ranta.\emph{"}Alfred Lord Tennyson wrote
+it for his best friend, who died. It's sad, but really good. It makes me
+wish I had a friend who would write a beautiful poem for me after I
+died."
+
+Ranta is really nice. Even though she's a sports girl like Cora, she
+also likes to read, so it's fun to talk about books with her. I haven't
+had that many chances to be alone with her, since we're in different
+classes; sometimes we meet up in the library, but otherwise we only see
+each other when Cora is around, and Cora fights with Ranta, so it's hard
+to talk to her then.
+
+``I don't know how beautiful it would be,'' I said, ``but I could write
+a poem for you if you\ldots{}'' I started to get embarrassed and looked
+down, hiding my face behind my bangs.
+
+Ranta looked surprised, but happy. ``Thank you, Nora,'' she said.
+``That's sweet of you to say, but I don't plan to die anytime soon.''
+
+``N-no, of course not\ldots{}'' I thought about hiding behind the
+curtains, but I decided to make tea instead, to calm myself down. Lily
+always kept some nice tea in the clubroom. I filled the self-heating
+kettle and started it off.
+
+I had made tea, served Ranta and myself, and started reading my own
+book, when Lily came in with another girl and a teacher. The teacher was
+Mrs. Julian, one of the science teachers. Everyone liked her a lot; her
+specialty was geology, so she taught us a lot about rocks and minerals,
+though we also learned some chemistry and a little paleontology from
+her. That's the study of animals and plants that lived a long time ago,
+like dinosaurs; after they died, their bodies were preserved as fossils
+that people can dig up and study to learn what they were like.
+
+``Oh, good, Ranta, you're here,'' said Lily. ``Maria and Mrs. Julian
+came to ask us for a favor.''
+
+``Our geology club is going on a field trip this weekend,'' said Mrs.
+Julian. ``We're going to the mountains north of the school to look at
+some rock formations, and we'll be camping out.''
+
+``There are only twelve of us in the club,'' said Maria, ``and three are
+little, so we wanted some more help carrying things and setting up camp
+and cooking, and watching the little kids. So I decided to ask Lily for
+help.''
+
+``You don't have to come,'' said Lily, ``but we could use the extra
+help. I was hoping you'd come, Ranta, since you're so athletic and
+level-headed. Of course, we could use your help too, Nora.''
+
+``I'm up for it,'' said Ranta. ``It's been a while since I went
+camping.''
+
+``I'll come too,'' I said.
+
+``Good! Thank you so much,'' said Maria. ``We'll get everything ready
+and leave tomorrow morning at nine. There's a van driving us up, so meet
+at the front gates.''
+
+I was pretty excited. I had never gone camping before, and I was going
+to get some time to get to know Ranta better. Maybe if we got to know
+each other well enough, Ranta would become my second friend at St.
+Galgani's. I was hoping for that to happen.
+
+Cora came in later, and we asked her if she wanted to come, but she said
+she couldn't. ``My parents want me to come home this weekend,'' she
+said. ``They're coming to pick me up tomorrow and bring me back.''
+
+``Too bad, I want to see Cora's parents,'' I said. ``I've never seen a
+grown-up cat person.''
+
+``They just look like me, but bigger and older,'' said Cora. ``There's
+nothing special about them. Now, my big brother, he's the one you want
+to see. You'll fall in love at first sight, I guarantee it!''
+
+``Oh, a big brother rivalry?'' said Ranta. ``I'll take that challenge.''
+
+``Well, if you really want to see him so much, here,'' said Cora, taking
+her wallet from her pocket and handing it to Lily. Inside she had
+pictures of her family. ``These are my parents, and this is my baby
+sister, and here's my big brother.''
+
+Cora's parents looked a lot like her, especially her father. He wore
+glasses and had the same orange-and-white hair and ears that she did.
+Her mother was very beautiful, with a thin face and high cheekbones; her
+ears and hair were grey, like a koala. Cora's baby sister, who I guessed
+was about four, was like an adorable miniature copy of her, though she
+didn't wear glasses and had a gap in her front teeth.
+
+Cora's big brother also looked a lot like her. He also wore glasses,
+although he had his mother's grey hair and ears and thin face, which
+made him look noble and princely. He was scowling, like Cora often did,
+and his eyes were narrow and somehow angry. He was handsome, that was
+for sure, but he was also kind of scary, and I wasn't falling in love at
+first sight as Cora had guaranteed.
+
+``Does your brother go to school here?'' asked Lily.
+
+``No, he's in medical school right now. He's smart, and he has the Gift
+of Soothing, so he decided to try and become a pediatrician. He's
+nothing like me,'' said Cora. ``I'm stupid, and if I tried to take care
+of kids, I'd just yell and make them cry. I really admire him.''
+
+Ranta made a snorting sound, and Cora turned on her. ``So, you said
+something about a big brother challenge? Did you just realize that my
+big brother is cooler and tougher than yours? Come on, tell us what he's
+doing. I can't wait to hear how he sits on a couch all day and has
+grapes fed to him by servants.''
+
+``He goes to school here,'' said Ranta. ``He's in the high school.
+In\ldots{}the theater club. He makes costumes for them.''
+
+``Oh, so Aurelio is your brother,'' said Lily.
+
+``He goes by Rel, just like I go by Ranta,'' said Ranta. ``My full name
+is Amaranta.''
+
+Cora burst out laughing, although I thought `Amaranta' was a nice name,
+and said so.
+
+``Thank you, Nora,'' said Ranta.
+
+``I agree,'' said Cora. ``It's such a nice name, that from now on I'm
+going to call you Amaranta all the time.''
+
+Cora's parents weren't going to be there until ten or so, so she came
+down to the gate to see us off.
+
+I had packed two pairs of jeans and two T-shirts, along with a water
+bottle, some granola bars, a sewing kit, and my pillow. It had taken me
+a month to get used to the pillow in my dorm room when I first came, and
+I wasn't going to go back now. I also packed two books, \emph{White
+Fang}and \emph{The Jungle Book}, just in case there was time for me to
+read.
+
+Cora and Ranta met me in the dining hall for breakfast. They fought all
+through breakfast as usual, with Cora calling Ranta by her full name and
+making fun of Ranta's brother for being a dressmaker. I was so tired of
+listening to it that I left breakfast early and started down to the
+front gates without them.
+
+There was a guard on duty at the gatehouse. I told him I was going on
+the camping trip with Mrs. Julian, and he found my name on the list she
+had given him and let me through the gates into the parking lot.
+
+The van was parked at the middle of the lot, with all the doors open and
+the camping equipment sitting around it. A man who I assumed was the
+driver of the van was loading everything up. Lily wasn't there yet when
+I arrived, but Maria and Mrs. Julian were, along with the rest of the
+club. As Maria had said, three of the members were little kids---two
+second graders and a first grader---and the others, aside from Maria
+herself and one other girl, were third graders. Mrs. Julian was trying
+to keep the little kids in line when I came up, but Maria saw me and
+waved.
+
+``Sorry, what was your name again?'' she asked when I got to her.
+
+``N-Nora,'' I said.
+
+``Thank you again for agreeing to come help us.''
+
+``It's n-no trouble, I've n-never been camping before, so it ought to be
+f-fun.''
+
+Maria smiled and introduced me to Francine, a sixth grader with curly
+blonde hair and kind of a horsey face. ``Francine is the one who's most
+excited about this trip,'' said Maria.
+
+``The other kids are just here to have fun,'' said Francine, ``so we
+could have just gone somewhere nearby to camp, but I really wanted to
+see these rock formations. They're made from igneous rock that dates
+back to the time of the dinosaurs. I thought Lily might like to come and
+see the plants and trees, and we needed the extra help, so I asked
+her.''
+
+``Oh, you're the one who asked Lily,'' I said. ``How did you meet her?''
+
+``Last year, I was failing science,'' said Francine. ``Miss Hanover
+asked Lily to tutor me. Thanks to her, I found out that rocks are
+interesting and decided to join this club.''
+
+I didn't think that rocks were all that interesting, but I did think
+that books were interesting, and I knew that it didn't feel good when
+Cora said they were dumb and made her head hurt, so I didn't say
+anything about that to Francine. ``I didn't know that Lily liked
+science,'' I said.
+
+``Lily is a genius at science! Of course she's good at botany, but she's
+incredible at all kinds of science,'' said Francine. ``Before she helped
+me, I thought science was just boring and dumb, like math, but Lily
+showed me that wasn't true.''
+
+Now that I thought about it, there had been a few science questions in
+our study sessions which had stumped me, Ranta, and Cora, and Lily had
+come in and helped us. I hadn't thought about it much; she was older
+than us and had already done it all when she was in sixth grade. But
+then, she must have done fractions too, but she was too afraid to even
+try and help us with those.
+
+``Are you guys talking about me?'' Lily asked as she came up, wearing
+her garden overalls and a big straw hat and carrying her leather satchel
+and a backpack.
+
+``Francine was telling me how much you helped her in science, and how
+she would never have known how fun it was without you,'' I said.
+
+``All I did was show you what was in front of you the whole time,'' said
+Lily. ``They say you can lead a horse to water, but you can't make him
+drink. All I did was lead you to water.''
+
+At first I thought Lily had said something mean about Francine, but
+Francine laughed and made a neighing sound, so this must have been some
+joke between them. That had to be it; it was so unlike Lily, who was
+always so nice to everyone, to say anything mean.
+
+On the other hand, there was Cora, now approaching with Ranta, whose
+every word was something mean about someone. I was a little bit glad
+that she wasn't coming.
+
+Ranta had worn jeans and a baseball jacket that was a bit too big for
+her, and was carrying her belongings in a duffel bag. It made her look
+somehow grown up that she was carrying a duffel bag instead of a
+backpack like the rest of us. She always looked so mature compared to me
+and Cora, even though she was in the same grade. ``Is everything loaded
+up?'' she asked.
+
+``Just a few things left,'' said Maria.
+
+Lily and Ranta helped the driver load the rest of the equipment, and
+after Cora had said her last `Amaranta' for the day, we all got into the
+van and got going. It was a huge van, with three bench-like seats, each
+one able to hold four people. Mrs. Julian sat in the front with the
+driver, while I was squeezed into the second seat between Ranta and
+Francine, with Lily on Francine's right next to the aisle. Maria sat in
+the back with the little kids to help keep them under control.
+
+Francine and Lily talked for a long time about the rocks and plants they
+were going to see when we got to the campsite. I didn't understand a lot
+of what they were saying; they both knew a lot more about science than I
+did, just like Ranta and I knew more about books than most kids our age.
+I listened to what they were saying for a while, following along as best
+as I could, as they talked about igneous rocks and geothermal vents and
+coniferous forests.
+
+``Do you like science too, Nora?'' Francine asked when she noticed I was
+listening.
+
+``It's not my favorite subject, but it's okay,'' I said. ``Listening to
+you and Lily talk, it makes me feel like science might be a lot more
+interesting than I ever thought.''
+
+After that, Ranta and I talked about books for a while and let Francine
+and Lily continue their conversation about science. Even though the
+little kids were loud, it was a peaceful trip without Cora, and I
+enjoyed being able to talk to Lily and Ranta as much as I wanted.
+Talking to Francine was also fun; even though she liked science and I
+liked books, I felt like we were similar in a way. Most people make me a
+little bit nervous when I first meet them, and I stutter a little while
+talking to them, but from the very beginning, I hadn't stuttered at all
+while talking to Francine.
+
+We arrived at Ash Mountains Park around noon, and everyone got out of
+the van. Once we had unloaded the supplies and the driver had said
+goodbye and driven off, the little kids ran around yelling in the
+parking lot while Mrs. Julian explained to the older kids what we were
+going to do. ``We have to walk to the campsite from here,'' she said,
+``and it takes about an hour. First we'll eat lunch at the restaurant
+here. I have club funds to pay for everyone, so don't worry if you
+didn't bring money. Then we'll get going. Maria and I will go first,
+with the younger children and Francine and Lily in the middle. Nora and
+Ranta, please bring up the rear and make sure none of the little kids
+leave the group.'' She gave us all maps of the forest that showed the
+campsite where we would be staying. ``Does anyone know how to use a
+compass?''
+
+``I do,'' said Ranta, so Mrs. Julian gave her one.
+
+The restaurant was inside the visitor's complex of the park, a big
+wooden building perched on the edge of a gulch. The restaurant had both
+inside and outside tables; the outside tables were on a wooden deck that
+overlooked a pine forest and a lake nestled deep down in the valley. A
+waterfall sprayed down from the peak across from us and came crashing
+down into the lake at the bottom. I was so impressed with the view that
+I don't even remember what I ate. While the little kids were finishing
+up, I took a pencil and notebook out of my backpack and started trying
+to write a poem about the lake, something like what William Wordsworth
+would write if he had been there to see it.
+
+It was one o' clock by the time we finished with lunch, and everyone got
+ready to set out for the campsite. Mrs. Julian and the older kids split
+up the bigger equipment, like the tents and chairs and cooking
+equipment, but we took some of the smaller things and put them in little
+bags and satchels and gave them to the children. Then we set out down
+the forest trail, Mrs. Julian and Maria at the head of a herd of noisy
+kids, kept in line by Francine and Lily, with me and Ranta at the end of
+the line.
+
+The forest was beautiful. There were pines and redwoods, their trunks as
+wide as cars, stretching up to the skies like towers, as tall as any
+skyscraper. The forest floor was littered with pine needles and pine
+cones, but the trail was mostly clear. We passed from sunny areas with
+no trees to shady areas where the sunlight all came to us filtered
+through the leaves of huge trees that had been here for hundreds of
+years before we were born, and would still be here hundreds of years
+after we had died. I wanted to try writing a poem about it, but we were
+walking, and I was carrying my backpack and a folding chair, so I
+couldn't even have written and walked at the same time. I started
+writing the poem down in my mind, trying to remember exactly the words
+that came to me while I was there, although it hadn't worked so well
+with the speech I'd wanted to make on my first day of class.
+
+``This place makes me think of Henry Wadsworth Longfellow,'' Ranta
+commented as we walked. ``The forest primeval, and Hiawatha. Have you
+read him, Nora?''
+
+``Yes,'' I said, wanting to say more, but I was starting to run out of
+breath. It had been a long time since I'd walked for this long, and I
+was having a hard time keeping up.
+
+``Are you all right?'' Ranta asked.
+
+``I'm sorry. I'm just not used to walking this much,'' I said.
+
+``Don't worry about it. Do you want to rest for a minute? We'll catch up
+to the others later.''
+
+The others were already getting pretty far ahead, but I did need a rest.
+I sat down on a log at the edge of a high hill and took a few deep
+breaths. ``It sure is nice out here,'' I said. ``I could just sit in
+this spot forever and listen to the wind in the trees.''
+
+``We'd better start catching up,'' said Ranta. ``They're almost out of
+sight.''
+
+I started to stand up, but then something really unlucky happened: I
+felt my foot slide on the pine needles that littered the hillside.
+
+``I---I'm slipping!''
+
+Ranta grabbed my hand, and we probably would have been all right, except
+that then the dirt under the pine needles chose that moment to collapse.
+
+I tumbled backwards, trying to pull myself back up by Ranta's hand,
+pulling her back with me. We landed on the hillside and I felt myself
+rolling downwards on my side like a ball down a slide, Ranta beside me.
+
+\scenebreak
+
+When we finally hit the bottom, my head was spinning, and I had a few
+bruises on my arms where I'd rolled over rocks, and my shirt was full of
+pine needles, but I wasn't hurt. Ranta had landed nearby and also didn't
+seem to be hurt.
+
+``I, I'm sorry!'' I cried. ``I'm so sorry!''
+
+Ranta picked herself and dusted herself. ``It's, it's okay,'' she said.
+``It was an accident.''
+
+``I'm just sorry that I pulled you down with me,'' I said. ``Now we're
+both stuck down here.'' The hill was quite steep, and it looked
+unstable, so I didn't think we could climb back up it.
+
+``We have the map and the compass. We'll find the campsite,'' said
+Ranta. Our packs had tumbled down the hill with us---at least, mine had,
+since it had been sitting next to me on the hill and had fallen along
+with the pine needles and dirt, and Ranta had been holding hers when I'd
+dragged her down with me---so we also had a little food and water. And
+Ranta was with me, and she seemed reliable and strong, so I wasn't very
+worried about getting to the campsite.
+
+\scenebreak
+
+Two hours later, we still hadn't found the campsite.
+
+Neither of us could make any sense of the map, which was so full of
+topographical symbols and orienteering jargon that we couldn't even
+begin to figure out where we were. Also, the visitor's center wasn't on
+it, so we didn't have any point of reference. There was nothing on the
+map that we knew except that campsite, and that wasn't any help since
+that was what we were trying to find.
+
+And it turned out that Ranta didn't know how to use a compass after all.
+
+``I'm sorry,'' she said, sitting down and staring around us in defeat.
+``My dad showed me how to use one when we went camping, but I never
+actually did it, so it looks like I forgot everything he said.''
+
+``That's all right. It's my fault for getting us into this in the first
+place,'' I said.
+
+``Well, come on, let's see if we can get ourselves out of this,'' said
+Ranta. ``I don't know if we can find the campsite before dark, so let's
+see if we can find any shelter for the night. Dangerous things come out
+in this forest at nighttime, so if we can find a cabin or something,
+that would be best.''
+
+``What kind of dangerous things?'' I asked, starting to be afraid.
+
+``Pine cats, mostly. They're like racoons crossed with leopards. There
+are also bears, though I think the wardens drive them away from the
+areas where people camp. And the coyotes are too cowardly to bother
+people. So mostly pine cats, I think. But they climb, so we're not safe
+in trees.''
+
+``If Cora were here, she might be able to talk them into leaving us
+alone,'' I said.
+
+``More likely they'd eat us just to shut her up,'' said Ranta.
+
+We walked for a while longer. We'd lost the trail, so it was hard to
+tell one part of the forest from another. For all I knew, we were just
+walking in circles. I started to wonder if I should mark the trees just
+to make sure that wasn't happening, but after a while I realized it
+wasn't happening, because the tree cover was getting thicker as we moved
+ahead. Even though the sun was still high, the sky got darker the
+further we went in the direction we were going. I started to think of
+the direction ahead as the dark direction, and the direction behind as
+the light direction.
+
+I couldn't walk anymore, so we stopped to rest for a minute, and Ranta
+took out the map. ``I think I know where we are!'' she said suddenly.
+``Look.'' She showed me the map. ``See how the little tree pictures are
+closer together here?'' she said, pointing. ``I think that means the
+forest gets thicker. And this light-colored ring probably means higher
+elevation, which makes sense because we fell down that hill, so we're at
+a lower elevation now than we were before.''
+
+``So we overshot the campsite,'' I said, pointing to it on the map.
+``It's over here, and we're way over here, to the west of it.''
+
+``Yes. I don't think we can walk all that way before night falls. I'm
+starting to get pretty tired, so even if I carried you, I don't think we
+could go that far.'' Neither of us could figure out how far it actually
+was, since the map was so hard to read, but it looked pretty far.
+
+``What's this?'' I asked, pointing to a little house icon that was on
+the map to the north of where we thought we were.
+
+``Don't know. It's not a campsite, since those have tents on them. But
+it must be some kind of place with people, and it looks pretty close to
+here, so I think we should go there and see if we can find help. Maybe
+they can let us stay there for the night, or maybe they can guide us to
+the campsite.''
+
+It turned out it wasn't somewhere with people.
+
+With no better ideas, we made for the house icon on the map. The forest
+got thicker and darker as we went, until it finally got so dark that we
+could barely see the map anymore. At that point it was too late to
+change our minds, so we kept making for the house.
+
+When we finally got there, it wasn't a house at all.
+
+Inside a cluster of old, twisted oaks which had twined together to form
+something that looked like a roof, someone had built a temple. At least,
+I decided it was a temple because I couldn't imagine what else it could
+be for. The holes between the twisted trunks of the oaks had been
+covered over with boards from the inside, and the leaves, along with
+bushes and branches of other trees, had grown over to cover the rest of
+the grove inside the cluster of oaks. An opening had remained between
+the branches, like a door; it was too dark to see far inside it. The
+oaks grew into the side of a hill, which enclosed the temple at the
+back.
+
+``This is a disappointment,'' said Ranta. ``I wonder if anyone's here?''
+She walked up to the door of the temple and knocked on one of the
+trunks. ``Hello? Anyone here?''
+
+There was no answer.
+
+``I can't tell if it's dark because it's almost night or if these trees
+are just blotting out the sun,'' said Ranta, starting to sound
+frustrated. ``What do you think, Nora? This place is probably okay
+protection from pine cats. We could stay here the night. Or we could try
+to make it to camp.''
+
+``I don't like it here,'' I said, ``but I don't know if I can make it
+all the way to camp.'' It had taken us about thirty minutes to walk here
+since discovering it on the map, and according to the map, the campsite
+was about four times as far. After all, we had spent two hours walking
+away from the campsite before we'd figured out how to read the map.
+
+``Then let's stay the night here,'' said Ranta. ``I have a blanket and
+some trail mix in my duffel bag. What about you?''
+
+``I have my pillow, some water, and a few granola bars,'' I said.
+
+``Then let's stop for the night. Tomorrow we can make it to the
+campsite.''
+
+\scenebreak
+
+Both Ranta and I had flashlights with us, so we spent some time
+exploring the grove of twisted oaks where we intended to sleep that
+night. It wasn't very big on the inside, but it was pretty tall---the
+roof was about as high as the classroom back at the academy. There were
+several large cracks in the hill at the far end, but they looked too
+small for bears or pine cats to live in, so Ranta wasn't worried about
+them.
+
+``I wonder who built it,'' said Ranta. ``And why.''
+
+``Could it have been druids?'' I asked.
+
+``Could be. Or Iroquois, maybe.''
+
+We both read too much, I know, but it turned out that what had built
+that grove was even more bizarre than druids or Iroquois.
+
+As night fell, we both drank some water and ate some granola bars and
+trail mix, and built a little bed to sleep in from what we had. Ranta's
+blanket wasn't big enough to wrap around both of us on top and bottom,
+so we laid it out on the dry leaves, and put my pillow on top to share.
+As darkness fell, we laid down together to go to sleep.
+
+The trees were so thick, and the temple roof so enclosing, that I
+couldn't see a single star or one solitary beam of moonlight. Even
+though it's hard to sleep when it's too light, it can be even harder to
+sleep when it's too dark, especially if you're somewhere unfamiliar or
+scary, so I laid there in the dark, opening and closing my eyes. It was
+almost lighter with my eyes closed.
+
+After a while I felt Ranta's arms wrap around my shoulders. ``Are you
+cold?'' I asked. It was a little chilly.
+
+``No. Scared,'' she admitted. ``It's so dark\ldots{}''
+
+``Me too,'' I said. ``Ranta, I'm so sorry for getting you into this.''
+
+``No, don't be,'' said Ranta. ``When we get out of here, we'll look back
+on this and laugh. It'll be a good memory from the early days of our
+friendship.''
+
+``You---you think of me as your friend? Even though you have so many
+other friends who never dragged you down a hill and got you lost in the
+wilderness?'' I asked.
+
+``Of course. None of my other friends has ever gotten me into anything
+this exciting,'' said Ranta. ``Just don't tell Cora I said I was
+scared.''
+
+``Okay. I'll make sure she never knows,'' I promised.
+
+At that moment, I heard something shuffle across leaves in the darkness.
+
+I heard something clicking.
+
+``Ranta\ldots{}something's here.''
+
+``Don't make fun of me. I didn't think you were like that, Nora,'' said
+Ranta.
+
+``I'm not\ldots{}something's really here.''
+
+Eyes were staring at us from the darkness. Glowing red eyes.
+
+Eight glowing red eyes.
+
+I screamed.
+
+Ranta grabbed me and pulled me up, dragging me through the door of the
+temple to the outside. ``What is it?!'' I asked.
+
+``I don't know.''
+
+Outside, the tiniest amount of moonlight was managing to make it through
+the trees. The thing came to the door of the temple, and I could just
+barely make out the outline of something huge and hairy, something
+black, something the size of a small horse, with eight legs and eight
+eyes and long fangs.
+
+It was a giant spider.
+
+I was about to scream again, but I managed to stop myself. ``Hide,''
+Ranta whispered roughly. ``Go off into the forest and hide. Once the
+spiders are gone, start making for the campsite''
+
+``What about you?'' I whispered back.
+
+``I'll distract it.''
+
+Just as she said that, a second spider appeared in the doorway of the
+temple, its huge fangs, like a pair of kitchen knives, clicking together
+murderously.
+
+``Go!'' said Ranta, and I went. I ran around the side of the temple and
+knelt down among the branches, hoping the darkness would hide me.
+
+Ranta turned on the flashlight. ``Hey!'' she screamed, jumping up and
+down and waving it above her head. ``Tasty fly, over here! Come on,
+spiders! Come get me!''
+
+The spiders went after Ranta, and she turned and ran off into the trees.
+She ran, and the spiders followed, leaving me alone in the dark forest.
+
+I waited as long as I dared to make sure the spiders were really gone,
+and then I started off in the direction of the campsite.
+
+Ranta's Gift of Running meant she could run further and faster than most
+people, and as far as I knew, spiders weren't famous for running, so she
+should be able to shake them off and circle around to start moving
+towards the campsite. I had to do my best to make sure she didn't have
+to worry about me at all.
+
+I walked, ran, walked, ran, stopped and breathed, walked and ran, for as
+long as I could before I had to stop and rest for a while. The dark
+forest looked pretty much the same no matter where I went, but I could
+now see a few stars through the trees, and I made sure they kept the
+same shape in the sky as I moved.
+
+I stopped to rest in a clearing, sitting down on a log to catch my
+breath, when I heard movement in the trees. I got up, preparing to run,
+but then a voice called out to me.
+
+``Ho, I am not your enemy!'' it said, and I stopped.
+
+Through the trees came an old man. He was stooped with age, and covered
+with ragged robes, leaning on a wooden stick and pulling himself along
+like a strange three-legged creature. His hair and beard were long and
+white; I couldn't see his face, as it was hidden behind a wooden mask,
+which I could see was fastened to his head with leather straps.
+
+This must be a hermit, I decided. I had read about them in books; most
+of them were old men who lived out in the desert or the forest by
+themselves. The townspeople usually called them crazy, but hermits often
+knew many things, and would offer their wisdom to the hero.
+
+``Is the bottled water good?'' the hermit asked.
+
+``Wh-what bottled water?'' I asked in response.
+
+The hermit pulled himself up to me, leaning on his stick, and sniffed
+the air. ``The bottled water is good!'' he declared. ``Come, come with
+me to my cabin. I'll give you food and a soft bed.''
+
+``Can you help me find the campsite?'' I asked.
+
+``Campsite?''
+
+Ranta had the map, so I couldn't show him, but I pointed east and said,
+``The campsite that way. People go there to sleep in tents.''
+
+``Yes, yes, I'll help you get back. Come with me!''
+
+Sometimes hermits were dangerous, but on the whole he seemed less
+dangerous than the giant spiders, and he said he could get me back to
+the campsite, so I decided to go with him. That turned out to be a bad
+idea, but I didn't know that at the time.
+
+As I followed him to the cabin, I hoped that Ranta had managed to throw
+off the spiders and was coming back around to where I was.
+\end{document}

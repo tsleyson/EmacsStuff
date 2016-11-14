@@ -1,0 +1,7 @@
+<html>
+  <head>
+    <title>Ajax Test Main</title>
+  </head>
+  <body>
+    <h2>Testing out use of Ajax</h2>
+    <div id="display">The default text</div>

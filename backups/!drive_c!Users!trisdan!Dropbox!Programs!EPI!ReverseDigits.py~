@@ -1,0 +1,4 @@
+# Problem 5.10 of EPI.
+
+def reverse_digits(x):
+    return ''.join(reversed(str(x)))

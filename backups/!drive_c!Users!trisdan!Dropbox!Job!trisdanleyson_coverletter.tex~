@@ -1,0 +1,29 @@
+\documentclass[10pt]{letter}
+% The following get rid of giant white space at top of page.
+\makeatletter
+\let\@texttop\relax
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true]{hyperref}  % Make links non-horrible.
+\usepackage[margin=1.0in]{geometry}
+
+\signature{Trisdan Leyson}
+\address{12266 Regent Way\\PO Box 1033\\Oregon House, CA 95962\\(530) 692-9040\\trisdan.leyson@gmail.com}
+\longindentation=0pt  % Don't center closing.
+
+\begin{document}
+\begin{letter}{dummy content}
+\opening{Dear Sir or Madam:}
+
+Thank you for considering me for a software engineering position. My background is probably a little different from many of your candidates' backgrounds; as a child, I never took apart old radios or built my own printer from spare parts. Instead, I loved books, and until I was nearly twenty, I wanted to be a writer. But I have been around computers my whole life, I'm no slouch as a programmer, and I hope I can have the opportunity to show that someone with a background like mine can be very useful to a software company.
+
+I studied computer science at the University of California, Davis. I used C++ and Java for most of my classes; in particular, I implemented a compiler in C++ as a semester-long project, as well as a control system for an industrial robot arm. I also took courses using C and Visual Basic. I learned Python and Clojure through self-study; I taught myself the rudiments of programming with Python before ever enrolling in a course, and learned Clojure to expand my knowledge of functional programming, Lisp, and the JVM. I am also familiar with HTML and CSS, having used them both to build websites and to self-publish to Amazon's Kindle Direct Publishing. I have dabbled with many other programming languages and have the ability to learn new languages and technologies quickly. At UC Davis, I split my elective classes between courses in programming languages and compilers and courses in discrete mathematics.
+
+Before studying at UC Davis, I studied at Yuba Community College, and also worked for two years in the Writing and Language Development Center, tutoring writing and English as a Second Language. I qualified as a tutor on the basis of my strong written communication skills, as attested by my professors. Tutoring these subjects also requires very strong verbal skills and the ability to excel as part of a team; to tutor writing, one must collaborate with a student, forming a strong partnership to bring a project to completion. Ultimately, all writing must come from the student, so the tutor's challenge is to spark ideas, engender confidence, clarify goals, and create an encouraging atmosphere, all indirectly. To tutor English language learners, a tutor must do all of those things, but also needs the verbal aptitude to express complex ideas so they can be understood by those with limited English language skills. All of these skills are useful in any team environment, as I found in my team programming assignments at UC Davis. I often directed and coordinated work on these assignments, but also always took it upon myself to implement some significant part of the program, and was comfortable following direction and coming to a consensus.
+
+I am grounded in C++, Java, and Python, but also have the drive and ability to learn new technologies, as shown by my self-study of Clojure, HTML, and CSS. I have completed UC Davis's computer science course of study and taken core classes in algorithms, operating systems, and discrete math, as well as electives in programming languages and compiler design. My work as a tutor developed strong written and verbal communication skills, and taught me to work well in a team atmosphere. I could be a great asset to your company, if given the chance.
+
+\closing{Thank you for your time,}
+\end{letter}
+
+\end{document}

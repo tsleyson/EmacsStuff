@@ -1,0 +1,4 @@
+(ns nutrition-clj.test.routes.home
+  (:require [nutrition-clj.routes.home :as home]
+            [clojure.test :refer [testing is deftest]]))
+

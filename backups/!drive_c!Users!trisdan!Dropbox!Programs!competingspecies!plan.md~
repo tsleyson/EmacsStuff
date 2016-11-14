@@ -1,0 +1,19 @@
+Use TK to build a GUI interface (I can't believe Ken Joy made his ECS
+40 students build GUIs with Qt Creator. That seems like borderline
+insanity given the failure rates of that class.)
+
+Use matrices to represent the equations (Ruby has a built-in matrix
+class.) In matrix form, we can think of what we have to do with the
+numbers like this:
+
+We have an A matrix that holds all the death rates, and an x vector
+that holds the populations. We have a b vector that holds the birth
+rates. To calculate the change in population at time t, we can
+calculate the following:
+
+Δx(t) = x(t) .* (b - Ax(t))
+
+where x(t) is the population at time t, b is the birthrate vector, and
+A is the deathrate matrix. .* is the Matlab element-wise
+multiplication operator.
+

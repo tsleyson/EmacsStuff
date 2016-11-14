@@ -1,0 +1,60 @@
+"use strict";
+
+var removePics = function(pics, animationClass) {
+    for (var i = 0; i < pics.length; ++i) {
+        var pic = pics[i];
+        pic.addEventListener("transitionend", this.remove);
+        // animationend if using an animation, and you need prefixes
+        // for browsers other than Firefox.
+        pic.classList.add(animationClass);
+    }
+};
+
+// specific function
+var displayPicture = function() {
+    var that = this;
+    var cont = document.getElementById("container");
+    var pic = document.createElement("img");
+    pic.id = "display";
+    pic.src = document.getElementById(this.id).src;
+    pic.height = 500;
+    pic.style = "transition: all 1s ease;" +
+        "position: relative;" +
+        "border: none;" +
+        "animation: grow 3s ease-out;";
+    // Have to use apply so removePics has access to current val
+    // of 'this'.
+    removePics.apply(this, [cont.children, "shrink"]);
+    cont.style.position = "absolute";
+    cont.style.left = "50%";
+    cont.style.right = 0;
+    cont.style.margin = "0 0 0 -25%";
+    cont.width = "-moz-fit-content"; // Unavailable in IE.
+    cont.padding = "2%";
+    cont.appendChild(pic);
+};
+
+/* These functions didn't work because I was trying to use them on
+ * images, but client coordinates don't work right for images after
+ * you scroll, because the client is the outer container of the image,
+ * so if you scroll down, the tooltip keeps appearing at the top of
+ * the screen where it would be if you'd never scrolled down. Instead,
+ * with images, use the title attribute. This approach still works
+ * with divs and spans and so on, though--anything that can have
+ * elements inside it, so you can put the tooltip element inside it
+ * and use client coordinates.
+ */
+var displayTooltip = function(e) {
+    var tooltip = document.getElementById("tooltip");
+    // Expects some kind of div or something w/ name "tooltip",
+    // with a p or span tag called "info".
+    tooltip.style.left = e.clientX + "px";
+    tooltip.style.top = e.clientY + "px";
+    tooltip.children[0].innerHTML = this.src;
+    tooltip.style.visibility = "visible";
+};
+
+var removeTooltip = function() {
+    tooltip.style.visibility = "hidden";
+    tooltip.children[0].innerHTML = "";
+};

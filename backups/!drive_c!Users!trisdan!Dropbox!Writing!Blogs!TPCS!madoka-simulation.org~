@@ -1,0 +1,81 @@
+* Let’s try out Clojure’s object-oriented features!
+
+Recently I wrote a couple of Code Review.SE reviews for games in Clojure. All the code I looked at was written essentially like C: data was stored in global variables or in “god” maps that were passed into every function. Entities were all modeled with plain maps or vectors. None of the code was bad, but everyone seemed to be ignoring Clojure’s object-oriented features, records, protocols, and multimethods, even though games and simulations are exactly where object-oriented programming really shines.
+
+Since I didn’t have any real experience writing something like this in Clojure, I decided to write a very silly project: a simulation of [a certain anime about magical girls and witches](http://en.wikipedia.org/wiki/Puella_Magi_Madoka_Magica). I would try out the techniques I’d been recommending to other people, and find out if they really worked better than the bare-bones approach with global variables and built-in data structures.
+
+** Drawing Inspiration from Rich Hickey’s Ants Demo
+
+I first planned my magical girl simulation as a discrete-time simulation; it would have turns or phases during which the entities would take actions, then stop to let the code update state. But ever since I read *Seven Concurrency Models in Seven Weeks*, I’ve been wanting to try out some concurrent programs, and this seemed like a good chance, so I decided to make the program a continuous-time simulation. But I had a hard time coming up with an architecture, until I remembered reading about [Rich Hickey’s ant simulation](https://github.com/limist/literate-clojure-ants). This is a demo Rich Hickey wrote early on to show how Clojure’s approach to concurrency works. Someone very helpfully made a literate programming version, so everything is thoroughly explained in text alongside the code. 
+
+If you don’t want to read the code, I’ll summarize. The ants move around on an 80 by 80 grid looking for food. As they explore, they leave pheromone trails for other ants to follow. When they find food, they bring a piece of it back to the nest. Other ants will reach the same piece of food by following the pheromone trails. However, the trails decay and become weaker over time.
+
+The ants are represented two ways: an ant struct (a record in modern Clojure) that tells us which direction the ant is heading, and how much food it’s carrying if it is carrying any; and a vector of ant agents. The world grid is a vector of vectors of refs to cell structs, which store how much food is on a square, how strong the pheromone mark on a square is, whether the square is part of the ants’ home, and the struct for any ant which is currently on the square. Making them refs lets the program update them concurrently, for example by moving an ant from one square to another.
+
+The ants’ behavior is implemented as the function `behave`. When the program starts, we `send-off` the `behave` function to all the ant agents. The ant agents only store the ants’ current locations, but with that information, we can look up the ant struct stored in the world grid and make any modifications we want. The `behave` function will make the ants move, pick up food, bring food home, and leave pheromone trails. It runs in an infinite loop by adding another invocation of itself to the ant agent’s work queue every time it’s called. Since each ant is an agent, and agents are concurrent, uncoordinated, and asynchronous, each ant behaves independently.
+
+## How is this relevant to magical girls?
+
+My magical girl simulation is very similar to Rich Hickey’s ant simulation. Instead of ants, I have magical girls, and instead of food, I have witches. The magical girls search for the witches just like the ants search for food. Unlike the ants, the magical girls can sort of tell where the witches are because their soul gems will react to the presence of a witch; by contrast, the ants search for food at random, using the pheromones as a guide. Also, the ants can only move one square at a time, and to take food, they have to be next to it; I intend for magical girls to be able to move multiple squares and detect witches from multiple spaces away.
+
+I’ll have to make some tweaks, but the architecture that Rich Hickey used for his concurrent ants should work pretty well for my concurrent magical girls, too.
+
+## What about core.async?
+
+*Seven Concurrency Models in Seven Weeks* covers core.async, a new Clojure library whose premise is stolen from Go. (Rich Hickey himself says so, unabashedly.) I wanted to try out core.async too.
+
+The ant demo code is pretty old as Clojure code goes. No one uses structs or the `sync` macro anymore, and there are easier ways to build a UI in Clojure than calling to AWT through Java interop. I wondered whether a modern version of the ant demo could use core.async to clean some things up.
+
+I soon realized that there was no place for core.async in the ants demo, at least so far as I could see. Go, and core.async by merit of having stolen its premise from Go, implement CSP, a paradigm for concurrency invented by computer scientist CAR Hoare in the 1970s. CSP and actors (as seen in Erlang, Scala, and the Akka framework) are both models of concurrency based on message passing. They’re sort of like two sides of the same coin. Actors are a special kind of process which the system runs concurrently, set up with a mailbox and a PID so they can receive messages from other actors. Just how actors send and receive messages is transparent to the programmer. It’s an implementation detail. When an actor sends a message, it could be appending to a queue in the machine’s memory, or serializing the message and sending it to another machine in the same cluster, or it could be encoding the message as JSON and sending it to a web service running on a server on the other side of the planet. From the programmer’s perspective, these all look the same.
+
+In CSP, there’s nothing special about the process. Processes in a CSP-based architecture can be threads, or actual OS processes, or they can just be separate functions operating in the same thread at different times. Where actors use a special abstraction for the process, CSP uses a special abstraction for how messages get passed: the channel. Any process which has a reference to a channel can write to that channel, and any other process can read from that channel, at any time. CSP still lets you run things across multiple machines, but the implementation of the channel will change.
+
+As I was thinking about how to apply core.async to the ant program, I remembered that, hey, core.async is CSP, and CSP stands for *communicating* sequential processes. As soon as I thought that, I realized that core.async wasn’t really applicable to the ant demo. At first I thought this was because the ants don’t communicate with each other. But they do—through the pheromones. Modeling the pheromone trails with channels seemed pointless and overly complex. It’s just not a good fit. The way Rich Hickey modeled ant pheromone trails is a good way to model how ants communicate.
+
+By the way, even though CSP and actors are closely related, there’s something in Clojure which behaves much more like an actor when it comes to entity modeling: agents. The ants are independent entities acting asynchronously. Agents are perfect to model that. 
+
+That means core.async would be an even worse fit for my simulation, because magical girls and witches don’t communicate with each other at all. They’re completely independent. But agents are still useful, because my magical girls are going to be independent entities acting asynchronously, just like the ants.
+
+## Where would core.async be a good fit?
+
+Core.async was a bad fit for the ant simulation because channels aren’t a good way to model how ants communicate. Ants pass information by leaving scent trails for other ants to discover later.
+
+But suppose we were modeling some type of entity which can convey complex information to its fellows instantaneously. Take the police department.
+
+Suppose we wanted to simulate a police manhunt. Let’s say you’re the chief of police in a small town. The FBI notifies you that the notorious serial killer, the Panties-Head Prowler, has been spotted in your town.
+
+You have 200 officers stationed throughout the city. The officers have radios that we can use to contact them. Say we have a vector containing the name of every officer on the force. We can model the officers’ radios by a map from the officer’s name to a channel:
+
+[code language=clojure]
+(def radios
+  (zipmap roster (repeatedly chan)))
+[/code]
+
+Officers are records which contain a name, location, and the channel representing their radio. We store the officer records inside agents so that officers can be independent entities.
+
+[code language=clojure]
+(defrecord Officer [name location radio])
+
+(defn create-officer
+  [name]
+  (agent
+    (->Officer name (rand-loc) (get radios name))))
+
+(defn patrol
+  []
+  (go
+    (let [dest (<! (:radio @*agent*))]
+      (send *agent* assoc :location dest)
+      (if (found-perp dest)
+        (arrest-perp)
+        (send-off *agent* patrol)))))
+
+(def officers
+  (map
+    (comp #(send-off % patrol) create-officer)
+    roster))
+[/code]
+
+`rand-loc` is just a function that returns a random location where the officer should start patrolling.
+
+The officers wait to hear instructions on their radios about where to move.  When we receive a tip about the Panties-Head Prowler’s location, we can look up the nearest officer and call that officer on the radio. We have a function `nearest-officer`, which takes a location on the map and returns the nearest officer.

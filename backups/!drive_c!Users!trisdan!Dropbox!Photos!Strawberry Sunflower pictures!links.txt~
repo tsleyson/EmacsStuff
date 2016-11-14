@@ -1,0 +1,28 @@
+How I made the logo:
+
+See http://graphicssoft.about.com/od/gimptutorials/ss/Inner-Text-Shadow_5.htm
+
+and
+
+http://gimp-tutorials.net/node/91
+
+for the shadows and the borders (respectively).
+
+To make the shadows:
+
+- Write the text
+- Duplicate the text layer
+- Click on the duplicate and change the color to black. (Or some other dark color: I used dark brown in the StrawSun logo.)
+- Right-click on the duplicate layer and choose "Discard Text Information"
+- Right-click again and choose "Alpha to Selection". It should select all around the text. Choose the move tool in selection mode and use the arrow keys to move the black text very slightly (a few pixels) off the original.
+- Hit Delete or go to Edit -> Clear to delete most of the dark text.
+- Apply a Gaussian blur to make it look shadowy.
+- You can use a layer mask to blank out the shadows outside the text. Add a fully opaque layer mask to the shadow layer, then use Alpha to Selection to select around the text again and fill that part with transparency (black) in the layer mask.
+
+To make the border:
+
+- Write the text
+- Right click and choose Alpha to Selection
+- In the Select menu, choose Grow and grow the selection by a few pixels. I used 1 pixel in the logo. 
+- Make a new layer under the text.
+- Fill the selection with your border color in that layer.

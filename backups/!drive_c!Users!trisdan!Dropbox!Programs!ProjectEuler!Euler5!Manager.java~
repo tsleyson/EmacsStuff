@@ -1,0 +1,47 @@
+package Euler5;
+
+    // Use BlockingQueue, not Queue, so we don't have to cast to use
+    // the blocking methods.
+    private class Manager implements Runnable
+    {
+        private Context myContext;
+
+        Manager(Context myContext)
+        {
+            this.myContext = myContext;
+        }
+
+        private static void fillQueue(Long start, Long step)
+        {
+            for (Long i = start; i <= start+step; ++i)
+            {
+                myContext.myContext.numbers.add(i);
+            }
+        }
+
+        public void run()
+        {
+            Long start = new Long(21);
+            Long step = new Long(1000);
+            for (;;)
+            {
+                try {
+                    while (!myContext.numbers.isEmpty())
+                        wait();
+                    if (answers.isEmpty())
+                    {
+                        fillQueue(start, step);
+                        start += step + 1;
+                    }
+                    else
+                    {
+                        result = answers.take();
+                        return;
+                    }
+                } catch (InterruptedException ie) {
+                    System.err.println("Manager interrupted.");
+                    System.exit(1);
+                }
+            }
+        }
+    }

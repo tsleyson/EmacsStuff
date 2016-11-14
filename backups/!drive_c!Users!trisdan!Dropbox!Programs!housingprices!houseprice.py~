@@ -1,0 +1,8 @@
+# houseprice.py
+# Predict price of a house using least-squares linear regression.
+import numpy as np
+import scipy.linalg as la
+
+def fit_coefficients(A, b):
+    "Computes the least-squares estimate of x in Ax = b."
+    

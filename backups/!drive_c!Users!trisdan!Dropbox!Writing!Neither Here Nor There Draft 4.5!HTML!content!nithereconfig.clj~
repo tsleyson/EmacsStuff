@@ -1,0 +1,28 @@
+{
+ :directory "C:/Users/trisdan/Dropbox/Writing/Neither Here Nor There Draft 4.5/HTML/content/"
+ :title "Neither Here Nor There"
+ :authors ["Trisdan Leyson"]
+ :heading-selector []
+ :paragraph-selector [:p]
+ :order ["episode 1.html",
+         "episode 2 - Symbollica Brutallae.html",
+         "episode 3 - Let's Be Friends.html",
+         "episode 4 - Dream with Me.html",
+         "episode 5 - Hylas and the Nymphette.html",
+         "episode 6 - Negative Capability.html",
+         "episode 7 - Crawling Baby Human.html",
+         "Episode 8 - So You Walked Back in the Revolving Door and Did It All Again.html",
+         "Episode 9 - Thug Life.html",
+         "Episode 10 - Le Coeur a Raison que la Raison ne Connaît point.html",
+         "Episode 11 - Virga pro Virginibus Rationes Habet quas illa Ratio perfecte Intellegit.html",
+         "Episode 12 - Do Robots Shave with Electric Razors.html",
+         "Episode 13 - Ask Your Doctor About.html"]
+ :cleaner (transformation
+           [#{:span :font}]
+           unwrap
+           [text-node]
+           (do->
+            #(string/replace % #"\p{Z}" " ")
+            #(string/replace % #"^\s+" "")
+            #(string/replace % #"--" "\u2014")))
+}

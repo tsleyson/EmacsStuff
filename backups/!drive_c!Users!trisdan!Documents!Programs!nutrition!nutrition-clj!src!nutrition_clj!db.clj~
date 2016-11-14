@@ -1,0 +1,53 @@
+(ns nutrition-clj.db
+  (:require [clojure.java.jdbc :as sql]
+            [clojure.edn :as edn]))
+
+(def nutrition {:classname "sun.jdbc.odbc.JdbcOdbcDriver"
+                :subprotocol "odbc"
+                :subname (str "Driver={Microsoft Access Driver (*.mdb)};"
+                              "DBQ=resources/data/CN17_Final.mdb")})
+
+(def recipes {:subprotocol "sqlite"
+              :classname "org.sqlite.JDBC"
+              :subname "resources/data/recipes.db"})
+
+;; YeSQL didn't work at all; it fucking insists the file can't be
+;; found even though it's on the fucking classpath and slurp doesn't
+;; have any trouble finding it when I use it directly.
+;; (defquery recipe-by-id "data/resources/recipe_by_id.sql")
+
+(defn make-hash
+  "Formats returned values from recipe database."
+  [a]
+  (hash-map :name (:name a)
+                 :ingredients (ingredient-lookup
+                               (edn/read-string (:ingredients a)))
+                 :instructions (:instructions a)))
+
+(defn recipe-by-id
+  [id]
+  (-> recipes
+      (sql/query
+       [(str "SELECT Name, Ingredients, Instructions "
+             "FROM recipes "
+             "WHERE ID = ?")
+        id])
+      (first)
+      (make-hash)))
+
+(defn ingredient-lookup
+  "Look up ingredients from nutrition database."
+  [ingredients]
+  (map #(let [ingredient
+              (sql/query
+               nutrition
+               [(str "SELECT ABBR_DESC FROM FDES WHERE CN_Code = " %)])]
+          ;;       Note that MS Access does not support prepared
+          ;;       statements
+          (assert (= 1 (count ingredient)))
+          (first ingredient))
+       ingredients))
+
+(defn main-
+  []
+  (println (recipe-by-id 1)))

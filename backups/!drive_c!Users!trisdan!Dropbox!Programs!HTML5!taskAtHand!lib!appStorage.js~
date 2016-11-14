@@ -1,0 +1,6 @@
+"use strict";
+
+function AppStorage(appName) {
+    var prefix = (appName? appName + "." : "");
+
+}

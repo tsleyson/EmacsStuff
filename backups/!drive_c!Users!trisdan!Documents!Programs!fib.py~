@@ -1,0 +1,11 @@
+def fib(n, acc):
+    if len(acc) == n:
+        return acc
+    else:
+        fib(n, acc.append(acc[-1] + acc[-2]))
+
+def fib_start(n):
+    return fib(n, [0, 1])
+
+if __name__ == "__main__":
+    print(fib_start(20))

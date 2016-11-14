@@ -1,0 +1,6 @@
+/* life_test.c
+ * Has tests for the game of life.
+ */
+
+int test_grid[10][15];
+

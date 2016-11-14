@@ -1,0 +1,4 @@
+# Four Algorithms Books
+At some point, you can’t get any further with linked lists, selection sort, and voodoo Big O, and you have to go get a real algorithms textbook and learn all that horrible math, at least a little. But which book? There are tons of them.
+
+I haven’t read every algorithms book out there, but I have read four of them. Maybe my experience with these four can help guide your decision. The four books are *Algorithms*, by Dasgupta, Papadimitriou, and Vazirani (hereafter called Dasgupta); *Introduction to Algorithms*, by Cormen, Leiserson, Rivest, and Stein (hereafter called CLRS); *The Algorithm Design Manual*, by Steve Skiena (hereafter called Skiena); and *The Art of Computer Programming*, Volumes 1&ndash3.

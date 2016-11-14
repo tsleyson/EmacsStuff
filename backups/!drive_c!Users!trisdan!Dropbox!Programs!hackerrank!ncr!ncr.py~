@@ -1,0 +1,21 @@
+from math import factorial
+import sys
+
+def choose(n, k):
+  return factorial(n) // (factorial(k) * factorial(n - k))
+
+def choose_list(n):
+  half = [choose(n, i) for i in xrange(0, n//2)]
+  result = []
+  result.extend(half)
+  half.reverse()
+  if n % 2 == 0:
+    result.append(choose(n, n//2))
+  else:
+    result.extend([choose(n, n//2)]*2)
+  result.extend(half)
+  return " ".join([str(x) for x in result])
+    
+inputs = [int(x) for x in sys.stdin.readlines()[1:]]
+for number in inputs:
+  print(choose_list(int(number)))

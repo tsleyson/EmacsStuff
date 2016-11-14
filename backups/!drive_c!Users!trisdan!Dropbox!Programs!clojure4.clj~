@@ -1,0 +1,79 @@
+;; A REPL session that defines a Fibonacci sequence according to the formula.
+user> (def root5 (Math/sqrt 5))
+#'user/root5
+user> root5
+2.23606797749979
+user> (def phi+ (/ (inc root5) 2))
+#'user/phi+
+user> phi+
+1.618033988749895
+user> (def phi- (/ (- 1 root5) 2))
+#'user/phi-
+user> phi-
+-0.6180339887498949
+user> (defn fibn [^double n] (* (/ 1 root5) (- (Math/pow phi+ n) (Math/pow phi- n))))
+#'user/fibn
+user> (fibn 3)
+2.0
+user> (fibn 6)
+8.000000000000002
+user> (fibn 8)
+21.000000000000004
+user> (defn fibn [^double n] (int (* (/ 1 root5) (- (Math/pow phi+ n) (Math/pow phi- n)))))
+#'user/fibn
+user> (fibn 8)
+21
+user> (fibn 6)
+8
+user> (fibn 3)
+2
+
+;; A horrendous loop-using version of Fibonacci.
+(#(loop [fibs [], n (dec %), fn-1 0, fn 1]
+    (if (zero? n)
+      fibs
+      (recur (conj fibs (+ fn-1 fn)) (dec n) fn (+ fn-1 fn))))
+ 8)
+
+;; From the Clojure docs: a lazy-seq of Fibonacci numbers.
+;; A lazy-seq of Fibonacci numbers (fn = fn-1 + fn-2)
+2	;; The producer function takes exactly two parameters
+3	;; (because we need the last 2 elements to produce a new one)
+4	user=> (defn fib [a b] (cons a (lazy-seq (fib b (+ b a)))))
+5	 
+6	user=> (take 5 (fib 1 1))
+7	(1 1 2 3 5)
+
+(defn iter2 [f x]
+        (cons x
+              (lazy-seq (iter2 f (f x)))))
+;; 4Clojure doesn't allow it, but defn actually returns the function
+;; you just defined, so you can use it just like fn.
+
+;; The cool way to find the max of a sequence
+(reduce #(if (> %1 %2) %1 %2) '(1 8 3 4))
+
+;; Another way to double all the elements of a sequence
+(for [x s, y (range 2)] x)
+;; Very useful when the number of repetitions can vary:
+#(for [x %1, y (range %2)] x)
+
+;; An insane function that converts bit strings to binary numbers.
+(defn to-decimal
+        [bitstr]
+        (letfn [(to-n? [sum pair]
+                       (if (= \0 (first pair))
+                           sum
+                         (+ (second pair) sum)))]
+               (reduce to-n? 0
+                       (partition 2
+                                  (interleave (reverse (seq bitstr))
+                                              (iterate (partial * 2) 1))))))
+#'user/to-decimal
+user> (to-decimal "1000")
+8
+
+;; You can give names to fns. This lets you use them as recur points
+;; without using letfn like I've been doing.
+(fn fib-seq [fn-1 fn]
+  (cons fn-1 (lazy-seq (fib-seq fn (+ fn-1 fn)))))

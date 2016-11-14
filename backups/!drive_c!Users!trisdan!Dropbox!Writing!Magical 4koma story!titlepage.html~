@@ -1,0 +1,8 @@
+  <div id="title-page">
+    <h1>Strawberry Sunflower</h1>
+    <h2>Book 2: Camping, Puzzles, Friends</h2>
+    <p>Text and images copyright Trisdan Leyson, 2014, all rights reserved.</p>
+    <p>Cover font: Satisfy, by David L. Cohen. Available on Google Fonts under the Apache License, version 2.0.</p>
+    <p>Visit us online at <a href="strawberrysunflower.wordpress.com">strawberrysunflower.wordpress.com</a>.
+  </div>
+<!-- We might be able to insert this automatically using Pandoc's -B command, which is like -H but for the body. Then we just change the subtitle. -->

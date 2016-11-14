@@ -1,0 +1,5 @@
+(ns madoka_population.test.entities_test
+  (:require [clojure.test :refer :all]
+            [incanter.stats :as stats[]]
+            [madoka_population.entities :as entities]))
+

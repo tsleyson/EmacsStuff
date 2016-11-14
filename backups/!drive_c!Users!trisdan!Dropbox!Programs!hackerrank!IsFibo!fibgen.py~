@@ -1,0 +1,6 @@
+def fib_gen():
+    "Generate a Fibonacci sequence."
+    cur = 0
+    nextfib = 1
+    while True:
+        yield 

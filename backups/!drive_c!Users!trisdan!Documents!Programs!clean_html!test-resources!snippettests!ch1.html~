@@ -1,0 +1,7 @@
+<html>
+  <head><title>The First Test Chapter 1: Testing in the Rain</title></head>
+  <body>
+    <p class="standard">It was raining the day we went out to test the Clojure application.</p>
+    <p class="standard">I'll never forget that rain, or that Clojure application.</p>
+    <p class="heading">Chapter 1: Testing in the Rain</p>
+    <p class="standard">

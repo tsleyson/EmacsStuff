@@ -1,0 +1,23 @@
+import sys
+
+def check_digits(digitstr):
+  for digit in digitstr:
+    if digit not in ('0', '9'): return False 
+  return True
+
+def zero_nine(multstring):
+  multiplier = current = int(multstring)
+  check = check_digits(multstring)
+  while not check:
+    current += multiplier
+    # Anything with just 9's and 0's has a digit sum divisible by
+    # 9, so is itself divisible by 9. But not everything divisible
+    # by 9 has just 0's and 9's, so we have to check the digits.
+    if current % 9 == 0:
+    	check = check_digits(str(current))
+  return current
+
+if __name__ == "__main__":
+  tests = sys.stdin.readlines()[1:]
+  for test in tests:
+    print(zero_nine(test))

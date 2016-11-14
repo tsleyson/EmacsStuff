@@ -1,0 +1,14 @@
+/* Problem 6.21 of EPI */
+import java.util.Set;
+import java.util.HashSet;
+
+public class Sudoku {
+    
+    public static check_sudoku(int[][] sud) {
+        
+    }
+    
+    public static void main(String[] args) {
+
+    }
+}

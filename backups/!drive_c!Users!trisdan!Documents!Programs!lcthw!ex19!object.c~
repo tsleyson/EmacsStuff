@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "object.h"
+#include <assert.h>
+
+void Object_destroy(void *self) {
+    Object *obj = self;
+
+    if (obj) {
+        if (obj->description) {
+            free(obj->description);
+        }
+        free(obj);
+    }
+}

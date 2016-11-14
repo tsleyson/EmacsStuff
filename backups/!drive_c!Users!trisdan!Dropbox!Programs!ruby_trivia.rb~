@@ -1,0 +1,6 @@
+# Get a directory object
+Dir["/path/to/search"]
+# You can use globs, like
+Dir["/path/*.rb/"]
+# or you can do
+Dir.entries("/path/to/search").select {|f| File.file? f}

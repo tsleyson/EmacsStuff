@@ -1,0 +1,26 @@
+var sorter = {
+    sortBy : function (tableID, keyFn) {
+        // tableID is the id of the table you want to sort.
+        // keyFn is a function that extracts the key to sort by, given
+        // a row.
+        var table = $('#' + tableID);
+        var rows = $('#' + tableID + " tbody tr");
+
+        try {
+             rows.sort(function(r1, r2) {
+                 var n1 = keyFn(r1);
+                 var n2 = keyFn(r2);
+                 return n1 < n2? -1 : n1 > n2? 1 : 0;
+             });
+        } catch (exc) {
+            alert(exc.origin + " " + exc.reason);
+        }
+        $.each(rows, function(index, row) {
+            table.children('tbody').append(row);
+        });
+    }
+}
+
+// Regexps for extracting the number from manga chapters:
+// var checks = [/Navigation\s+(\d+)/,
+//               /Special\s+Navigation\s+\([vV]ol\.?\s+(\d+)\)/];

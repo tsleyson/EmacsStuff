@@ -1,0 +1,59 @@
+;; How to use require and refer from the repl.
+(require '[libretokindlehtml.merge-files :refer [mine-all]] :reload)
+
+;; How to both destructuring bind elements from a vector and keep the
+;; original vector around too.
+(let [[a b :as xs] [2 3]]
+  (println a)
+  (println b)
+  (println xs))
+;; prints 2 3 [2 3]
+
+;; How to destructuring bind from maps more concisely
+(let [{:keys [a b c]} {:a \a :b \b :c \c}]
+  (println (apply str (interpose " " [a b c]))))
+;; It expects the map to have keys a, b, c as keywords (:a, :b, :c).
+;; It reads those into symbols a, b, c.
+;; You can also use :strs and :syms for string keys or symbol keys.
+;; See The Joy of Clojure, Page 49.
+;; This also works with function argument vectors:
+(defn square-root-seq
+  "Generate sequence of square-roots of a^(n-1)."
+  [a m {:keys [odd-part power]}]
+  (iterate #(mod (* % %) m) (exp-by-squaring a odd-part m)))
+;; from my miller-rabin program. (I ended up not needing `power`, so
+;; the final version doesn't do this; that's why I copied it here.)
+user> (let [{:strs [a b c]} {"a" \a "b" \b "c" \c}]
+        (println (apply str (interpose " " [a b c]))))
+user> (let [{:syms [a b c]}
+            {'a \a 'b \b 'c \c}]
+        (println (apply str (interpose " " [a b c]))))
+;; Use :or to assign a default value for a key that's not in the map.
+(let [{:keys [a b c d] :or {d 22}} {:a \a :b \b :c \c}]
+  (println (apply str (interpose " " [a b c d]))))
+;; Would print a b c 22.
+
+;; You can also use the map form with a vector. Just give integer
+;; indices instead of keys.
+(let [{a 0, c 2 :as chars} [\a \b \c \d]]
+  (println (apply str (interpose " " [a c]))))
+;; Prints a c.
+
+;; How to run a Clojure file from the REPL. Works like
+;; os.system("python blh.py") in Python.
+(load-file "name of file.clj")
+
+;; keep and keep-indexed are like map and map-indexed, but they
+;; automatically drop nils from the returned collection.
+;; Instead of this:
+(-> coll
+    (map-indexed #(when (> 3 %) %2))
+    (remove nil?))
+;; you can do this:
+(keep-indexed #(when (> 3 %) %2) coll)
+;; And instead of this:
+(-> coll
+    (map #(when (> 3 %) %))
+    (remove nil?))
+;; you can do this:
+(keep #(when (> 3 %) %) coll)

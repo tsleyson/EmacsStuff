@@ -1,0 +1,8 @@
+
+public class Euler5Seq
+{
+    private static checkDivisibility(long candidate)
+    {
+        
+    }
+}

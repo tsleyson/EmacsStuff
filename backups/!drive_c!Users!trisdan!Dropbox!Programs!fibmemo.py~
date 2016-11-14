@@ -1,0 +1,24 @@
+memo = [0, 1]
+
+def fib_memo(n):
+    if 0 <= n < len(memo):
+        return memo[n]
+    else:
+        return fib_helper(memo[-2], memo[-1], n - 2)
+
+def fib_helper(a, b, n):
+    if n == 0:
+        memo.append(a+b)
+        return memo[-1]
+    else:
+        memo.append(a+b)
+        return fib_helper(b, a+b, n-1)
+
+if __name__ == "__main__":
+    ns = [1, 2, 3, 5, 8, 13, 7]
+    for i in ns:
+        print("{0}".format(fib_memo(i)))
+    print("{0}".format(fib_memo(5)))
+    print(memo)
+    print("{0}".format(len(memo)))
+

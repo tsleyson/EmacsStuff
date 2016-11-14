@@ -1,0 +1,55 @@
+\documentclass[
+  fontsize=11pt,
+  paper=a4,
+  parskip=half,
+  enlargefirstpage=on,    % More space on first page
+  fromalign=right,        % Placement of name in letter head
+%  fromphone=on,           % Turn on phone number of sender
+  fromemail=on,
+  fromrule=aftername,     % Rule after sender name in letter head
+  %addrfield=on,           % Address field for envelope with window
+  backaddress=off,         % Sender address in this window
+  subject=left,  % Placement of subject
+%  locfield=narrow,        % Additional field for sender
+  foldmarks=off,           % Print foldmarks
+  addfield=false
+]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+
+\makeatletter
+\@setplength{sigbeforevskip}{\parskip}
+\@setplength{refvpos}{\useplength{toaddrvpos}}
+\@setplength{toaddrheight}{1cm}
+\@setplength{locheight}{1cm}
+\makeatother
+
+\setkomafont{fromname}{\sffamily \Large}
+\setkomafont{fromaddress}{\sffamily}%% statt \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\bfseries}
+\setkomafont{backaddress}{\mdseries}
+
+\LoadLetterOption{DIN}
+\setkomavar{fromname}{Trisdan Leyson}
+\setkomavar{fromaddress}{2343 Kirkham St.\\San Francisco, CA 94122}
+%\setkomavar{fromphone}{(530) 692-9040}
+\setkomavar{fromemail}{trisdan.leyson@gmail.com}
+\setkomavar{backaddressseparator}{\enspace\textperiodcentered\enspace}
+\setkomavar{signature}{Trisdan S. Leyson}
+%\setkomavar{place}{Oregon House}
+\setkomavar{date}{\today}
+\setkomavar{subject}{Software Intern}
+\setkomavar{enclseparator}{: }
+
+\begin{document}
+  \begin{letter}{~}
+    \opening{Dear Brightidea Team:}
+    You're looking for a bright, passionate, energetic software intern. I'm a bright, passionate software developer looking to find a job and move out of my parents' house. We can help each other.
+
+    I'll soon be graduating from UC Davis with a Bachelor's of Science in computer science. I programmed with a variety of languages in school, including C++, Java, and several more esoteric ones; I also taught myself Python, some Javascript, and Clojure, a Lisp dialect for the JVM. I have projects in these three on GitHub, at \hyperref{http://github.com/tsleyson}{http://github.com/tsleyson}. I also taught myself some CSS and HTML, and recently read \textit{Dive into HTML5} to learn the basics of HTML5. 
+    \closing{Thank you for your time,}
+  \end{letter}
+\end{document}

@@ -1,0 +1,12 @@
+<?php
+class tree_node {
+    public $data;
+    public $left;
+    public $right;
+
+    function __construct($data, $left, $right) {
+        $this->data = $data;
+        $this->left = $left;
+        $this->right = $right;
+    }
+}

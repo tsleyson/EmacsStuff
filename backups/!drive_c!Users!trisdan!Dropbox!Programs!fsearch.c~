@@ -1,0 +1,14 @@
+/* Exercise 13-11 of C Primer Plus.
+   Takes a string and a file, searches for the string
+   in the file.
+*/
+#include <stdio.h>
+#include <string.h>
+
+
+int main(int argc, char** argv) {
+    if (argc < 2) {
+        fputs(STDERR, "Usage: fsearch <string to look for> <file to search in>");
+        return 1;
+    }
+}

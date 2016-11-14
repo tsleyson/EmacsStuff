@@ -1,0 +1,20 @@
+# Problem 16.2 of EPI.
+# The folder regex contains a plan for a much more complex Java
+# version that goes way further than the question asks you to.
+# (That version was going to support +, ?, {}, |, and [], and
+# build an abstract syntax tree; the question just asks you to
+# support ., ^, *, and $.
+
+def match_regex(s, re):
+    """
+    Match a regex with just ^, $, . and *.
+
+    >>> match_regex("hello", "hello")
+    True
+    
+    >>> match_regex("hello", "^hel*")
+    True
+
+    >>> match_regex("hello", "h*el$")
+    False
+    """

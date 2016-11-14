@@ -1,0 +1,5 @@
+// Tests to make sure the binary search tree works right,
+// since I'm awful at C.
+
+#include <stdio.h>
+#include "bintree.h"

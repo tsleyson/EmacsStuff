@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <assert.h>
+
+typedef struct c {
+    int row;
+    int col;
+} coord;
+
+void locate(char grid[101][101], char target, int n, coord* location) {
+  unsigned int i, j;
+  for (i = 0; i < n; ++i) {
+      for (j = 0; j < n; ++j)
+        if (grid[i][j] == target) {
+       		location->row = i;
+        	location->col = j;
+        	return;
+      }
+    }
+}
+void displayPathtoPrincess(int n, char grid[101][101]) {
+    coord princessloc, botloc;
+    char* dirs[] = {"UP", "RIGHT", "LEFT", "DOWN"};
+    // Start at N on compass, move clockwise; count moves
+    // before reaching desired dir to get lookup index.
+    locate(grid, 'p', n, &princessloc);
+    locate(grid, 'm', n, &botloc);
+    
+    coord movements;
+    int rowindex, colindex; // Indices into dirs array.
+    movements.row = botloc.row - princessloc.row < 0? -1 : 1;
+    movements.col = botloc.col - princessloc.col < 0? -1 : 1;
+    rowindex = movements.row  < 0? 0 : 3;
+    colindex = movements.col  < 0? 1 : 2;
+
+    while (botloc.row != princessloc.row && botloc.col != princessloc.col) {
+        botloc.row += movements.row;
+        printf("%s", dirs[rowindex]);
+        botloc.col += movements.col;
+        printf("%s", dirs[colindex]);
+    }
+}
+int main(void) {
+
+    int m, i;
+    scanf("%d", &m);
+    char grid[101][101]={};
+    char line[101];
+
+    for(i=0; i<m; i++) {
+        scanf("%s", line);
+        strcpy(grid[i], line);
+    }
+    displayPathtoPrincess(m,grid);
+    return 0;
+}

@@ -1,0 +1,16 @@
+<!-- See Mkyong.com -->
+<?xml version="1.0"?>
+<company>
+  <staff>
+    <firstname>yong</firstname>
+    <lastname>mook kim</lastname>
+    <nickname>mkyong</nickname>
+    <salary>1</salary>
+  </staff>
+  <staff>
+    <firstname>low</firstname>
+    <lastname>yin fong</firstname>
+    <nickname>fong fong</nickname>
+    <salary>2</salary>
+  </staff>
+</company>

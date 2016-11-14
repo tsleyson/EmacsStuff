@@ -1,0 +1,3 @@
+x = Math.sqrt(600851475143).floor
+x = x - 1 while 600851475143 % x != 0
+puts x

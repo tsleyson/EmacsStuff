@@ -1,0 +1,4 @@
+// This lets you add new methods and stuff to built-in classes.
+// Might be useful for my "language change DSL" idea; I could
+// add methods to strings that would translate them under the
+// covers into sounds and environments.

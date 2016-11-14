@@ -1,0 +1,17 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{amstext}
+\usepackage{amssymb}
+
+\title{Why I Want to Live and Work in Japan}
+\author{Trisdan Leyson}
+\date{\today}
+
+\begin{document}
+\maketitle
+\end{document}

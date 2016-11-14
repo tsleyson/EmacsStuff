@@ -1,0 +1,35 @@
+(ns nutrition-clj.layout
+  (:require [clojure.string :as s]
+            [clojure.java.io :refer [file]]
+            [ring.util.response :refer [content-type response]]
+            [compojure.response :refer [Renderable]]
+            [environ.core :refer [env]]
+            [net.cgrand.enlive-html :refer :all]
+            [nutrition-clj.db :refer [ingredient-str]]))
+
+;; Add functions to render pages with Enlive.
+;; I stripped out all the Selmer stuff that was in here.
+
+(comment block-render is a snippet or another template whose
+         content will be put in the page's main block.)
+
+(deftemplate base (file "resources/templates/base.html")
+  [block-render & args]
+  [:#main] (content (apply block-render args)))
+
+;; Just use a single stylesheet (defsnippet head (file ""))
+
+(defsnippet recipe (file "resources/templates/recipe.html") [:.recipe]
+  [name ingredients instructions]
+  [:h2]
+  (content name)
+  [:#ingredients :#ingredient_list :li]
+  (clone-for [ingredient ingredients]
+             [:li] (content (ingredient-str ingredient)))
+  [:#instructions :#instruction_list :li]
+  (clone-for [step instructions]
+             [:li] (content step)))
+
+(defn entry
+  []
+  (html-resource (file "resources/templates/entry.html")))

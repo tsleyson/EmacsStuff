@@ -1,0 +1,26 @@
+Plan to make Connect 4 multithreaded:
+
+Instead of using iterative deepening, assign different recursion
+depths to several worker threads. Each thread goes down to the
+assigned depth and evaluates all the boards at that depth, storing
+the results in a cache.
+
+Make an array where each level of recursion depth has an array list
+in which it can store its calculated values and the sequence of
+moves that led to that board. (Maybe use a treemap--probably they can
+be sorted, and probably in logarithmic time, and then we can use the
+move sequence as a key and the value as the value.)
+
+[It would actually be better if we could reuse these values. Here's how
+to do it: 
+
+The threads store the calculated values in the cache array. The cache
+array also has a seal array of booleans. When a thread finishes with
+a recursion depth, it unseals that bucket in the cache and calls
+notify().
+
+Upon starting a turn, the main method (whatever it was called) begins
+another thread which waits to be notified. Every time it's notified,
+it looks through the cache for the bucket with the highest recursion
+depth and then finds the max value and uses the move associated with
+that value as the 

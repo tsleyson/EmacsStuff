@@ -1,0 +1,2 @@
+# Using win32ole to access an MS Access database with Ruby.
+require 'win32ole'

@@ -1,0 +1,4 @@
+/* Exercise 13-12 of C Primer Plus.
+   Read a file of numbers and print out weird ASCII art
+   of it.
+ */

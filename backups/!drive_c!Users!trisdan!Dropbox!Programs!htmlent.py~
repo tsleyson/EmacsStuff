@@ -1,0 +1,5 @@
+# A tool to convert all Unicode characters to HTML character entities.
+import sys
+
+u"—Möbius strips? A Gödelian concept indeed.".encode('ascii', 'xmlcharrefreplace')
+# Returns '&#226;&#128;&#148;M&#195;&#182;bius strips? A G&#195;&#182;delian concept indeed.'

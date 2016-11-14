@@ -11,16 +11,23 @@
 (set-default 'ξ-font-list
              (cond ((string-equal system-type "windows-nt")
                     '(
+                      "Ubuntu Mono 12"
                       "DejaVu Sans Mono-10"
                       "Lucida Console-10"
                       "Lucida Sans Unicode-10"
-                      "Constantia-10"
+                      "Gentium Book Basic-12"
+                      "Simonetta-12"
+                      "Constantia-12"
+                      "Noto Serif-11"  ; Mamiko Noto's font.
                       ))
                    ((string-equal system-type "linux")
                     '("Ubuntu Mono-12"
-                      "DejaVu Sans Mono-12"))))
+                      "DejaVu Sans Mono-12"))
+                   ((string-equal system-type "Darwin")
+                    '("Monaco-12"
+                      "Cochin-14"))))
                                         ; Don't bother adding Mac.
-
+					; Now is the time to add Mac.
 (defun cycle-font (ξ-n)
   "Change font in current frame.
 Each time this is called, font cycles through the list of fonts in 

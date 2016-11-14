@@ -1,0 +1,1 @@
+Don't type django-admin.py when you start up a project; just type django-admin. There's an exe in the Python folder that it runs if you do that. 

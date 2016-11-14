@@ -1,0 +1,8 @@
+# Problem 5.3 of EPI.
+def reverse_bits(x):
+    y = 0
+    while x > 0:
+        y |= x
+        x >>= 1
+        y <<= 1
+    return y

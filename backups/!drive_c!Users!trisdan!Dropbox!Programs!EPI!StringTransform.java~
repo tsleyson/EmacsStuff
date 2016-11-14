@@ -1,0 +1,202 @@
+/* Problem 19.5 of EPI */
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Queue;
+import java.util.ArrayDeque;
+import java.util.Set;
+import java.util.HashSet;
+
+public class StringTransform {
+    public static class AdjListGraph<V> {
+        private Map<V, List<V>> storage;
+        
+        public AdjListGraph(List<V> vertices) {
+            storage = new HashMap<>();
+            for (V vertex : vertices) {
+                storage.put(vertex, new ArrayList<V>());
+            }
+        }
+
+        public AdjListGraph(List<V> vertices, List<List<V>> edges) {
+            storage = new HashMap<>();
+            for (V vertex : vertices) {
+                storage.put(vertex, new ArrayList<V>());
+            }
+            addEdges(edges);
+        }
+
+        public AdjListGraph<V> addEdge(V v, V u) {
+            storage.get(v).add(u);
+            storage.get(u).add(v);
+            return this;  //  For chained calls.
+        }
+
+        public AdjListGraph<V> addEdges(List<List<V>> edges) {
+            for (List<V> pair : edges) {
+                if (pair.size() != 2) {
+                    throw new IllegalArgumentException("Pairs must have " +
+                                                       "two elements.");
+                }
+                addEdge(pair.get(0), pair.get(1));
+            }
+            return this;
+        }
+
+        public List<V> getNeighbors(V v) {
+            // Defensive copying. Only copies list, not elements,
+            // but since we're using immutable elements--strings--it's
+            // fine.
+            return new ArrayList<V>(storage.get(v));
+        }
+
+        public int bfsPathLength(V u, V v) {
+            Set<V> seen = new HashSet<>();  // Mark investigated nodes.
+            Map<V, V> prev = new HashMap<>();  // Trail back.
+            Queue<V> next = new ArrayDeque<>();
+            next.offer(u);
+            while(next.size() > 0) {
+                V n = next.poll();
+                if (n.equals(v)) {
+                    return followTrail(prev, u, v);
+                }
+                for (V neighbor : getNeighbors(n)) {
+                    if (!seen.contains(neighbor)) {
+                        prev.put(neighbor, n);
+                        next.offer(neighbor);
+                    }
+                }
+            }
+            return -1;  // No trail from u to v.
+        }
+
+        private int followTrail(Map<V, V> prev, V u, V v) {
+            int count = 0;
+            V n = v;
+            for (; n != u; ++count) {
+                n = prev.get(n);
+            }
+            return count;
+        }
+
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            for (V v : storage.keySet()) {
+                sb.append(v + ": ");
+                List<V> adjList = storage.get(v);
+                for (V u : adjList) {
+                    sb.append(" " + u);
+                }
+                sb.append("\n");
+            }
+            return sb.toString();
+        }
+    }
+
+    public static class Transform {
+        private Map<Integer, AdjListGraph<String>> g;
+        // g isn't a connected graph; strings with different lengths
+        // won't share any edges since insertions and deletions aren't
+        // allowed. Each value is a connected component of strings
+        // with a given length.
+        
+        // private static final Comparator<String> lenComp =
+        //     new Comparator<String>() {
+        //     @Override public int compare(String s, String t) {
+        //         return s.length() > t.length()?
+        //         1 : s.length() < t.length()? -1 : 0;
+        //     }
+        // };
+        
+        public Transform(List<String> dict) {
+            g = new HashMap<Integer, AdjListGraph<String>>();
+            linkWords(dict);
+        }
+
+        public int canTransform(String s, String t) {
+            // do a bfs on the graph.
+            if (s.length() != t.length()) {
+                return -1;  // Can't transform.
+            }
+
+            AdjListGraph<String> it = g.get(s.length());
+            return it.bfsPathLength(s, t);
+        }
+
+        private void linkWords(List<String> dict) {
+            Map<Integer, List<String>> groups = partitionByLength(dict);
+            for (Integer i : groups.keySet()) {
+                List<String> words = groups.get(i);
+                AdjListGraph<String> iGraph =
+                    new AdjListGraph<String>(words, buildEdgeList(words));
+                g.put(i, iGraph);
+                // linkWords is private and only called from the
+                // constructor, and the class is outwardly immutable,
+                // so we know g is always empty at this point.
+            }
+        }
+
+        private Map<Integer, List<String>> partitionByLength(
+            List<String> dict) {
+            Map<Integer, List<String>> partitions = new Hash// Map<>();
+    //         for (String s : dict) {
+    //             Integer len = s.length();
+    //             if (partitions.containsKey(len)) {
+    //                 partitions.get(len).add(s);
+    //             }
+    //             else {
+    //                 ArrayList<String> entry = new ArrayList<>();
+    //                 entry.add(s);
+    //                 partitions.put(len, entry);
+    //             }
+    //         }
+    //         return partitions;
+    //     }
+
+    //     private ArrayList<List<String>> buildEdgeList(List<String> words) {
+    //         ArrayList<List<String>> pairs = new ArrayList<>();
+    //         for (String s : words) {
+    //             for (String t : words) {
+    //                 if (diff(s, t) == 1) {
+    //                     pairs.add(Arrays.asList(s, t));
+    //                 }
+    //             }
+    //         }
+    //         return pairs;
+    //     }
+
+    //     private int diff(String s, String t) {
+    //         // Finds number of characters that differ.
+    //         assert s.length() == t.length() : "diff is undefined " +
+    //             "when lengths differ.";
+    //         int count = 0;
+    //         for (int i = 0; i < s.length(); ++i) {
+    //             if (s.charAt(i) != t.charAt(i)) {
+    //                 ++count;
+    //             }
+    //         }
+    //         return count;
+    //     }
+
+    // }
+    
+    public static void main(String[] args) {
+        List<String> d = Arrays.asList("hell", "help", "heck", "helt",
+                                       "herk", "heroic", "hernic",
+                                       "helk", "hernia", "harnic",
+                                       "anaximander");
+        
+        Transform t = new Transform(d);
+        System.out.println(t.canTransform("hell", "help"));
+        System.out.println(t.canTransform("hell", "heck"));
+        System.out.println(t.canTransform("heroic", "hernia"));
+        System.out.println(t.canTransform("anaximander", "harnic"));
+
+        System.out.println(t.g.get(4));
+        System.out.println(t.canTransform("herk", "helt"));
+                // Above causes infinite loop, I believe due to
+                // duplicates in adjacency list.
+    }
+}

@@ -1,0 +1,3 @@
+# Network.py
+# The Python implementation of the actual network. Does not include
+# backpropagation.

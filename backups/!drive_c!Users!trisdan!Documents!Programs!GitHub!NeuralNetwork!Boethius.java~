@@ -1,0 +1,695 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Collections;
+import javax.swing.JOptionPane;
+
+public class Boethius {
+  public static boolean debug = false; //for debugging
+  public static boolean testing = false;	
+  	// true = test; false = verify. This means we always must do one or the other, we
+  	// can't just train, but I think that's probably okay.
+  	
+  //hold the list of the files from the directory passed in
+  /* Because of the new way the files are handled, we probably don't need
+  	 maleFiles and femaleFiles to be class members, but I'm lazy. */
+  private File[] maleFiles;	
+  private File[] femaleFiles;
+  private File[] testFiles;	// We just run straight over these so they don't need to be an ArrayList.
+  private ArrayList<File> allTraining;
+  private static final int FEMALE = 1;
+  private static final int MALE = 0;
+  private static final int HIDDEN_NEURONS = 5;
+  private static final int OUTPUT_NEURONS = 1;
+  private static final int HIDDEN_LAYERS = 1;
+  private static final int PROPAGATION_LIMIT = 3;	// How many times to do back propagation.
+  
+  private static String femaleDir = "", maleDir = "", testDir = "";  
+  	// So we can tell which directory a file came from while doing verification;
+  	// we can find out whether a file is male or female by looking at what directory
+  	// it came from.
+  
+  //private Network trainedNet;		// Holds the trained network so we can run tests with it.
+  
+  /* java main method
+  * where everything begins
+  */
+  public static void main(String[] args) 
+  {
+  	long begin = System.nanoTime();
+    //parse the command line arguments
+    try 
+    {
+      Boethius obj = new Boethius();
+      //parsing the args
+      int i = 0;
+      while(i < args.length) 
+      {
+        // -train female male
+        if(args[i].equalsIgnoreCase("-train")) 
+        {          
+          //female
+          System.out.println("female directory: " + args[i+1]);
+          femaleDir = args[i+1];
+          //male
+          System.out.println("male directory: " + args[i+2]);
+          maleDir = args[i+2];
+          i++;//skip over 1 arg
+        }
+        else if(args[i].equalsIgnoreCase("-test")) 
+        {
+          //test -test
+          System.out.println("test: " + args[i+1]);
+          Boethius.testing = true;
+          testDir = args[i+2];
+          i++;
+        }
+        else if(args[i].equalsIgnoreCase("-debug")) //for debugging
+        {
+          System.out.println("set debug to: " + args[i+1]);
+          Boethius.debug = Boolean.parseBoolean(args[i+1]);
+        }
+        else if (args[i].equalsIgnoreCase("-verify"))
+        {
+          System.out.println("verify: true");
+          Boethius.testing = false;
+          // Note: if we have both test and verify, verification always wins.
+        }
+        i += 2;
+      }
+      
+      //If we got actual female directory and male directory
+      if(!femaleDir.equals("") && !maleDir.equals(""))
+      {
+        //get file list from directory
+        obj.setFemaleList(obj.getFileList(femaleDir));
+        obj.setMaleList(obj.getFileList(maleDir));
+        if (!testDir.equals(""))
+        	obj.setTestList(obj.getFileList(testDir));
+          
+        obj.readDatas(); //read in the data from the file. From here all execution takes place 
+        				 //inside nonstatic methods of class Boethius so private data is accessible.
+      }
+      else { // doesn't have femaleDir or maleDir
+      	  System.out.println("Usage: java Boethius [-train <fem-dir> <masc-dir>]" +
+			     " [-test <test-dir>] [-debug true]");
+      }
+      long end = System.nanoTime();
+      double minutes = (double)((end-begin)/1000000000)/60;
+      System.out.println("Completed in " + minutes + " minutes.");
+      JOptionPane.showMessageDialog(null, "Completed in " + minutes + " minutes.");
+    }
+    catch (Exception e) 
+    {
+      System.err.println("Error: " + e.getMessage());
+      e.printStackTrace();
+    }
+  }
+
+  /*
+   * This method is used to get an array of filenames from a local directory 
+   */
+  private File[] getFileList(String localDir) 
+  {
+    try {
+      File folder = new File(localDir);
+      File[] listOfFiles = folder.listFiles();
+      if(listOfFiles.length == 0)
+      {
+    	  //TODO: this error throw will need to be changed but it's not important
+        throw new NullPointerException("Path not found or directory empty.");
+      }
+      if(debug == true) 
+      {
+        System.out.println("Dir: " + localDir);
+        for (int i = 0; i < listOfFiles.length; i++) 
+        {
+          if(listOfFiles[i].isFile()) 
+          {
+            System.out.println("File " + listOfFiles[i].getName());
+          }
+          else if (listOfFiles[i].isDirectory()) 
+          {
+            System.out.println("Dir " + listOfFiles[i].getName());
+          }
+        }
+      }
+      return listOfFiles;
+    }
+    catch (NullPointerException ne) {
+      throw new NullPointerException(ne.getMessage());
+    }
+    //return listOfFiles;
+  }
+  
+  private void buildFileList()
+  {
+  	// Build list of all files; alternate female and male, then randomly shuffle
+  	// them (using a consistent seed so we can reproduce the test).
+  	allTraining = new ArrayList<File>();
+    for (int i = 0; i < femaleFiles.length && i < maleFiles.length; i++)
+    {
+    	allTraining.add(femaleFiles[i]);
+    	allTraining.add(maleFiles[i]);
+    }
+    Collections.shuffle(allTraining, new Random(22));  
+  }
+  
+  // Separates the training data into five random folds. Each is just a
+  // view on the original data so the lists should not be modified at
+  // all.
+  private ArrayList<List<File>> foldUp()
+  {
+	ArrayList<List<File>> folds = new ArrayList<>();
+	Collections.shuffle(allTraining, new Random(System.nanoTime()));	
+		// Randomly shuffle data again.
+	/* Assume that the number of training data is divisible by 5. */
+	int foldSize = allTraining.size()/5;
+	for (int i = 0, pos = 0; i < 5; i++, pos+=foldSize)
+	{
+		folds.add(allTraining.subList(pos, pos+foldSize));
+	}
+	if (debug)
+	{
+		for (int i = 0; i < folds.size(); i++)
+		{
+			System.out.println("Printing fold " + i);
+			for (int j = 0; j < folds.get(i).size(); j++)
+			{
+				System.out.println(folds.get(i).get(j));	
+			}
+		}
+	}
+	assert folds.size() == 5 : "Should have 5 folds.";
+	return folds;
+  }
+  
+  private Network buildNetwork()
+  {
+    Network net = new Network();
+    net.addLayer(new Layer(HIDDEN_NEURONS));
+    net.addLayer(new Layer(HIDDEN_NEURONS));
+	net.addLayer(new Layer(HIDDEN_NEURONS));
+	net.addLayer(new Layer(HIDDEN_NEURONS));
+	net.addLayer(new Layer(HIDDEN_NEURONS));
+	net.addLayer(new Layer(HIDDEN_NEURONS));
+	net.addLayer(new Layer(HIDDEN_NEURONS));
+    net.addLayer(new Layer(OUTPUT_NEURONS));
+    return net;
+  }
+  
+  /*
+   * This method is meant to read all the datas in and perhaps call the training
+   * function?
+   */
+  private void readDatas() throws FileNotFoundException 
+  {
+
+    buildFileList();
+    Network net = buildNetwork();
+
+    if (testing)
+    {
+    	if (debug) System.out.println("Testing!!");
+		//begin loop of propagation
+		// will need to figure out termination condition!
+		for(int i = 0; i < PROPAGATION_LIMIT; i++)
+		{
+		  net.BackPropagation(allTraining);
+		  	// ArrayList conforms to List, so there shouldn't be a type clash.
+		}
+		/** Add test-performing code here. */
+    }
+    else	// We're verifying; do cross-fold validation.
+    {
+    	/* 1. Split allTraining into five folds.
+    	   2. Feed four of them to the network.
+    	   3. Run a test on the fifth one.
+    	   4. Pick another fold to be the verification fold.
+    	   5. Stop when all five have been the verification fold. */
+    	if (debug) System.out.println("Verifying!!");
+    	ArrayList<List<File>> folds = foldUp(); 
+    	ArrayList<Double> sample = new ArrayList<>();
+    	for (int excluded = 4; excluded >= 0; excluded--)
+    	{
+    		if (debug) System.out.println("Excluding fold " + excluded);
+			for (int i = 0; i < PROPAGATION_LIMIT; i++)
+			{
+				for (int k = 0; k < 5; k++)
+				{
+					if (k != excluded)
+						net.BackPropagation(folds.get(k));
+				}
+			}
+			sample.add(measureAccuracy(net, folds.get(excluded)));
+			net = buildNetwork();	// Wipe out the old training and start anew.*/
+		}
+		double[] stats = statistics(sample);
+		System.out.println("Mean: " + stats[0] + "\nStandard Deviation: " + stats[1]);
+    }
+    //trainedNet = net;	// Save the final version of the network to work with further.
+  }
+  
+  private double[] statistics(List<Double> sample)
+  {
+  	double[] stats = new double[2];	// Index 0 is the mean; index 1 is the standard deviation.
+  	// First calculate the mean.
+  	stats[0] = 0.0;	// Just to be safe; I think it's 0.0 by default though.
+  	for (Double d : sample)
+  		stats[0] += d;
+  	stats[0] /= sample.size();
+  	// Now the standard deviation.
+  	stats[1] = 0.0;
+  	for (Double d : sample)
+  		stats[1] += (d - stats[0])*(d - stats[0]);
+  	stats[1] /= (sample.size()-1);
+  	stats[1] = Math.sqrt(stats[1]);
+  	
+  	return stats;
+  }
+  
+  // Runs several tests and returns the percentage of correct answers.
+  private Double measureAccuracy(Network net, List<File> testData) throws FileNotFoundException
+  {
+  	  List<Integer> data;
+      double ou;	// We might need this as a separate variable for doing confidence later.
+      int decision, actual, correct = 0;
+      String provenance;
+      for (File f : testData) {
+        if(debug) 
+        {
+          System.out.println("From measureAccuracy: processing file: " + f);
+        }
+        data = readData(f);
+        ou = net.test(data);
+        decision = (int)Math.round(ou);	// 0 => Male; 1 => Female.
+        provenance = f.getParent();
+        actual = provenance.equals(maleDir)? MALE : FEMALE;
+        assert provenance.equals(maleDir) || provenance.equals(femaleDir) : 
+        	"Invalid directory " + provenance + " in measureAccuracy.";
+        if (debug) System.out.println("decision: " + decision + " actual " + actual + 
+        	" decision == actual = " + (decision == actual));
+        if (decision == actual)
+        	++correct;
+      }
+      double percent_correct = (double)correct/testData.size();
+      	// Java is the dumbest language ever. At least, until I have to use C++ again.
+      if (debug) System.out.println("measureAccuracy measured " + percent_correct +
+      	  " accuracy and found " + correct + " correct answers over " + testData.size() +
+      	  " data.");
+      assert 0 <= percent_correct && percent_correct <= 1 : "You somehow have worse than 0% or " +
+      	" better than 100% accuracy.";
+      return percent_correct;
+  }
+  
+  /*
+   * Feed this method 1 file and it will spit out the list of data
+   */
+  private List<Integer> readData(File file) throws FileNotFoundException 
+  {
+    if(debug)
+    {
+      System.out.println("read data for " + file.getName());
+    }
+    List<Integer> values = new ArrayList<Integer>();
+    try {      
+      Scanner scanner = new Scanner(file);
+
+      while (scanner.hasNext()) {
+        values.add(Integer.parseInt(scanner.next()));
+        //if(debug) 
+        //{
+        //  System.out.println(values.get(values.size()-1));
+        //}        
+      }
+      if(debug)
+      {
+        System.out.println("count: " + values.size());
+      }
+    }
+    catch (FileNotFoundException e) {
+      throw new FileNotFoundException(e.getLocalizedMessage());
+    }
+    return values;
+  }
+
+  private void setMaleList(File[] male)
+  {
+    maleFiles = male;
+  }
+
+  private void setFemaleList(File[] female) 
+  {
+    femaleFiles = female;
+  }
+  
+  private void setTestList(File[] test)
+  {
+    this.testFiles = test;
+  }
+
+  private File[] getMaleList() 
+  {
+    return maleFiles;
+  }
+  
+  private File[] getFemaleList()
+  {
+    return femaleFiles;
+  }
+  
+  /*
+   * A neuron has many inputs and one output 
+   * [w_i]->[Neuron]->output
+   */
+  public class Neuron 
+  {
+    private double inputSum = 0; //sum of the inputW
+    private double output = 0;
+    private double learningRate = 0.05; 
+    
+    private List<Weight> inputWeights; // [w_i]
+
+    Neuron(double output) 
+    {
+      this.output = output;
+    }
+
+    /*
+     * Since we decide to just pass in the data to the middle layer
+     * this constructor should be used only for the first hidden layer
+     */
+    Neuron(List<Integer> data) 
+    {
+      //init weights to random numbers
+      Random ranGen = new Random();
+      inputWeights = new ArrayList<Weight>();
+      for(int i = 0; i < data.size(); i++)
+      {
+        //generate between -0.05 and 0.05
+        double randomVal = ranGen.nextInt(11) / 100.0 - 0.05;
+        //System.out.println(randomVal);
+        Weight tempWeight = new Weight(randomVal, new Neuron(data.get(i)));
+        inputWeights.add(tempWeight);
+        //inputSum += data.get(i);
+      }
+      //calculate output also
+      compute();
+    }
+    
+    Neuron(Layer layer)
+    {
+      Neuron[] neurons = layer.getNeurons();
+      //init weights to random numbers
+      Random ranGen = new Random();
+      inputWeights = new ArrayList<Weight>();
+      for(int i = 0; i < layer.getNumberOfNeurons(); i++)
+      {
+        //generate between -0.05 and 0.05
+        double randomVal = ranGen.nextInt(11) / 100.0 - 0.05;
+        //System.out.println(randomVal);
+        Weight tempWeight = new Weight(randomVal, neurons[i]);
+        inputWeights.add(tempWeight);
+        //inputSum += data.get(i);
+      }
+      //calculate output also
+      compute();
+    }
+    
+    // 1 / (1 + e^(-x))
+    private double sigmoidActivation(double x) 
+    {
+      return (1.0 / (1.0 + Math.exp(-x)) );
+    }
+    
+    private void updateWeight(double delta)
+    {
+       
+      for(int i = 0; i < inputWeights.size(); i++)
+      {
+        double bigDelta = learningRate * delta * inputWeights.get(i).from.output;
+        inputWeights.get(i).value += bigDelta;
+      }
+      
+    }
+    
+    private double compute() 
+    {
+      //sum(wi * xi)
+      for(Weight w: inputWeights) 
+      {
+        inputSum += w.value * w.from.output;
+      }
+      //apply sigmoid to the sum
+      output = sigmoidActivation(inputSum);
+      return output;
+    }
+    
+    private double getOutput()
+    {
+      return output;
+    }
+
+    private List<Weight> getWeight()
+    {
+      return inputWeights;
+    }
+	
+	public double delta(double[] previousDelta)
+	{
+		double weightedDeltas = 0.0;
+		for (int h = 0; h < previousDelta.length; h++)
+		{
+			weightedDeltas += this.inputWeights.get(h).value * previousDelta[h];
+		}
+		double deltah = this.getOutput() * ( 1 - this.getOutput()) * weightedDeltas;
+		if (debug) System.out.println("delta calculated " + deltah);
+		return deltah;
+	}
+  }
+  
+  /*
+   * Each weigh has something like: [xi]--wi-->[Neuron]
+   */
+  public class Weight
+  {
+    // I make these guys public since
+    // I'm lazy to write set/get methods for them
+    public double value; //wi
+    public Neuron from; // xi    
+    Weight(double value, Neuron from)
+    {
+      this.value = value;
+      this.from = from;
+    }
+  }
+
+  public class Layer 
+  {
+    private int numberOfNeurons; //in this layer
+    private Neuron[] neurons;
+
+    Layer(List<Integer> data, int numNeurons) 
+    {
+      numberOfNeurons = numNeurons;
+      neurons = new Neuron[numNeurons];
+
+      for(int i = 0; i < numNeurons; i++)
+      {
+        neurons[i] = new Neuron(data); 
+      }
+    }
+
+    Layer(int numNeurons) 
+    {
+      numberOfNeurons = numNeurons;
+      neurons = new Neuron[numNeurons];
+    }
+    
+    private void feedLayer(Layer layer)
+    {
+      if(debug)
+      {
+        System.out.println("Feed layer to layer");
+      }
+      try {
+        for(int i = 0; i < numberOfNeurons; i++)
+        {
+          neurons[i] = new Neuron(layer);
+        }
+      }
+      catch (NullPointerException ne)
+      {
+        throw ne;
+      }
+      catch (Exception e)
+      {
+        throw e;
+      }
+    }
+
+    private void feedData(List<Integer> data)
+    {
+      if(debug)
+      {
+        System.out.println("Feed data to layer");
+      }
+      for(int i = 0; i < numberOfNeurons; i++)
+      {
+        neurons[i] = new Neuron(data); 
+      }
+    }
+    
+    private int getNumberOfNeurons()
+    {
+      return numberOfNeurons;
+    }
+    
+    private Neuron[] getNeurons()
+    {
+      return neurons;
+    }
+    
+    
+    private double getSumOutput()
+    {
+      double sumOutput = 0;
+      for(int i = 0; i < numberOfNeurons; i++) 
+      {
+        sumOutput += neurons[i].getOutput();
+      }
+      return sumOutput;
+    }
+    
+    private void updateWeight(double[] delta)
+    {
+      for(int i = 0; i < delta.length; i++)
+      {
+        neurons[i].updateWeight(delta[i]);
+      }
+    }
+	
+	public double[] deltaArray(double[] deltas)
+	{
+		double[] newDeltas = new double[neurons.length];
+		for (int i = 0; i < neurons.length; i++)
+		{
+			newDeltas[i] = neurons[i].delta(deltas);
+		}
+		return newDeltas;
+	}
+  }
+
+  public class Network 
+  {
+    private List<Layer> layers;
+     
+    //TODO: methods
+    Network()
+    {
+      layers = new ArrayList<Layer>();
+    }
+
+    private void addLayer(Layer layer)
+    {
+      layers.add(layer);
+    }
+    
+    private List<Layer> getLayer()
+    {
+      return layers;
+    }
+    
+    public Neuron[] getOutputNeurons()
+    {
+    	return this.layers.get(this.layers.size()-1).getNeurons();	
+    }
+	
+	public double getOutput()
+	{
+		return this.layers.get(layers.size()-1).getSumOutput();
+	}
+    
+    public double inspect(List<Integer> data)
+    {
+    	Layer current = layers.get(0), previous;
+    	current.feedData(data);
+    	for (int i = 1; i < layers.size(); i++)
+    	{
+    		previous = current;
+    		current = layers.get(i);
+    		current.feedLayer(previous);
+    	}
+    	double ou = layers.get(layers.size()-1).getSumOutput();
+    	if (debug) System.out.println("From Network.train--Output: " + ou);
+    	return ou;
+    }
+    
+    public double test(List<Integer> data)
+    {
+        double ou = this.inspect(data);
+        if(debug)
+        {
+          System.out.println("From Network.test--Output: " + ou);
+        }
+        return ou;
+    }
+	
+	public void BackPropagation(List<File> trainingData) throws FileNotFoundException
+	{
+	  List<Integer> data;
+	  try { 
+		for (File f : trainingData) {
+		  if(debug) 
+		  {
+			System.out.println("processing file: " + f);
+		  }
+		  data = readData(f);
+
+		  // Using Michell-NN.pdf pg18
+		  //Propagate the input foward through the network        
+		  double ou = this.inspect(data);
+		  if(debug)
+		  {
+			System.out.println("Output: " + ou);
+		  }        
+
+		  //Propagate the errors backward through the network
+		  //delta for output
+		  double[] deltak = new double[OUTPUT_NEURONS];
+		  deltak[0] = ou * (1 - ou) * (FEMALE - ou);
+		  /* Note: must modify if we add more output neurons. */
+
+		  Layer current;
+		  double[] deltah = deltak;
+		  List<double[]> allDeltas = new ArrayList<>();
+		  allDeltas.add(deltak);
+		  /* Calculate delta array for each layer and push to array list in
+		   * reverse order. Then reverse and update all weights.
+		   */
+		  for (int i = layers.size() - 2; i >= 0; i--)
+		  {
+			  current = layers.get(i);
+			  deltah = current.deltaArray(deltah);
+			  allDeltas.add(deltah);
+		  }
+		  Collections.reverse(allDeltas);
+		  for (int i = 0; i < layers.size() - 1; i++)
+		  {
+			  layers.get(i).updateWeight(allDeltas.get(i));
+		  }
+		}
+	  }
+	  catch (FileNotFoundException fe) 
+	  {
+		throw fe;
+	  }
+	  catch (Exception e)
+	  {
+		throw e;
+	  }
+	}
+  }
+}

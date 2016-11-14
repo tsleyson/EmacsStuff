@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <limits.h>
+
+int check_digits(unsigned long long m) {
+    unsigned long long current = m;
+    int digit;
+    for (; current > 0; current /= 10) {
+        digit = current % 10;
+        if (0 < digit && digit < 9) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+unsigned long long zero_nine(unsigned int m) {
+    unsigned long long multiplier, current;
+    unsigned int i, check;
+    multiplier = m;
+    current = multiplier % 9 == 0? multiplier : 9 * multiplier;
+    multiplier = current;
+    check = check_digits(current);
+    while (!check) {
+        current += multiplier;
+        check = check_digits(current);
+        assert(current + multiplier < ULLONG_MAX);
+        // If that's not true, the long has overflowed somehow.
+    }
+    return current;
+}
+int main(void) {
+    unsigned int numcases, multiplier, i;
+    scanf("%u", &numcases);
+    printf("%d", sizeof(unsigned long long));
+    for (i = 0; i < numcases; ++i) {
+        scanf("%u", &multiplier);
+        printf("%u. %u -- %ul\n", i, multiplier, zero_nine(multiplier));
+    }
+    return 0;
+}

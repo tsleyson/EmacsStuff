@@ -1,0 +1,5 @@
+// bintree.c
+// A binary search tree in C.
+// Like the Java version, it's not inherently a binary search tree;
+// you can stick together the nodes yourself and write your own
+// functions and make some other kind of tree.

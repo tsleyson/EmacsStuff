@@ -1,0 +1,33 @@
+# Problem 12.4 of EPI.
+
+def cyclic_head(a):
+    """
+    Finds the head (smallest element) of the cyclically sorted
+    list a.
+
+    Normal use.
+    >>> cyclic_head([378, 478, 550, 94, 103, 200, 220, 234, 279, 368])
+    3
+
+    Should return None on empty list.
+    >>> cyclic_head([])
+    None
+
+    Should return 0 on normally sorted list.
+    >>> cyclic_head([1, 2, 3, 4])
+    0
+
+    Should also return 0 on one-element list
+    >>> cyclic_head([2])
+    0
+
+    Should return n-1 on reverse-sorted list
+    >>> cyclic_head([5, 4, 3, 2, 1])
+    4
+    """
+    if len(a) <= 0: return None
+    l = 0; h = len(a)-1
+    while l < h:
+        if a[l] < a[h]:
+            if a[(l-1) % len(a)] > a[l]:
+                return l

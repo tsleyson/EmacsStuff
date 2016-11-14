@@ -1,0 +1,19 @@
+/* list.h
+   Struct and functions for C linked list.
+*/
+#ifndef LIST_H
+#define LIST_H
+
+typedef struct lnode {
+    int  data;
+    struct lnode* next;
+} lnode;
+
+lnode* list_init();
+lnode* list_prepend(lnode*, int);
+lnode* list_append(lnode*, int);
+int  list_decapitate(lnode*);
+int list_pop(lnode*);
+lnode* list_map(lnode*, int (*)(int));
+
+#endif

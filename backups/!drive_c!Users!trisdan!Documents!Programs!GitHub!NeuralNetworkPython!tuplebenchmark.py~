@@ -1,0 +1,7 @@
+# tuplebenchmark.py
+# Do a crude comparison of the performance of normal tuples
+# versus named tuples versus dictionaries.
+import time
+import collections
+
+normtup = zip(range(1000), range(1000, 0, -1))

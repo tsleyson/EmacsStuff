@@ -1,0 +1,206 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Nov 13 22:00:55 2016
+;; Desktop file format version 206
+;; Emacs version 24.5.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22569 21271 648127 0) (desktop . "206") "trisdan@Trisdans-MBP.attlocal.net" nil nil ((((font-backend mac-ct ns) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (foreground-color . "#e1e1e0") (background-color . "#2d3743") (line-spacing) (left-fringe . 10) (right-fringe . 11) (menu-bar-lines . 1) (tool-bar-lines . 1) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (alpha) (fullscreen) (display . "Trisdans-MBP.attlocal.net") (display-type . color) (background-mode . dark) (cursor-color . "#415160") (visibility) (frameset--id . "7CF0-BD46-96A5-9F23") (frameset--mini t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (explicit-name) (tool-bar-position . top) (scroll-bar-background . "gray20") (scroll-bar-foreground . "dark turquoise") (mouse-color . "OrangeRed") (border-color . "gold") (height . 27) (width . 98) (left . 0) (top . 0)) ((min-height . 8) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 152) (min-pixel-width . 80) (min-pixel-height-ignore . 56) (min-pixel-width-ignore . 56) (min-pixel-height-safe . 28) (min-pixel-width-safe . 14)) vc (pixel-width . 722) (pixel-height . 364) (total-width . 103) (total-height . 26) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 722) (pixel-height . 182) (total-width . 103) (total-height . 13) (normal-height . 0.5) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 10 11 nil) (margins nil) (scroll-bars 15 3 t nil) (vscroll . 0) (dedicated) (point . 192) (start . 1))) (leaf (last . t) (pixel-width . 722) (pixel-height . 182) (total-width . 103) (total-height . 13) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Warnings*" (selected) (hscroll . 0) (fringes 10 11 nil) (margins nil) (scroll-bars 15 3 t nil) (vscroll . 0) (dedicated) (point . 360) (start . 1)))) (((font-backend mac-ct ns) (fontsize . 0) (font . "-*-Monaco-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (foreground-color . "#e1e1e0") (background-color . "#2d3743") (line-spacing) (left-fringe . 11) (right-fringe . 13) (menu-bar-lines . 1) (tool-bar-lines . 1) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (alpha) (fullscreen . maximized) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#415160") (environment) (display . "Trisdans-MBP.attlocal.net") (frameset--id . "3F6A-E6A4-AE4E-71FC") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (explicit-name) (tool-bar-position . top) (user-size . t) (scroll-bar-background . "gray20") (scroll-bar-foreground . "dark turquoise") (mouse-color . "OrangeRed") (border-color . "gold") (visibility . t) (height . 37) (width . 154) (left . 0) (top . 32)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 14) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 76) (min-pixel-width . 160) (min-pixel-height-ignore . 38) (min-pixel-width-ignore . 112) (min-pixel-height-safe . 19) (min-pixel-width-safe . 32)) hc (pixel-width . 1271) (pixel-height . 684) (total-width . 159) (total-height . 36) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 633) (pixel-height . 684) (total-width . 79) (total-height . 36) (normal-height . 1.0) (normal-width . 0.5) (buffer "init.el" (selected) (hscroll . 0) (fringes 11 13 nil) (margins 3) (scroll-bars 15 2 t nil) (vscroll . 0) (dedicated) (point . 5206) (start . 4568))) (leaf (last . t) (pixel-width . 638) (pixel-height . 684) (total-width . 80) (total-height . 36) (normal-height . 1.0) (normal-width . 0.5) (buffer "ore_imo_retro.md" (selected . t) (hscroll . 0) (fringes 11 13 nil) (margins 2) (scroll-bars 15 2 t nil) (vscroll . 0) (dedicated) (point . 25779) (start . 24120)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("em-dash" "x" "Ore Imo" "siblin" "being" "actual" "off on " "rights" "womens" "Zac" "Wa" "effe" "img" "Full" "disjoin" "print"))
+(setq regexp-search-ring '("\\(val\\)[0-9]\\{1,2\\}" "pdb." "pdb"))
+(setq register-alist nil)
+(setq file-name-history '("/Users/trisdan/Google Drive/Writing/Blogs/anime/Evangelion II.md" "/Users/trisdan/Google Drive/Writing/Blogs/anime/ore_imo_retro.md" "/Users/trisdan/Google Drive/Writing/Thoughts/Thoughts on Ore no Imouto ga Konna ni Kawaii Wake ga Nai.md" "/Users/trisdan/Google Drive/Writing/Blogs/anime/mcu_ranking.md" "/Users/trisdan/Google Drive/Writing/nanowrimo/Chapter1.org" "/Users/trisdan/Google Drive/Writing/Blogs/anime/exiles.html" "/Users/trisdan/Google Drive/Writing/Blogs/anime/exiles.md" "/Users/trisdan/Google Drive/Writing/Blogs/anime/the_dark_knight_returns.md" "/Users/trisdan/Google Drive/Writing/Blogs/anime/the_dark_knight_returns.txt" "/Users/trisdan/.emacs.d/init.el" "/Users/trisdan/Google Drive/Writing/Blogs/TPCS/What Programming Language should I learn first.md" "/Users/trisdan/Dropbox/Official/DMV appt.txt" "~/Google Drive/Writing/Blogs/TPCS/What Programming Language should I learn first.md" "/Users/trisdan/Dropbox/Writing/over_the_top/ideas.org" "~/Dropbox/Writing/over_the_top" "/Users/trisdan/Dropbox/Writing/Thoughts/ranticles.org" "/Users/trisdan/Dropbox/Writing/resurrection_story/ideas.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Suicide Squad.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/why-did-java-seem-good-idea.md" "/Users/trisdan/Dropbox/Writing/Thoughts/Thoughts on Kotoura-san.org" "/Users/trisdan/Dropbox/Writing/Thoughts/Yuru Yuri Top 10.org" "/Users/trisdan/Dropbox/Writing/Thoughts/Unfair First Impressions.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/Introducing_MonkeyType.js.md" "/Users/trisdan/Dropbox/Writing/Blogs/Goodnight Moon: The Movie.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/the_dark_knight_returns.txt" "/Users/trisdan/Dropbox/Iyashikei" "/Users/trisdan/Documents/Programs/guivalid.py" "/Users/trisdan/Dropbox/Writing/Blogs/explain-class.md" "~/Dropbox/Writing/Blogs/Goodnight Moon: The Movie.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/Introducing_MonkeyType.js.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/Introducing_MonkeyType.js" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/Pissing on the Dreams of Schoolchildren and Other Exquisite Cruelties.md" "/Users/trisdan/Dropbox/Writing/Misc/this_one_weird_hack_female_psychology.md" "/Users/trisdan/Dropbox/Writing/Misc/all_the_goddamn_apartments.md" "/Users/trisdan/Documents/Programs/fanboy/.gitignore" "/Users/trisdan/Documents/Programs/fanboy/project.clj" "/Users/trisdan/Documents/Programs/something-luminus/env/dev/clj/something_luminus/config.clj" "/Users/trisdan/Documents/Programs/something-luminus/Procfile" "/Users/trisdan/Documents/Programs/something-luminus/profiles.clj" "/Users/trisdan/Dropbox/Programs/clojuresnippets.clj" "/Users/trisdan/Dropbox/Writing/resurrection_story/ideas.org" "~/Dropbox/Writing/resurrection_story" "/Users/trisdan/Dropbox/Writing/Blogs/anime/the_dark_knight_returns.txt" "/Users/trisdan/Dropbox/Writing/Blogs/On the Futility of Eloquence.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/My Favorite Anime.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/A Lonely Crusade - Mami in the Different Story.md" "/Users/trisdan/Dropbox/Writing/Thoughts/Bee Train K-On.odt" "/Users/trisdan/Dropbox/Writing/Thoughts/Tsukihi The Greatest Little Sister that Ever Was or Will Be.html" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Anime and Manga map entry" "/Users/trisdan/Dropbox/Writing/Blogs/explain-class.md" "/Users/trisdan/Dropbox/Writing/Blogs/Where do bad programmers work.md" "~/Dropbox/Writing/Blogs/On the Futility of Eloquence.org" "/Users/trisdan/1465165153_5754a561b54816.03306390.mp4" "/Users/trisdan/Documents/dbwikia.html" "/Users/trisdan/Dropbox/Writing/Blogs/anime/How not to write an id request.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/Pissing on the Dreams of Schoolchildren and Other Exquisite Cruelties.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/mod_questions.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/anime_fights_the_end_of_pokemon.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/ChallengeOfTheCOBOLFriends.md" "~/Dropbox/Writing/Blogs/TPCS/Every job ad ever.md" "~/Dropbox/Writing/Blogs/anime/" "/Users/trisdan/Dropbox/Writing/Blogs/anime/My Favorite Anime.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/On the Ending of Ore Imo.org" "/Users/trisdan/Dropbox/Writing/Magical 4koma story/Book 2/Alone with Lily.md" "/Users/trisdan/Dropbox/Writing/Magical 4koma story/Anne and Tricks.md" "~/Dropbox/Writing/Blogs/TPCS/Pissing on the Dreams of Schoolchildren and Other Exquisite Cruelties.md" "/Users/trisdan/Dropbox/Writing/Misc/android_story.md" "~/Dropbox/Writing/Blogs/anime/Suicide Squad.md" "/Users/trisdan/Dropbox/Writing/Neither Here Nor There Draft 4.5/NiThereNotes/NiThere Reverse Outline.org" "/Users/trisdan/Dropbox/Writing/tankoubonprod" "/Users/trisdan/Dropbox/Writing/Blogs/webframeworks.md" "~/Dropbox/Writing/Blogs/TPCS/Paean to the Proxy.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/The Oblivion of Haruhi Suzumiya revised.md" "~/Dropbox/Writing/Blogs/anime/The Oblivion of Haruhi Suzumiya revised.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/The Oblivion of Haruhi Suzumiya.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Reaction_to_ANNCast.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/How can we heal the wounds in our culture left by id requests.md" "/Users/trisdan/Dropbox/Programs/coursera/week2/clustering_big_test.txt" "/Users/trisdan/Dropbox/Programs/coursera/week2/hamming_generation_itertools.py" "/Users/trisdan/Dropbox/Programs/coursera/week2/small_cluster2.py" "/Users/trisdan/Dropbox/Programs/coursera/week2/small_cluster.py" "/Users/trisdan/Dropbox/Programs/coursera/week2/big_cluster.py" "/Users/trisdan/Dropbox/Programs/coursera/week2/clustering_big.txt" "/Users/trisdan/Dropbox/Programs/coursera/week2/clustering_small_test_2.txt" "/Users/trisdan/Dropbox/Programs/coursera/week2/clustering_small_test.txt" "/Users/trisdan/Dropbox/Programs/coursera/week2/small_cluster2.py" "/Users/trisdan/Dropbox/Programs/coursera/week2/small_cluster.py" "/Users/trisdan/Dropbox/Writing/Thoughts/Thoughts on Steve Yegge's Ten Great Books and Ten Challenges.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/siena_blog.org" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/understand-the-use.org" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/relational-lists.md" "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/java_v_cpp.md" "/Users/trisdan/Dropbox/Writing/Blogs/explain-class.md" "/Users/trisdan/Dropbox/Writing/Thoughts/Moe Yon-Koma Rankings.org" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Top_9_Favorite_Anime.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/My Favorite Anime.md" "/Users/trisdan/Dropbox/Programs/barber.clj" "/Users/trisdan/Dropbox/Programs/clojuresnippets.clj" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Kodomo_no_jikan.md" "/Users/trisdan/Dropbox/Writing/Blogs/anime/Kodomo_no_jikan.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/anime/ore_imo_retro.md"
+  "ore_imo_retro.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  25779
+  '(25681 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode)
+  5206
+  '(5207 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Thoughts/Thoughts on Ore no Imouto ga Konna ni Kawaii Wake ga Nai.md"
+  "Thoughts on Ore no Imouto ga Konna ni Kawaii Wake ga Nai.md"
+  'org-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  210431
+  '(278090 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/anime/Evangelion II.md"
+  "Evangelion II.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  6676
+  '(70771 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/TPCS/What Programming Language should I learn first.md"
+  "What Programming Language should I learn first.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode)
+  15679
+  '(16128 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/anime/mcu_ranking.md"
+  "mcu_ranking.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  7807
+  '(8854 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/nanowrimo/Chapter1.org"
+  "Chapter1.org"
+  'org-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  3223
+  '(1824 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/anime/exiles.md"
+  "exiles.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode flyspell-mode)
+  1
+  '(13964 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Google Drive/Writing/Blogs/anime/the_dark_knight_returns.md"
+  "the_dark_knight_returns.md"
+  'markdown-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode)
+  6166
+  '(12208 nil)
+  nil
+  nil
+  '((tab-width . 4) (buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Dropbox/Official/DMV appt.txt"
+  "DMV appt.txt"
+  'text-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode)
+  69
+  '(69 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Music/afu.php"
+  "afu.php"
+  'html-mode
+  '(visual-line-mode typopunct-mode linum-mode global-auto-revert-mode yas-minor-mode)
+  76
+  '(76 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Dropbox/Iyashikei"
+  "Iyashikei"
+  'fundamental-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Documents/Programs/fanboy/project.clj"
+  "project.clj"
+  'clojure-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode)
+  281
+  '(179 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Documents/Programs/fanboy/.gitignore"
+  ".gitignore"
+  'fundamental-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode)
+  107
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Documents/Programs/something-luminus/env/dev/clj/something_luminus/config.clj"
+  "config.clj"
+  'clojure-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode cider-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Documents/Programs/something-luminus/Procfile"
+  "Procfile"
+  'fundamental-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/trisdan/Documents/Programs/something-luminus/profiles.clj"
+  "profiles.clj"
+  'clojure-mode
+  '(linum-mode global-auto-revert-mode yas-minor-mode cider-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+

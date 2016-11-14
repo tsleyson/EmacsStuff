@@ -1,0 +1,17 @@
+# fsearch.py
+# Does the same as fsearch.c, but in Python.
+import sys
+
+def fsearch(string, f):
+    lineno = 0
+    for line in f:
+        lineno += 1
+        if line.search(string) > 0:
+            print("{}: {}".format(lineno, line))
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: fsearch <string to search for> <file to search in>")
+        sys.exit()
+    with open(sys.argv[2], "r") as f:
+        fsearch(sys.argv[1], f)

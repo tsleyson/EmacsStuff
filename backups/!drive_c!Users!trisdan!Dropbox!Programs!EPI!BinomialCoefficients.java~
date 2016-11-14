@@ -1,0 +1,97 @@
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
+public class BinomialCoefficients {
+    /** Using dynamic programming, make use of the fact that
+        n choose k = n-1 choose k-1 + n-1 choose k, as well as
+        the fact that n choose k = n choose n - k.
+        Store in a 2D ArrayList, indexed by n and k.
+    */
+    private ArrayList<ArrayList<Integer>> memo = new ArrayList<>();
+
+    public BinomialCoefficients() {
+        ArrayList<Integer> seed = new ArrayList<Integer>(1);
+        seed.add(1);  // 0 choose 0.
+        memo.add(seed);
+        seed = new ArrayList<Integer>(2);
+        seed.add(1);  // 1 choose 0.
+        seed.add(1);  // 1 choose 1.
+        memo.add(seed);
+    }
+
+    private void ensureSize(int n) {
+        memo.ensureCapacity(n+1);
+        for (int i = n - memo.size(); i > 0; --i) {
+            memo.add(new ArrayList<Integer>());
+        }
+    }
+    
+    public int choose(int n, int k) {
+        /* Try to look up n choose k from table,
+           possibly using the identities.
+           If that fails, calculate and store an entire row.
+        */
+        ensureSize(n+1);  // Ensure at least n indices.
+        if (k > n/2) {
+            // Use n choose k = n choose n - k.
+            k = n - k;
+        }
+        return lookup(n, k);
+        // Much cleaner: the lookup function deals with all the
+        // possible error conditions and adds rows when lookups fail.
+    }
+
+    private int lookup(int n, int k) {
+        ArrayList<Integer> row = memo.get(n);
+        if (!row.isEmpty()) {
+            return row.get(k);
+        }
+        else {
+            ArrayList<Integer> newRow = addRow(n);
+            assert k < newRow.size() : "k: " + k + " " + newRow.size();
+            return newRow.get(k);
+        }
+    }
+    
+    private int calculate(int n, int k) {
+        int result = 1;
+        for (int i = n, j = k; i > n-k && j > 0; --i, --j) {
+            result *= i/j;
+        }
+        return result;
+    }
+    // This weird algorithm is meant to prevent overflow.
+    // Since all operations on i and j are reductive, we never
+    // overflow with huge products that are just going to get
+    // divided later. Only result can overflow, and that can
+    // only now happen if the result is too big for an integer.
+
+    private ArrayList<Integer> addRow(int n) {
+        // Only fills in requested rows, not all rows up
+        // to n, so lazy.
+        // By now, we know memo is large enough and that
+        // memo.get(n) is empty, else we wouldn't be here.
+        assert memo.size() >= n : "Memo is " + memo.size();
+        ArrayList<Integer> row = new ArrayList<>((n/2)+1);
+        memo.set(n, row);
+        ArrayList<Integer> prevRow = memo.get(n-1);
+        if (prevRow.isEmpty()) {  // Previous row not in.
+            for (int i = 0; i <= Math.ceil(n/2); ++i) {
+                row.add(calculate(n, i));
+            }
+        }
+        else {  // Previous row in; calc from identity.
+            for (int i = 1; i <= Math.ceil(n/2); ++i) {
+                row.add(prevRow.get(i-1) + prevRow.get(i));
+            }
+        }
+        assert row.size() == Math.ceil(n/2) : "Size: " + row.size();
+        return row;
+    }
+
+    public static void main(String[] args) {
+        BinomialCoefficients bc = new BinomialCoefficients();
+        System.out.printf("choose(2, 1): %10d%n", bc.choose(2, 1));
+        System.out.printf("choose(10, 7): %10d%n", bc.choose(10, 7));
+    }
+}

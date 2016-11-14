@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+# Zips the current directory into a .tar.gz file.
+# -v prints all files.
+# -d deletes the current directory.
+# A directory name argument moves the tar.gz file to that directory.
+# If the directory is deleted and no target directory is given, it is
+# moved up one leve.
+dir="$(pwd)"
+fname="${dir##*/}"_backup_$(date +"%Y%m%d%H%M%S").tar.gz
+options=-cz
+#echo "$fname"
+while getopts ":vd" opt; do
+    case $opt in
+        v ) options=$options"v" ;;
+        d ) delete="yay" ;;
+        \?) echo "Usage: compresspwd [-v] [-d] [backup-dir]"
+            exit 1
+    esac
+done
+shift $(($OPTIND - 1))  # Not necessary if no arguments.
+
+# Add directory if set.
+if [ -n $1 ]; then
+    movdir=$1
+else
+    movdir=$pwd'/../'
+fi
+echo $movdir
+tar $options -f "$fname" ./*
+# tar needs f last in the arg glob, so just put -f separately.
+# See http://docstore.mik.ua/orelly/unix3/upt/ch38_12.htm
+
+if [ ! -z $delete ]; then
+    mv "$fname" $movdir
+    cd .. || exit 1
+    rm -r "$dir"
+else
+    mv "$fname" $movdir
+fi

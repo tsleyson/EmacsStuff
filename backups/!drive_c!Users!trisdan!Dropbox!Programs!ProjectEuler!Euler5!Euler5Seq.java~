@@ -1,0 +1,24 @@
+
+public class Euler5Seq
+{
+    private static boolean checkDivisibility(long candidate)
+    {
+        for (int i = 2; i <= 20; ++i)
+        {
+            if (candidate % i != 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String [] args)
+    {
+        long result = 0;
+        for (long li = 21; result == 0; ++li)
+        {
+            if (checkDivisibility(li))
+                result = li;
+        }
+        System.out.println("The answer is " + result);
+    }
+}

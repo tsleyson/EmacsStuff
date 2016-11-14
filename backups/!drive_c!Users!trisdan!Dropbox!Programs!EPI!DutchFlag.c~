@@ -1,0 +1,26 @@
+// Dutch flag (i.e. a partition of an array into three zones: less
+// than pivot, greater than pivot, equal to pivot) in C.
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+void swap(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+inline size_t choose_pivot_index(size_t n) {
+    return floor(abs(rand()) * n);
+}
+
+void partition(int *a, size_t n) {
+    int *boundary, *frontier;
+    
+}
+
+int main(void) {
+    printf("%d\n", choose_pivot_index(22));
+    return 0;
+}

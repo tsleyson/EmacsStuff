@@ -1,0 +1,2 @@
+;; This can't actually be used as a function. But this is the code to
+;; decrement the heading numbers when you convert an Org file to HTML.

@@ -1,0 +1,16 @@
+string = raw_input()
+ 
+found = False
+counts = {}
+for char in string:
+    if char in counts:
+        counts[char] += 1
+    else:
+        counts[char] = 1
+parities = [c % 2 for c in counts.values()]
+if 0 <= sum(parities) <= 1:
+    found = False
+if not found:
+    print("NO")
+else:
+    print("YES")

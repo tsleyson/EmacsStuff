@@ -1,0 +1,16 @@
+import datetime
+from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
+# Users can be created using
+# django.contrib.auth.models.User.objects.create_user(). Yes, it's
+# totally insane.
+
+class Post(models.Model):
+    post_date = models.DateTimeField('date published')
+    post_text = models.TextField('post text')
+    user = models.ForeignKey(User)
+
+    # We can get username from the foreign key in the Users table.
+    

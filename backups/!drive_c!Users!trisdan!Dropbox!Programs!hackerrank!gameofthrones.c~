@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+ 
+findPalind(char *arr)
+{
+     
+    int flag = 0;
+    // Find the required answer here. Print Yes or No at the end of this function depending on your inspection of the string
+    if (flag==0)
+        printf("YES\n");
+    else
+        print("NO\n");
+    
+    return;
+}
+int main() {
+
+    char arr[100001];
+    scanf("%s",arr);
+    findPalind(arr);
+    return 0;
+}
+
+/*
+ * Generating all permutations won't work. Too many.
+ * But, to form a palindrome, we need all the characters to occur in
+ * pairs (except we can have one unmatched character, but only if the
+ * number of characters is odd). So I think I can write a function
+ * that counts the characters and stores the results in a simple hash
+ * table (since all the strings are lowercase letters, just inchar -
+ * 'a' ought to be a good enough hashing function). 

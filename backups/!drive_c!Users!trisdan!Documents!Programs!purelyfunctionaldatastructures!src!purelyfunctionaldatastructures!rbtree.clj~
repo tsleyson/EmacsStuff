@@ -1,0 +1,6 @@
+(ns purelyfunctionaldatastructures.rbtree
+  (:require [purelyfunctionaldatastructures.protocols :refer [pfn-set]]))
+
+(defrecord rbset
+    pfn-set
+  ())

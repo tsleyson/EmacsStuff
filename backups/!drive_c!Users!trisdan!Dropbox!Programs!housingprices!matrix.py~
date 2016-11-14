@@ -1,0 +1,20 @@
+# For Hackerrank problem: Predicting House Prices for Charlie.
+import array
+
+class Matrix(Object):
+    def __init__(self, rows):
+        '''
+        Expects rows to be a list of strings which are comma- or
+        space-separated floating-point numbers.
+        '''
+        self.numrows = len(rows)
+        self.numcols = len(rows[0].split(", "))
+        self.internals = array.array('d') # Stored in row-major order.
+        for row in rows:
+            internals.extend([float(x) for x in row.split(", ")])
+    def get_row(n):
+        return internals[n:n+numcols-1]
+    def get_col(m):
+        indices = [
+            
+        

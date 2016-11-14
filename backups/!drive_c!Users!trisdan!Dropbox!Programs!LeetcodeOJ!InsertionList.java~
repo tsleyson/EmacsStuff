@@ -1,0 +1,52 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode insertionSortList(ListNode head) {
+        if (head == null)
+            return null;
+        ListNode current, seekNext, seekPrev;
+        ListNode fakeHead = new ListNode(Integer.MIN_VALUE);
+        fakeHead.next = head;
+        // We need the first node to have a left neighbor for
+        // various reasons.
+        for (current = head; current.next != null; current = current.next) {
+            seekPrev = current;
+            seekNext = current.next;
+            while (seekNext != null && seekPrev.val <= seekNext.val) {
+                seekPrev = seekPrev.next;
+                seekNext = seekNext.next;
+            }
+            ListNode seekInsertPoint = fakeHead;
+            while (seekInsertPoint.next.val <= seekNext.val &&
+                   seekInsertPoint.next != seekNext) {
+                assert(seekInsertPoint != null);
+                seekInsertPoint = seekInsertPoint.next;
+            }
+            seekNext = removeNode(seekPrev);  // Node before one to remove.
+            insertNode(seekInsertPoint, seekNext);
+        }
+        return head;
+    }
+
+    private ListNode removeNode(ListNode leftNeighbor) {
+        ListNode condemned = leftNeighbor.next;
+        leftNeighbor.next = condemned.next;
+        condemned.next = null;
+        return condemned;
+    }
+
+    private void insertNode(ListNode leftNeighbor, ListNode toInsert) {
+        ListNode rightNeighbor = leftNeighbor.next;
+        leftNeighbor.next = toInsert;
+        toInsert.next = rightNeighbor;
+    }
+}

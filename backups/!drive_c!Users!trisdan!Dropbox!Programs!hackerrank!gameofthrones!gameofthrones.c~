@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+ 
+findPalind(char *arr)
+{
+    long letter_counts[26]; // Could have e.g. 10^5 a's, so use a
+                            // long.
+    char *current = arr;
+    int flag = 0, any_odd = 0, i, parity;
+    for (i = 0; i < 26; ++i)
+    {
+        letter_counts[i] = 0;
+    }
+
+    while (current)
+    {
+        ++letter_counts[*current - 'a'];
+        ++current;
+    }
+
+    for (i = 0; i < 26; ++i)
+    {
+        parity = letter_counts[i] % 2;
+        if (parity && any_odd)
+        {
+            flag = 1;
+            break;
+        }
+        else if (parity && !any_odd)
+        {
+            any_odd = 1;
+        }
+    }
+            
+    if (flag==0)
+        printf("YES\n");
+    else
+        printf("NO\n");
+    
+    return;
+}
+int main() {
+
+    char arr[100001];
+    scanf("%s",arr);
+    findPalind(arr);
+    return 0;
+}
+
+/*
+ * Generating all permutations won't work. Too many.
+ * But, to form a palindrome, we need all the characters to occur in
+ * pairs (except we can have one unmatched character, but only if the
+ * number of characters is odd). So I think I can write a function
+ * that counts the characters and stores the results in a simple hash
+ * table (since all the strings are lowercase letters, just inchar -
+ * 'a' ought to be a good enough hashing function).
+ * Once all the characters have been counted, read the table. Flip a
+ * bool if any has an odd number of occurrences; after that, if you
+ * find another with an odd number of occurrences, the string can't be
+ * a palindrome, so false.
+ */

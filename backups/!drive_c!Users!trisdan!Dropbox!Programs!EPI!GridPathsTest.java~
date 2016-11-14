@@ -1,0 +1,35 @@
+import junit.framework.*;
+
+public class GridPathsTest extends TestCase{
+
+    public void setUp() {
+    }
+
+    public void tearDown() {
+    }
+
+    // Put the tests here. Begin name with 'test'.
+    
+    public GridPathsTest(String name) {
+        super(name);
+    }
+
+    public static Test suite() {
+        return new TestSuite(GridPathsTest.class);
+    }
+
+    public static void main(String[] args) {
+        TestSuite suite = new TestSuite();
+        if (args.length > 0) {
+            // Run tests passed in as command line args.
+            for (int i = 0; i < args.length; ++i) {
+                suite.addTest(new GridPathsTest(args[i]));
+            }
+        } else {
+            // Dynamically discover all tests, or use
+            // user-defined suite.
+            suite.addTest(GridPathsTest.suite());
+        }
+        junit.textui.TestRunner.run(suite);
+    }
+}

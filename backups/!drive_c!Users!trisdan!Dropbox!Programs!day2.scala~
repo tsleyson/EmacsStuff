@@ -1,0 +1,22 @@
+def totalSize(list: List[String]) =
+  list.foldLeft(0)((count, word) => count + word.size)
+
+val s: Int = totalSize(List("marshmallow", "justice", "platinum", "disco"))
+println(s)
+
+trait Censor {
+  val replacements = Map("shoot" -> "pucky", "darn" -> "beans")
+  def censor(text: List[String]): String =
+    text.map(word =>
+      if (replacements.contains(word)) {
+        replacements(word)
+      }
+      else {
+        word
+      }).foldLeft("")((fullStr, word) => fullStr + " " + word)
+}
+
+class MoralGuardian;
+object tipper extends MoralGuardian with Censor;
+
+println(tipper.censor(List("darn", "you", "to", "fucking", "hell", "I'll", "shoot", "you")))

@@ -1,0 +1,48 @@
+# Problem 5.6 of EPI.
+
+charmap = { chr(65 + i - 1) : i for i in range(1, 27) }
+
+def col_to_number(col):
+    """
+    Converts a col of the A, AA, AB, AAA, etc. format
+    to the number that column would have if we just
+    numbered them straight across.
+    """
+    base26 = sum(map(lambda a, x : a*27**x,
+                   reversed([charmap[c] for c in col]),
+                   range(len(col))))
+    minus = base26 // 26
+    print("base26: {}, minus: {}".format(base26, minus))
+    return base26 - minus
+
+if __name__ == "__main__":
+    tests = [('A', 1), ('AZ', 52), ('K', 11), ('Q', 17),
+             ('BX', 76), ('ADJ', 790), ('RB', 470),
+             ('ACC', 757), ('ABS', 747), ('AA', 27),
+             ('BA', 53), ('AZ', 52)]
+    # Got the tests with OpenOffice Calc: put 1 in column A
+    # and dragged it across for many, many columns.
+
+    for test in tests:
+        try:
+            assert col_to_number(test[0]) == test[1]
+        except AssertionError:
+            print("Error: {} {} should be {}".format(test[0],
+                                                     col_to_number(test[0]),
+                                                     test[1]))
+# Explanation:
+# We treat the column names as base-26 numbers. However,
+# there's actually no zero because A is considered one.
+# So pretend there was a zero. Then
+# [charmap[c] for c in col]
+# gives us a list of all the digits in that base-26 number
+# that corresponds to the column name.
+# We reverse it to get them in ascending order of place
+# value. Then sum(map(lambda a, x : a*27**x, digits, range(len(col))))
+# gives us that base-26 number in base-10.
+# But, since there is no zero, we lose every multiple of 26 in this
+# encoding scheme, which we wouldn't if we numbered the columns
+# straight across. For every number x with d letters, we lose x // 26**d-1
+# numbers: i.e. if we cover 27 1-letter columns, we've lost one
+# number, what would be 10 or A0. If we cover 53 columns, we've lost
+# two because we've lost 10 (A0) and 20 (B0). 

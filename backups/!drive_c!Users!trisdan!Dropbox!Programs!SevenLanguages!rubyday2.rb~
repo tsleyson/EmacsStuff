@@ -1,0 +1,165 @@
+# You can translate a hash to an array like this:
+ha = {1 => 10, 2 => 20, 4 => 40}
+ha.to_a
+# You can translate an array to a hash like this:
+ar = [1, 10, 2, 20, 4, 40]
+h = Hash[*ar]
+# The splat operator * basically splatters the list all over the place
+# (it's sort of like what apply does in Clojure: it "delists" the
+# array into just a bunch of stuff. It seems to only work in the
+# context of something like the hash constructor, though. And you can
+# blow the whole stack with it if you're not careful, since all the
+# items in the list get stored on the stack.
+
+# Yes, you can iterate through a hash, as the following code
+# demonstrates:
+ha.methods.any? {|i| i =~ /each/}
+# Checks if there's a method matching the regex /each/ in the list of
+# methods of the hash. There is. So:
+ha.each {|i| puts i}
+# Prints every key and value of ha. So another way to convert a hash
+# to an array is:
+ar2 = []
+ha.each {|i| ar2.push i}
+# i here is a list pair, like [1, 10]. So that code makes ar2 a nested
+# list of pairs. If you want a flat list, you can do:
+ha.each {|i| ar2.push i[0]; ar2.push i[1]}
+# You can also just give a block with two arguments, like this:
+ha.each {|k, v| ar2.push [k, v]}
+
+# Ruby arrays support push and pop, so they can be stacks:
+s = Array.new
+s.push 4
+s.push 9
+s.pop # Gets 9
+# They support union and intersection, so they can be sets:
+st = [1, 2, 3, 4]
+st2 = [9, 8, 7, 6, 5, 4, 3]
+puts st & st2 # Gives [3, 4]
+puts st - st2 # Gives [1, 2]
+puts st | st2 # The union
+# You can make sure they only contain unique elements like this:
+st = st.uniq
+# They support enqueueing and dequeueing like this:
+q = [1, 2, 3, 4]
+puts q.shift # Returns and removes 1
+q << 5 # Adds 5 to the end
+puts q.unshift 1 # Puts 1 back at the front.
+
+def print_four_per_line()
+  ar = []
+  16.times {|i| ar << i}
+  # Since we're totally cheating, add one to every element to aid our 
+  # cheating.
+  ar.collect! {|i| i+1}
+  # collect is like map, and collect! is like ar = map(ar, ...)
+  # Now comes the total cheating. Every other way to do this also came
+  # off as complete and utter cheating, though.
+  # You can use a for-loop, though the exercise said "Using just
+  # each..."
+  ar.each do |item|
+    if item % 4 == 0
+      print item, "\n"
+    else
+      print item, " "
+    end
+  end
+  # Now the better, non-cheating way:
+  ar.each_slice(4) {|i| i.each {|j| print j, " "}; puts}
+end
+
+print_four_per_line
+
+# Note: I wanted to do something like this:
+# ar.each {|a, b, c, d| print a, " ", b, " ", c, " ", d, "\n"}.
+# While failing at this I learned much about how blocks work.
+# Block-using functions don't barf if you pass them a block that
+# doesn't take the right
+# number of arguments; too few args, and it just fills in nil for the
+# missing ones, and
+# if you pass in too many, it lumps them all into an array. Ex:
+#ar.each {|a, b| puts b, a}
+# You get just a, then a newline. each blocks take only 1 arg, so the
+# b arg is assigned nil. Nil is coerced to an empty string.
+#ar.each {|a, b| p b, a}
+# You get nil, then a newline.
+#ar.each {|a, b| print b, " ", a}
+# This is how I figured it out. b is nil, so it gets printed as
+# nothing. You get " #{a}" (to use the Ruby idiom).
+
+class Tree
+  attr_accessor :children, :node_name
+  # Now we get getters and setters for these. We can treat them like
+  # they're public fields, though.
+  
+  # initialize is our constructor, more or less.
+  def initialize(name, children={})
+    @children = children
+    @node_name = name
+  end
+  # @ means an instance field. You specify access control either
+  # like in C++ or the same way we declared the accessors above, but
+  # using public, private, protected instead of attr_accessor.
+ 
+  def visit_all(&block)
+    visit &block
+    children.each {|c| c.visit_all &block}
+  end
+
+  def visit(&block)
+    block.call self
+  end
+end
+
+ruby_tree = Tree.new("Ruby",
+                     [Tree.new("Reia"), Tree.new("MacRuby")])
+puts "Visiting a node"
+ruby_tree.visit{|node| puts node.node_name}
+puts
+puts "Visiting entire tree"
+ruby_tree.visit_all {|node| puts node.node_name}
+
+# That was all from the text. These are my additions to finish the
+# exercise, using a split class def (kyahh!)
+class Tree
+  # Overloading is not allowed. What this does is redefine the
+  # constructor.
+  def initialize(hash_tree)
+    @children = parse_hash(hash_tree.keys[0], 
+                           hash_tree[hash_tree.keys[0]])
+  end
+
+  def parse_hash(name, children)
+    @node_name = name
+    unless children.empty?
+      children.collect do |child, grandchildren|
+        Tree.new Hash[child, grandchildren]
+      end
+    else
+      children
+    end #unless
+  end # def
+end # class
+# In a language with constructor overloading I could just declare two
+# constructors, one that takes a single hash and one that takes a
+# name/children pair, and call the second one from inside parse_hash
+# instead of having to stick everything back in a hash. Ruby doesn't
+# have that, and this seems like the cleanest way to achieve the
+# effect I want. But no doubt a Ruby master could come up with
+# something better.
+
+lineage = Tree.new ({'grandpa' =>
+  {'dad' => {'me' => {}, 'little sister (kyaah!)' => {}},
+   'uncle' => {'dumb cousin' => {}, 'hot cousin' => {}}
+  }
+})
+
+puts "Visiting tree in hash form--Witness the mastery of my recursion! Nya hahahahahah!!!"
+lineage.visit_all {|node| puts node.node_name }
+
+# Grepping lines from a file.
+f = File.new("../../Writing/aboutme.txt", "r")
+f.each_line {|line| puts line if line =~ /favorite/i}
+f.close
+# I knew I could do that really fast; here it is. Probably a Ruby
+# master could have made it even shorter.

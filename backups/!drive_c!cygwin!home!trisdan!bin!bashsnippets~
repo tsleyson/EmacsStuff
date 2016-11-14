@@ -1,0 +1,12 @@
+find . -name "file name pattern with number" | sort -V
+# sorts by name, then number, e.g. Pic1.jpg, Pic2.jpg..., rather than
+# Pic1.jpg, Pic10.jpg...
+
+# Reading arguments to a command from a file:
+mapfile -t < arguments.txt
+command "${MAPFILE[@]}"
+
+# or for me, since I'm stuck on Cygwin:
+IFS=$'\n'  # or whatever's delimiting them.
+read -ra args -d '' < arguments.txt
+command "${args[@]}"

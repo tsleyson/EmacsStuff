@@ -1,0 +1,11 @@
+#include <ncurses>
+
+int main(void) {
+    initscr();
+    printw("Hello world!");
+    refresh();
+    getch();
+    endwin();
+
+    return 0;
+}

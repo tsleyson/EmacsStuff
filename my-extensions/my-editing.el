@@ -22,10 +22,16 @@
     (insert " ")
     (right-word 1)))
 
-;; Note: In TeX insert mode, --- gets automatically replaced with this.
+;; Note: In TeX insert mode, --- gets automatically replaced with
+;; this. Pandoc also does this for Markdown.
 (defun insert-unicode-em-dash ()
   (interactive)
   (insert "—"))
+
+;; -- in TeX mode.
+(defun insert-unicode-en-dash ()
+  (interactive)
+  (insert "–"))
 
 (defun orgicize-headings (marker)
   "For my Thoughts files, to make the headings into org headings."
@@ -44,5 +50,25 @@
 (defun clear-shell ()
   "Clear shell buffer output."
   (interactive)
-  (let ((comint-buffre-maximum-size 0))
+  (let ((comint-buffer-maximum-size 0))
     (comint-truncate-buffer)))
+
+;;(define-key org-mode-map "\"" #'endless/round-quotes)
+
+
+;; Endless Parentheses solution since Typopunct is stupid.
+;; (defun endless/round-quotes (italicize)
+;;   "Insert “” and leave point in the middle.
+;; With prefix argument ITALICIZE, insert /“”/ instead (meant for
+;; org-mode).
+;; If inside a code-block, simply calls `self-insert-command'."
+;;   (interactive "P")
+;;   (if (and (derived-mode-p 'org-mode) (org-in-src-block-p))
+;;       (call-interactively 'self-insert-command)
+;;     (if (looking-at "”[/=_\\*]?")
+;;         (goto-char (match-end 0))
+;;       (when italicize
+;;         (insert "//")
+;;         (forward-char -1))
+;;       (insert "“”")
+;;       (forward-char -1))))

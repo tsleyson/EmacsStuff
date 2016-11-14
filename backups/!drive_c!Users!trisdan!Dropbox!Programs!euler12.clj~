@@ -1,0 +1,12 @@
+(defn count-factors [n]
+        (let [sqrt (Math/sqrt n)]
+          (if (== sqrt (int sqrt))
+            (inc (* 2 (count (filter #(== 0 (mod n %))
+                                     (range 1 (int sqrt))))))
+            (* 2 (count (filter #(== 0 (mod n %))
+                                (range 1 (int sqrt))))))))
+
+(loop [triangle 0, idx 1]
+        (if (>= (count-factors triangle) 5)
+          triangle
+          (recur (+ triangle idx) (inc idx))))

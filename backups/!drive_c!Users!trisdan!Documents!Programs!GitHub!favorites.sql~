@@ -1,0 +1,23 @@
+create table FavoriteChars(
+       series PRIMARY KEY,
+       first NOT NULL,
+       second NOT NULL,
+       third NOT NULL
+);
+
+insert into FavoriteChars(series, first, second, third)
+       values ('Ore no Imouto ga Konna ni Kawaii Wake ga Nai',
+              'Kuroneko'
+              'Ayase Aragaki',
+              'Kirino Kousaka');
+insert into FavoriteChars(series, first, second, third)
+       values ('Clannad',
+              'Fuko Ibuki',
+              'Kotomi Ichinose',
+              'Nagisa Furukawa');
+insert into FavoriteChars(series, first, second, third)
+       values ('Bakemonogatari',
+              'Tsukihi Araragi',
+              'Karen Araragi',
+              'Tsubasa Hanekawa');
+       

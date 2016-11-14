@@ -1,0 +1,35 @@
+var request = new XMLHTTPRequest();
+// The book isn't clear about whether you have to set these before
+// calling open or not, so let's try this and see if it works.
+request.setRequestHeader("User-Agent", "XMLHTTPRequest");
+request.setRequestHeader("Accept-Language", "en");
+request.setRequestHeader("If-Modified-Since",
+                                         lastRequestTime.toString());
+var urlPrefix = "http://localhost/p";
+var page = {current: 0,
+            nextPage: function() {
+                request.open("GET",
+                             urlPrefix + ++this.current,
+                             false); // Remove to get async request.
+                request.send(null);
+                this.displayPage();
+            }
+            prevPage: function() {
+                request.open("GET",
+                             urlPrefix + --this.current,
+                             false);
+                request.send(null);
+                this.displayPage();
+            }
+            displayPage: function() {
+                if (request.status == 200) {
+                    document.getElementById('display').innerHTML =
+                        request.responseText;
+                }
+                else {
+                    alert("Error " + request.status + ": " +
+                          request.statusText);
+                }
+            }
+           };
+                

@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+void printNthFromLast(struct node* head, int n) {
+    static int i = 0;
+    
+    ++i;
+    
+int main() {
+
+    return 0;
+}

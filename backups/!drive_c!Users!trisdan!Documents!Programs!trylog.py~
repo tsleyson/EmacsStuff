@@ -1,0 +1,4 @@
+import logging
+
+logging.warning("Warning")
+logging.info("This won't get printed.")

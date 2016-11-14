@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser storage</title>
+    <link href="taskAtHand.css" rel="stylesheet">
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/appStorage.js"></script>
+    <script src="browserStorage.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>Browser storage</header>
+</html>

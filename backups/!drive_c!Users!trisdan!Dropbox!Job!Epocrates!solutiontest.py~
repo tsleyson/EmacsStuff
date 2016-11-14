@@ -1,0 +1,6 @@
+# solutiontest.py
+# Tests for the coding puzzle.
+
+import unittest
+import solution
+

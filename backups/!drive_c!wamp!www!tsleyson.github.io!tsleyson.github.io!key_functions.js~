@@ -1,0 +1,34 @@
+// These functions determine an ordering for table rows in the
+// Aria correspondence table. (Or are utilities or data for that purpose.)
+var keyFunctions = {
+    mangaOrd : {"Aqua" : 0, "Aria" : 1},
+    animeOrd : {"Aria the Animation"   : 0,
+                "Aria the Natural"     : 1,
+                "Aria the Origination" : 2},
+    extractNumber: function(str, checks) {
+        // str is the string to extract a number from.
+        // checks is an array of regexps to try. It must
+        // have the key-capturing group as its first group.
+        for (var i = 0; i < checks.length; ++i) {
+            var m = str.match(checks[i]);
+            if (m) {
+                return parseInt(m[1]);
+            }
+        }
+        // Nothing matches.
+        throw new Error("extractNumber: " +
+                        str + " does not match any check.");
+    },
+    animeInfo : function(row) {
+        var series = $('td.anime_series', row).text();
+        if (!series) {
+            throw new Error(row + " doesn't have a series somehow.");
+            // Not having a series means I screwed up writing the HTML.
+        }
+        var episode = extractNumber($('td.anime_episode', row).text(),
+                                    
+    },
+    byManga : function(row) {
+
+    }
+};

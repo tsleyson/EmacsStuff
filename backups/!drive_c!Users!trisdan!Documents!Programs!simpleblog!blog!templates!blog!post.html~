@@ -1,0 +1,8 @@
+{% extends "user_info.html" %}
+
+{% block title %}{{ user.username }} on {{ post.post_date }}{% endblock %}
+
+{% block content %}
+<h1>{{ user.username }} on {{ post.post_date }}</h1>
+{{ post.post_text }}
+{% endblock %}

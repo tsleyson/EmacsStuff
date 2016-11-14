@@ -1,0 +1,67 @@
+(ns sleeping-barber.core
+  "The answer to the Day 3 question on Clojure
+   in Seven Languages in Seven Weeks.")
+
+(def ^:const chairs 3)
+(def ^:const haircut-time 20) ; in milliseconds
+
+;; The pipeline:
+;; main -> (future send-customers) -> waiting-room ->
+;; (future front-desk) -> barber.
+;; The futures both run infinitely; main has to cancel them when the
+;; time comes.
+(def waiting-room (agent 0
+                         :validator #(and (number? %)
+                                          (<= % chairs)
+                                          (not (neg? %)))))
+(def barber (agent 0
+                   :validator (comp not neg?)))
+
+(defn manage-waiting-room
+  "This function will be started in a future to act
+   as the front desk part of the pipeline."
+  []
+  (while true
+    (let [wr (await-for 30 (send waiting-room
+                                 #(when (pos? %) (dec %))))]
+      (when wr
+        (await (send barber
+                     #(do
+                        (Thread/sleep 20)
+                        (inc %))))))))
+
+;; Or, alternately, just make an infinite lazy seq of times and keep taking
+;; values from it until the day ends, like this:
+(defn send-customers []
+  (loop [intervals (repeatedly #(+ 10 (rand-int 20)))]
+    (Thread/sleep (first intervals))
+    (send waiting-room #(if (= % chairs)0
+                            (inc %)))
+    (recur (rest intervals))))
+
+(defn -main
+  []
+  (println "I work."))
+
+;; Use a future to start things up and send in customers at the correct
+;; interval. Use (future-call send-customers), wait 10000ms (10 seconds),
+;; and then do (future-cancel) on that future object.
+;; Send customers to a waiting room agent that stores the number of occupied
+;; chairs. If all the chairs are occupied, it just turns away the new
+;; customer. Otherwise it increments its count.
+;; The front desk checks if there are any customers in the waiting room,
+;; and if so, it sends one off to the barber (by subtracting from the waiting
+;; room's count). It waits 20ms  before checking for another
+;; customer, so the barber has time to do the haircut.
+;; (The front desk is an agent.) When the front desk asks for a customer, it
+;; should (await-for 30) on the waiting room, because there should definitely
+;; be a customer by then. Actually the front desk has to be a future.
+;; The barber (an agent) just updates his haircut count. Actually we can
+;; probably merge the barber and the front desk. Just have the barber
+;; await-for 30 ms the result of sending off a request for a customer to
+;; the waiting room, then wait 20ms when he receives one, then update his
+;; count.
+
+;; So we have this pipeline: customer-sender -> waiting-room -> front-desk
+;; -> barber. The main thread cancels the sender and the waiting room after
+;; 10s and then dereferences the barber to get the number of haircuts.

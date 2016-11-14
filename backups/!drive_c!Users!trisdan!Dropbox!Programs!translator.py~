@@ -1,0 +1,5 @@
+# translator.py
+# Translates the name of a series into a list of my
+# favorite characters from the series, in order,
+# as a string. Designed to receive and send data over
+# a network.

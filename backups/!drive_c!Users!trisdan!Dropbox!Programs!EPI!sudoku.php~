@@ -1,0 +1,32 @@
+<?php
+function empty_set($keys) {
+    foreach ($keys as $key) {
+        $set[$key] = 0;
+    }
+    return $set;
+}
+
+function no_duplicates($sudoku) {
+
+}
+
+function check_sudoku($sudoku) {
+    // $sudoku is a 2d array
+    $rows = empty_set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    for ($i = 0; $i < count($sudoku); ++$i) {
+        for ($j = 0; $j < count($sudoku[$i]); ++$j) {
+            $val = $sudoku[$i][$j];
+            if (!$rows[$val]) {
+                if ($val > 0) {
+                    $rows[$val] = TRUE;
+                }
+            }
+            else {
+                return FALSE;
+            }
+        }
+    }
+    $cols = empty_set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    for 
+}
+?>

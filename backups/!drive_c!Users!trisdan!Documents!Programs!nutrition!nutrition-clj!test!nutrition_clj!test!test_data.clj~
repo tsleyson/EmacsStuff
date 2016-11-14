@@ -1,0 +1,3 @@
+(ns nutrition-clj.test.test-data
+  "Defines some test data that's used across several tests."
+  )

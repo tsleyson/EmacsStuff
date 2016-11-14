@@ -1,0 +1,102 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/trisdan/Documents/Programs/leiningen/" . "doc/")
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/src/" . "madoka_population/")
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/" . "src/")
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/" . "madoka_population/")
+ ("/Users/trisdan/IdeaProjects/" . "MadokaPopulation/")
+ ("/Users/trisdan/Documents/Programs/Clojure programs/" . "my-stuff/")
+ ("/Users/trisdan/Documents/Programs/" . "leiningen/")
+ ("/Users/trisdan/Documents/" . "Programs/")
+ ("/Users/trisdan/Dropbox/Writing/Blogs/" . "TPCS/")
+ ("/Users/trisdan/Dropbox/Writing/" . "Magical 4koma story/")
+ ("/Users/trisdan/Dropbox/" . "Writing/")
+ ("/Users/trisdan/.emacs.d/" . "my-extensions/")
+ ("/Users/trisdan/" . ".lein/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/trisdan/.lein/"
+ "/Users/trisdan/Documents/Programs/leiningen/doc/"
+ "/Users/trisdan/Documents/Programs/leiningen/"
+ "/Users/trisdan/Documents/Programs/new_guestbook/"
+ "/Users/trisdan/Documents/Programs/boron.wiki/"
+ "/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/src/madoka_population/"
+ "/Users/trisdan/Documents/Programs/ECS60_Assignment5/"
+ "/Users/trisdan/.emacs.d/"
+ "/Users/trisdan/Dropbox/Writing/Magical 4koma story/"
+ "/Users/trisdan/.emacs.d/my-extensions/"
+ "/Users/trisdan/Dropbox/Writing/Blogs/TPCS/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "profiles.clj"
+ "TUTORIAL.md"
+ "project.clj"
+ "Java8Lambdas.md"
+ "Git.md"
+ "core.clj"
+ "events.clj"
+ "Dispatcher.cpp"
+ "crazystuff.el"
+ "Anne and Tricks.md"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/trisdan/Documents/Programs/new_guestbook/" (22135 38486 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj~" "project.clj" "profiles.clj" "Procfile" "new_guestbook_dev.db.mv.db" "new_guestbook.log" "new_guestbook.iml" "env/" "dev-resources/" ".lein-env" ".idea/" ".gitignore" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/leiningen/doc/" (22135 36786 0 0) "TUTORIAL.md" "TEMPLATES.md" "PROFILES.md" "PLUGINS.md" "MIXED_PROJECTS.md" "lein.1" "ja/" "GPG.md" "FAQ.md" "DEPLOY.md" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/" (22136 63660 0 0) "yogthos_guestbook/" "XSLT.java" "xmltotransform.xml" "x" "workspace/" "web-example/" "vigenere/" "UsageCalc/" "untitled/" "tutorial/" "TSLeysonScript.zip" "trylog.py" "trying_out/" "tl.log" "TextFileSum.java" "TextFileSum.html" "TextFileSum.class" "test/" "templatefact.cpp" "target/" "subsets.py" "stringreverse.c" "Stocks/" "star-lang-katas/" "src-cljs/" "src/" "something/" "solitaire/" "SnapApp/" "sleeping_barber/" "site_example/" "simpleblog/" "SieveOfEratosthenes/" "scores.py" "scores/" "schigh.html" "ScalaKatas2/" "rubytest.rb" "Rounds/" "rhinotest.js" "resources/" "RecipeBook/" "readstdin.py" "README.md" "ReadAndSearch.java" "ReadAndSearch.class" "rails_projects/" "rails-master/" "quil-sketch/" "pythonordereddict.py" "python_koans/" "python-xml/" "PySounds2/" "purelyfunctionaldatastructures/" "Program ideas.txt" "Procfile" "Prime/" "powerset.js" "phonemnemonic.py" "phonemnemonic.clj" "pgtut.sql" "PGSQL/" "Permutations.java" "permutations.c" "nutrition/" "numbers.txt" "nthfromlast.c" "nodebook/" "new_guestbook/" "montyhall.py" "montyhall.pdf" "montyhall.html" "Matrix/" "machinelearninginaction/" "luminus-template/" "ll.c" "leiningen/" "lcthw/" "KarpRabin/" "JythonTest.py" "javascript-koans/" "JavaSAXExample/" "Java_Programs/" "Java8Features/" "ISLR/" "IntervalTree/" "incanter-test/" "ImageScraper/" "id3_renamer.py" "htmlent_scraper/" "HTML5 Web Application Development By Example.zip" "HTML5 Web Application Development By Example/" "HipsterEffect.ipynb" "HelloWorld.vb" "HelloWorld.cs" "HelloJava8.java" "helloflask.py" "hello_uno.py" "guivalid.py" "guestbook/" "gohome/" "GitSandbox/" "gimme_info/" "GeneTorrent-3.8.7/" "game_of_life/" "freeing.c" "fieldsep.c" "fib.py" "fib.c" "epibook.github.io/" "env/" "edntest" "ECS60_Assignment5/" "djangotut/" "diveintopython-pdf-5.4.zip" "dev-resources/" "DBAccess.java" "DBAccess.class" "databaseaccess.rb" "database/" "cpsfib.scm" "cprog.c" "Cornucopia/" "ConcurrentFileSearcher/" "clojure-master.zip" "Clojure programs/" "clean_html/" "chop_chop_this_instant.py" "cghub-coding-exercise/" "btreeproto" "boron.wiki/" "boron/" "booksite/" "answer.md" "AnagramGame/" "__pycache__/" "42.c" ".ipynb_checkpoints/" ".gitignore" ".DS_Store" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/leiningen/" (22135 37758 0 0) "zsh_completion.zsh" "TUTORIAL.md" "test_projects/" "test/" "target/" "src/" "sample.project.clj" "resources/" "README.md" "project.clj" "pcmpl-lein.el" "NEWS.md" "leiningen-core/" "lein-pprint/" "doc/" "COPYING" "CONTRIBUTING.md" "bin/" "bash_completion.bash" ".travis.yml" ".lein-project-checksum" ".lein-classpath" ".gitignore" ".gitattributes" ".git/" "../" "./")
+
+ ("/Users/trisdan/.lein/" (22135 36412 0 0) "self-installs/" "repl-history" "profiles.clj~" "profiles.clj" "../" "./")
+
+ ("/Users/trisdan/" (22135 34822 0 0) "Public/" "Pictures/" "Music/" "Movies/" "Library/" "IdeaProjects/" "file2.txt" "file1.txt" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Books/" "bin/" "Applications/" ".viminfo" ".Trash/" ".ssh/" ".scala_history" ".sbt/" ".password-store/" ".oracle_jre_usage/" ".m2/" ".lein/" ".ivy2/" ".IdeaIC15/" ".idea-build/" ".gnupg/" ".gitconfig" ".gitattributes" ".git-prompt.sh" ".git-completion.bash" ".emacs.d/" ".DS_Store" ".dropbox/" ".CFUserTextEncoding" ".bash_profile" ".bash_history" ".android/" ".489614.padl" "../" "./")
+
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/" (22117 7421 0 0) "test/" "target/" "src/" "resources/" "project.clj" "LICENSE" "doc/" "dev-resources/" ".nrepl-port" ".gitignore" "../" "./")
+
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/src/madoka_population/" (22117 8859 0 0) "events.clj" "entities.clj" "demo_core.clj" "core.clj" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/boron.wiki/" (22125 5275 0 0) "How-to-create-a-hibernate-model-in-java.md" "Home.md" "Git.md" "_Sidebar.md" ".git/" "../" "./")
+
+ ("/Users/trisdan/.emacs.d/" (22125 5801 0 0) "url/" "TAGS" "recentf" "README.md" "places" "my-extensions/" "init.el~" "init.el" "image-dired/" "ido.last~" "ido.last" "emacsreg.reg" "elpa/" "crazystuff.el" "backups/" "auto-save-list/" ".smex-items" ".git/" ".emacs.desktop" "../" "./")
+
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/madoka_population/src/" (22107 23852 0 0) "madoka_population/" ".DS_Store" "../" "./")
+
+ ("/Users/trisdan/IdeaProjects/MadokaPopulation/" (22102 47605 0 0) "README.md" "madoka_population/" ".idea/" ".git/" "../" "./")
+
+ ("/Users/trisdan/IdeaProjects/" (22106 37694 0 0) "PySounds2/" "MadokaPopulation/" "intellij-templates/" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/ECS60_Assignment5/" (22085 36784 0 0) "tt.cpp" "tt" "testmain.cpp" "testCR.dat.txt" "testCR.dat" "test.exe" "test.dat" "test" "TaxiMain.cpp" "taxi.out" "Taxi.o" "Taxi.h" "Taxi.cpp" "Taxi Simulator Plan" "SubmissionItems/" "RestOfTest.dat" "problems.txt" "output.txt" "myout2.txt" "myout.txt" "Makefile" "is.o" "is.cpp" "is" "HashTable.h" "HashTable.cpp" "gt.out" "gt.cpp" "gt" "Graph.o" "Graph.h" "Graph.cpp" "ECS60_p5.htm" "Dispatcher.o" "Dispatcher.h" "Dispatcher.cpp" "Backup/" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/Clojure programs/my-stuff/" (22085 33612 0 0) "test/" "target/" "src/" "README.md" "project.clj" "doc/" ".lein-repl-history" ".lein-failures" ".gitignore" "../" "./")
+
+ ("/Users/trisdan/Documents/Programs/Clojure programs/" (22085 33612 0 0) "ngram/" "my-stuff/" "MazeGen.clj" "../" "./")
+
+ ("/Users/trisdan/Documents/" (22115 50114 0 0) "Steam info.pdf" "Programs/" "Keyboard test ramblings.pages" "Intro_letter.pdf" "Intro_letter.pages" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/Magical 4koma story/" (22084 10786 0 0) "titlepage.html" "stylelink.html" "strawsunstyles.css" "strawsun_style.css" "Notes/" "Book 3/" "Book 2/" "Book 1/" "Anne and Tricks.md" "Anne and Tricks.html" ".DS_Store" "../" "./")
+
+ ("/Users/trisdan/.emacs.d/my-extensions/" (22117 3822 0 0) "typopunct.el" "tan-background-theme.el" "ruby-block.el" "python-django/" "php-mode-improved.el" "my-editing.el" "markdown-mode.el" "linum.el" "ispell/" "html-entities.el" "font-toggle.el" "ekoans.el" "../" "./")
+
+ ("/Users/trisdan/bin/" (22117 2875 0 0) "emacs" "../" "./")
+
+ ("/Users/trisdan/Dropbox/" (22106 37242 0 0) "Writing/" "UCSC Campus (mobile).pdf" "ubuntu-font-family-0.80.zip" "TrisdanLeysonCreditReport.pdf" "TESTING SUBMERSIBLE PUMP MOTORS.htm" "Somerandomfile.odt" "Programs/" "Photos/" "parking-map.pdf" "Official/" "notes" "Job/" "Icon
+" "Homework/" "hideHNQ.js" "Graduate Applications/" "Finances.ods" "eI9Verify_files/" "eI9Verify.html" "diveintopython.pdf" "Apps/" ".DS_Store" ".dropbox.cache/" ".dropbox" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/Blogs/TPCS/" (22105 25148 0 0) "understand-the-use.org" "three-clojure-topics.md" "three-clojure-topics.html" "siena_blog.org" "relational_lists.db" "relational-lists.md" "python-is-vs-equals-equals.md" "multiple_inheritance.org" "multiple_inheritance.html" "madoka-simulation.org" "madoka-simulation.html" "java_v_cpp.md" "isomorphism.html" "induction-finale.html" "implicit.md" "Essential Data Structures.lyx~" "Essential Data Structures.lyx" "dynamic_programming2.md" "dynamic_programming1.md" "ants-async.md" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/Blogs/" (22084 10766 0 0) "WhyCitations.md" "WhyCitations.html" "Where do bad programmers work.md" "webframeworks.md" "TPCS/" "one-week-friends.md" "four-algs-books.md" "explain-class.md" "clojure-conservative.md" "answer.txt" "anime/" "../" "./")
+
+ ("/Users/trisdan/Dropbox/Writing/" (22084 10801 0 0) "Wizard Story/" "What's inside a computer.odt" "Thoughts/" "Succubus Story/" "novel_style.css" "Neither Here Nor There Draft 4.5/" "Misc/" "Magical 4koma story/" "Building-Your-Book-for-Kindle.pdf" "Blogs/" "Amazon Kindle Direct Publishing: KDP Account Information_files/" "Amazon Kindle Direct Publishing: KDP Account Information.html" "aboutme.txt" ".DS_Store" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

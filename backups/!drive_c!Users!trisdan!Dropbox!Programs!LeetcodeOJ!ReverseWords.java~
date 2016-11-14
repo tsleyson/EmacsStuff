@@ -1,0 +1,18 @@
+public class ReverseWords{
+    public String reverseWords(String s) {
+        String[] sentence = s.split("\\s+");
+        for (int i = 0; i < sentence.length / 2; ++i) {
+            String temp = sentence[sentence.length - i];
+            sentence[sentence.length - i] = sentence[i];
+            sentence[i] = temp;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < sentence.length - 1; ++i) {
+            sb.append(sentence[i]);
+            sb.append(" ");
+        }
+        if (sentence.length > 0)
+            sb.append(sentence[sentence.length - 1]);
+        return sb.toString();
+    }
+}

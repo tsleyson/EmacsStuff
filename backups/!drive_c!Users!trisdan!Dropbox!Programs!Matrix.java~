@@ -1,0 +1,6 @@
+// An attempt to implement a high-performance matrix in Java.
+import java.util.Arrays;
+
+public class Matrix {
+
+}

@@ -1,0 +1,8 @@
+# The Sieve of Erathosthenes in Python
+def sieve(n):
+    numbers = range(2, n)
+    for i in range(2, n):
+        numbers = [number for number in numbers
+                   if (number ^ % i > 0) or
+                   (number % i == 0 and number != i)]
+    return numbers

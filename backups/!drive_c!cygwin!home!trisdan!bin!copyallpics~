@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+under=$1
+to=$2
+
+if [[ -z under ]] || [[ -z to ]]; then
+    echo "Usage: copyallpics <directory pics are under> <directory to copy to>"
+    exit 1
+fi
+

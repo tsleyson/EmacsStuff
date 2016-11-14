@@ -1,0 +1,8 @@
+{:user
+  {
+  :java-cmd "C:\\Program Files (x86)\\Java\\jdk1.7.0_11\\bin\\java.exe"
+  :plugins [
+            [lein-try "0.4.1"]
+    ]
+   }
+ }

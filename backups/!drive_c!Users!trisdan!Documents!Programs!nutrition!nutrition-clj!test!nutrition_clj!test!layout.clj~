@@ -1,0 +1,3 @@
+(ns nutrition-clj.test.layout
+  (:require [nutrition-clj.layout :refer :all]
+            [clojure.test :refer [deftest testing is use-fixtures]]))

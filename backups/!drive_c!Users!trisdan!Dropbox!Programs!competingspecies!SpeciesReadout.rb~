@@ -1,0 +1,6 @@
+require 'tk'
+
+class Level
+  # A bar chart level on a TK canvas.
+  def change_level(new_level)
+    @current = new_level

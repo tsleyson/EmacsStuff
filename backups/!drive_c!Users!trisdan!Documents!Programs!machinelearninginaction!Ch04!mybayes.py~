@@ -1,0 +1,144 @@
+# mybayes.py
+import re
+import random
+from numpy import *
+
+def loadDataSet():
+    postingList=[['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'],
+                 ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'],
+                 ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'],
+                 ['stop', 'posting', 'stupid', 'worthless', 'garbage'],
+                 ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'],
+                 ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']]
+    classVec = [0,1,0,1,0,1]    #1 is abusive, 0 not
+    return postingList,classVec
+
+def createVocabList(dataSet):
+    vocabSet = set([])
+    for document in dataSet:
+        vocabSet = vocabSet | set(document)
+    return list(vocabSet)
+
+def setOfWords2Vec(vocabList, inputSet):
+    returnVec = [0] * len(vocabList)
+    for word in inputSet:
+        if word in vocabList:
+            returnVec[vocabList.index(word)] = 1
+        else:
+            print("The word: {0} is not in my vocabulary".format(word))
+    return returnVec
+
+def bagOfWords2Vec(vocabList, inputSet):
+    '''
+    Counts occurrences of words instead of just checking for
+    presence or absence.
+    '''
+    returnVec = [0] * len(vocabList)
+    for word in inputSet:
+        if word in vocabList:
+            returnVec[vocabList.index(word)] += 1
+    return returnVec
+
+def trainNB0(trainMatrix, trainCategory):
+    nTrainingDocs = len(trainMatrix)
+    nWords = len(trainMatrix[0])
+    # Probability of an abusive posting, estimated from sample.
+    pAbusive = sum(trainCategory) / float(nTrainingDocs)
+    # Vectors of length nWords; numerators[i][j] counts the number of
+    # times token j appears in a document of class i. (Class 0 is
+    # innocent, Class 1 is abusive.)
+    numerators = [ones(nWords), ones(nWords)]
+    # Total count of tokens in each document type. Have to be floating
+    # point because, remember, the numpy arrays are statically-typed
+    # under the covers.
+    denoms = [2.0, 2.0]
+    # We had zeros and 0.0, but change it to avoid multiplying by 0
+    # when calculating conditional probability. (And to adjust for
+    # sampling error.
+    for i in range(nTrainingDocs):
+        numerators[trainCategory[i]] += trainMatrix[i]
+        # trainMatrix will have a 1 for every word that a given
+        # document has, so this incs the counts for all words in the
+        # document trainMatrix[i].
+        denoms[trainCategory[i]] += sum(trainMatrix[i])
+        # sum(trainMatrix[i]) counts total tokens in trainMatrix[i].
+    return log(numerators[0] / denoms[0]), log(numerators[1] / denoms[1]), pAbusive
+    # Change multiplication to addition via log; more stable with
+    # floating point.
+
+def classifyNB(vec2Classify, p0v, p1v, pClass1):
+    p1 = sum(vec2Classify * p1v) + log(pClass1)
+    p0 = sum(vec2Classify * p0v) + log(1 - pClass1)
+    # sum(vec2Classify * pnv) gets rid of the probabilities for all
+    # the words that aren't in this document (because those indices
+    # are 0 in vec2Classify) and then adds them up, which is the
+    # product of all the words but under a log transform. Then we add
+    # P(c1). This is because we want P(c1 | w1, w2, ..., wn), which is
+    # hard to find, so we instead calculate P(w1, w2, ..., wn | c1) *
+    # P(c1) / P(c1 or c0), which is the same thing by Bayes's Rule. We
+    # know all of our documents are in c1 or c0, so P(c1 or c0) is 1.
+    # We calculated P(w1, w2, ..., wn | c1) = P(w1 | c1) * P(w2 | c1)
+    # * ... * P(wn | c1) because we assumed that the probabilities of
+    # w1, ..., wn appearing in a document were conditionally
+    # independent of each other given that we know the class of the
+    # document. So we now add log(pClass1) = log(P(c1)) and finish
+    # calcullating P(w1, w2, ..., wn | c1) P(c1).
+    if p1 > p0:
+        return 1
+    else:
+        return 0
+
+def testingNB():
+    listOfPosts, listClasses = loadDataSet()
+    myVocabList = createVocabList(listOfPosts)
+    trainMat = []
+    for postInDoc in listOfPosts:
+        trainMat.append(setOfWords2Vec(myVocabList, postInDoc))
+    p0v, p1v, pAb = trainNB0(array(trainMat), array(listClasses))
+    testEntries = [['love', 'my', 'dalmation'],
+                   ['stupid', 'garbage']]
+    for doc in testEntries:
+        thisDoc = array(setOfWords2Vec(myVocabList, doc))
+        print(doc, "classfied as: ", classifyNB(thisDoc, p0v, p1v, pAb))
+
+def parseText(bigString):
+    listOfTokens = re.split(r'\W+', bigString)
+    return [tok.lower() for tok in listOfTokens if len(tok) >= 3]
+
+def spamTest():
+    docList = []
+    classList = []
+    fullText = []
+    for i in range(1, 26):
+        wordList = parseText(open('email/spam/{}.txt'.format(i)).read())
+        docList.append(wordList)
+        fullText.extend(wordList)
+        classList.append(1) # spam is class 1.
+        wordList = parseText(open('email/ham/{}.txt'.format(i)).read())
+        docList.append(wordList)
+        fullText.extend(wordList)
+        classList.append(0) # ham is class 0.
+    vocabList = createVocabList(docList)
+    trainingSet = range(50)
+    testSet = []
+    for i in range(10):
+        # Randomly choose ten docs from training to test 
+        randIndex = int(random.uniform(0, len(trainingSet)))
+        testSet.append(trainingSet[randIndex])
+        del(trainingSet[randIndex])
+    trainMat = []
+    trainClasses = []
+    for docIndex in trainingSet:
+        trainMat.append(setOfWords2Vec(vocabList, docList[docIndex]))
+        trainClasses.append(classList[docIndex])
+    # Train network with chosen training docs.
+    p0v, p1v, pSpam = trainNB0(array(trainMat), array(trainClasses))
+    errorCount = 0
+    for docIndex in testSet:
+        # Run test docs and calculate error rate.
+        wordVec = setOfWords2Vec(vocabList, docList[docIndex])
+        if classifyNB(array(wordVec), p0v, p1v, pSpam) != classList[docIndex]:
+            errorCount += 1
+    print("The error rate is: ", float(errorCount) / len(testSet))
+
+

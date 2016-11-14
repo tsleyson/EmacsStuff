@@ -1,0 +1,11 @@
+# Connect 4 Board Algorithm
+
+Use dynamic programming to analyze a Connect 4 board and evaluate its advantages and disadvantages.
+
+## The recurrence
+
+The optimal substructure here is the fact that if you have a two-chip sequence, it must have a one-element sequence as its subsequence, and a three-chip needs a one-chip and two-chip, and so on.
+
+The problem with what I did in the actual program is that it kept rechecking the same positions when they appeared as part of a different sequence (i.e. if we needed to look at positions 3-3 and 4-4, it would look at position 3-4 for each of them, because it would check for a sequence coming downward from 3-3 and for one going left from 4-4. It's actually even worse because it would also check it from other positions).
+
+The problem with all the solutions that Tran and I came up with is that they all compromised the amount of checking that was done in return for going faster, so it wasn't enough to beat Monte Carlo.

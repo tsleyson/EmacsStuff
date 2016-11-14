@@ -1,0 +1,79 @@
+There's a boring quadratic time solution like this:
+
+    for n1 in h1:
+      for n2 in h2:
+        if n1 == n2:
+          return n1
+
+Just add manual pointer moving for non-iterable linked lists.
+
+But there might also be a really horrible n log n time solution like this:
+
+1: First use fast and slow pointers to find the centers of h1 and h2. Call h1's center pointer c1 and h2's c2.
+
+2: As you move c1 and c2, keep track of how many nodes they travel through. Assume without loss of generality that c1 traveled through fewer nodes than c2. Then move c1 through h1 until c1 == c2, or c1 hits the end of h1.
+
+3a: If c1 hits the end of h1, we have two possibilities:
+
+  - The shared structure starts after c2.
+  - The two lists do not share structure.
+
+It's impossible for them to share structure without sharing all the structure from the first point where they share it up to the end. For that to happen, a node would need two pointers to branch out into the two separate continuations of the two lists, but these are normal linked lists, so they only have one next pointer each. That means that if they do share structure, it has to start somewhere after c2, otherwise c2 would be pointing to a node in the shared region and c1 would have found it. We can't eliminated this possibility with just the knowledge we have. So we move the head of h1 to the starting position of c1, and the head of h2 to c2. We now know that if there is a shared region, it must begin somewhere between these two locations
+
+3b: If you get c1 == c2, then we know that h1 and h2 share structure somewhere. Furthermore, we know that the first point where they share structure is somewhere between the current location of c2 and the beginning of both lists. So we can repeat from 1, using c2's current location as the final stop for the fast pointers on their run. If we do this process and fall into case 3a, we know the shared structure starts at c2, because we've already eliminated the possibility that it starts after c2 (c2 was in the shared region already), so the previous node that we found in the shared region had to be the first one in the shared region.
+
+We can model this by checking at the end whether the beginning of the shared region is null (or whatever flag we use for end of list). If so, we know there is no shared region.
+
+This is sort of like binary search; at each iteration, we narrow the region where the shared region could start, but Step 1, where we have to find the centers of the lists, takes O(n). After that, we always know the new end/beginning is one of the pointers from the previous iteration, so that part is constant time. The part where we advance c1 until we hit c2 or the end of the list is linear as well; in the worst case, we would advance only one node from the center on each subsquent interation, so the worst case is O(n/2) \in O(n). We expect to do log n iterations, although in the worst case we could do n^2/2. So in the worst case this is O(n^2) just like the boring solution, but it has expected O(n log n) time.
+
+[wrong!!!]
++More precisely, we'd have O(n) up front, then expected log n iterations with worst case n work per iteration, so we'd have expected O(n) + O(n log n) which is expected O(n log n). But in the worst case we'd have n iterations and do n work per iteration, so O(n) + O(n^2) which is O(n^2).+
+[end wrong]
+
+The above is wrong. We do have to do n^2 work each time because when we move up the end of the list or move down the beginning, we then have to find the center of the new region, once again using the fast/slow pointers, so it's actually O(n)O(n)O(log n) which is O(n^2 log n), and which, combined with the higher constants, means there's no advantage to this over the boring version.
+
+The differences from binary search that increase the runtime are:
+
+  - No random access, so we have to do O(n) work to find the center.
+  - We have to do the check to see if c1 crosses c2, to find out if
+    c2 is in the shared region.
+  - We don't necessarily halve the feasible region on each iteration.
+
+Also, I think this will be a gigantic pain in the ass to implement, with like seven pointers to keep track of.
+
+
+The EPI hint says to take care of the easy cases first.
+
+As I see it, there are the following cases for this problem:
+
+  1. The lists share no structure because one of them is empty and the other is not.
+  2. The two lists share all of their structure because they are in fact the same list.
+  3. The two lists share no structure, but neither is empty.
+  4. The two lists are not identical, but have the same length and share structure. This is distinguished because by the observation above that if two lists share any structure, they must share the last node, this case is detectable by a pair of pointers moving in lockstep.
+  5. The two lists have unequal lengths and share structure. (This is the hard case; the others are easy.)
+
+We can fold these into the following cases:
+
+  1. The lists share no structure. Obviously the empty list shares no structure with any nonempty list.
+  2. The lists are identical and share all structure.
+  3. The lists share some structure.
+  
+Cases 1-4 are easy. We can check all of them with some algorithm like the following:
+
+    for n1 in h1 and n2 in h2:
+      if n1 == n2:
+        n1 / n2 are the start of the shared region. The list comes under
+        case 2 or case 4 from above. Don't need to care which.
+      else if one of the lists is consumed and not the other:
+        Save the last node of the consumed list. Advance to the last node of
+        the other list and check them for equality. If they are equal, we've
+        detected Case 5. If they are unequal, including the case where one
+        of them is null, we've detected Case 1 or 3. 
+
+We can also get the lengths of the lists as we do this. As long as the pointers are moving in lockstep, increment a counter c. When one of the lists is consumed, make another counter, overage. Increment overage until the second list is consumed. c is the length of the shorter list; c + overage is the length of the longer list. If overage == 0, the lists are the same length and share no structure (but it doesn't matter because we'll detect that when the final nodes are unequal).
+
+The question is what to do if we hit case 5. We could fall back on a quadratic time solution, but it seems like we could use the knowledge we get from the first run-through to do better. For one thing, we now know unequivocally that the two do share structure, because cases 1-4 cover every way for the lists to not share structure. We also know that the start point of the shared region has to lie somewhere inside the shorter list and that the tails of the two lists have to be identical. We therefore know that, if k is the length of the shorter list, the shared region must start somewhere within the last k nodes of the longer list.
+
+We then have the problem of finding out if two lists, both of length k, share any structure. We can find the last k nodes of the longer list by reading overage nodes into the longer list and moving through the two lists in lockstep again. Now we're under case 4 above.
+
+Assume we're working on lists L1 of length m and L2 of length n, and without loss of generality, m < n. This algorithm takes O(n) time to do the first run-through in lockstep. It then takes O(n - m) time to find the length m sublist of L2, and then O(m) time to do the second read in lockstep (in the worst case, which is case 5 from above). So it takes O(n) + O(n - m) + O(m), which is O(n).

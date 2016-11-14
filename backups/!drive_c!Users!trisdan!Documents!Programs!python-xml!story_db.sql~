@@ -1,0 +1,16 @@
+CREATE TABLE files(
+       id INTEGER PRIMARY KEY,
+       name TEXT
+);
+-- name can be null; then we have anonymous files.
+
+CREATE TABLE text(
+       file INT NOT NULL,
+       paragraph_no INT NOT NULL,
+       hash TEXT NOT NULL,
+       paragraph TEXT NOT NULL,
+       FOREIGN KEY (file) REFERENCES files(id)
+);
+
+-- Enter a database from the sqlite prompt and do .read odt_db.sql
+-- to execute this file and get these tables.

@@ -1,0 +1,7 @@
+# Problem 11.3 of EPI.
+
+# See notes.
+
+def heapify(a):
+    "Min-heapify a list."
+    

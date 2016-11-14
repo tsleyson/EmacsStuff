@@ -1,0 +1,3 @@
+var request = new XMLHTTPRequest();
+var page = {current: 0,
+            next: function

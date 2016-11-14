@@ -1,0 +1,28 @@
+# BoldAlt2.py
+# Made to work with Latex exported as pdflatex from Lyx. Then we can
+# import the file back to Lyx and reexport as HTML or ODT so that
+# OpenOffice can make it into a doc.
+
+import sys
+
+def bold_line(line):
+    if not (line.startswith("%") and line.startswith("\\")):
+        return "\textbf{" + line + "}"
+# end bold_line
+
+def should_bolden(line, do_it):
+    if do_it:
+        return bold_line(line)
+    else:
+        return line
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python boldalt.py <True|False> <name of file>")
+    else:
+        startwhere = bool(sys.argv[1])
+        name = sys.argv[2]
+        b = BoldAlt(startwhere)
+        b.feed(name)
+        bolded = open(name, "w")
+        bolded.write(b.rawdata)

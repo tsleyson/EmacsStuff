@@ -1,0 +1,6 @@
+# Gets html img tags for all the images in the provided directory.
+
+unless ARGV[0]
+  puts "Usage: ruby html_image_list.rb <dir>"
+  exit
+end

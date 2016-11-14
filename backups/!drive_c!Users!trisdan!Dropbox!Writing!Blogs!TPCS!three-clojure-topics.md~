@@ -1,0 +1,60 @@
+# Three Haiku on Clojure
+
+These are three random topics about Clojure that are sort of connected, in that all three address Clojure’s incredible flexibility and genericity from different angles. They were born from a few recent small projects that I started and haven’t yet finished.
+
+## Clojure’s uneasy relationship with OOP
+
+Object-oriented programming, at least as presented in C++ and Java, lets you do three things much more easily than languages like C:
+
+  1. Encapsulation. You can hide data from certain parts of the code.
+  2. Inheritance. You can create hierarchies of related objects which share some behaviors and modify other behaviors to suit themselves.
+  3. Polymorphism. You can implement a function which behaves differently depending on the type of its arguments.
+
+I’m being deliberately vague. Even though these three principles were all over the multiple choice section of the exam on Java when I was in school, they actually transcend object-oriented programming. They’re things which are helpful in all languages. Languages differ in how they support these principles, though.
+
+Encapsulation lets us limit the number of things we have to worry about by only allowing certain parts of the code to modify data. If we have a global variable and we discover in debugging that its value is wrong, the piece of code that made its value wrong could be anywhere. If we have a private member of a class, the piece of code that made its value wrong can only be in that class.
+
+Clojure doesn’t really support encapsulation. Like JavaScript and C, data in Clojure is local or global. You can do weird contortions with closures to make things private, like people do in JavaScript. I wouldn’t, but you can. Since Clojure data is almost all immutable, it’s not nearly as necessary to have encapsulation.
+
+Clojure doesn’t really support inheritance either. But how much of the inheritance we see in Java is about avoiding code duplication, and how much is about the type system? Clojure is dynamically typed, so it doesn’t need inheritance for a type system. And Clojure has macros, the ultimate way of reducing code duplication, so it doesn’t really need inheritance for that reason either. You can build your own inheritance using `derive` and the polymorphism tools, but the language doesn’t support it directly, not really.
+
+Clojure supports all kinds of sophisticated mechanisms for polymorphism. Records, types, protocols, multimethods. Probably some more that I’m forgetting or that only exist in the upcoming 1.8.1 alpha pre-release. All of them are useful and interesting, but my favorite example of Clojure polymorphism is probably this function:
+
+    clojure.core/tree-seq
+    ([branch? children root])
+      Returns a lazy sequence of the nodes in a tree, via a depth-first walk.
+      branch? must be a fn of one arg that returns true if passed a node
+      that can have children (but may not).  children must be a fn of one
+      arg that returns a sequence of the children. Will only be called on
+      nodes for which branch? returns true. Root is the root node of the
+      tree.
+
+Why do I love `tree-seq` so much? Because this is the only polymorphic function in any language I can think of that both does not care, in any way, in the slightest, not even a little, how you represent the data it works on, and is also so simple that you can make a call to it in one line with practically no boilerplate:
+
+    (tree-seq #(not (nil? %))
+              #(get % 1)
+              [:root
+                [[:a [[:b nil] [:c nil]]]
+                [:d [[:e
+                       [:f nil]]]
+                     [:g nil]]]])
+
+It works on this horror of nested vectors, producing a lazy sequence of the child vectors of each node. Even though this thing is the most ghetto way I can imagine to represent a binary tree, `tree-seq` doesn’t care and still processes it.
+
+It also works on slightly more sophisticated structures:
+
+    (defrecord Node [name children])
+    (def t
+    (->Node :root
+          [(->Node :a
+                   [(->Node :b nil) (->Node :c nil)])
+           (->Node :d [(->Node :e
+                               [(->Node :f nil)])
+                       (->Node :g nil)])]))
+    (tree-seq #(not (nil? %)) :children t)
+
+
+
+## You Can Only Luminus Once Per Project
+
+## Clojure’s thought pollution

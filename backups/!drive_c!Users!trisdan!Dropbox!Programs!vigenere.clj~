@@ -1,0 +1,17 @@
+;; Functions to encrypt something with a simplistic Vigenere cypher.
+(ns 'vigenere)
+
+(defn shifted-range
+  "Generates the range from start to stop-1, wraps around and generates the rest."
+  [start stop]
+  (take stop (iterate #(mod (inc %) stop) start)))
+
+(defn shifted-range2
+  "Just to practice using lazy-seq"
+  [start stop]
+  (letfn [helper
+          ([start stop next]
+             (if (= start (inc next))
+               nil
+               (cons next (lazy-seq (helper start stop (mod (inc next) stop))))))]
+    (take stop (helper start stop start))))

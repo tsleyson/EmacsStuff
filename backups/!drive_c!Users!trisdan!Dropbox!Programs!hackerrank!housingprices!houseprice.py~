@@ -1,0 +1,40 @@
+# houseprice.py
+# Predict price of a house using least-squares linear regression.
+import sys
+import numpy as np
+import scipy.linalg as la
+
+def from_str_list(convrtr, strings):
+    '''
+    Takes a list of strings and turns each string into a list.
+    Converts items of the list using the function convrtr.
+    '''
+    return [map(convrtr, x) for x in
+            [s.strip().split() for s in strings]]
+
+def prep_data():
+    "Get data in shape to become numpy arrays."
+    lines_in = sys.stdin.readlines()
+    numfeatures, numtraining = map(int, lines_in[0].split())
+    training = from_str_list(float, lines_in[1:numtraining+1])
+    answers = [ls.pop() for ls in training]
+    # Skip number of test data by going +2.
+    test = from_str_list(float, lines_in[numtraining+2:])
+    # Convert to np array. Couldn't before because needed training as
+    # list to use pop.
+    training = np.asarray(training)
+    answers = np.asarray(answers)
+    test = np.asarray(test)
+    # Now add a bias term.
+    training = np.append(training, np.ones([len(training), 1]), 1)
+    test = np.append(test, np.ones([len(test), 1]), 1)
+    return training, answers, test
+
+if __name__ == "__main__":
+    training, answers, test = prep_data()
+
+    # lstsq returns a tuple with the least-squares coefficients in first pos.
+    model = la.lstsq(training, answers)[0]
+    estimated = np.dot(test, model)
+    for estimate in estimated:
+        print(estimate)

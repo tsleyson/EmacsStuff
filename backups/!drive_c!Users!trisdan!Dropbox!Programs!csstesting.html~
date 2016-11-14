@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS testing</title>
+    <style>
+      img {
+        border: solid hsl(250, 67%, 90%) 7px;
+        border-radius: 16px;
+        margin: 5px;
+        transition: all 2s ease-in-out;
+      }
+
+      img:hover {
+       border: solid hsl(60, 90%, 70%) 7px;
+     }
+
+     .shrink {
+       height: 10px;
+       width: 10px;
+     }
+
+      #container {
+       border: 2px solid hsl(274, 65%, 92%);
+       padding: 1%;
+       border-radius: 5px;
+       background-color: hsl(266, 10%, 95%);
+       position: absolute;
+       right: 5%;
+       overflow-x: hidden; /* No horizontal scrollbars. */
+       /*left: 5%*/
+       width: -moz-fit-content;
+       transition: all 1s ease-in;
+     }
+
+     #frame {
+       position: relative;
+       background-color: green;
+       width: 400px;
+       height: 450px;
+     }
+
+     #tooltip {
+       position: absolute;
+       background-color: hsl(250, 67%, 90%);
+       border: solid WhiteSmoke 4px;
+       border-radius: 5px;
+       visibility: hidden;
+       padding: 1em;
+     }
+     
+     .row {
+       /*width: 90%;
+       left: 50%;
+       margin: 0 0 0 -35%;
+       /* -35% = -(width of parent)/2. With left: 50%, centers
+       non-statically positioned element. */
+       position: relative;
+     }
+
+     .leave {
+       animation-duration: 1s;
+       animation-name: exit-top;
+       animation-timing-function: ease-out; 
+     }
+
+     @keyframes exitstageleft {
+       from {
+         margin-left: 0;
+       }
+       50% {
+         margin-left: 50%;
+       }
+       to {
+         margin-left: 100%;
+       }
+     }
+
+     @keyframes exit-top {
+       from {
+         bottom: 0;
+       }
+       50% {
+         bottom: 50%;
+       }
+       to {
+         bottom: 100%;
+       }
+     }
+
+     @keyframes grow {
+       from {
+         transform: scale(0.3);
+       }
+       50% {
+         transform: scale(0.5);
+       }
+       to {
+         transform: scale(1);
+       }
+     }
+
+     @keyframes shrink {
+       from {
+         transform: scale(1);
+       }
+       25% {
+         transform: scale(0.75);
+       }
+       50% {
+         transform: scale(0.5);
+       }
+       75% {
+         transform: scale(0.25);
+       }
+       to {
+         transform: scale(0);
+       }
+     }
+    </style>
+  </head>
+  
+  <body>
+    <!--  <div id="frame"></div> -->
+    <div id="container">
+      <div id="tooltip"><p id="info">Stuff here</p></div>
+      <img src="ResetCover1.jpg">
+      <img src="ResetCover2.jpg">
+      <img src="ResetCover3.jpg">
+      <img src="72/MDAwMg==.jpg">
+      <img src="72/MDAwMQ==.jpg">
+      <img src="72/MDAwMw==.jpg">
+      <img src="72/MDAwNA==.jpg">
+      <img src="72/MDAwNg==.jpg">
+      <img src="72/MDAwNQ==.jpg">
+      <img src="72/MDAwNw==.jpg">
+      <img src="72/MDAwOA==.jpg">
+      <img src="72/MDAwOQ==.jpg">
+      <img src="72/MDAxMA==.jpg">
+      <img src="72/MDAxMg==.jpg">
+      <img src="72/MDAxMQ==.jpg">
+      <img src="72/MDAxMw==.jpg">
+    </div>
+    <script src="csstesting.js"></script>
+    <script>
+      var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; ++i) {
+       images[i].setAttribute("height", 300);
+       images[i].setAttribute("width", 220);
+       images[i].setAttribute("id", i);
+       
+       images[i].addEventListener("click", displayPicture);
+       images[i].title = images[i].src;
+/*
+       images[i].addEventListener("click", function(event) {
+         var cont = document.getElementById("container");
+         var pic = document.createElement("img");
+         pic.id = "display";
+         pic.src = document.getElementById(this.id).src;
+         pic.setAttribute("height", 500);
+         pic.setAttribute("style",
+                          "transition: all 1s ease;" +
+                          "position:relative;" +
+                          "border: none;" +
+                          "animation: grow 3s ease-out;");
+         console.log(cont);
+         for (var i = 0; i < cont.children.length; ++i) {
+           var child = cont.children[i];
+           console.log(child);
+           child.addEventListener("animationend", this.remove);
+           child.classList.add("leave");
+         }
+         cont.style.position = "absolute";
+         cont.style.left = "50%";
+         cont.style.margin = "0 0 0 -25%";
+         cont.appendChild(pic);
+       });*/
+     }
+    </script>
+  </body>
+</html>

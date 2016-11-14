@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Canvas Test</title>
+    <meta charset="UTF-8">
+    <style>
+      #a { border: solid; }
+    </style>
+    <script>
+      function drawLines() {
+         var c = document.getElementById("a").getContext("2d");
+         for (var i = 0.5; i < 800; i += 10) {
+            c.moveTo(i, 0);
+            c.lineTo(i, 600);
+         }
+         for (var j = 0.5; j < 600; j += 10) {
+            c.moveTo(0, j);
+            c.lineTo(800, j);
+         }
+         c.strokeStyle = "#eee";
+         c.stroke();
+      }
+    </script>                           
+  </head>
+  <body onload="drawLines();">
+    <canvas id="a" width="800" height="600"></canvas>
+    <br />
+    <input type="color" />  
+  </body>
+</html>

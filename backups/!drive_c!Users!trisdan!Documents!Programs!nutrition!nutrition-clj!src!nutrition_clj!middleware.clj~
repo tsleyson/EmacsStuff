@@ -1,0 +1,17 @@
+(ns nutrition-clj.middleware
+  (:require [taoensso.timbre :as timbre]
+            [environ.core :refer [env]]
+            [prone.middleware :refer [wrap-exceptions]]
+            [noir-exception.core :refer [wrap-internal-error]]))
+
+(defn log-request [handler]
+  (fn [req]
+    (timbre/debug req)
+    (handler req)))
+
+(def production-middleware
+  [#(wrap-internal-error % :log (fn [e] (timbre/error e)))])
+
+(defn load-middleware []
+  (concat (when (env :dev) development-middleware)
+          production-middleware))
