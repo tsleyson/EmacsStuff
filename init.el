@@ -31,6 +31,9 @@
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
+;; Don't show top tool bar
+(tool-bar-mode -1)
+
 (require 'typopunct)
 (typopunct-change-language 'english t)
 ;; “Using nice quotes.” Typopunct.
