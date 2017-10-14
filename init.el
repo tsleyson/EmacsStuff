@@ -1,3 +1,7 @@
+;; Some other extension I'm using has screwed up package initialzation which has
+;; made stuff in the elpa folder not laod correctly.
+(package-initialize)
+
 ;; My personal global key bindings.
 (global-set-key (kbd "C-c C-r") 'reunite-orphaned-first-letter)
 (global-set-key (kbd "C-c C-l") 'reunite-orphaned-last-letter)
@@ -33,6 +37,9 @@
 
 ;; Don't show top tool bar
 (tool-bar-mode -1)
+
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 (require 'typopunct)
 (typopunct-change-language 'english t)
@@ -99,7 +106,7 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
-(exec-path-from-shell-initialize)
+;;(exec-path-from-shell-initialize)
 (add-to-list 'exec-path "/usr/bin/local")
 
 ;; Fullscreen on startup
@@ -137,7 +144,14 @@
 (setq exec-path (append exec-path '("/usr/local/bin")))
 (add-hook 'text-mode-hook 'flyspell-mode)
 
-(set-default-font "Monaco 14")
+(set-default-font "Monaco 12")
+(setq default-tab-width 4)
+
+;; Try making command also meta for a while, see how it goes.
+(setq mac-command-modifier 'meta)
+
+;; Smart quotes mode
+(require 'smart-quotes)
 
 ;; Set command as meta for mac os x, and make option nothing so you
 ;; can use it as a modifier. I'm having trouble getting used to it
@@ -154,7 +168,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default))))
+    ("569964314f42b3ca20080c39516c523bb07d768be9af2c6437b799127a31b380" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" "8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
