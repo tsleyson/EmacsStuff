@@ -1,4 +1,22 @@
-((("strip" .
+((("to:" .
+   [1 0 0])
+  ("home" .
+   [1 0 0 0])
+  ("generate-move-graph" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("find-shortest-path" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("nil" .
+   [1 0 0])
+  ("recur" .
+   [1 0 0 0 0])
+  ("Integer/parseInt" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("clojure.string" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  (":require" .
+   [1 0 0 0 0 0 0 0])
+  ("strip" .
    [3 0 0 0 0])
   ("in_values" .
    [0 0 0 0 1 0 3 0 0])

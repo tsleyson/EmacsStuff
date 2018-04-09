@@ -153,6 +153,11 @@
 ;; Smart quotes mode
 (require 'smart-quotes)
 
+;; Ruby / Rails configuration
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(add-hook 'ruby-mode-hook 'projectile-on)
+
 ;; Set command as meta for mac os x, and make option nothing so you
 ;; can use it as a modifier. I'm having trouble getting used to it
 ;; and I actually like having meta a little further over, so it's
