@@ -1,0 +1,50 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Current"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "* Characters\n** ")
+ (rear-context-string . "e Muuriphaka, \n\n")
+ (position . 50875))
+("p1c2"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "*** 2\nWhen Lili ")
+ (rear-context-string . "ut of the hut.\n\n")
+ (position . 40069))
+("Chapter 2"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "*** 2\nWhen Lili ")
+ (rear-context-string . "ut of the hut.\n\n")
+ (position . 40069))
+("Rhalti Wordlist"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "**** Wordlist\n**")
+ (rear-context-string . "our statement.\n\n")
+ (position . 61519))
+("Language"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "** Language\n*** ")
+ (rear-context-string . ")\n- Vita stones\n")
+ (position . 54371))
+("** Language"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "\n*** Rhalti\nThe ")
+ (rear-context-string . "ones\n** Language")
+ (position . 29621))
+("* Characters"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "* Characters\n** ")
+ (rear-context-string . "t act.\n\n* Story\n")
+ (position . 2612))
+("**** Wordlist"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "\n*** Rhalti\nThe ")
+ (rear-context-string . "ones\n** Language")
+ (position . 29621))
+("**** Basic morphology and syntax"
+ (filename . "~/Google Drive/Writing/magicrobots/mika_story.org")
+ (front-context-string . "**** Basic morph")
+ (rear-context-string . "s as I see fit.\n")
+ (position . 11446))
+)

@@ -9,8 +9,8 @@
 (global-set-key (kbd "C-c C-0") 'reunite-orphaned-first-letter)
 (global-set-key (kbd "C-c C-9") 'reunite-orphaned-last-letter)
 ;; General
-(global-set-key (kbd "M--") 'insert-unicode-em-dash)
-(global-set-key (kbd "C-c C-n C--") 'insert-unicode-en-dash)
+;;(global-set-key (kbd "M--") 'insert-unicode-em-dash)
+;;(global-set-key (kbd "C-c C-n C--") 'insert-unicode-en-dash)—
 (global-set-key (kbd "M-z") 'other-window)
 (global-set-key (kbd "<f2>") 'other-window)
 (global-set-key (kbd "C-c M-z") 'zap-to-char)
@@ -41,16 +41,16 @@
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
-(require 'typopunct)
-(typopunct-change-language 'english t)
+;;(require 'typopunct)
+;;(typopunct-change-language 'english t)
 ;; “Using nice quotes.” Typopunct.
 ;; "Using ugly quotes." C-q C-”.
 
 ; Make markdown mode also have visual-line-mode and typopunct mode by default.
 (add-hook 'text-mode-hook 'visual-line-mode)
-(add-hook 'text-mode-hook 'typopunct-mode)
-(add-hook 'org-mode-hook 'typopunct-mode)
-(add-hook 'markdown-mode-hook 'typopunct-mode)
+;;(add-hook 'text-mode-hook 'typopunct-mode)
+;;(add-hook 'org-mode-hook 'typopunct-mode)
+;;(add-hook 'markdown-mode-hook 'typopunct-mode)
 
 ;; Change C/C++/Java indentation rules
 (setq c-default-style "bsd"
@@ -130,6 +130,8 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-20160226.1359/snippets/")
+(add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets"))
+(yas-global-mode 1)
 (add-to-list 'ac-sources 'ac-source-yasnippet)
 
 (require 'nodejs-repl)
@@ -151,12 +153,13 @@
 (setq mac-command-modifier 'meta)
 
 ;; Smart quotes mode
-(require 'smart-quotes)
+;;(require 'smart-quotes)
 
 ;; Ruby / Rails configuration
 (require 'flymake-ruby)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (add-hook 'ruby-mode-hook 'projectile-on)
+(add-hook 'comint-mode-hook (lambda () (setq comint-process-echoes t)))
 
 ;; Set command as meta for mac os x, and make option nothing so you
 ;; can use it as a modifier. I'm having trouble getting used to it
