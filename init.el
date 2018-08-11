@@ -176,7 +176,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("569964314f42b3ca20080c39516c523bb07d768be9af2c6437b799127a31b380" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" "8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default))))
+	("569964314f42b3ca20080c39516c523bb07d768be9af2c6437b799127a31b380" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" "8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default)))
+ '(package-selected-packages
+   (quote
+	(terraform-mode cider yasnippet yaml-mode web-mode sx spinner seq scala-mode2 rvm reykjavik-theme queue projectile paredit org-bookmark-heading nodejs-repl js2-mode inf-ruby highlight-chars helm haskell-mode handlebars-sgml-mode handlebars-mode gotham-theme gorepl-mode golint go-mode flymake-ruby exec-path-from-shell dark-krystal-theme coffee-mode clues-theme clojure-mode auto-complete afternoon-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
