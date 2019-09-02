@@ -1,5 +1,9 @@
+;; Make sure melpa certificates are verified correctly
+(require 'gnutls)
+(add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
+
 ;; Some other extension I'm using has screwed up package initialzation which has
-;; made stuff in the elpa folder not laod correctly.
+;; made stuff in the elpa folder not load correctly.
 (package-initialize)
 
 ;; My personal global key bindings.
@@ -29,6 +33,9 @@
 ;; M-space to remove all spaces save one.
 ;; M-\ to remove all spaces, period.
 ;; M-x canonically-space-region to put one space between every word and two after periods.
+
+(global-set-key (kbd "C-c C-d w") 'delete-trailing-whitespace)
+(global-set-key (kbd "<f12>") 'magit-status)
 
 (add-to-list 'load-path "/Users/trisdan/.emacs.d/my-extensions")
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -146,7 +153,14 @@
 (setq exec-path (append exec-path '("/usr/local/bin")))
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+;; Make sure emacs can find cargo for Rust
+(setq cargo-dir (substitute-in-file-name "$HOME/.cargo/bin/cargo"))
+(setenv "PATH" (concat (getenv "PATH") (format ":%s" cargo-dir)))
+(setq exec-path (append exec-path '(~cargo-dir)))
+
+;; Set default font for OS X. Change for other platforms.
 (set-default-font "Monaco 12")
+;;(set-default-font "Georgia 14")
 (setq default-tab-width 4)
 
 ;; Try making command also meta for a while, see how it goes.
@@ -176,10 +190,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-	("569964314f42b3ca20080c39516c523bb07d768be9af2c6437b799127a31b380" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" "8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default)))
+	("28ec8ccf6190f6a73812df9bc91df54ce1d6132f18b4c8fcc85d45298569eb53" "569964314f42b3ca20080c39516c523bb07d768be9af2c6437b799127a31b380" "a3132bd39a977ddde4c002f8bd0ef181414c3fbe9228e3643b999491192680ad" "8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "01ce486c3a7c8b37cf13f8c95ca4bb3c11413228b35676025fdf239e77019ea1" "bf25a2d5c2eddc36b2ee6fc0342201eb04ea090e637562c95b3b6e071216b524" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" default)))
  '(package-selected-packages
    (quote
-	(terraform-mode cider yasnippet yaml-mode web-mode sx spinner seq scala-mode2 rvm reykjavik-theme queue projectile paredit org-bookmark-heading nodejs-repl js2-mode inf-ruby highlight-chars helm haskell-mode handlebars-sgml-mode handlebars-mode gotham-theme gorepl-mode golint go-mode flymake-ruby exec-path-from-shell dark-krystal-theme coffee-mode clues-theme clojure-mode auto-complete afternoon-theme))))
+	(yasnippet-classic-snippets magit tommyh-theme toml-mode cargo rust-mode terraform-mode cider yasnippet yaml-mode web-mode sx spinner seq scala-mode2 rvm reykjavik-theme queue projectile paredit org-bookmark-heading nodejs-repl js2-mode inf-ruby highlight-chars helm haskell-mode handlebars-sgml-mode handlebars-mode gotham-theme gorepl-mode golint go-mode flymake-ruby exec-path-from-shell dark-krystal-theme coffee-mode clues-theme clojure-mode auto-complete afternoon-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

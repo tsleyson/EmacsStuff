@@ -1,0 +1,7 @@
+#name : python-skeleton
+# --
+def main():
+    $0pass
+
+if __name__ == '__main__':
+    main()
